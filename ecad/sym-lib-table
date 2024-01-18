@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "esp32-pico-kit")(type "KiCad")(uri "${KIPRJMOD}/esp32 pico kit/ESP32-PICO-KIT.kicad_sym")(options "")(descr ""))
+)
