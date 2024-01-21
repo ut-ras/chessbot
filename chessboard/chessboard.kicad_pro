@@ -48,7 +48,13 @@
           "min_clearance": 0.5
         }
       },
-      "diff_pair_dimensions": [],
+      "diff_pair_dimensions": [
+        {
+          "gap": 0.0,
+          "via_gap": 0.0,
+          "width": 0.0
+        }
+      ],
       "drc_exclusions": [],
       "meta": {
         "version": 2
@@ -165,8 +171,26 @@
           "td_width_to_size_filter_ratio": 0.9
         }
       ],
-      "track_widths": [],
-      "via_dimensions": [],
+      "track_widths": [
+        0.0,
+        0.2,
+        0.5,
+        1.5
+      ],
+      "via_dimensions": [
+        {
+          "diameter": 0.0,
+          "drill": 0.0
+        },
+        {
+          "diameter": 0.7,
+          "drill": 0.3
+        },
+        {
+          "diameter": 0.8,
+          "drill": 0.4
+        }
+      ],
       "zones_allow_external_fillets": false
     },
     "layer_presets": [],
@@ -413,6 +437,40 @@
         "via_diameter": 0.8,
         "via_drill": 0.4,
         "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "D0",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.25,
+        "via_diameter": 0.7,
+        "via_drill": 0.3,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "D1",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.25,
+        "via_diameter": 0.7,
+        "via_drill": 0.3,
+        "wire_width": 6
       }
     ],
     "meta": {
@@ -477,160 +535,160 @@
       "Row0"
     ],
     [
-      "61033af0-e227-4080-85d0-70cf5d8ebc03",
+      "7da4fa47-f7be-472c-8768-5be40d5bac70",
+      "sensorpair0"
+    ],
+    [
+      "1d74f805-e713-4b1a-8ce1-66afcdde9510",
+      "sensorpair1"
+    ],
+    [
+      "934fc3fc-e92a-4896-b0b0-e3e9a0af6406",
+      "sensorpair2"
+    ],
+    [
+      "0bec1906-7c77-4c93-b5ea-e391da94fc2e",
       "sensorpair3"
     ],
     [
-      "0f836c2b-df34-43f5-81db-316ab8db7f3d",
-      "Row4"
-    ],
-    [
-      "211be6ee-6cae-45dd-a5d5-c6e8c51475b9",
-      "Row2"
-    ],
-    [
-      "e22f0853-06f4-4fb5-92f3-ca99261717ba",
-      "Row6"
-    ],
-    [
-      "749d234f-5976-4c4b-abcc-8a7628bbbae6",
-      "Row7"
-    ],
-    [
-      "0d72517a-0337-461f-b027-dd51cb05885d",
+      "17c0e463-cbc8-42bc-98c7-95e3590956a1",
       "Row1"
     ],
     [
-      "4ee53fe6-953c-4524-9fe8-104ed7635784",
+      "1d74f805-e713-4b1a-8ce1-66afcdde9510",
+      "sensorpair1"
+    ],
+    [
+      "0bec1906-7c77-4c93-b5ea-e391da94fc2e",
+      "sensorpair3"
+    ],
+    [
+      "934fc3fc-e92a-4896-b0b0-e3e9a0af6406",
+      "sensorpair2"
+    ],
+    [
+      "7da4fa47-f7be-472c-8768-5be40d5bac70",
+      "sensorpair0"
+    ],
+    [
+      "daacdcd8-29a3-4e95-8b58-1b6c5868c75f",
+      "Row2"
+    ],
+    [
+      "0bec1906-7c77-4c93-b5ea-e391da94fc2e",
+      "sensorpair3"
+    ],
+    [
+      "934fc3fc-e92a-4896-b0b0-e3e9a0af6406",
+      "sensorpair2"
+    ],
+    [
+      "7da4fa47-f7be-472c-8768-5be40d5bac70",
+      "sensorpair0"
+    ],
+    [
+      "1d74f805-e713-4b1a-8ce1-66afcdde9510",
+      "sensorpair1"
+    ],
+    [
+      "cafb4ce1-43a2-4e44-b1c5-63758a8828c6",
+      "Row3"
+    ],
+    [
+      "1d74f805-e713-4b1a-8ce1-66afcdde9510",
+      "sensorpair1"
+    ],
+    [
+      "0bec1906-7c77-4c93-b5ea-e391da94fc2e",
+      "sensorpair3"
+    ],
+    [
+      "934fc3fc-e92a-4896-b0b0-e3e9a0af6406",
+      "sensorpair2"
+    ],
+    [
+      "7da4fa47-f7be-472c-8768-5be40d5bac70",
+      "sensorpair0"
+    ],
+    [
+      "dc9fe572-40d7-42bb-80eb-ae736298da77",
+      "Row4"
+    ],
+    [
+      "0bec1906-7c77-4c93-b5ea-e391da94fc2e",
+      "sensorpair3"
+    ],
+    [
+      "1d74f805-e713-4b1a-8ce1-66afcdde9510",
+      "sensorpair1"
+    ],
+    [
+      "7da4fa47-f7be-472c-8768-5be40d5bac70",
+      "sensorpair0"
+    ],
+    [
+      "934fc3fc-e92a-4896-b0b0-e3e9a0af6406",
+      "sensorpair2"
+    ],
+    [
+      "a2897459-5f88-4f0f-b963-f1c86b376a0a",
       "Row5"
     ],
     [
       "7da4fa47-f7be-472c-8768-5be40d5bac70",
-      "sensorpair"
+      "sensorpair0"
     ],
     [
-      "24712d05-32c3-4f9e-92db-3e83fef4ff24",
+      "1d74f805-e713-4b1a-8ce1-66afcdde9510",
       "sensorpair1"
     ],
     [
-      "24712d05-32c3-4f9e-92db-3e83fef4ff24",
-      "sensorpair1"
-    ],
-    [
-      "68a567ea-e604-4c00-be46-b19646681094",
-      "sensorpair2"
-    ],
-    [
-      "24712d05-32c3-4f9e-92db-3e83fef4ff24",
-      "sensorpair1"
-    ],
-    [
-      "68a567ea-e604-4c00-be46-b19646681094",
-      "sensorpair2"
-    ],
-    [
-      "61033af0-e227-4080-85d0-70cf5d8ebc03",
+      "0bec1906-7c77-4c93-b5ea-e391da94fc2e",
       "sensorpair3"
     ],
     [
-      "61033af0-e227-4080-85d0-70cf5d8ebc03",
-      "sensorpair3"
-    ],
-    [
-      "61033af0-e227-4080-85d0-70cf5d8ebc03",
-      "sensorpair3"
-    ],
-    [
-      "68a567ea-e604-4c00-be46-b19646681094",
+      "934fc3fc-e92a-4896-b0b0-e3e9a0af6406",
       "sensorpair2"
     ],
     [
-      "61033af0-e227-4080-85d0-70cf5d8ebc03",
-      "sensorpair3"
+      "057e6850-cdb5-4403-a092-e317f1d8813f",
+      "Row6"
     ],
     [
-      "7da4fa47-f7be-472c-8768-5be40d5bac70",
-      "sensorpair"
-    ],
-    [
-      "24712d05-32c3-4f9e-92db-3e83fef4ff24",
-      "sensorpair1"
-    ],
-    [
-      "68a567ea-e604-4c00-be46-b19646681094",
+      "934fc3fc-e92a-4896-b0b0-e3e9a0af6406",
       "sensorpair2"
     ],
     [
-      "68a567ea-e604-4c00-be46-b19646681094",
-      "sensorpair2"
-    ],
-    [
-      "24712d05-32c3-4f9e-92db-3e83fef4ff24",
-      "sensorpair1"
-    ],
-    [
-      "61033af0-e227-4080-85d0-70cf5d8ebc03",
-      "sensorpair3"
-    ],
-    [
-      "68a567ea-e604-4c00-be46-b19646681094",
-      "sensorpair2"
-    ],
-    [
-      "68a567ea-e604-4c00-be46-b19646681094",
-      "sensorpair2"
-    ],
-    [
-      "7da4fa47-f7be-472c-8768-5be40d5bac70",
-      "sensorpair"
-    ],
-    [
-      "24712d05-32c3-4f9e-92db-3e83fef4ff24",
-      "sensorpair1"
-    ],
-    [
-      "68a567ea-e604-4c00-be46-b19646681094",
-      "sensorpair2"
-    ],
-    [
-      "7da4fa47-f7be-472c-8768-5be40d5bac70",
-      "sensorpair"
-    ],
-    [
-      "7da4fa47-f7be-472c-8768-5be40d5bac70",
-      "sensorpair"
-    ],
-    [
-      "24712d05-32c3-4f9e-92db-3e83fef4ff24",
+      "1d74f805-e713-4b1a-8ce1-66afcdde9510",
       "sensorpair1"
     ],
     [
       "7da4fa47-f7be-472c-8768-5be40d5bac70",
-      "sensorpair"
+      "sensorpair0"
+    ],
+    [
+      "0bec1906-7c77-4c93-b5ea-e391da94fc2e",
+      "sensorpair3"
+    ],
+    [
+      "9b50ff42-e924-4f42-b819-32c9802f4846",
+      "Row7"
+    ],
+    [
+      "934fc3fc-e92a-4896-b0b0-e3e9a0af6406",
+      "sensorpair2"
+    ],
+    [
+      "0bec1906-7c77-4c93-b5ea-e391da94fc2e",
+      "sensorpair3"
     ],
     [
       "7da4fa47-f7be-472c-8768-5be40d5bac70",
-      "sensorpair"
+      "sensorpair0"
     ],
     [
-      "24712d05-32c3-4f9e-92db-3e83fef4ff24",
+      "1d74f805-e713-4b1a-8ce1-66afcdde9510",
       "sensorpair1"
-    ],
-    [
-      "61033af0-e227-4080-85d0-70cf5d8ebc03",
-      "sensorpair3"
-    ],
-    [
-      "7da4fa47-f7be-472c-8768-5be40d5bac70",
-      "sensorpair"
-    ],
-    [
-      "61033af0-e227-4080-85d0-70cf5d8ebc03",
-      "sensorpair3"
-    ],
-    [
-      "08c07a2a-cdb0-4381-9e6f-3d28d7d01869",
-      "Row3"
     ]
   ],
   "text_variables": {}

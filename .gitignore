@@ -1,4 +1,4 @@
-chessbot-backups
+*-backups/
 output/
 fp-info-cache
 *.lck
