@@ -711,33 +711,33 @@
     (pin "2" (uuid aecc213d-00a0-43db-a7f4-014744d4ebb6))
     (pin "3" (uuid c2730e3e-e392-45be-aa17-3aa1021d622e))
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404"
           (reference "D1") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/0ecf2261-63d0-42d7-af1f-687430f67c49"
-          (reference "D3") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/042bc61c-e5f6-49f2-a6f7-55c5905d55cf"
-          (reference "D11") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f376e082-1fce-46b0-9ab5-10e144e1b399"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0f836c2b-df34-43f5-81db-316ab8db7f3d"
           (reference "D19") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/8abb4636-88b4-41b5-b2b8-e4a045c764a2"
-          (reference "D27") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/4ee53fe6-953c-4524-9fe8-104ed7635784"
+          (reference "D59") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f225061a-b578-46da-b633-333e800eaa1a"
-          (reference "D35") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/a7d01384-9c07-484e-9de0-4be9005176dc"
+          (reference "D3") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/6a66a7a1-c8cf-40c9-b855-80dc164993af"
-          (reference "D43") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/dfba45b6-8dfb-40cb-9629-ad63d3cdf8a0"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0d72517a-0337-461f-b027-dd51cb05885d"
           (reference "D51") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/1fdb5dce-c2e4-4802-8144-05912ebafeaa"
-          (reference "D59") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/211be6ee-6cae-45dd-a5d5-c6e8c51475b9"
+          (reference "D27") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/08c07a2a-cdb0-4381-9e6f-3d28d7d01869"
+          (reference "D11") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/e22f0853-06f4-4fb5-92f3-ca99261717ba"
+          (reference "D35") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/749d234f-5976-4c4b-abcc-8a7628bbbae6"
+          (reference "D43") (unit 1)
         )
       )
     )
@@ -746,7 +746,7 @@
   (symbol (lib_id "power:+3.3V") (at 90.17 38.1 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 1328a225-9202-40f4-bcc8-7a188f6c98f6)
-    (property "Reference" "#PWR022" (at 90.17 41.91 0)
+    (property "Reference" "#PWR064" (at 90.17 41.91 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 90.17 33.02 0)
@@ -760,30 +760,30 @@
     )
     (pin "1" (uuid afb0aed5-2297-4c35-8fc0-ec6ca83a33d9))
     (instances
-      (project "chessbot"
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/0ecf2261-63d0-42d7-af1f-687430f67c49"
-          (reference "#PWR0194") (unit 1)
+      (project "chessboard"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/749d234f-5976-4c4b-abcc-8a7628bbbae6"
+          (reference "#PWR064") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/042bc61c-e5f6-49f2-a6f7-55c5905d55cf"
-          (reference "#PWR0195") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/e22f0853-06f4-4fb5-92f3-ca99261717ba"
+          (reference "#PWR057") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f376e082-1fce-46b0-9ab5-10e144e1b399"
-          (reference "#PWR0196") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/08c07a2a-cdb0-4381-9e6f-3d28d7d01869"
+          (reference "#PWR036") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/8abb4636-88b4-41b5-b2b8-e4a045c764a2"
-          (reference "#PWR0197") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/211be6ee-6cae-45dd-a5d5-c6e8c51475b9"
+          (reference "#PWR050") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f225061a-b578-46da-b633-333e800eaa1a"
-          (reference "#PWR0198") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0d72517a-0337-461f-b027-dd51cb05885d"
+          (reference "#PWR071") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/6a66a7a1-c8cf-40c9-b855-80dc164993af"
-          (reference "#PWR0199") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/a7d01384-9c07-484e-9de0-4be9005176dc"
+          (reference "#PWR029") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/dfba45b6-8dfb-40cb-9629-ad63d3cdf8a0"
-          (reference "#PWR0200") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/4ee53fe6-953c-4524-9fe8-104ed7635784"
+          (reference "#PWR078") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/1fdb5dce-c2e4-4802-8144-05912ebafeaa"
-          (reference "#PWR0201") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0f836c2b-df34-43f5-81db-316ab8db7f3d"
+          (reference "#PWR043") (unit 1)
         )
       )
     )
@@ -792,7 +792,7 @@
   (symbol (lib_id "power:+3.3V") (at 59.69 43.18 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 24aa7bcf-9fb9-4f37-af77-6ec1e8c5a319)
-    (property "Reference" "#PWR022" (at 59.69 46.99 0)
+    (property "Reference" "#PWR041" (at 59.69 46.99 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 59.69 38.1 0)
@@ -806,30 +806,30 @@
     )
     (pin "1" (uuid 61d112e4-b7d0-4245-a0c0-84073cea941e))
     (instances
-      (project "chessbot"
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/0ecf2261-63d0-42d7-af1f-687430f67c49"
-          (reference "#PWR05") (unit 1)
+      (project "chessboard"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0f836c2b-df34-43f5-81db-316ab8db7f3d"
+          (reference "#PWR041") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/042bc61c-e5f6-49f2-a6f7-55c5905d55cf"
-          (reference "#PWR021") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/4ee53fe6-953c-4524-9fe8-104ed7635784"
+          (reference "#PWR076") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f376e082-1fce-46b0-9ab5-10e144e1b399"
-          (reference "#PWR050") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/a7d01384-9c07-484e-9de0-4be9005176dc"
+          (reference "#PWR027") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/8abb4636-88b4-41b5-b2b8-e4a045c764a2"
-          (reference "#PWR078") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0d72517a-0337-461f-b027-dd51cb05885d"
+          (reference "#PWR069") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f225061a-b578-46da-b633-333e800eaa1a"
-          (reference "#PWR0102") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/211be6ee-6cae-45dd-a5d5-c6e8c51475b9"
+          (reference "#PWR048") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/6a66a7a1-c8cf-40c9-b855-80dc164993af"
-          (reference "#PWR0126") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/08c07a2a-cdb0-4381-9e6f-3d28d7d01869"
+          (reference "#PWR034") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/dfba45b6-8dfb-40cb-9629-ad63d3cdf8a0"
-          (reference "#PWR0150") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/e22f0853-06f4-4fb5-92f3-ca99261717ba"
+          (reference "#PWR055") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/1fdb5dce-c2e4-4802-8144-05912ebafeaa"
-          (reference "#PWR0174") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/749d234f-5976-4c4b-abcc-8a7628bbbae6"
+          (reference "#PWR062") (unit 1)
         )
       )
     )
@@ -838,7 +838,7 @@
   (symbol (lib_id "Jumper:Jumper_2_Bridged") (at 40.64 78.74 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 2c4d3955-f4fe-41b9-8348-a92cd60a8c8c)
-    (property "Reference" "JP7" (at 40.64 80.01 0)
+    (property "Reference" "JP12" (at 40.64 80.01 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Jumper_2_Bridged" (at 40.64 76.2 0)
@@ -853,30 +853,30 @@
     (pin "2" (uuid 656a7aff-e7d4-4db1-9ced-220792498240))
     (pin "1" (uuid f19aadad-b828-41d8-a90f-78e58084ca67))
     (instances
-      (project "chessbot"
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/0ecf2261-63d0-42d7-af1f-687430f67c49"
-          (reference "JP7") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/042bc61c-e5f6-49f2-a6f7-55c5905d55cf"
-          (reference "JP8") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f376e082-1fce-46b0-9ab5-10e144e1b399"
+      (project "chessboard"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0f836c2b-df34-43f5-81db-316ab8db7f3d"
           (reference "JP12") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/8abb4636-88b4-41b5-b2b8-e4a045c764a2"
-          (reference "JP16") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/4ee53fe6-953c-4524-9fe8-104ed7635784"
+          (reference "JP32") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f225061a-b578-46da-b633-333e800eaa1a"
-          (reference "JP20") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/a7d01384-9c07-484e-9de0-4be9005176dc"
+          (reference "JP4") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/6a66a7a1-c8cf-40c9-b855-80dc164993af"
-          (reference "JP24") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/dfba45b6-8dfb-40cb-9629-ad63d3cdf8a0"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0d72517a-0337-461f-b027-dd51cb05885d"
           (reference "JP28") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/1fdb5dce-c2e4-4802-8144-05912ebafeaa"
-          (reference "JP32") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/211be6ee-6cae-45dd-a5d5-c6e8c51475b9"
+          (reference "JP16") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/08c07a2a-cdb0-4381-9e6f-3d28d7d01869"
+          (reference "JP8") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/e22f0853-06f4-4fb5-92f3-ca99261717ba"
+          (reference "JP20") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/749d234f-5976-4c4b-abcc-8a7628bbbae6"
+          (reference "JP24") (unit 1)
         )
       )
     )
@@ -922,33 +922,33 @@
     (pin "12" (uuid 717c575a-326b-483f-9e23-0817a78c12f6))
     (pin "3" (uuid e91ab8d1-db26-4a33-b6b7-b0b39b4a0b9c))
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404"
           (reference "U1") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/0ecf2261-63d0-42d7-af1f-687430f67c49"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0f836c2b-df34-43f5-81db-316ab8db7f3d"
           (reference "U3") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/042bc61c-e5f6-49f2-a6f7-55c5905d55cf"
-          (reference "U10") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/4ee53fe6-953c-4524-9fe8-104ed7635784"
+          (reference "U8") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f376e082-1fce-46b0-9ab5-10e144e1b399"
-          (reference "U19") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/a7d01384-9c07-484e-9de0-4be9005176dc"
+          (reference "U1") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/8abb4636-88b4-41b5-b2b8-e4a045c764a2"
-          (reference "U28") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0d72517a-0337-461f-b027-dd51cb05885d"
+          (reference "U7") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f225061a-b578-46da-b633-333e800eaa1a"
-          (reference "U37") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/211be6ee-6cae-45dd-a5d5-c6e8c51475b9"
+          (reference "U4") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/6a66a7a1-c8cf-40c9-b855-80dc164993af"
-          (reference "U46") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/08c07a2a-cdb0-4381-9e6f-3d28d7d01869"
+          (reference "U2") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/dfba45b6-8dfb-40cb-9629-ad63d3cdf8a0"
-          (reference "U55") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/e22f0853-06f4-4fb5-92f3-ca99261717ba"
+          (reference "U5") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/1fdb5dce-c2e4-4802-8144-05912ebafeaa"
-          (reference "U64") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/749d234f-5976-4c4b-abcc-8a7628bbbae6"
+          (reference "U6") (unit 1)
         )
       )
     )
@@ -957,7 +957,7 @@
   (symbol (lib_id "Jumper:Jumper_2_Bridged") (at 40.64 60.96 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 45dc0176-a3e5-499a-acfc-c7fd88821ce1)
-    (property "Reference" "JP3" (at 40.64 55.88 0)
+    (property "Reference" "JP9" (at 40.64 55.88 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Jumper_2_Bridged" (at 40.64 58.42 0)
@@ -972,30 +972,30 @@
     (pin "2" (uuid d0e2087f-7d78-4f88-a36a-41366c729be6))
     (pin "1" (uuid 9f2c3688-2354-491b-8f5d-6f7714d3eb78))
     (instances
-      (project "chessbot"
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/0ecf2261-63d0-42d7-af1f-687430f67c49"
-          (reference "JP3") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/042bc61c-e5f6-49f2-a6f7-55c5905d55cf"
-          (reference "JP4") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f376e082-1fce-46b0-9ab5-10e144e1b399"
+      (project "chessboard"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0f836c2b-df34-43f5-81db-316ab8db7f3d"
           (reference "JP9") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/8abb4636-88b4-41b5-b2b8-e4a045c764a2"
-          (reference "JP13") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/4ee53fe6-953c-4524-9fe8-104ed7635784"
+          (reference "JP29") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f225061a-b578-46da-b633-333e800eaa1a"
-          (reference "JP17") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/a7d01384-9c07-484e-9de0-4be9005176dc"
+          (reference "JP1") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/6a66a7a1-c8cf-40c9-b855-80dc164993af"
-          (reference "JP21") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/dfba45b6-8dfb-40cb-9629-ad63d3cdf8a0"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0d72517a-0337-461f-b027-dd51cb05885d"
           (reference "JP25") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/1fdb5dce-c2e4-4802-8144-05912ebafeaa"
-          (reference "JP29") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/211be6ee-6cae-45dd-a5d5-c6e8c51475b9"
+          (reference "JP13") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/08c07a2a-cdb0-4381-9e6f-3d28d7d01869"
+          (reference "JP5") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/e22f0853-06f4-4fb5-92f3-ca99261717ba"
+          (reference "JP17") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/749d234f-5976-4c4b-abcc-8a7628bbbae6"
+          (reference "JP21") (unit 1)
         )
       )
     )
@@ -1004,7 +1004,7 @@
   (symbol (lib_id "power:GND") (at 59.69 91.44 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 58da121f-ec5c-4243-abb5-a393c4dff0d4)
-    (property "Reference" "#PWR016" (at 59.69 97.79 0)
+    (property "Reference" "#PWR042" (at 59.69 97.79 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 59.69 96.52 0)
@@ -1018,30 +1018,30 @@
     )
     (pin "1" (uuid 887e26ca-90d6-4923-a23e-606a670c1bd9))
     (instances
-      (project "chessbot"
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/0ecf2261-63d0-42d7-af1f-687430f67c49"
-          (reference "#PWR06") (unit 1)
+      (project "chessboard"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0f836c2b-df34-43f5-81db-316ab8db7f3d"
+          (reference "#PWR042") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/042bc61c-e5f6-49f2-a6f7-55c5905d55cf"
-          (reference "#PWR022") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/4ee53fe6-953c-4524-9fe8-104ed7635784"
+          (reference "#PWR077") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f376e082-1fce-46b0-9ab5-10e144e1b399"
-          (reference "#PWR051") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/a7d01384-9c07-484e-9de0-4be9005176dc"
+          (reference "#PWR028") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/8abb4636-88b4-41b5-b2b8-e4a045c764a2"
-          (reference "#PWR079") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0d72517a-0337-461f-b027-dd51cb05885d"
+          (reference "#PWR070") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f225061a-b578-46da-b633-333e800eaa1a"
-          (reference "#PWR0103") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/211be6ee-6cae-45dd-a5d5-c6e8c51475b9"
+          (reference "#PWR049") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/6a66a7a1-c8cf-40c9-b855-80dc164993af"
-          (reference "#PWR0127") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/08c07a2a-cdb0-4381-9e6f-3d28d7d01869"
+          (reference "#PWR035") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/dfba45b6-8dfb-40cb-9629-ad63d3cdf8a0"
-          (reference "#PWR0151") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/e22f0853-06f4-4fb5-92f3-ca99261717ba"
+          (reference "#PWR056") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/1fdb5dce-c2e4-4802-8144-05912ebafeaa"
-          (reference "#PWR0175") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/749d234f-5976-4c4b-abcc-8a7628bbbae6"
+          (reference "#PWR063") (unit 1)
         )
       )
     )
@@ -1050,7 +1050,7 @@
   (symbol (lib_id "Jumper:Jumper_2_Bridged") (at 40.64 73.66 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 5d4e9f89-de8f-400a-abde-6b68aec1347a)
-    (property "Reference" "JP1" (at 40.64 71.12 0)
+    (property "Reference" "JP10" (at 40.64 71.12 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Jumper_2_Bridged" (at 40.64 71.12 0)
@@ -1065,30 +1065,30 @@
     (pin "2" (uuid 1b401346-a872-4111-9553-5c1354dfd21a))
     (pin "1" (uuid 8c5e51db-962b-4af7-9270-d9c2a0eee2f3))
     (instances
-      (project "chessbot"
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/0ecf2261-63d0-42d7-af1f-687430f67c49"
-          (reference "JP1") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/042bc61c-e5f6-49f2-a6f7-55c5905d55cf"
-          (reference "JP2") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f376e082-1fce-46b0-9ab5-10e144e1b399"
+      (project "chessboard"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0f836c2b-df34-43f5-81db-316ab8db7f3d"
           (reference "JP10") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/8abb4636-88b4-41b5-b2b8-e4a045c764a2"
-          (reference "JP14") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/4ee53fe6-953c-4524-9fe8-104ed7635784"
+          (reference "JP30") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f225061a-b578-46da-b633-333e800eaa1a"
-          (reference "JP18") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/a7d01384-9c07-484e-9de0-4be9005176dc"
+          (reference "JP2") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/6a66a7a1-c8cf-40c9-b855-80dc164993af"
-          (reference "JP22") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/dfba45b6-8dfb-40cb-9629-ad63d3cdf8a0"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0d72517a-0337-461f-b027-dd51cb05885d"
           (reference "JP26") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/1fdb5dce-c2e4-4802-8144-05912ebafeaa"
-          (reference "JP30") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/211be6ee-6cae-45dd-a5d5-c6e8c51475b9"
+          (reference "JP14") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/08c07a2a-cdb0-4381-9e6f-3d28d7d01869"
+          (reference "JP6") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/e22f0853-06f4-4fb5-92f3-ca99261717ba"
+          (reference "JP18") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/749d234f-5976-4c4b-abcc-8a7628bbbae6"
+          (reference "JP22") (unit 1)
         )
       )
     )
@@ -1114,33 +1114,33 @@
     (pin "2" (uuid 43fa757a-801c-45ce-a06f-1bcfc1994188))
     (pin "3" (uuid 99ac30ee-d573-4bb5-8d1c-88942664cf96))
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404"
           (reference "D1") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/0ecf2261-63d0-42d7-af1f-687430f67c49"
-          (reference "D8") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/042bc61c-e5f6-49f2-a6f7-55c5905d55cf"
-          (reference "D16") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f376e082-1fce-46b0-9ab5-10e144e1b399"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0f836c2b-df34-43f5-81db-316ab8db7f3d"
           (reference "D24") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/8abb4636-88b4-41b5-b2b8-e4a045c764a2"
-          (reference "D32") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/4ee53fe6-953c-4524-9fe8-104ed7635784"
+          (reference "D64") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f225061a-b578-46da-b633-333e800eaa1a"
-          (reference "D40") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/a7d01384-9c07-484e-9de0-4be9005176dc"
+          (reference "D8") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/6a66a7a1-c8cf-40c9-b855-80dc164993af"
-          (reference "D48") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/dfba45b6-8dfb-40cb-9629-ad63d3cdf8a0"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0d72517a-0337-461f-b027-dd51cb05885d"
           (reference "D56") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/1fdb5dce-c2e4-4802-8144-05912ebafeaa"
-          (reference "D64") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/211be6ee-6cae-45dd-a5d5-c6e8c51475b9"
+          (reference "D32") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/08c07a2a-cdb0-4381-9e6f-3d28d7d01869"
+          (reference "D16") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/e22f0853-06f4-4fb5-92f3-ca99261717ba"
+          (reference "D40") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/749d234f-5976-4c4b-abcc-8a7628bbbae6"
+          (reference "D48") (unit 1)
         )
       )
     )
@@ -1149,7 +1149,7 @@
   (symbol (lib_id "power:GND") (at 90.17 45.72 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6f807ac9-4991-4082-8171-70a91b00e3f5)
-    (property "Reference" "#PWR016" (at 90.17 52.07 0)
+    (property "Reference" "#PWR065" (at 90.17 52.07 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 90.17 50.8 0)
@@ -1163,30 +1163,30 @@
     )
     (pin "1" (uuid 6aa0d4ae-8090-4678-9337-0b0c7d7e0efc))
     (instances
-      (project "chessbot"
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/0ecf2261-63d0-42d7-af1f-687430f67c49"
-          (reference "#PWR0202") (unit 1)
+      (project "chessboard"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/749d234f-5976-4c4b-abcc-8a7628bbbae6"
+          (reference "#PWR065") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/042bc61c-e5f6-49f2-a6f7-55c5905d55cf"
-          (reference "#PWR0203") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/e22f0853-06f4-4fb5-92f3-ca99261717ba"
+          (reference "#PWR058") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f376e082-1fce-46b0-9ab5-10e144e1b399"
-          (reference "#PWR0204") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/08c07a2a-cdb0-4381-9e6f-3d28d7d01869"
+          (reference "#PWR037") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/8abb4636-88b4-41b5-b2b8-e4a045c764a2"
-          (reference "#PWR0205") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/211be6ee-6cae-45dd-a5d5-c6e8c51475b9"
+          (reference "#PWR051") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f225061a-b578-46da-b633-333e800eaa1a"
-          (reference "#PWR0206") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0d72517a-0337-461f-b027-dd51cb05885d"
+          (reference "#PWR072") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/6a66a7a1-c8cf-40c9-b855-80dc164993af"
-          (reference "#PWR0207") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/a7d01384-9c07-484e-9de0-4be9005176dc"
+          (reference "#PWR030") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/dfba45b6-8dfb-40cb-9629-ad63d3cdf8a0"
-          (reference "#PWR0208") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/4ee53fe6-953c-4524-9fe8-104ed7635784"
+          (reference "#PWR079") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/1fdb5dce-c2e4-4802-8144-05912ebafeaa"
-          (reference "#PWR0209") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0f836c2b-df34-43f5-81db-316ab8db7f3d"
+          (reference "#PWR044") (unit 1)
         )
       )
     )
@@ -1212,33 +1212,33 @@
     (pin "2" (uuid ce3939a9-87cd-42f4-8cd3-c9006a68b11b))
     (pin "3" (uuid 585efdd7-2a8c-42e4-8ded-a8d942f56e17))
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404"
           (reference "D1") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/0ecf2261-63d0-42d7-af1f-687430f67c49"
-          (reference "D1") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/042bc61c-e5f6-49f2-a6f7-55c5905d55cf"
-          (reference "D9") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f376e082-1fce-46b0-9ab5-10e144e1b399"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0f836c2b-df34-43f5-81db-316ab8db7f3d"
           (reference "D17") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/8abb4636-88b4-41b5-b2b8-e4a045c764a2"
-          (reference "D25") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/4ee53fe6-953c-4524-9fe8-104ed7635784"
+          (reference "D57") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f225061a-b578-46da-b633-333e800eaa1a"
-          (reference "D33") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/a7d01384-9c07-484e-9de0-4be9005176dc"
+          (reference "D1") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/6a66a7a1-c8cf-40c9-b855-80dc164993af"
-          (reference "D41") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/dfba45b6-8dfb-40cb-9629-ad63d3cdf8a0"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0d72517a-0337-461f-b027-dd51cb05885d"
           (reference "D49") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/1fdb5dce-c2e4-4802-8144-05912ebafeaa"
-          (reference "D57") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/211be6ee-6cae-45dd-a5d5-c6e8c51475b9"
+          (reference "D25") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/08c07a2a-cdb0-4381-9e6f-3d28d7d01869"
+          (reference "D9") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/e22f0853-06f4-4fb5-92f3-ca99261717ba"
+          (reference "D33") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/749d234f-5976-4c4b-abcc-8a7628bbbae6"
+          (reference "D41") (unit 1)
         )
       )
     )
@@ -1247,7 +1247,7 @@
   (symbol (lib_id "power:+5V") (at 168.91 55.88 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 8d128a33-1ed1-4d80-bc18-c21a2d8e8f1a)
-    (property "Reference" "#PWR09" (at 168.91 59.69 0)
+    (property "Reference" "#PWR045" (at 168.91 59.69 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 168.91 50.8 0)
@@ -1261,30 +1261,30 @@
     )
     (pin "1" (uuid 8b7980fe-cb72-4b3e-af7e-7ba40503c4db))
     (instances
-      (project "chessbot"
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/0ecf2261-63d0-42d7-af1f-687430f67c49"
-          (reference "#PWR07") (unit 1)
+      (project "chessboard"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0f836c2b-df34-43f5-81db-316ab8db7f3d"
+          (reference "#PWR045") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/042bc61c-e5f6-49f2-a6f7-55c5905d55cf"
-          (reference "#PWR023") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f376e082-1fce-46b0-9ab5-10e144e1b399"
-          (reference "#PWR052") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/8abb4636-88b4-41b5-b2b8-e4a045c764a2"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/4ee53fe6-953c-4524-9fe8-104ed7635784"
           (reference "#PWR080") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f225061a-b578-46da-b633-333e800eaa1a"
-          (reference "#PWR0104") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/a7d01384-9c07-484e-9de0-4be9005176dc"
+          (reference "#PWR031") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/6a66a7a1-c8cf-40c9-b855-80dc164993af"
-          (reference "#PWR0128") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0d72517a-0337-461f-b027-dd51cb05885d"
+          (reference "#PWR073") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/dfba45b6-8dfb-40cb-9629-ad63d3cdf8a0"
-          (reference "#PWR0152") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/211be6ee-6cae-45dd-a5d5-c6e8c51475b9"
+          (reference "#PWR052") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/1fdb5dce-c2e4-4802-8144-05912ebafeaa"
-          (reference "#PWR0176") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/08c07a2a-cdb0-4381-9e6f-3d28d7d01869"
+          (reference "#PWR038") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/e22f0853-06f4-4fb5-92f3-ca99261717ba"
+          (reference "#PWR059") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/749d234f-5976-4c4b-abcc-8a7628bbbae6"
+          (reference "#PWR066") (unit 1)
         )
       )
     )
@@ -1310,33 +1310,33 @@
     (pin "2" (uuid f01eb2b6-67eb-49c8-a917-e78cf3d5211c))
     (pin "3" (uuid 3ce5df7f-11f3-4e37-82ae-5f6e0c06734b))
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404"
           (reference "D1") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/0ecf2261-63d0-42d7-af1f-687430f67c49"
-          (reference "D2") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/042bc61c-e5f6-49f2-a6f7-55c5905d55cf"
-          (reference "D10") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f376e082-1fce-46b0-9ab5-10e144e1b399"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0f836c2b-df34-43f5-81db-316ab8db7f3d"
           (reference "D18") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/8abb4636-88b4-41b5-b2b8-e4a045c764a2"
-          (reference "D26") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/4ee53fe6-953c-4524-9fe8-104ed7635784"
+          (reference "D58") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f225061a-b578-46da-b633-333e800eaa1a"
-          (reference "D34") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/a7d01384-9c07-484e-9de0-4be9005176dc"
+          (reference "D2") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/6a66a7a1-c8cf-40c9-b855-80dc164993af"
-          (reference "D42") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/dfba45b6-8dfb-40cb-9629-ad63d3cdf8a0"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0d72517a-0337-461f-b027-dd51cb05885d"
           (reference "D50") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/1fdb5dce-c2e4-4802-8144-05912ebafeaa"
-          (reference "D58") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/211be6ee-6cae-45dd-a5d5-c6e8c51475b9"
+          (reference "D26") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/08c07a2a-cdb0-4381-9e6f-3d28d7d01869"
+          (reference "D10") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/e22f0853-06f4-4fb5-92f3-ca99261717ba"
+          (reference "D34") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/749d234f-5976-4c4b-abcc-8a7628bbbae6"
+          (reference "D42") (unit 1)
         )
       )
     )
@@ -1345,7 +1345,7 @@
   (symbol (lib_id "Device:C") (at 90.17 41.91 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 9fadd641-5799-462a-9658-6b3cb3b4b220)
-    (property "Reference" "C41" (at 93.98 40.64 0)
+    (property "Reference" "C11" (at 93.98 40.64 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "2.2uF" (at 93.98 43.18 0)
@@ -1360,30 +1360,30 @@
     (pin "2" (uuid 624f9052-0626-4f96-a91b-5d702e1004dd))
     (pin "1" (uuid bf74130f-2ddd-4dc9-b252-642c1bd8f33c))
     (instances
-      (project "chessbot"
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/0ecf2261-63d0-42d7-af1f-687430f67c49"
-          (reference "C41") (unit 1)
+      (project "chessboard"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/749d234f-5976-4c4b-abcc-8a7628bbbae6"
+          (reference "C11") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/042bc61c-e5f6-49f2-a6f7-55c5905d55cf"
-          (reference "C42") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/e22f0853-06f4-4fb5-92f3-ca99261717ba"
+          (reference "C9") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f376e082-1fce-46b0-9ab5-10e144e1b399"
-          (reference "C43") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/08c07a2a-cdb0-4381-9e6f-3d28d7d01869"
+          (reference "C3") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/8abb4636-88b4-41b5-b2b8-e4a045c764a2"
-          (reference "C44") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/211be6ee-6cae-45dd-a5d5-c6e8c51475b9"
+          (reference "C7") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f225061a-b578-46da-b633-333e800eaa1a"
-          (reference "C45") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0d72517a-0337-461f-b027-dd51cb05885d"
+          (reference "C13") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/6a66a7a1-c8cf-40c9-b855-80dc164993af"
-          (reference "C46") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/a7d01384-9c07-484e-9de0-4be9005176dc"
+          (reference "C1") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/dfba45b6-8dfb-40cb-9629-ad63d3cdf8a0"
-          (reference "C47") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/4ee53fe6-953c-4524-9fe8-104ed7635784"
+          (reference "C15") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/1fdb5dce-c2e4-4802-8144-05912ebafeaa"
-          (reference "C48") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0f836c2b-df34-43f5-81db-316ab8db7f3d"
+          (reference "C5") (unit 1)
         )
       )
     )
@@ -1392,7 +1392,7 @@
   (symbol (lib_id "Device:C") (at 248.92 67.31 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid a861c07c-11c1-475b-99a6-4ad056e4122f)
-    (property "Reference" "C33" (at 252.73 66.04 0)
+    (property "Reference" "C12" (at 252.73 66.04 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100uF" (at 252.73 68.58 0)
@@ -1407,30 +1407,30 @@
     (pin "2" (uuid 8259a7d9-30f2-4b76-ad78-99fbe12aad03))
     (pin "1" (uuid b163040a-93cc-4ca0-bec5-2cf323abf1ee))
     (instances
-      (project "chessbot"
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/0ecf2261-63d0-42d7-af1f-687430f67c49"
-          (reference "C33") (unit 1)
+      (project "chessboard"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/749d234f-5976-4c4b-abcc-8a7628bbbae6"
+          (reference "C12") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/042bc61c-e5f6-49f2-a6f7-55c5905d55cf"
-          (reference "C34") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/e22f0853-06f4-4fb5-92f3-ca99261717ba"
+          (reference "C10") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f376e082-1fce-46b0-9ab5-10e144e1b399"
-          (reference "C35") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/08c07a2a-cdb0-4381-9e6f-3d28d7d01869"
+          (reference "C4") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/8abb4636-88b4-41b5-b2b8-e4a045c764a2"
-          (reference "C36") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/211be6ee-6cae-45dd-a5d5-c6e8c51475b9"
+          (reference "C8") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f225061a-b578-46da-b633-333e800eaa1a"
-          (reference "C37") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0d72517a-0337-461f-b027-dd51cb05885d"
+          (reference "C14") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/6a66a7a1-c8cf-40c9-b855-80dc164993af"
-          (reference "C38") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/a7d01384-9c07-484e-9de0-4be9005176dc"
+          (reference "C2") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/dfba45b6-8dfb-40cb-9629-ad63d3cdf8a0"
-          (reference "C39") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/4ee53fe6-953c-4524-9fe8-104ed7635784"
+          (reference "C16") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/1fdb5dce-c2e4-4802-8144-05912ebafeaa"
-          (reference "C40") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0f836c2b-df34-43f5-81db-316ab8db7f3d"
+          (reference "C6") (unit 1)
         )
       )
     )
@@ -1456,33 +1456,33 @@
     (pin "2" (uuid d7c2cf77-060e-4874-8260-508a65dedff9))
     (pin "3" (uuid f27d7ff5-29fa-4007-a34a-bccca060ab30))
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404"
           (reference "D1") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/0ecf2261-63d0-42d7-af1f-687430f67c49"
-          (reference "D4") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/042bc61c-e5f6-49f2-a6f7-55c5905d55cf"
-          (reference "D12") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f376e082-1fce-46b0-9ab5-10e144e1b399"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0f836c2b-df34-43f5-81db-316ab8db7f3d"
           (reference "D20") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/8abb4636-88b4-41b5-b2b8-e4a045c764a2"
-          (reference "D28") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/4ee53fe6-953c-4524-9fe8-104ed7635784"
+          (reference "D60") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f225061a-b578-46da-b633-333e800eaa1a"
-          (reference "D36") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/a7d01384-9c07-484e-9de0-4be9005176dc"
+          (reference "D4") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/6a66a7a1-c8cf-40c9-b855-80dc164993af"
-          (reference "D44") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/dfba45b6-8dfb-40cb-9629-ad63d3cdf8a0"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0d72517a-0337-461f-b027-dd51cb05885d"
           (reference "D52") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/1fdb5dce-c2e4-4802-8144-05912ebafeaa"
-          (reference "D60") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/211be6ee-6cae-45dd-a5d5-c6e8c51475b9"
+          (reference "D28") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/08c07a2a-cdb0-4381-9e6f-3d28d7d01869"
+          (reference "D12") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/e22f0853-06f4-4fb5-92f3-ca99261717ba"
+          (reference "D36") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/749d234f-5976-4c4b-abcc-8a7628bbbae6"
+          (reference "D44") (unit 1)
         )
       )
     )
@@ -1508,33 +1508,33 @@
     (pin "2" (uuid 71f59a86-ba1a-4a99-8325-f44bf8ac5148))
     (pin "3" (uuid 41106d2a-6b6d-426f-bd28-e9dd627c3731))
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404"
           (reference "D1") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/0ecf2261-63d0-42d7-af1f-687430f67c49"
-          (reference "D5") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/042bc61c-e5f6-49f2-a6f7-55c5905d55cf"
-          (reference "D13") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f376e082-1fce-46b0-9ab5-10e144e1b399"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0f836c2b-df34-43f5-81db-316ab8db7f3d"
           (reference "D21") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/8abb4636-88b4-41b5-b2b8-e4a045c764a2"
-          (reference "D29") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/4ee53fe6-953c-4524-9fe8-104ed7635784"
+          (reference "D61") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f225061a-b578-46da-b633-333e800eaa1a"
-          (reference "D37") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/a7d01384-9c07-484e-9de0-4be9005176dc"
+          (reference "D5") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/6a66a7a1-c8cf-40c9-b855-80dc164993af"
-          (reference "D45") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/dfba45b6-8dfb-40cb-9629-ad63d3cdf8a0"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0d72517a-0337-461f-b027-dd51cb05885d"
           (reference "D53") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/1fdb5dce-c2e4-4802-8144-05912ebafeaa"
-          (reference "D61") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/211be6ee-6cae-45dd-a5d5-c6e8c51475b9"
+          (reference "D29") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/08c07a2a-cdb0-4381-9e6f-3d28d7d01869"
+          (reference "D13") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/e22f0853-06f4-4fb5-92f3-ca99261717ba"
+          (reference "D37") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/749d234f-5976-4c4b-abcc-8a7628bbbae6"
+          (reference "D45") (unit 1)
         )
       )
     )
@@ -1543,7 +1543,7 @@
   (symbol (lib_id "Jumper:Jumper_2_Bridged") (at 40.64 76.2 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid bb4e6e31-55e1-4727-963b-813869b8de50)
-    (property "Reference" "JP5" (at 40.64 76.2 0)
+    (property "Reference" "JP11" (at 40.64 76.2 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Jumper_2_Bridged" (at 40.64 73.66 0)
@@ -1558,30 +1558,30 @@
     (pin "2" (uuid c1d86f20-0ce8-47d4-ad3e-0849ee57a2ad))
     (pin "1" (uuid 5c8a1cbf-bf48-4693-807d-c57f80d05a01))
     (instances
-      (project "chessbot"
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/0ecf2261-63d0-42d7-af1f-687430f67c49"
-          (reference "JP5") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/042bc61c-e5f6-49f2-a6f7-55c5905d55cf"
-          (reference "JP6") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f376e082-1fce-46b0-9ab5-10e144e1b399"
+      (project "chessboard"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0f836c2b-df34-43f5-81db-316ab8db7f3d"
           (reference "JP11") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/8abb4636-88b4-41b5-b2b8-e4a045c764a2"
-          (reference "JP15") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/4ee53fe6-953c-4524-9fe8-104ed7635784"
+          (reference "JP31") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f225061a-b578-46da-b633-333e800eaa1a"
-          (reference "JP19") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/a7d01384-9c07-484e-9de0-4be9005176dc"
+          (reference "JP3") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/6a66a7a1-c8cf-40c9-b855-80dc164993af"
-          (reference "JP23") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/dfba45b6-8dfb-40cb-9629-ad63d3cdf8a0"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0d72517a-0337-461f-b027-dd51cb05885d"
           (reference "JP27") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/1fdb5dce-c2e4-4802-8144-05912ebafeaa"
-          (reference "JP31") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/211be6ee-6cae-45dd-a5d5-c6e8c51475b9"
+          (reference "JP15") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/08c07a2a-cdb0-4381-9e6f-3d28d7d01869"
+          (reference "JP7") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/e22f0853-06f4-4fb5-92f3-ca99261717ba"
+          (reference "JP19") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/749d234f-5976-4c4b-abcc-8a7628bbbae6"
+          (reference "JP23") (unit 1)
         )
       )
     )
@@ -1607,33 +1607,33 @@
     (pin "2" (uuid e64bb751-cf84-4924-a013-aa79ee41886d))
     (pin "3" (uuid 0fe6f48a-89f6-4b64-88ea-3f46408f26c8))
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404"
           (reference "D1") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/0ecf2261-63d0-42d7-af1f-687430f67c49"
-          (reference "D6") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/042bc61c-e5f6-49f2-a6f7-55c5905d55cf"
-          (reference "D14") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f376e082-1fce-46b0-9ab5-10e144e1b399"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0f836c2b-df34-43f5-81db-316ab8db7f3d"
           (reference "D22") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/8abb4636-88b4-41b5-b2b8-e4a045c764a2"
-          (reference "D30") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/4ee53fe6-953c-4524-9fe8-104ed7635784"
+          (reference "D62") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f225061a-b578-46da-b633-333e800eaa1a"
-          (reference "D38") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/a7d01384-9c07-484e-9de0-4be9005176dc"
+          (reference "D6") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/6a66a7a1-c8cf-40c9-b855-80dc164993af"
-          (reference "D46") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/dfba45b6-8dfb-40cb-9629-ad63d3cdf8a0"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0d72517a-0337-461f-b027-dd51cb05885d"
           (reference "D54") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/1fdb5dce-c2e4-4802-8144-05912ebafeaa"
-          (reference "D62") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/211be6ee-6cae-45dd-a5d5-c6e8c51475b9"
+          (reference "D30") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/08c07a2a-cdb0-4381-9e6f-3d28d7d01869"
+          (reference "D14") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/e22f0853-06f4-4fb5-92f3-ca99261717ba"
+          (reference "D38") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/749d234f-5976-4c4b-abcc-8a7628bbbae6"
+          (reference "D46") (unit 1)
         )
       )
     )
@@ -1642,7 +1642,7 @@
   (symbol (lib_id "power:+3.3V") (at 30.48 60.96 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c40974ec-d488-4ab6-b50d-c7eed97409e3)
-    (property "Reference" "#PWR022" (at 30.48 64.77 0)
+    (property "Reference" "#PWR040" (at 30.48 64.77 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 30.48 55.88 0)
@@ -1656,30 +1656,30 @@
     )
     (pin "1" (uuid 3b711b42-38e0-4365-9d49-95e61afb2535))
     (instances
-      (project "chessbot"
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/0ecf2261-63d0-42d7-af1f-687430f67c49"
-          (reference "#PWR042") (unit 1)
+      (project "chessboard"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0f836c2b-df34-43f5-81db-316ab8db7f3d"
+          (reference "#PWR040") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/042bc61c-e5f6-49f2-a6f7-55c5905d55cf"
-          (reference "#PWR043") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/4ee53fe6-953c-4524-9fe8-104ed7635784"
+          (reference "#PWR075") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f376e082-1fce-46b0-9ab5-10e144e1b399"
-          (reference "#PWR049") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/a7d01384-9c07-484e-9de0-4be9005176dc"
+          (reference "#PWR026") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/8abb4636-88b4-41b5-b2b8-e4a045c764a2"
-          (reference "#PWR077") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0d72517a-0337-461f-b027-dd51cb05885d"
+          (reference "#PWR068") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f225061a-b578-46da-b633-333e800eaa1a"
-          (reference "#PWR0101") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/211be6ee-6cae-45dd-a5d5-c6e8c51475b9"
+          (reference "#PWR047") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/6a66a7a1-c8cf-40c9-b855-80dc164993af"
-          (reference "#PWR0125") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/08c07a2a-cdb0-4381-9e6f-3d28d7d01869"
+          (reference "#PWR033") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/dfba45b6-8dfb-40cb-9629-ad63d3cdf8a0"
-          (reference "#PWR0149") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/e22f0853-06f4-4fb5-92f3-ca99261717ba"
+          (reference "#PWR054") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/1fdb5dce-c2e4-4802-8144-05912ebafeaa"
-          (reference "#PWR0173") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/749d234f-5976-4c4b-abcc-8a7628bbbae6"
+          (reference "#PWR061") (unit 1)
         )
       )
     )
@@ -1705,33 +1705,33 @@
     (pin "2" (uuid 98e9f37e-588b-4ce2-a9d7-4728f5f5512a))
     (pin "3" (uuid b7ed0645-3262-4a51-ad94-7cdf8d8d6242))
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404"
           (reference "D1") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/0ecf2261-63d0-42d7-af1f-687430f67c49"
-          (reference "D7") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/042bc61c-e5f6-49f2-a6f7-55c5905d55cf"
-          (reference "D15") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f376e082-1fce-46b0-9ab5-10e144e1b399"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0f836c2b-df34-43f5-81db-316ab8db7f3d"
           (reference "D23") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/8abb4636-88b4-41b5-b2b8-e4a045c764a2"
-          (reference "D31") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/4ee53fe6-953c-4524-9fe8-104ed7635784"
+          (reference "D63") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f225061a-b578-46da-b633-333e800eaa1a"
-          (reference "D39") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/a7d01384-9c07-484e-9de0-4be9005176dc"
+          (reference "D7") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/6a66a7a1-c8cf-40c9-b855-80dc164993af"
-          (reference "D47") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/dfba45b6-8dfb-40cb-9629-ad63d3cdf8a0"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0d72517a-0337-461f-b027-dd51cb05885d"
           (reference "D55") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/1fdb5dce-c2e4-4802-8144-05912ebafeaa"
-          (reference "D63") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/211be6ee-6cae-45dd-a5d5-c6e8c51475b9"
+          (reference "D31") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/08c07a2a-cdb0-4381-9e6f-3d28d7d01869"
+          (reference "D15") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/e22f0853-06f4-4fb5-92f3-ca99261717ba"
+          (reference "D39") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/749d234f-5976-4c4b-abcc-8a7628bbbae6"
+          (reference "D47") (unit 1)
         )
       )
     )
@@ -1740,7 +1740,7 @@
   (symbol (lib_id "power:GND") (at 175.26 82.55 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid f6dd3afb-5056-49de-8c56-001b58073a59)
-    (property "Reference" "#PWR014" (at 175.26 88.9 0)
+    (property "Reference" "#PWR046" (at 175.26 88.9 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 175.26 87.63 0)
@@ -1754,30 +1754,30 @@
     )
     (pin "1" (uuid 0b6a65be-6d84-40fe-ba9f-8807c8369d75))
     (instances
-      (project "chessbot"
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/0ecf2261-63d0-42d7-af1f-687430f67c49"
-          (reference "#PWR08") (unit 1)
+      (project "chessboard"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0f836c2b-df34-43f5-81db-316ab8db7f3d"
+          (reference "#PWR046") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/042bc61c-e5f6-49f2-a6f7-55c5905d55cf"
-          (reference "#PWR024") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f376e082-1fce-46b0-9ab5-10e144e1b399"
-          (reference "#PWR053") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/8abb4636-88b4-41b5-b2b8-e4a045c764a2"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/4ee53fe6-953c-4524-9fe8-104ed7635784"
           (reference "#PWR081") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f225061a-b578-46da-b633-333e800eaa1a"
-          (reference "#PWR0105") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/a7d01384-9c07-484e-9de0-4be9005176dc"
+          (reference "#PWR032") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/6a66a7a1-c8cf-40c9-b855-80dc164993af"
-          (reference "#PWR0129") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0d72517a-0337-461f-b027-dd51cb05885d"
+          (reference "#PWR074") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/dfba45b6-8dfb-40cb-9629-ad63d3cdf8a0"
-          (reference "#PWR0153") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/211be6ee-6cae-45dd-a5d5-c6e8c51475b9"
+          (reference "#PWR053") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/1fdb5dce-c2e4-4802-8144-05912ebafeaa"
-          (reference "#PWR0177") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/08c07a2a-cdb0-4381-9e6f-3d28d7d01869"
+          (reference "#PWR039") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/e22f0853-06f4-4fb5-92f3-ca99261717ba"
+          (reference "#PWR060") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/749d234f-5976-4c4b-abcc-8a7628bbbae6"
+          (reference "#PWR067") (unit 1)
         )
       )
     )
@@ -1810,15 +1810,15 @@
       (uuid 5a822adc-2c17-4c38-b987-038b8ed6399d)
     )
     (instances
-      (project "chessbot"
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/0ecf2261-63d0-42d7-af1f-687430f67c49" (page "5"))
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/042bc61c-e5f6-49f2-a6f7-55c5905d55cf" (page "12"))
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f376e082-1fce-46b0-9ab5-10e144e1b399" (page "14"))
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/8abb4636-88b4-41b5-b2b8-e4a045c764a2" (page "20"))
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f225061a-b578-46da-b633-333e800eaa1a" (page "27"))
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/6a66a7a1-c8cf-40c9-b855-80dc164993af" (page "32"))
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/dfba45b6-8dfb-40cb-9629-ad63d3cdf8a0" (page "34"))
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/1fdb5dce-c2e4-4802-8144-05912ebafeaa" (page "40"))
+      (project "chessboard"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/08c07a2a-cdb0-4381-9e6f-3d28d7d01869" (page "11"))
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/e22f0853-06f4-4fb5-92f3-ca99261717ba" (page "12"))
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/749d234f-5976-4c4b-abcc-8a7628bbbae6" (page "14"))
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/211be6ee-6cae-45dd-a5d5-c6e8c51475b9" (page "23"))
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0f836c2b-df34-43f5-81db-316ab8db7f3d" (page "26"))
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/4ee53fe6-953c-4524-9fe8-104ed7635784" (page "31"))
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/a7d01384-9c07-484e-9de0-4be9005176dc" (page "35"))
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0d72517a-0337-461f-b027-dd51cb05885d" (page "38"))
       )
     )
   )
@@ -1850,15 +1850,15 @@
       (uuid c7b505a7-e03d-4f21-8e4d-e35aac06f544)
     )
     (instances
-      (project "chessbot"
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/0ecf2261-63d0-42d7-af1f-687430f67c49" (page "43"))
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/042bc61c-e5f6-49f2-a6f7-55c5905d55cf" (page "9"))
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f376e082-1fce-46b0-9ab5-10e144e1b399" (page "15"))
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/8abb4636-88b4-41b5-b2b8-e4a045c764a2" (page "21"))
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f225061a-b578-46da-b633-333e800eaa1a" (page "25"))
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/6a66a7a1-c8cf-40c9-b855-80dc164993af" (page "29"))
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/dfba45b6-8dfb-40cb-9629-ad63d3cdf8a0" (page "35"))
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/1fdb5dce-c2e4-4802-8144-05912ebafeaa" (page "42"))
+      (project "chessboard"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/4ee53fe6-953c-4524-9fe8-104ed7635784" (page "16"))
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/e22f0853-06f4-4fb5-92f3-ca99261717ba" (page "17"))
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0d72517a-0337-461f-b027-dd51cb05885d" (page "18"))
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/08c07a2a-cdb0-4381-9e6f-3d28d7d01869" (page "20"))
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/a7d01384-9c07-484e-9de0-4be9005176dc" (page "3"))
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0f836c2b-df34-43f5-81db-316ab8db7f3d" (page "27"))
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/211be6ee-6cae-45dd-a5d5-c6e8c51475b9" (page "39"))
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/749d234f-5976-4c4b-abcc-8a7628bbbae6" (page "41"))
       )
     )
   )
@@ -1890,15 +1890,15 @@
       (uuid cfe3c85f-9690-4460-b12b-312dab68b819)
     )
     (instances
-      (project "chessbot"
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/0ecf2261-63d0-42d7-af1f-687430f67c49" (page "4"))
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/042bc61c-e5f6-49f2-a6f7-55c5905d55cf" (page "11"))
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f376e082-1fce-46b0-9ab5-10e144e1b399" (page "17"))
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/8abb4636-88b4-41b5-b2b8-e4a045c764a2" (page "19"))
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f225061a-b578-46da-b633-333e800eaa1a" (page "24"))
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/6a66a7a1-c8cf-40c9-b855-80dc164993af" (page "30"))
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/dfba45b6-8dfb-40cb-9629-ad63d3cdf8a0" (page "36"))
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/1fdb5dce-c2e4-4802-8144-05912ebafeaa" (page "41"))
+      (project "chessboard"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/4ee53fe6-953c-4524-9fe8-104ed7635784" (page "13"))
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0d72517a-0337-461f-b027-dd51cb05885d" (page "15"))
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/e22f0853-06f4-4fb5-92f3-ca99261717ba" (page "19"))
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0f836c2b-df34-43f5-81db-316ab8db7f3d" (page "24"))
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/a7d01384-9c07-484e-9de0-4be9005176dc" (page "25"))
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/211be6ee-6cae-45dd-a5d5-c6e8c51475b9" (page "28"))
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/749d234f-5976-4c4b-abcc-8a7628bbbae6" (page "29"))
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/08c07a2a-cdb0-4381-9e6f-3d28d7d01869" (page "32"))
       )
     )
   )
@@ -1930,15 +1930,15 @@
       (uuid 628ec687-2842-466d-a838-0295231b1938)
     )
     (instances
-      (project "chessbot"
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/0ecf2261-63d0-42d7-af1f-687430f67c49" (page "6"))
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/042bc61c-e5f6-49f2-a6f7-55c5905d55cf" (page "10"))
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f376e082-1fce-46b0-9ab5-10e144e1b399" (page "16"))
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/8abb4636-88b4-41b5-b2b8-e4a045c764a2" (page "22"))
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/f225061a-b578-46da-b633-333e800eaa1a" (page "26"))
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/6a66a7a1-c8cf-40c9-b855-80dc164993af" (page "31"))
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/dfba45b6-8dfb-40cb-9629-ad63d3cdf8a0" (page "37"))
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/1fdb5dce-c2e4-4802-8144-05912ebafeaa" (page "39"))
+      (project "chessboard"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0f836c2b-df34-43f5-81db-316ab8db7f3d" (page "10"))
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/a7d01384-9c07-484e-9de0-4be9005176dc" (page "22"))
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/e22f0853-06f4-4fb5-92f3-ca99261717ba" (page "30"))
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/749d234f-5976-4c4b-abcc-8a7628bbbae6" (page "33"))
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/0d72517a-0337-461f-b027-dd51cb05885d" (page "34"))
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/4ee53fe6-953c-4524-9fe8-104ed7635784" (page "36"))
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/211be6ee-6cae-45dd-a5d5-c6e8c51475b9" (page "37"))
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/08c07a2a-cdb0-4381-9e6f-3d28d7d01869" (page "40"))
       )
     )
   )

@@ -392,7 +392,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "chessbot.kicad_pro",
+    "filename": "chessboard.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -473,152 +473,52 @@
       ""
     ],
     [
-      "00efe30f-72a6-4414-9d15-9c7cfad52794",
-      "ChessBoard"
-    ],
-    [
-      "0ecf2261-63d0-42d7-af1f-687430f67c49",
+      "a7d01384-9c07-484e-9de0-4be9005176dc",
       "Row0"
     ],
     [
-      "68a567ea-e604-4c00-be46-b19646681094",
-      "sensorpair2"
-    ],
-    [
-      "24712d05-32c3-4f9e-92db-3e83fef4ff24",
-      "sensorpair1"
-    ],
-    [
-      "7da4fa47-f7be-472c-8768-5be40d5bac70",
-      "sensorpair"
-    ],
-    [
-      "042bc61c-e5f6-49f2-a6f7-55c5905d55cf",
-      "Row1"
-    ],
-    [
       "61033af0-e227-4080-85d0-70cf5d8ebc03",
       "sensorpair3"
     ],
     [
-      "7da4fa47-f7be-472c-8768-5be40d5bac70",
-      "sensorpair"
-    ],
-    [
-      "68a567ea-e604-4c00-be46-b19646681094",
-      "sensorpair2"
-    ],
-    [
-      "24712d05-32c3-4f9e-92db-3e83fef4ff24",
-      "sensorpair1"
-    ],
-    [
-      "f376e082-1fce-46b0-9ab5-10e144e1b399",
-      "Row2"
-    ],
-    [
-      "24712d05-32c3-4f9e-92db-3e83fef4ff24",
-      "sensorpair1"
-    ],
-    [
-      "61033af0-e227-4080-85d0-70cf5d8ebc03",
-      "sensorpair3"
-    ],
-    [
-      "7da4fa47-f7be-472c-8768-5be40d5bac70",
-      "sensorpair"
-    ],
-    [
-      "68a567ea-e604-4c00-be46-b19646681094",
-      "sensorpair2"
-    ],
-    [
-      "8abb4636-88b4-41b5-b2b8-e4a045c764a2",
-      "Row3"
-    ],
-    [
-      "68a567ea-e604-4c00-be46-b19646681094",
-      "sensorpair2"
-    ],
-    [
-      "24712d05-32c3-4f9e-92db-3e83fef4ff24",
-      "sensorpair1"
-    ],
-    [
-      "61033af0-e227-4080-85d0-70cf5d8ebc03",
-      "sensorpair3"
-    ],
-    [
-      "7da4fa47-f7be-472c-8768-5be40d5bac70",
-      "sensorpair"
-    ],
-    [
-      "f225061a-b578-46da-b633-333e800eaa1a",
+      "0f836c2b-df34-43f5-81db-316ab8db7f3d",
       "Row4"
     ],
     [
-      "68a567ea-e604-4c00-be46-b19646681094",
-      "sensorpair2"
+      "211be6ee-6cae-45dd-a5d5-c6e8c51475b9",
+      "Row2"
     ],
     [
-      "61033af0-e227-4080-85d0-70cf5d8ebc03",
-      "sensorpair3"
-    ],
-    [
-      "7da4fa47-f7be-472c-8768-5be40d5bac70",
-      "sensorpair"
-    ],
-    [
-      "24712d05-32c3-4f9e-92db-3e83fef4ff24",
-      "sensorpair1"
-    ],
-    [
-      "6a66a7a1-c8cf-40c9-b855-80dc164993af",
-      "Row5"
-    ],
-    [
-      "61033af0-e227-4080-85d0-70cf5d8ebc03",
-      "sensorpair3"
-    ],
-    [
-      "68a567ea-e604-4c00-be46-b19646681094",
-      "sensorpair2"
-    ],
-    [
-      "7da4fa47-f7be-472c-8768-5be40d5bac70",
-      "sensorpair"
-    ],
-    [
-      "24712d05-32c3-4f9e-92db-3e83fef4ff24",
-      "sensorpair1"
-    ],
-    [
-      "dfba45b6-8dfb-40cb-9629-ad63d3cdf8a0",
+      "e22f0853-06f4-4fb5-92f3-ca99261717ba",
       "Row6"
     ],
     [
-      "24712d05-32c3-4f9e-92db-3e83fef4ff24",
-      "sensorpair1"
-    ],
-    [
-      "61033af0-e227-4080-85d0-70cf5d8ebc03",
-      "sensorpair3"
-    ],
-    [
-      "68a567ea-e604-4c00-be46-b19646681094",
-      "sensorpair2"
-    ],
-    [
-      "7da4fa47-f7be-472c-8768-5be40d5bac70",
-      "sensorpair"
-    ],
-    [
-      "1fdb5dce-c2e4-4802-8144-05912ebafeaa",
+      "749d234f-5976-4c4b-abcc-8a7628bbbae6",
       "Row7"
     ],
     [
+      "0d72517a-0337-461f-b027-dd51cb05885d",
+      "Row1"
+    ],
+    [
+      "4ee53fe6-953c-4524-9fe8-104ed7635784",
+      "Row5"
+    ],
+    [
       "7da4fa47-f7be-472c-8768-5be40d5bac70",
       "sensorpair"
+    ],
+    [
+      "24712d05-32c3-4f9e-92db-3e83fef4ff24",
+      "sensorpair1"
+    ],
+    [
+      "24712d05-32c3-4f9e-92db-3e83fef4ff24",
+      "sensorpair1"
+    ],
+    [
+      "68a567ea-e604-4c00-be46-b19646681094",
+      "sensorpair2"
     ],
     [
       "24712d05-32c3-4f9e-92db-3e83fef4ff24",
@@ -635,6 +535,102 @@
     [
       "61033af0-e227-4080-85d0-70cf5d8ebc03",
       "sensorpair3"
+    ],
+    [
+      "61033af0-e227-4080-85d0-70cf5d8ebc03",
+      "sensorpair3"
+    ],
+    [
+      "68a567ea-e604-4c00-be46-b19646681094",
+      "sensorpair2"
+    ],
+    [
+      "61033af0-e227-4080-85d0-70cf5d8ebc03",
+      "sensorpair3"
+    ],
+    [
+      "7da4fa47-f7be-472c-8768-5be40d5bac70",
+      "sensorpair"
+    ],
+    [
+      "24712d05-32c3-4f9e-92db-3e83fef4ff24",
+      "sensorpair1"
+    ],
+    [
+      "68a567ea-e604-4c00-be46-b19646681094",
+      "sensorpair2"
+    ],
+    [
+      "68a567ea-e604-4c00-be46-b19646681094",
+      "sensorpair2"
+    ],
+    [
+      "24712d05-32c3-4f9e-92db-3e83fef4ff24",
+      "sensorpair1"
+    ],
+    [
+      "61033af0-e227-4080-85d0-70cf5d8ebc03",
+      "sensorpair3"
+    ],
+    [
+      "68a567ea-e604-4c00-be46-b19646681094",
+      "sensorpair2"
+    ],
+    [
+      "68a567ea-e604-4c00-be46-b19646681094",
+      "sensorpair2"
+    ],
+    [
+      "7da4fa47-f7be-472c-8768-5be40d5bac70",
+      "sensorpair"
+    ],
+    [
+      "24712d05-32c3-4f9e-92db-3e83fef4ff24",
+      "sensorpair1"
+    ],
+    [
+      "68a567ea-e604-4c00-be46-b19646681094",
+      "sensorpair2"
+    ],
+    [
+      "7da4fa47-f7be-472c-8768-5be40d5bac70",
+      "sensorpair"
+    ],
+    [
+      "7da4fa47-f7be-472c-8768-5be40d5bac70",
+      "sensorpair"
+    ],
+    [
+      "24712d05-32c3-4f9e-92db-3e83fef4ff24",
+      "sensorpair1"
+    ],
+    [
+      "7da4fa47-f7be-472c-8768-5be40d5bac70",
+      "sensorpair"
+    ],
+    [
+      "7da4fa47-f7be-472c-8768-5be40d5bac70",
+      "sensorpair"
+    ],
+    [
+      "24712d05-32c3-4f9e-92db-3e83fef4ff24",
+      "sensorpair1"
+    ],
+    [
+      "61033af0-e227-4080-85d0-70cf5d8ebc03",
+      "sensorpair3"
+    ],
+    [
+      "7da4fa47-f7be-472c-8768-5be40d5bac70",
+      "sensorpair"
+    ],
+    [
+      "61033af0-e227-4080-85d0-70cf5d8ebc03",
+      "sensorpair3"
+    ],
+    [
+      "08c07a2a-cdb0-4381-9e6f-3d28d7d01869",
+      "Row3"
     ]
   ],
   "text_variables": {}

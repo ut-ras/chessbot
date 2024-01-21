@@ -561,7 +561,7 @@
     )
     (pin "1" (uuid 68fa6dfa-9a64-4ab6-af15-597977545682))
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794"
           (reference "#PWR047") (unit 1)
         )
@@ -586,7 +586,7 @@
     )
     (pin "1" (uuid 613c3c8e-0564-48f6-8949-54d61b24405c))
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794"
           (reference "#PWR072") (unit 1)
         )
@@ -611,7 +611,7 @@
     )
     (pin "1" (uuid 3429fe2a-f1d7-4f2c-8346-9f21eabf80a6))
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794"
           (reference "#PWR045") (unit 1)
         )
@@ -636,7 +636,7 @@
     )
     (pin "1" (uuid 73fcf493-2892-4806-abe8-c9dfd10173bc))
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794"
           (reference "#PWR076") (unit 1)
         )
@@ -661,7 +661,7 @@
     )
     (pin "1" (uuid 5188b0b9-0f20-4762-a1dd-5441b4939cb5))
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794"
           (reference "#PWR0123") (unit 1)
         )
@@ -686,7 +686,7 @@
     )
     (pin "1" (uuid 535d0f78-4286-4b39-aa40-5f08e08f3128))
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794"
           (reference "#PWR046") (unit 1)
         )
@@ -711,7 +711,7 @@
     )
     (pin "1" (uuid d9155006-f2f8-4a62-80a8-7044c09c23cb))
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794"
           (reference "#PWR0147") (unit 1)
         )
@@ -736,7 +736,7 @@
     )
     (pin "1" (uuid 3e222f5b-9e68-4508-96ff-f999a46c833b))
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794"
           (reference "#PWR073") (unit 1)
         )
@@ -761,7 +761,7 @@
     )
     (pin "1" (uuid 3f644b09-1836-48f6-b72b-c888805c63fa))
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794"
           (reference "#PWR0170") (unit 1)
         )
@@ -772,7 +772,7 @@
   (symbol (lib_id "Device:R_Pack04") (at 151.13 30.48 0) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 7bc46f90-c8e5-4298-a461-72018e73ed9e)
-    (property "Reference" "RN1" (at 143.51 29.21 0)
+    (property "Reference" "RN10" (at 143.51 29.21 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "4.7k" (at 143.51 26.67 0)
@@ -793,33 +793,33 @@
     (pin "3" (uuid 301ce02a-6a3a-467d-bd5c-487d20df0e95))
     (pin "8" (uuid 0a23fafd-c6ec-4c6a-a5d9-7d342528b8a8))
     (instances
-      (project "chessbot"
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/0ecf2261-63d0-42d7-af1f-687430f67c49/61033af0-e227-4080-85d0-70cf5d8ebc03"
-          (reference "RN1") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/042bc61c-e5f6-49f2-a6f7-55c5905d55cf/61033af0-e227-4080-85d0-70cf5d8ebc03"
-          (reference "RN5") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/042bc61c-e5f6-49f2-a6f7-55c5905d55cf/68a567ea-e604-4c00-be46-b19646681094"
-          (reference "RN7") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/042bc61c-e5f6-49f2-a6f7-55c5905d55cf/24712d05-32c3-4f9e-92db-3e83fef4ff24"
-          (reference "RN8") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/042bc61c-e5f6-49f2-a6f7-55c5905d55cf/7da4fa47-f7be-472c-8768-5be40d5bac70"
-          (reference "RN6") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/0ecf2261-63d0-42d7-af1f-687430f67c49/68a567ea-e604-4c00-be46-b19646681094"
-          (reference "RN2") (unit 1)
-        )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/0ecf2261-63d0-42d7-af1f-687430f67c49/24712d05-32c3-4f9e-92db-3e83fef4ff24"
-          (reference "RN3") (unit 1)
+      (project "chessboard"
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794"
+          (reference "RN10") (unit 1)
         )
         (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/0ecf2261-63d0-42d7-af1f-687430f67c49/7da4fa47-f7be-472c-8768-5be40d5bac70"
           (reference "RN4") (unit 1)
         )
-        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794"
-          (reference "RN10") (unit 1)
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/0ecf2261-63d0-42d7-af1f-687430f67c49/24712d05-32c3-4f9e-92db-3e83fef4ff24"
+          (reference "RN3") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/0ecf2261-63d0-42d7-af1f-687430f67c49/68a567ea-e604-4c00-be46-b19646681094"
+          (reference "RN2") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/0ecf2261-63d0-42d7-af1f-687430f67c49/61033af0-e227-4080-85d0-70cf5d8ebc03"
+          (reference "RN1") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/042bc61c-e5f6-49f2-a6f7-55c5905d55cf/7da4fa47-f7be-472c-8768-5be40d5bac70"
+          (reference "RN6") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/042bc61c-e5f6-49f2-a6f7-55c5905d55cf/24712d05-32c3-4f9e-92db-3e83fef4ff24"
+          (reference "RN8") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/042bc61c-e5f6-49f2-a6f7-55c5905d55cf/68a567ea-e604-4c00-be46-b19646681094"
+          (reference "RN7") (unit 1)
+        )
+        (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794/042bc61c-e5f6-49f2-a6f7-55c5905d55cf/61033af0-e227-4080-85d0-70cf5d8ebc03"
+          (reference "RN5") (unit 1)
         )
       )
     )
@@ -842,7 +842,7 @@
     )
     (pin "1" (uuid 1708e56b-d3c5-46dc-bea7-bafa4506681d))
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794"
           (reference "#PWR0148") (unit 1)
         )
@@ -867,7 +867,7 @@
     )
     (pin "1" (uuid d93887a7-c092-4f70-9b69-d043b74226d6))
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794"
           (reference "#PWR071") (unit 1)
         )
@@ -892,7 +892,7 @@
     )
     (pin "1" (uuid 034da231-1ccf-4f94-b587-00fa743708bd))
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794"
           (reference "#PWR074") (unit 1)
         )
@@ -917,7 +917,7 @@
     )
     (pin "1" (uuid b60387db-4627-44e1-87e0-e95f79e79b20))
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794"
           (reference "#PWR0124") (unit 1)
         )
@@ -942,7 +942,7 @@
     )
     (pin "1" (uuid a2ec2437-1f3e-479a-81c2-d7b8a1c21f92))
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794"
           (reference "#PWR0122") (unit 1)
         )
@@ -967,7 +967,7 @@
     )
     (pin "1" (uuid 79732933-1959-42b7-b081-630ce64ef7ef))
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794"
           (reference "#PWR0100") (unit 1)
         )
@@ -992,7 +992,7 @@
     )
     (pin "1" (uuid 51bea309-5e96-4b60-bcdc-9a8251ddd70a))
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794"
           (reference "#PWR0171") (unit 1)
         )
@@ -1017,7 +1017,7 @@
     )
     (pin "1" (uuid 4c279eb8-1810-4679-adc3-a35a38de783d))
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794"
           (reference "#PWR098") (unit 1)
         )
@@ -1042,7 +1042,7 @@
     )
     (pin "1" (uuid 22e6eb06-d653-4cf7-887a-5e6bd1de2511))
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794"
           (reference "#PWR048") (unit 1)
         )
@@ -1067,7 +1067,7 @@
     )
     (pin "1" (uuid fc5ea8fc-8842-4626-99ac-258490132143))
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794"
           (reference "#PWR041") (unit 1)
         )
@@ -1092,7 +1092,7 @@
     )
     (pin "1" (uuid ae821f02-70f3-444d-843d-04a22f8f6001))
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794"
           (reference "#PWR044") (unit 1)
         )
@@ -1117,7 +1117,7 @@
     )
     (pin "1" (uuid adf3720b-6704-4c04-919a-fb831a2657df))
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794"
           (reference "#PWR075") (unit 1)
         )
@@ -1142,7 +1142,7 @@
     )
     (pin "1" (uuid 0d518c78-6d6b-4235-9a61-a8bd96d142d8))
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794"
           (reference "#PWR0146") (unit 1)
         )
@@ -1167,7 +1167,7 @@
     )
     (pin "1" (uuid 7b1eebd9-e1ce-4cc3-9fc3-6dac5815c4bd))
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794"
           (reference "#PWR070") (unit 1)
         )
@@ -1192,7 +1192,7 @@
     )
     (pin "1" (uuid bd3258a6-afe9-4514-9679-411d8c99cebe))
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794"
           (reference "#PWR0172") (unit 1)
         )
@@ -1217,7 +1217,7 @@
     )
     (pin "1" (uuid 24b7525e-bf46-4f6a-9a36-4043760e96ab))
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794"
           (reference "#PWR099") (unit 1)
         )
@@ -1264,7 +1264,7 @@
       (uuid a4ab3cbf-9c3e-4d36-9eb7-0aea8418b07c)
     )
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404" (page "2"))
         (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794" (page "8"))
       )
@@ -1310,7 +1310,7 @@
       (uuid 1dda12b9-c782-4cd7-940d-a25cd431d0c1)
     )
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404" (page "2"))
         (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794" (page "3"))
       )
@@ -1356,7 +1356,7 @@
       (uuid e06e8a0c-6f3d-45a7-823c-70726e1d7082)
     )
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404" (page "2"))
         (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794" (page "38"))
       )
@@ -1402,7 +1402,7 @@
       (uuid 7a72dac1-4a1b-4690-be85-df4bbc12604a)
     )
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404" (page "2"))
         (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794" (page "28"))
       )
@@ -1448,7 +1448,7 @@
       (uuid 780a2a81-7ffb-4f9a-931b-e960da1104cb)
     )
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404" (page "2"))
         (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794" (page "18"))
       )
@@ -1494,7 +1494,7 @@
       (uuid 75a52e5d-7463-4355-94f5-7fae75030863)
     )
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404" (page "2"))
         (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794" (page "33"))
       )
@@ -1540,7 +1540,7 @@
       (uuid 90e6d152-f763-4dac-8c89-3a3696631f31)
     )
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404" (page "2"))
         (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794" (page "23"))
       )
@@ -1586,7 +1586,7 @@
       (uuid 172c52be-9e3f-4170-8053-430d0ac97a66)
     )
     (instances
-      (project "chessbot"
+      (project "chessboard"
         (path "/178674ef-da23-4447-9d4b-ea3429461404" (page "2"))
         (path "/178674ef-da23-4447-9d4b-ea3429461404/00efe30f-72a6-4414-9d15-9c7cfad52794" (page "13"))
       )
