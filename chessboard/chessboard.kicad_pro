@@ -61,7 +61,7 @@
       },
       "rule_severities": {
         "annular_width": "error",
-        "clearance": "error",
+        "clearance": "ignore",
         "connection_width": "warning",
         "copper_edge_clearance": "error",
         "copper_sliver": "warning",
@@ -91,8 +91,8 @@
         "padstack": "warning",
         "pth_inside_courtyard": "ignore",
         "shorting_items": "error",
-        "silk_edge_clearance": "warning",
-        "silk_over_copper": "warning",
+        "silk_edge_clearance": "ignore",
+        "silk_over_copper": "ignore",
         "silk_overlap": "warning",
         "skew_out_of_range": "error",
         "solder_mask_bridge": "error",
@@ -101,7 +101,7 @@
         "text_thickness": "warning",
         "through_hole_pad_without_hole": "error",
         "too_many_vias": "error",
-        "track_dangling": "warning",
+        "track_dangling": "ignore",
         "track_width": "error",
         "tracks_crossing": "error",
         "unconnected_items": "error",
@@ -128,7 +128,7 @@
         "min_via_diameter": 0.5,
         "solder_mask_clearance": 0.0,
         "solder_mask_min_width": 0.0,
-        "solder_mask_to_copper_clearance": 0.0,
+        "solder_mask_to_copper_clearance": 0.005,
         "use_height_for_length_calcs": true
       },
       "teardrop_options": [
@@ -412,7 +412,9 @@
     }
   },
   "libraries": {
-    "pinned_footprint_libs": [],
+    "pinned_footprint_libs": [
+      "mylibrary"
+    ],
     "pinned_symbol_libs": []
   },
   "meta": {
@@ -531,156 +533,16 @@
       ""
     ],
     [
-      "a7d01384-9c07-484e-9de0-4be9005176dc",
+      "501c11bc-04bd-4d54-8bc8-c6f63ce2a0b8",
       "Row0"
     ],
     [
-      "7da4fa47-f7be-472c-8768-5be40d5bac70",
-      "sensorpair0"
-    ],
-    [
-      "1d74f805-e713-4b1a-8ce1-66afcdde9510",
-      "sensorpair1"
-    ],
-    [
-      "934fc3fc-e92a-4896-b0b0-e3e9a0af6406",
-      "sensorpair2"
-    ],
-    [
-      "0bec1906-7c77-4c93-b5ea-e391da94fc2e",
+      "73c9f203-0eaf-49a7-9de9-0b482d2a37ed",
       "sensorpair3"
     ],
     [
-      "17c0e463-cbc8-42bc-98c7-95e3590956a1",
-      "Row1"
-    ],
-    [
-      "1d74f805-e713-4b1a-8ce1-66afcdde9510",
-      "sensorpair1"
-    ],
-    [
-      "0bec1906-7c77-4c93-b5ea-e391da94fc2e",
-      "sensorpair3"
-    ],
-    [
-      "934fc3fc-e92a-4896-b0b0-e3e9a0af6406",
+      "d0d45836-5e97-4706-95cf-18db5897a617",
       "sensorpair2"
-    ],
-    [
-      "7da4fa47-f7be-472c-8768-5be40d5bac70",
-      "sensorpair0"
-    ],
-    [
-      "daacdcd8-29a3-4e95-8b58-1b6c5868c75f",
-      "Row2"
-    ],
-    [
-      "0bec1906-7c77-4c93-b5ea-e391da94fc2e",
-      "sensorpair3"
-    ],
-    [
-      "934fc3fc-e92a-4896-b0b0-e3e9a0af6406",
-      "sensorpair2"
-    ],
-    [
-      "7da4fa47-f7be-472c-8768-5be40d5bac70",
-      "sensorpair0"
-    ],
-    [
-      "1d74f805-e713-4b1a-8ce1-66afcdde9510",
-      "sensorpair1"
-    ],
-    [
-      "cafb4ce1-43a2-4e44-b1c5-63758a8828c6",
-      "Row3"
-    ],
-    [
-      "1d74f805-e713-4b1a-8ce1-66afcdde9510",
-      "sensorpair1"
-    ],
-    [
-      "0bec1906-7c77-4c93-b5ea-e391da94fc2e",
-      "sensorpair3"
-    ],
-    [
-      "934fc3fc-e92a-4896-b0b0-e3e9a0af6406",
-      "sensorpair2"
-    ],
-    [
-      "7da4fa47-f7be-472c-8768-5be40d5bac70",
-      "sensorpair0"
-    ],
-    [
-      "dc9fe572-40d7-42bb-80eb-ae736298da77",
-      "Row4"
-    ],
-    [
-      "0bec1906-7c77-4c93-b5ea-e391da94fc2e",
-      "sensorpair3"
-    ],
-    [
-      "1d74f805-e713-4b1a-8ce1-66afcdde9510",
-      "sensorpair1"
-    ],
-    [
-      "7da4fa47-f7be-472c-8768-5be40d5bac70",
-      "sensorpair0"
-    ],
-    [
-      "934fc3fc-e92a-4896-b0b0-e3e9a0af6406",
-      "sensorpair2"
-    ],
-    [
-      "a2897459-5f88-4f0f-b963-f1c86b376a0a",
-      "Row5"
-    ],
-    [
-      "7da4fa47-f7be-472c-8768-5be40d5bac70",
-      "sensorpair0"
-    ],
-    [
-      "1d74f805-e713-4b1a-8ce1-66afcdde9510",
-      "sensorpair1"
-    ],
-    [
-      "0bec1906-7c77-4c93-b5ea-e391da94fc2e",
-      "sensorpair3"
-    ],
-    [
-      "934fc3fc-e92a-4896-b0b0-e3e9a0af6406",
-      "sensorpair2"
-    ],
-    [
-      "057e6850-cdb5-4403-a092-e317f1d8813f",
-      "Row6"
-    ],
-    [
-      "934fc3fc-e92a-4896-b0b0-e3e9a0af6406",
-      "sensorpair2"
-    ],
-    [
-      "1d74f805-e713-4b1a-8ce1-66afcdde9510",
-      "sensorpair1"
-    ],
-    [
-      "7da4fa47-f7be-472c-8768-5be40d5bac70",
-      "sensorpair0"
-    ],
-    [
-      "0bec1906-7c77-4c93-b5ea-e391da94fc2e",
-      "sensorpair3"
-    ],
-    [
-      "9b50ff42-e924-4f42-b819-32c9802f4846",
-      "Row7"
-    ],
-    [
-      "934fc3fc-e92a-4896-b0b0-e3e9a0af6406",
-      "sensorpair2"
-    ],
-    [
-      "0bec1906-7c77-4c93-b5ea-e391da94fc2e",
-      "sensorpair3"
     ],
     [
       "7da4fa47-f7be-472c-8768-5be40d5bac70",

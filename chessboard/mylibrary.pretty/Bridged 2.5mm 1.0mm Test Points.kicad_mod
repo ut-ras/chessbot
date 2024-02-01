@@ -16,7 +16,7 @@
     (tstamp d702bbea-f8ca-4a03-8777-0c6d72e66ad5)
   )
   (fp_line (start 0 0) (end 2.54 0)
-    (stroke (width 0.2) (type default)) (layer "F.Cu") (tstamp d94b1fef-4f95-481c-8317-faf8fe508fba))
+    (stroke (width 1) (type default)) (layer "F.Cu") (tstamp d94b1fef-4f95-481c-8317-faf8fe508fba))
   (fp_line (start -1.2 -1.2) (end -1.2 1.2)
     (stroke (width 0.12) (type solid)) (layer "F.SilkS") (tstamp 22db61e4-87c3-4491-9e50-ffe9f0dda18f))
   (fp_line (start -1.2 1.2) (end 3.7 1.2)
