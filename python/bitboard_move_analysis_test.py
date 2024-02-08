@@ -36,11 +36,20 @@ class RealBoard:
             ['P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'],
             ['R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R']
         ]
+    
     def print_board(self):
         """Print the board."""
         for row in self.board:
             print(' '.join(row))
+    
     def print_pretty_board(self):
+        board=zip(self.get_pretty_board_representation())
+        #print the array
+        for row in board:
+            print(' '.join(row))
+        print()
+    
+    def get_pretty_board_representation(self):
         """Print the board with alphabetical chess coordinate markers as the last row and numerical markers as first coloumn ."""
         #easier to just make it into a 10x10 array and then just print the array
 
@@ -74,10 +83,11 @@ class RealBoard:
             for col in range(8):
                 piece = self.board[row][col]
                 board[row][col + 2] = piece
-        #print the array
+        board_representation = []
         for row in board:
-            print(' '.join(row))
-        print()
+            board_representation.append(' '.join(row))
+        return board_representation
+    
     def piece_symbol_to_piece_name(self, symbol):
         """Convert the piece symbol to the piece name."""
         # Map the piece symbol to the corresponding piece name
@@ -108,6 +118,7 @@ class RealBoard:
     
         else:
             return 'Unknown Piece'
+    
     def clear_piece(self, square):
         """Clear (remove) a piece from the board at the specified square."""
         # Convert the square to the corresponding row and column indices
@@ -115,6 +126,7 @@ class RealBoard:
         col = ord(square[0]) - ord('a')
         # Clear the piece at the specified row and column
         self.board[row][col] = '.'
+    
     def set_piece(self, square, piece_symbol):
         """Set a piece on the board at the specified square."""
         # Convert the square to the corresponding row and column indices
@@ -122,7 +134,8 @@ class RealBoard:
         col = ord(square[0]) - ord('a')
         # Set the piece at the specified row and column
         self.board[row][col] = piece_symbol  
-    def bitboard_position_to_realboard_position(self, position):
+    
+    def bitboard_position_to_realboard_position(position):
         """Convert the bitboard position to the real board position. Reverse of Move.square_to_bitboard_position"""
         # Map the position to the corresponding letter/number combo
         #for reference:
@@ -143,6 +156,34 @@ class RealBoard:
         col_letter = chr((position % 8) + ord('a'))
         # Return the letter/number combo
         return col_letter + str(row_num)
+    
+    def square_to_bitboard_position(square):
+
+        # Map the letter/number combos to their respective position on the board
+        #for reference:
+        # 8 |  0  1  2  3  4  5  6  7
+        # 7 |  8  9 10 11 12 13 14 15
+        # 6 | 16 17 18 19 20 21 22 23
+        # 5 | 24 25 26 27 28 29 30 31
+        # 4 | 32 33 34 35 36 37 38 39
+        # 3 | 40 41 42 43 44 45 46 47
+        # 2 | 48 49 50 51 52 53 54 55
+        # 1 | 56 57 58 59 60 61 62 63
+        #    -------------------------
+        #    a  b  c  d  e  f  g  h
+
+        # Extract the column letter and row number from the input
+        col_letter, row_num = square[0], int(square[1])
+        # Calculate the column index (0 to 7)
+        col_index = ord(col_letter) - ord('a')
+        # Calculate the row's starting index, considering the board's layout
+        # Row '1' corresponds to the 8th row in the grid, hence '8 - row_num'
+        row_start_index = (8 - row_num) * 8
+        # Calculate the position by adding the column index to the row's starting index
+        position = row_start_index + col_index
+        
+        return position    
+    
     def First_move_compare_and_update(self, default_board, new_bitboard):
         """Compare the bitboard after the first move to the default starting chessboard. Outputs the move made!"""
         #bitboard is a 64 bit integer representation of the chess board, where each bit represents a square on the board.
@@ -168,9 +209,9 @@ class RealBoard:
                 return
 
             #TODO This is where we would check for move legality and captures, but for now just print out the move made.
-            square_a = self.bitboard_position_to_realboard_position(positions_changed[1])
+            square_a = RealBoard.bitboard_position_to_realboard_position(positions_changed[1])
 
-            square_b = self.bitboard_position_to_realboard_position(positions_changed[0])
+            square_b = RealBoard.bitboard_position_to_realboard_position(positions_changed[0])
 
             #determine which square is the from_square and which is the to_square
             if new_bitboard.is_occupied(positions_changed[1]):  #TODO: This is a hacky way to determine which square is the from_square and which is the to_square, but it works for now, need to test more to see if it is reliable
@@ -195,7 +236,6 @@ class RealBoard:
             self.clear_piece(from_square)
             self.set_piece(to_square, piece)
             return self
-
 class Bitboard:
     def __init__(self):
         # Initialize an empty board, where 0 represents no pieces on the board
@@ -259,6 +299,13 @@ class Bitboard:
             print()  # Newline for each row
 
     def print_pretty_board(self):
+        board=zip(self.get_pretty_board_representation())
+        #print the array
+        for row in board:
+            print(' '.join(row))
+        print()
+    
+    def get_pretty_board_representation(self):
         """Print the board with alphabetical chess coordinate markers as the last row and numerical markers as first coloumn ."""
         #easier to just make it into a 10x10 array and then just print the array
 
@@ -293,102 +340,96 @@ class Bitboard:
                 position = row * 8 + col
                 piece = '1' if self.is_occupied(position) else '.'
                 board[row][col + 2] = piece
-        #print the array
+        board_representation = []
         for row in board:
-            print(' '.join(row))
-        print()
-
-    # Function to print the chessboard
+            board_representation.append(' '.join(row))
+        return board_representation
     def print_chessboard(board):
         for row in board:
             print(' '.join(row))
-class Move:
-    def __init__(self, bitboard):
-        self.bitboard_current = bitboard.copy()
-    def square_to_bitboard_position(self, square):
 
-        # Map the letter/number combos to their respective position on the board
-        #for reference:
-        # 8 |  0  1  2  3  4  5  6  7
-        # 7 |  8  9 10 11 12 13 14 15
-        # 6 | 16 17 18 19 20 21 22 23
-        # 5 | 24 25 26 27 28 29 30 31
-        # 4 | 32 33 34 35 36 37 38 39
-        # 3 | 40 41 42 43 44 45 46 47
-        # 2 | 48 49 50 51 52 53 54 55
-        # 1 | 56 57 58 59 60 61 62 63
-        #    -------------------------
-        #    a  b  c  d  e  f  g  h
+def print_pretty_side_by_side(realboard, bitboard):
+    """Print the real board and bitboard side by side."""
+    # Print the real board and bitboard side by side
+    rightzip =  zip(realboard.get_pretty_board_representation())
+    leftzip = zip(bitboard.get_pretty_board_representation())
+    for leftrow, rightrow in zip(leftzip, rightzip):
+        print(leftrow[0] + "    " + rightrow[0])
+    print()
+def user_move(bitboard_current, move):
+    """Prompt the user for a move and update the bitboard with the move."""
+    #parse the inputed move, should be in the form of "a2a4" or "a2 a4"
+    move = move.replace(" ", "")
+    move = move.lower()
+    pattern = r'^[a-hA-H]\d[a-hA-H]\d$'
 
-        # Extract the column letter and row number from the input
-        col_letter, row_num = square[0], int(square[1])
-        # Calculate the column index (0 to 7)
-        col_index = ord(col_letter) - ord('a')
-        # Calculate the row's starting index, considering the board's layout
-        # Row '1' corresponds to the 8th row in the grid, hence '8 - row_num'
-        row_start_index = (8 - row_num) * 8
-        # Calculate the position by adding the column index to the row's starting index
-        position = row_start_index + col_index
-        
-        return position    
-    def user_move(self, move):
-        #parse the inputed move, should be in the form of "a2a4" or "a2 a4"
-        move = move.replace(" ", "")
-        move = move.lower()
-        pattern = r'^[a-hA-H]\d[a-hA-H]\d$'
-    
-        # Use the re.match function to check if the string matches the pattern
-        if re.match(pattern, move):
-            print("Valid formatted move")
-            # Convert the move to bitboard numbers
+    # Use the re.match function to check if the string matches the pattern
+    if re.match(pattern, move):
+        print("Valid formatted move")
+        # Convert the move to bitboard numbers
 
-            #split 4 char move into 2 char from and to squares
-            from_square = move[:2]
-            to_square = move[2:]
-            from_position = self.square_to_bitboard_position(from_square)
-            to_position = self.square_to_bitboard_position(to_square)
+        #split 4 char move into 2 char from and to squares
+        from_square = move[:2]
+        to_square = move[2:]
+        from_position = RealBoard.square_to_bitboard_position(from_square)
+        to_position = RealBoard.square_to_bitboard_position(to_square)
 
-            #check if from_position is occupied on the bitboard (it should be)
-            if not self.bitboard_current.is_occupied(from_position):
-                print(f"Invalid move, {from_square} has no piece on it to move!!!")
-                return self.user_move(input("Enter a VALID move: "))
-                
+        if from_position == to_position:
+            print(f"Invalid move, {from_square} and {to_square} are the same square!!!")
+            return -1
 
-            #check if to_position is occupied on the bitboard
-            if self.bitboard_current.is_occupied(to_position):
-                print(f"Invalid move, {to_square} is occupied by another piece!!!")
-                return self.user_move(input("Enter a VALID move: "))
-                
-
-            #print out the bitboard position numbers
-            print(f"Move from {from_square} to {to_square} (from bitboard position {from_position} to bitboard position {to_position})")
-        else:
-            print("Invalid formatted move")
-            return self.user_move(input("Enter a VALID move: "))
+        #check if from_position is occupied on the bitboard (it should be)
+        if not bitboard_current.is_occupied(from_position):
+            print(f"Invalid move, {from_square} has no piece on it to move!!!")
+            return -1
             
-        self.bitboard_current.clear_piece(from_position)
-        self.bitboard_current.set_piece(to_position)
-        return self.bitboard_current
+
+        #check if to_position is occupied on the bitboard
+        if bitboard_current.is_occupied(to_position):
+            print(f"Invalid move, {to_square} is occupied by another piece!!!")
+            return -1
+            
+
+        #print out the bitboard position numbers
+        print(f"Move from {from_square} to {to_square} (from bitboard position {from_position} to bitboard position {to_position})")
+    else:
+        print("Invalid formatted move")
+        return -1
+        
+    bitboard_current.clear_piece(from_position)
+    bitboard_current.set_piece(to_position)
+    return bitboard_current
 
 
-# Create a new bitboard and RealBoard
-# 
 bitboard = Bitboard()
 bitboard.chessboard_setup()
 realboard = RealBoard()
-bitboard.print_pretty_board()
+# realboard.print_pretty_board()
+# print("Bitboard representation of the chess board:")
+# bitboard.print_pretty_board()
+# print("Real board and bitboard side by side:")
+print_pretty_side_by_side(realboard, bitboard)
 
 #prompt user for move and create a new bitboard with the move made
 # (the move is not checked for legality yet, just that it is formatted correctly
 # and doesn't move a piece to an occupied square (so no captures yet))
 
-current_move = Move(bitboard)
+new_bitboard = bitboard.copy()
+
 move = input("Enter a move. (stand-in for moving a piece on Chessbot): ")
-new_bitboard = current_move.user_move(move)
-new_bitboard.print_pretty_board()
+new_bitboard = user_move(new_bitboard, move)
+
+if new_bitboard == -1:
+    input("Enter a VALID move: ")
+    new_bitboard = user_move(new_bitboard, move)
+    if new_bitboard == -1:
+        print("Bro CANNOT play chess, exiting...")
+        exit()
+
 
 new_realboard = realboard.First_move_compare_and_update(bitboard, new_bitboard)
-new_realboard.print_pretty_board()
+print_pretty_side_by_side(new_realboard, new_bitboard)
+
 
 
 
