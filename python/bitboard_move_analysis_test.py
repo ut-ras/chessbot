@@ -6,6 +6,10 @@
 # RealBoard class is a simple 2D array representation of a chess board with pieces/colors, black pieces are lowercase and white pieces are uppercase. This is what will track the actual state of the game/pieces.
 # Bitboard class is a 64 bit integer representation of the chess board, where each bit represents a square on the board. 
 # Move class will prompt the user for a move, and update the bitboard with the move. This is meant as a stand in for Chessbot's generation of a bitboard from its sensors.
+
+#when "square" is used, it refers to a coordinate on the chess board in, where a1 is the bottom left corner, and h8 is the top right corner.
+#when "position" is used, it refers to the bitboard position, where 0 is the top left corner, and 63 is the bottom right corner.
+
 import re
 
 #for reference
@@ -24,7 +28,7 @@ class RealBoard:
     def __init__(self):
         self.board = [
             ['r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'],
-            ['p', 'p', 'p', 'p', 'p', 'p', 'p', 'p  '],
+            ['p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'],
             ['.', '.', '.', '.', '.', '.', '.', '.'],
             ['.', '.', '.', '.', '.', '.', '.', '.'],
             ['.', '.', '.', '.', '.', '.', '.', '.'],
@@ -74,6 +78,50 @@ class RealBoard:
         for row in board:
             print(' '.join(row))
         print()
+    def piece_symbol_to_piece_name(self, symbol):
+        """Convert the piece symbol to the piece name."""
+        # Map the piece symbol to the corresponding piece name
+        if symbol == 'P':
+            return 'White Pawn'
+        elif symbol == 'N':
+            return 'White Knight'
+        elif symbol == 'B':
+            return 'White Bishop'
+        elif symbol == 'R':
+            return 'White Rook'
+        elif symbol == 'Q':
+            return 'White Queen'
+        elif symbol == 'K':
+            return 'White King'
+        elif symbol == 'p':
+            return 'Black Pawn'
+        elif symbol == 'n':
+            return 'Black Knight'
+        elif symbol == 'b':
+            return 'Black Bishop'
+        elif symbol == 'r':
+            return 'Black Rook'
+        elif symbol == 'q':
+            return 'Black Queen'
+        elif symbol == 'k':
+            return 'Black King'
+    
+        else:
+            return 'Unknown Piece'
+    def clear_piece(self, square):
+        """Clear (remove) a piece from the board at the specified square."""
+        # Convert the square to the corresponding row and column indices
+        row = 8 - int(square[1])
+        col = ord(square[0]) - ord('a')
+        # Clear the piece at the specified row and column
+        self.board[row][col] = '.'
+    def set_piece(self, square, piece_symbol):
+        """Set a piece on the board at the specified square."""
+        # Convert the square to the corresponding row and column indices
+        row = 8 - int(square[1])
+        col = ord(square[0]) - ord('a')
+        # Set the piece at the specified row and column
+        self.board[row][col] = piece_symbol  
     def bitboard_position_to_realboard_position(self, position):
         """Convert the bitboard position to the real board position. Reverse of Move.square_to_bitboard_position"""
         # Map the position to the corresponding letter/number combo
@@ -95,41 +143,59 @@ class RealBoard:
         col_letter = chr((position % 8) + ord('a'))
         # Return the letter/number combo
         return col_letter + str(row_num)
-    def First_move_compare(self, default_board, new_bitboard):
+    def First_move_compare_and_update(self, default_board, new_bitboard):
         """Compare the bitboard after the first move to the default starting chessboard. Outputs the move made!"""
         #bitboard is a 64 bit integer representation of the chess board, where each bit represents a square on the board.
 
         #compare the bitboard to the default board
-        if default_board == new_bitboard:
-            print("No moves made!")
+        if default_board.board == new_bitboard.board:
+            print("Detected no moves made!")
             return
         else:
-            print("A move has been made!")
+            print("Detected that a move has been made!")
             #find the move made
-            print(f"Move made in binary bitboard positions: {bin(default_board)} -> {bin(new_bitboard)}")
 
-            xor = default_board ^ new_bitboard #find the differences between the two bitboards
+            xor = default_board.board ^ new_bitboard.board #find the differences between the two bitboards
         
             #throw error if xor is 0, no move was made (shouldn't happen)
             if xor == 0:
-                print("Error in First_move_compare, xor == 0, No moves made!")
+                print("Error in First_move_compare_and_update, xor == 0, No moves made!")
                 return
             
             positions_changed = Bitboard.decompose_bitboard(xor)
             if positions_changed == 0:
-                print("Error in First_move_compare, No positions changed!")
-            print(f"Bitboard Positions changed: {positions_changed}")
+                print("Error in First_move_compare_and_update, No positions changed!")
+                return
 
             #TODO This is where we would check for move legality and captures, but for now just print out the move made.
-            print(f"Position moved from position {positions_changed[1]} to position {positions_changed[0]}")
-            from_square = self.bitboard_position_to_realboard_position(positions_changed[1])
-            to_square = self.bitboard_position_to_realboard_position(positions_changed[0])
+            square_a = self.bitboard_position_to_realboard_position(positions_changed[1])
+
+            square_b = self.bitboard_position_to_realboard_position(positions_changed[0])
+
+            #determine which square is the from_square and which is the to_square
+            if new_bitboard.is_occupied(positions_changed[1]):  #TODO: This is a hacky way to determine which square is the from_square and which is the to_square, but it works for now, need to test more to see if it is reliable
+                from_square = square_b
+                to_square = square_a
+            else:
+                from_square = square_a
+                to_square = square_b
 
 
-            print(f"Move made from {from_square} to {to_square}") #if this matches the user input, then the bitboard analysis is working correctly!!!
 
+            print(f"Detected move made from {from_square} to {to_square}") #if this matches the user input, then the bitboard analysis is working correctly!!!
 
-  
+            #check what piece was moved from the from_square to the to_square
+
+            #since this is the first move, we can assume that the piece moved is the only piece that has changed positions so far into the game, so the starting chessboard is used for comparison
+            
+            #find the piece that was moved by looking at what piece was at the from_square on the default_board
+            piece = self.board[8 - int(from_square[1])][ord(from_square[0]) - ord('a')]
+            print(f"Detected piece moved: {piece}: {self.piece_symbol_to_piece_name(piece)}")
+            #update the real board with the move made
+            self.clear_piece(from_square)
+            self.set_piece(to_square, piece)
+            return self
+
 class Bitboard:
     def __init__(self):
         # Initialize an empty board, where 0 represents no pieces on the board
@@ -265,8 +331,7 @@ class Move:
         position = row_start_index + col_index
         
         return position    
-    def user_move(self):
-        move = input("Enter move: ")
+    def user_move(self, move):
         #parse the inputed move, should be in the form of "a2a4" or "a2 a4"
         move = move.replace(" ", "")
         move = move.lower()
@@ -286,20 +351,21 @@ class Move:
             #check if from_position is occupied on the bitboard (it should be)
             if not self.bitboard_current.is_occupied(from_position):
                 print(f"Invalid move, {from_square} has no piece on it to move!!!")
-                self.user_move()
-                return
+                return self.user_move(input("Enter a VALID move: "))
+                
 
             #check if to_position is occupied on the bitboard
             if self.bitboard_current.is_occupied(to_position):
                 print(f"Invalid move, {to_square} is occupied by another piece!!!")
-                self.user_move()
-                return
+                return self.user_move(input("Enter a VALID move: "))
+                
 
             #print out the bitboard position numbers
             print(f"Move from {from_square} to {to_square} (from bitboard position {from_position} to bitboard position {to_position})")
         else:
             print("Invalid formatted move")
-            self.user_move()
+            return self.user_move(input("Enter a VALID move: "))
+            
         self.bitboard_current.clear_piece(from_position)
         self.bitboard_current.set_piece(to_position)
         return self.bitboard_current
@@ -317,12 +383,12 @@ bitboard.print_pretty_board()
 # and doesn't move a piece to an occupied square (so no captures yet))
 
 current_move = Move(bitboard)
-new_board = current_move.user_move()
-new_board.print_pretty_board()
+move = input("Enter a move. (stand-in for moving a piece on Chessbot): ")
+new_bitboard = current_move.user_move(move)
+new_bitboard.print_pretty_board()
 
-# test = RealBoard.bitboard_position_to_realboard_position(realboard, 32)
-# print(test)
-RealBoard.First_move_compare(realboard, bitboard.board, new_board.board)
+new_realboard = realboard.First_move_compare_and_update(bitboard, new_bitboard)
+new_realboard.print_pretty_board()
 
 
 
