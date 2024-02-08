@@ -1,4 +1,11 @@
+# Goal: To create a simple bitboard implementation for a chess board, 
+# move class to prompt the user for a move, update the bitboard with the move, 
+# and track changes between bitboards to test keeping track of individual pieces and to check for move legality 
 
+
+# RealBoard class is a simple 2D array representation of a chess board with pieces/colors, black pieces are lowercase and white pieces are uppercase. This is what will track the actual state of the game/pieces.
+# Bitboard class is a 64 bit integer representation of the chess board, where each bit represents a square on the board. 
+# Move class will prompt the user for a move, and update the bitboard with the move. This is meant as a stand in for Chessbot's generation of a bitboard from its sensors.
 import re
 
 #for reference
