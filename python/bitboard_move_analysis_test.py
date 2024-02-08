@@ -74,7 +74,62 @@ class RealBoard:
         for row in board:
             print(' '.join(row))
         print()
+    def bitboard_position_to_realboard_position(self, position):
+        """Convert the bitboard position to the real board position. Reverse of Move.square_to_bitboard_position"""
+        # Map the position to the corresponding letter/number combo
+        #for reference:
+        # 8 |  0  1  2  3  4  5  6  7
+        # 7 |  8  9 10 11 12 13 14 15
+        # 6 | 16 17 18 19 20 21 22 23
+        # 5 | 24 25 26 27 28 29 30 31
+        # 4 | 32 33 34 35 36 37 38 39
+        # 3 | 40 41 42 43 44 45 46 47
+        # 2 | 48 49 50 51 52 53 54 55
+        # 1 | 56 57 58 59 60 61 62 63
+        #    -------------------------
+        #    a  b  c  d  e  f  g  h
 
+        # Calculate the row number (8 to 1) by subtracting the position from 63
+        row_num = 8 - (position // 8)
+        # Calculate the column letter (a to h) by adding the position to the ASCII value of 'a'
+        col_letter = chr((position % 8) + ord('a'))
+        # Return the letter/number combo
+        return col_letter + str(row_num)
+    def First_move_compare(self, default_board, new_bitboard):
+        """Compare the bitboard after the first move to the default starting chessboard. Outputs the move made!"""
+        #bitboard is a 64 bit integer representation of the chess board, where each bit represents a square on the board.
+
+        #compare the bitboard to the default board
+        if default_board == new_bitboard:
+            print("No moves made!")
+            return
+        else:
+            print("A move has been made!")
+            #find the move made
+            print(f"Move made in binary bitboard positions: {bin(default_board)} -> {bin(new_bitboard)}")
+
+            xor = default_board ^ new_bitboard #find the differences between the two bitboards
+        
+            #throw error if xor is 0, no move was made (shouldn't happen)
+            if xor == 0:
+                print("Error in First_move_compare, xor == 0, No moves made!")
+                return
+            
+            positions_changed = Bitboard.decompose_bitboard(xor)
+            if positions_changed == 0:
+                print("Error in First_move_compare, No positions changed!")
+            print(f"Bitboard Positions changed: {positions_changed}")
+
+            #TODO This is where we would check for move legality and captures, but for now just print out the move made.
+            print(f"Position moved from position {positions_changed[1]} to position {positions_changed[0]}")
+            from_square = self.bitboard_position_to_realboard_position(positions_changed[1])
+            to_square = self.bitboard_position_to_realboard_position(positions_changed[0])
+
+
+            print(f"Move made from {from_square} to {to_square}") #if this matches the user input, then the bitboard analysis is working correctly!!!
+
+
+  
 class Bitboard:
     def __init__(self):
         # Initialize an empty board, where 0 represents no pieces on the board
@@ -99,6 +154,14 @@ class Bitboard:
         for i in range(48, 56):
             self.set_piece(i)
             self.set_piece(i + 8)
+            
+    def decompose_bitboard(bitboard):
+        """Decompose the bitboard into a list of positions."""
+        positions = []
+        for i in range(64):
+            if bitboard & (1 << i):
+                positions.append(i)
+        return positions
 
     def clear_piece(self, position):
         """Clear (remove) a piece from the board at the specified position (0-63)."""
@@ -242,9 +305,11 @@ class Move:
         return self.bitboard_current
 
 
-# Create a new bitboard
+# Create a new bitboard and RealBoard
+# 
 bitboard = Bitboard()
 bitboard.chessboard_setup()
+realboard = RealBoard()
 bitboard.print_pretty_board()
 
 #prompt user for move and create a new bitboard with the move made
@@ -255,6 +320,9 @@ current_move = Move(bitboard)
 new_board = current_move.user_move()
 new_board.print_pretty_board()
 
+# test = RealBoard.bitboard_position_to_realboard_position(realboard, 32)
+# print(test)
+RealBoard.First_move_compare(realboard, bitboard.board, new_board.board)
 
 
 
