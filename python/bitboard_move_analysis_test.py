@@ -235,6 +235,62 @@ class RealBoard:
             self.clear_piece(from_square)
             self.set_piece(to_square, piece)
             return self
+
+    def move_compare_and_update(self, old_board, new_bitboard):
+        """Compare the bitboard after the first move to the default starting chessboard. Outputs the move made!"""
+        #bitboard is a 64 bit integer representation of the chess board, where each bit represents a square on the board.
+
+        #compare the bitboard to the default board
+        if old_board.board == new_bitboard.board:
+            print("Detected no moves made!")
+            return
+        else:
+            print("Detected that a move has been made!")
+            #find the move made
+
+            xor = old_board.board ^ new_bitboard.board #find the differences between the two bitboards
+        
+            #throw error if xor is 0, no move was made (shouldn't happen)
+            if xor == 0:
+                print("Error in First_move_compare_and_update, xor == 0, No moves made!")
+                return
+            
+            positions_changed = Bitboard.decompose_bitboard(xor)
+            if positions_changed == 0:
+                print("Error in First_move_compare_and_update, No positions changed!")
+                return
+
+            #TODO This is where we would check for move legality and captures, but for now just print out the move made.
+            square_a = RealBoard.bitboard_position_to_realboard_position(positions_changed[1])
+
+            square_b = RealBoard.bitboard_position_to_realboard_position(positions_changed[0])
+
+            #determine which square is the from_square and which is the to_square
+            if new_bitboard.is_occupied(positions_changed[1]):  #TODO: This is a hacky way to determine which square is the from_square and which is the to_square, but it works for now, need to test more to see if it is reliable
+                from_square = square_b
+                to_square = square_a
+            else:
+                from_square = square_a
+                to_square = square_b
+
+            print(f"Detected move made from {from_square} to {to_square}") #if this matches the user input, then the bitboard analysis is working correctly!!!
+
+            #check what piece was moved from the from_square to the to_square
+
+            #since this is the first move, we can assume that the piece moved is the only piece that has changed positions so far into the game, so the starting chessboard is used for comparison
+            
+            #find the piece that was moved by looking at what piece was at the from_square on the old_board
+            piece = self.board[8 - int(from_square[1])][ord(from_square[0]) - ord('a')]
+            print(f"Detected piece moved: {piece}: {self.piece_symbol_to_piece_name(piece)}")
+            #update the real board with the move made
+            self.clear_piece(from_square)
+            self.set_piece(to_square, piece)
+            return self
+        
+
+
+
+    
 class Bitboard:
     def __init__(self):
         # Initialize an empty board, where 0 represents no pieces on the board
@@ -419,16 +475,30 @@ move = input("Enter a move. (stand-in for moving a piece on Chessbot): ")
 new_bitboard = user_move(new_bitboard, move)
 
 if new_bitboard == -1:
-    input("Enter a VALID move: ")
+
+    new_bitboard = bitboard.copy()
+    move = input("Enter a VALID move: ")
     new_bitboard = user_move(new_bitboard, move)
     if new_bitboard == -1:
         print("Bro CANNOT play chess, exiting...")
         exit()
 
 
-new_realboard = realboard.First_move_compare_and_update(bitboard, new_bitboard)
-print_pretty_side_by_side(new_realboard, new_bitboard)
+realboard = realboard.First_move_compare_and_update(bitboard, new_bitboard)
+print_pretty_side_by_side(realboard, new_bitboard)
 
 
+
+#gameplay loop after first move
+while True:
+    bitboard = new_bitboard.copy()
+    new_bitboard = bitboard.copy()
+    move = input("Enter next move. (stand-in for moving a piece on Chessbot): ")
+    new_bitboard = user_move(new_bitboard, move)
+    if new_bitboard == -1:
+        print("Bro CANNOT play chess, exiting...")
+        exit()
+    realboard = realboard.move_compare_and_update(bitboard, new_bitboard)
+    print_pretty_side_by_side(realboard, new_bitboard)
 
 
