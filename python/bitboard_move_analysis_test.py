@@ -286,11 +286,6 @@ class RealBoard:
             self.clear_piece(from_square)
             self.set_piece(to_square, piece)
             return self
-        
-
-
-
-    
 class Bitboard:
     def __init__(self):
         # Initialize an empty board, where 0 represents no pieces on the board
