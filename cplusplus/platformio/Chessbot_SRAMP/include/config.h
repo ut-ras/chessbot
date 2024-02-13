@@ -10,7 +10,7 @@
 #define CFG_MACHINE_UUID "00000000-0000-0000-0000-000000000000"
 
 
-#define CFG_AXIS_COUNT 4
+#define CFG_AXIS_COUNT 2
 
 #define CFG_MIN_SOFTWARE_ENDSTOPS true // If true, axis won't move to coordinates less than HOME_POS.  //robo
 #define CFG_MAX_SOFTWARE_ENDSTOPS true  // If true, axis won't move to coordinates greater than the defined lengths below.
