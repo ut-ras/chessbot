@@ -14,8 +14,6 @@ public:
     static void readAll(MagVal *arr, int count = NUM_SENSORS);
 
 private:
-    static void reassignInOrder();
-
     static const byte START_ADDRESS = 0x21;                          // > 0x20, start address
     static constexpr byte SENSOR_ORDER[] = {4, 5, 6, 7, 0, 1, 2, 3}; // what bits on switch are what physical sensors
 
