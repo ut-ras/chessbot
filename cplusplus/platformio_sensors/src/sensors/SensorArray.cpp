@@ -1,9 +1,9 @@
 #include <assert.h>
 #include <TinyI2CMaster.h>
-#include "SwitchArray.h"
+#include "SensorArray.h"
 #include "SensorAndSwitches.cpp"
 
-void SwitchArray::init()
+void SensorArray::init()
 {
     TinyI2C.init();
     reassignInOrder();
@@ -11,7 +11,7 @@ void SwitchArray::init()
         Sensor::enableFastReadAndConfigure(i);
 }
 
-void SwitchArray::reassignInOrder()
+void SensorArray::reassignInOrder()
 {
     for (int i = 0; i < COLUMNS; i++)
     {
@@ -22,4 +22,12 @@ void SwitchArray::reassignInOrder()
         }
     }
     Switch::enableAll();
+}
+
+void SensorArray::readAll(MagVal *arr, int count)
+{
+    assert(count <= NUM_SENSORS);
+
+    for (int i = 0; i < NUM_SENSORS; i++)
+        arr[i] = Sensor::fastRead(START_ADDRESS + i);
 }

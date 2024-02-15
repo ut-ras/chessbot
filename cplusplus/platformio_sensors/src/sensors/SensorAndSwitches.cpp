@@ -1,13 +1,6 @@
-class Sensor
-{
-public:
-    static void setAddress(byte newAddr, byte oldAddr = 0x20);
-    static void enableFastReadAndConfigure(byte addr);
-    // pre: must've called enableFastRead before this
-    static MagVals fastRead(byte addr);
-
-private:
-};
+#include <assert.h>
+#include <Arduino.h>
+#include "MagVals.h"
 
 class I2CHelper
 {
@@ -15,12 +8,27 @@ public:
     static void WriteByte(byte addr, byte a);
 };
 
+
+class Sensor
+{
+public:
+    static void setAddress(byte newAddr, byte oldAddr = 0x20);
+    static void enableFastReadAndConfigure(byte addr);
+    // pre: must've called enableFastRead before this
+    static MagVal fastRead(byte addr);
+
+private:
+};
+
+
+
 class Switch
 {
 public:
     static void enableOnly(int sensor, int line)
     {
         disableAll(); // TODO efficiency, this sends 8 * (2 bytes + 4 bits); we can cache state to only send to switches which need it
+        // but also this is only called at init, so see how big a deal it really is
         assert(0 <= sensor && sensor <= 7);
         assert(0 <= line && line <= 7);
         I2CHelper::WriteByte(START_ADDRESS + sensor, 1 << line);
