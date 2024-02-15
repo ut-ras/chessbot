@@ -2,9 +2,13 @@
 #include <Arduino.h>
 #include "MagVals.h"
 #include "I2C.cpp"
+#include "utils.hpp"
 
 class Sensor
 {
+private:
+    static const int NUM_BYTES_READING = 10;
+
 public:
     static void configure(byte newAddr, byte oldAddr = 0x20)
     {
@@ -27,11 +31,10 @@ public:
         MagVal ans;
 
         // T T X X Y Y Z Z CONV CRC = 10
-        static const int NUM_BYTES_READING = 10;
         byte buffer[NUM_BYTES_READING];
         readNBytes(addr, (byte *)&buffer, NUM_BYTES_READING);
 
-        processCRC(buffer);
+        assert(processCRC(buffer, NUM_BYTES_READING) == buffer[NUM_BYTES_READING - 1]);
         // TODO check CONV Status, byte at index 6
         ans.t = transformADCToTemp(buffer[0], buffer[1]);
 
@@ -43,14 +46,7 @@ public:
         return ans;
     };
 
-private:
-    // https://www.ti.com/lit/ds/symlink/tmag5273.pdf Section 7.5.1.3.6
-    // last byte is CRC
-    static void processCRC(byte buffer[8])
-    {
-        // TODO
-    }
-
+protected:
     // TODO test for edge cases
     static int transformADCToReal(byte MSB, byte LSB)
     {
