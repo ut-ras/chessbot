@@ -12,7 +12,7 @@ static void writeNBytes(byte addr, byte reg, int n, byte *ptr)
 static byte readByte(byte addr, byte reg)
 {
     TinyI2C.start(addr, 0);
-    TinyI2C.start(reg, 0); // 0xD is device ID
+    TinyI2C.write(reg); 
     TinyI2C.start(addr, 1);
     byte r = TinyI2C.read();
     TinyI2C.stop();
