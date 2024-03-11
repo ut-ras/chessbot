@@ -25,6 +25,8 @@
 
 import re
 import subprocess
+import display_output
+import chess
 
 class RealBoard:
     def __init__(self):
@@ -43,6 +45,8 @@ class RealBoard:
         """Print the board."""
         for row in self.board:
             print(' '.join(row))
+    def draw_board(self):
+        display_output.draw_board(self.board)
     
     def print_pretty_board(self):
         board=zip(self.get_pretty_board_representation())
@@ -445,6 +449,91 @@ class StockfishEngine:
         return best_move
 
 
+
+def move_legal(game_moves_array):
+    """Check if a move/capture is legal."""
+    #start with checking what piece is being moved
+    #use chess library to check if the move is legal with the game moves array (a record of all the moves made so far)
+    # has the following format: [' ', 'e2e4', 'e7e5', 'g1f3', 'b8c6', 'f1c4', 'g8f6', 'e1g1', 'e8g8', etc...]
+    #if the move is legal, return True, else return False
+        # Initialize a chess board with the starting position
+    board = chess.Board() #TESTING USAGE OF CHESS LIBRARY, if it works, i'll use chess.board instead of RealBoard
+    
+    # Replay the game moves except the last move
+    for move in game_moves_array[:-1]:
+        # Skip the first empty string in your array format
+        if move != ' ':
+            # Convert the move string to a move object
+            chess_move = chess.Move.from_uci(move)
+            # Check if the move is legal in the current board state
+            if chess_move in board.legal_moves:
+                # If the move is legal, apply it to the board
+                board.push(chess_move)
+            else:
+                # If any move is illegal, return False
+                print(f"Move {move} is illegal.")
+                return False
+    
+    # Check the legality of the last move in the array
+    last_move = game_moves_array[-1]
+    if last_move != ' ':
+        last_chess_move = chess.Move.from_uci(last_move)
+        if last_chess_move in board.legal_moves:
+            # The last move is legal
+            return True
+        else:
+            # The last move is illegal
+            return False
+    else:
+        # If the last move is an empty string, treat it as a pass
+        return True
+def in_check(game_moves_array):
+    """Check if the player is in check."""
+    # Initialize a chess board with the starting position
+    board = chess.Board() #TESTING USAGE OF CHESS LIBRARY, if it works, i'll use chess.board instead of RealBoard
+    
+    # Replay the game moves
+    for move in game_moves_array[1:]:
+        # Skip the first empty string in your array format
+        if move != ' ':
+            # Convert the move string to a move object
+            chess_move = chess.Move.from_uci(move)
+            # Apply the move to the board
+            board.push(chess_move)
+    
+    # Check if the current player is in check
+    if board.is_check():
+        return True
+    else:
+        return False
+    
+def in_checkmate(game_moves_array):
+    """Check if the player is in checkmate."""
+    # Initialize a chess board with the starting position
+    board = chess.Board() #TESTING USAGE OF CHESS LIBRARY, if it works, i'll use chess.board instead of RealBoard
+    
+    # Replay the game moves
+    for move in game_moves_array[1:]:
+        # Skip the first empty string in your array format
+        if move != ' ':
+            # Convert the move string to a move object
+            chess_move = chess.Move.from_uci(move)
+            # Apply the move to the board
+            board.push(chess_move)
+    
+    # Check if the current player is in checkmate
+    if board.is_checkmate():
+        return True
+    else:
+        return False
+
+
+
+
+
+
+
+
 def print_pretty_side_by_side(realboard, bitboard):
     """Print the real board and bitboard side by side."""
     # Print the real board and bitboard side by side
@@ -456,15 +545,15 @@ def print_pretty_side_by_side(realboard, bitboard):
 def user_move(bitboard_current, move):
     """Prompt the user for a move and update the bitboard with the move."""
     #parse the inputed move, should be in the form of "a2a4" or "a2 a4"
-    move = move.replace(" ", "")
     move = move.lower()
+    move = move.replace(" ", "")
+    move = move.replace("_", "")
     pattern = r'^[a-hA-H]\d[a-hA-H]\d$'
 
     # Use the re.match function to check if the string matches the pattern
     if re.match(pattern, move):
         print("Valid formatted move")
         # Convert the move to bitboard numbers
-
         #split 4 char move into 2 char from and to squares
         from_square = move[:2]
         to_square = move[2:]
@@ -481,11 +570,11 @@ def user_move(bitboard_current, move):
             return -1
             
 
-        #check if to_position is occupied on the bitboard
-        if bitboard_current.is_occupied(to_position):
-            print(f"Invalid move, {to_square} is occupied by another piece!!!")
-            return -1
-            
+        # #check if to_position is occupied on the bitboard
+        # if bitboard_current.is_occupied(to_position):
+        #     print(f"Invalid move, {to_square} is occupied by another piece!!!")
+        #     return -1
+            #commented out for now, was used before we had move legality checking
 
         #print out the bitboard position numbers
         print(f"Move from {from_square} to {to_square} (from bitboard position {from_position} to bitboard position {to_position})")
@@ -499,86 +588,93 @@ def user_move(bitboard_current, move):
 
 if __name__ == "__main__":
 
-    path_to_stockfish = "/usr/games/stockfish"  # Adjust this path as necessary
+    path_to_stockfish = "/opt/homebrew/bin//stockfish"  # Adjust this path as necessary
     engine = StockfishEngine(path_to_stockfish)
     engine.start_new_game()
     game_moves_array = [" "]  # Array that stores the moves made in the game, in UCI format
-    # stockfish_response = engine.make_move(game_moves_array) #get the best move from stockfish
 
     bitboard = Bitboard()
     bitboard.chessboard_setup()
     realboard = RealBoard()
-    # realboard.print_pretty_board()
-    # print("Bitboard representation of the chess board:")
-    # bitboard.print_pretty_board()
-    # print("Real board and bitboard side by side:")
     print_pretty_side_by_side(realboard, bitboard)
-
-    #prompt user for move and create a new bitboard with the move made
-    # (the move is not checked for legality yet, just that it is formatted correctly
-    # and doesn't move a piece to an occupied square (so no captures yet))
+    RealBoard.draw_board(realboard)
 
     new_bitboard = bitboard.copy()
 
-    move = input("Enter a move. (stand-in for moving a piece on Chessbot): ")
-    move = move.lower()
-    new_bitboard = user_move(new_bitboard, move)
+    white_check = False 
+    black_check = False
 
-    if new_bitboard == -1:
-        new_bitboard = bitboard.copy()
-        move = input("Enter a VALID move: ")
-        new_bitboard = user_move(new_bitboard, move)
-        if new_bitboard == -1:
-            print("Bro CANNOT play chess, exiting...")
-            exit()
-
-    game_moves_array.append(move)
-    # print(game_moves_array)
-
-    realboard = realboard.First_move_compare_and_update(bitboard, new_bitboard)
-    print_pretty_side_by_side(realboard, new_bitboard)
-    stockfish_response = engine.make_move((' '.join(game_moves_array))) #get the best move from stockfish
-    print(f"Stockfish response: {stockfish_response}")
-
-    #turn stockfish response into a bitboard move
-    move = stockfish_response
-    move = move.lower()
-    new_bitboard = user_move(new_bitboard, move)
-    game_moves_array.append(move)
-    # print(game_moves_array)
-    realboard = realboard.move_compare_and_update(bitboard, new_bitboard)
-    print_pretty_side_by_side(realboard, new_bitboard)
-
-    
-
-
-    #gameplay loop after first move
+    #gameplay loop
     while True:
-        bitboard = new_bitboard.copy()
-        new_bitboard = bitboard.copy()
-        move = input("Enter next move. (stand-in for moving a piece on Chessbot): ")
+        move = input("Enter a move. (stand-in for moving a piece on Chessbot): ")
         move = move.lower()
-
+        move = move.replace(" ", "")
+        move = move.replace("_", "")
         new_bitboard = user_move(new_bitboard, move)
+
         if new_bitboard == -1:
-            print("Bro CANNOT play chess, exiting...")
+            new_bitboard = bitboard.copy()
+            move = input("Enter a VALID move: ")
+            new_bitboard = user_move(new_bitboard, move)
+            if new_bitboard == -1:
+                print("Bro CANNOT play chess, exiting...")
+                exit()
+
+        game_moves_array.append(move)#move this and the legality check to be AFTER user_move is called and returns a valid move from the bitboard
+        print(game_moves_array)
+
+        if(in_checkmate(game_moves_array)):
+            print("Checkmate, Chessbot Wins!")
             exit()
 
-        game_moves_array.append(move)
-        # print(game_moves_array)
+        if(in_check(game_moves_array)):
+            print("Player is in Check!")
+            white_check = True
+        else:
+            white_check = False
+
+        if(move_legal(game_moves_array)):
+            print("Move is legal!")
+        else:
+            print("Move is illegal!")
+            exit()
+
+        
 
         realboard = realboard.move_compare_and_update(bitboard, new_bitboard)
         print_pretty_side_by_side(realboard, new_bitboard)
-        stockfish_response = engine.make_move((' '.join(game_moves_array)))
+        RealBoard.draw_board(realboard)
+
+        stockfish_response = engine.make_move((' '.join(game_moves_array))) #get the best move from stockfish
         print(f"Stockfish response: {stockfish_response}")
+
         #turn stockfish response into a bitboard move
         move = stockfish_response
         move = move.lower()
+        move = move.replace(" ", "")
+        move = move.replace("_", "")    
         new_bitboard = user_move(new_bitboard, move)
         game_moves_array.append(move)
-        # print(game_moves_array)
+        print(game_moves_array)
+
+        if(in_checkmate(game_moves_array)):
+            print("Checkmate, Player Wins!")
+            exit()
+
+        if(in_check(game_moves_array)):
+            print("Chessbot is in Check!")
+            white_check = True
+        else:
+            white_check = False
+
+        if(move_legal(game_moves_array)):
+            print("Move is legal!")
+        else:
+            print("Move is illegal!")
+            exit()
+
         realboard = realboard.move_compare_and_update(bitboard, new_bitboard)
         print_pretty_side_by_side(realboard, new_bitboard)
+        RealBoard.draw_board(realboard)
 
-
-
+        bitboard = new_bitboard.copy()
