@@ -45,8 +45,8 @@ class RealBoard:
         """Print the board."""
         for row in self.board:
             print(' '.join(row))
-    def draw_board(self):
-        display_output.draw_board(self.board)
+    def draw_board(self, player_piece=0, player_move=0, chessbot_piece=0, chessbot_move=0):
+        display_output.draw_board(self.board, player_piece, player_move, chessbot_piece, chessbot_move)
     
     def print_pretty_board(self):
         board=zip(self.get_pretty_board_representation())
@@ -193,7 +193,6 @@ class RealBoard:
     def First_move_compare_and_update(self, default_board, new_bitboard):
         """Compare the bitboard after the first move to the default starting chessboard. Outputs the move made!"""
         #bitboard is a 64 bit integer representation of the chess board, where each bit represents a square on the board.
-
         #compare the bitboard to the default board
         if default_board.board == new_bitboard.board:
             print("Detected no moves made!")
@@ -267,7 +266,7 @@ class RealBoard:
                 print("Error in First_move_compare_and_update, No positions changed!")
                 return
 
-            #TODO This is where we would check for move legality and captures, but for now just print out the move made.
+
             square_a = RealBoard.bitboard_position_to_realboard_position(positions_changed[1])
 
             square_b = RealBoard.bitboard_position_to_realboard_position(positions_changed[0])
@@ -287,11 +286,14 @@ class RealBoard:
             #since this is the first move, we can assume that the piece moved is the only piece that has changed positions so far into the game, so the starting chessboard is used for comparison
             
             #find the piece that was moved by looking at what piece was at the from_square on the old_board
-            piece = self.board[8 - int(from_square[1])][ord(from_square[0]) - ord('a')]
-            print(f"Detected piece moved: {piece}: {self.piece_symbol_to_piece_name(piece)}")
+            self.last_piece_moved = self.board[8 - int(from_square[1])][ord(from_square[0]) - ord('a')]
+            print(f"Detected piece moved: {self.last_piece_moved}: {self.piece_symbol_to_piece_name(self.last_piece_moved)}")
             #update the real board with the move made
+            self.last_move_made_UCI = f"{from_square}{to_square}" 
+
+            # print(f"Last move made in UCI format: {self.last_move_made_UCI}")
             self.clear_piece(from_square)
-            self.set_piece(to_square, piece)
+            self.set_piece(to_square, self.last_piece_moved)
             return self
 class Bitboard:
     def __init__(self):
@@ -619,8 +621,10 @@ if __name__ == "__main__":
             if new_bitboard == -1:
                 print("Bro CANNOT play chess, exiting...")
                 exit()
+    
+        realboard = realboard.move_compare_and_update(bitboard, new_bitboard)
 
-        game_moves_array.append(move)#move this and the legality check to be AFTER user_move is called and returns a valid move from the bitboard
+        game_moves_array.append(realboard.last_move_made_UCI)
         print(game_moves_array)
 
         if(in_checkmate(game_moves_array)):
@@ -638,12 +642,11 @@ if __name__ == "__main__":
         else:
             print("Move is illegal!")
             exit()
-
         
-
-        realboard = realboard.move_compare_and_update(bitboard, new_bitboard)
         print_pretty_side_by_side(realboard, new_bitboard)
-        RealBoard.draw_board(realboard)
+        player_last_piece = realboard.last_piece_moved
+        player_last_move = realboard.last_move_made_UCI
+        RealBoard.draw_board(realboard, player_last_piece, player_last_move, 0, 0)
 
         stockfish_response = engine.make_move((' '.join(game_moves_array))) #get the best move from stockfish
         print(f"Stockfish response: {stockfish_response}")
@@ -675,6 +678,6 @@ if __name__ == "__main__":
 
         realboard = realboard.move_compare_and_update(bitboard, new_bitboard)
         print_pretty_side_by_side(realboard, new_bitboard)
-        RealBoard.draw_board(realboard)
+        RealBoard.draw_board(realboard, player_last_piece, player_last_move, realboard.last_piece_moved, realboard.last_move_made_UCI)
 
         bitboard = new_bitboard.copy()
