@@ -28,6 +28,9 @@ import subprocess
 import display_output
 import chess
 
+global gamestate
+gamestate = 0
+
 class RealBoard:
     def __init__(self):
         self.board = [
@@ -45,8 +48,8 @@ class RealBoard:
         """Print the board."""
         for row in self.board:
             print(' '.join(row))
-    def draw_board(self, player_piece=0, player_move=0, chessbot_piece=0, chessbot_move=0):
-        display_output.draw_board(self.board, player_piece, player_move, chessbot_piece, chessbot_move)
+    def draw_board(self, player_piece=0, player_move=0, chessbot_piece=0, chessbot_move=0, gamestate=0):
+        display_output.draw_board(self.board, player_piece, player_move, chessbot_piece, chessbot_move, gamestate)
     
     def print_pretty_board(self):
         board=zip(self.get_pretty_board_representation())
@@ -440,7 +443,7 @@ class StockfishEngine:
 
     def make_move(self, moves):
         self.send_command(f"position startpos moves {moves}")
-        self.send_command("go movetime 1000")  # Adjust movetime as needed
+        self.send_command("go movetime 1750")  # Adjust movetime as needed
         output = self.get_output(["bestmove"])
         # Extract the best move from the output
         best_move_line = next((line for line in output.split('\n') if line.startswith('bestmove')), None)
@@ -449,8 +452,6 @@ class StockfishEngine:
         else:
             best_move = "No move found"
         return best_move
-
-
 
 def move_legal(game_moves_array):
     """Check if a move/capture is legal."""
@@ -507,8 +508,7 @@ def in_check(game_moves_array):
     if board.is_check():
         return True
     else:
-        return False
-    
+        return False 
 def in_checkmate(game_moves_array):
     """Check if the player is in checkmate."""
     # Initialize a chess board with the starting position
@@ -528,14 +528,6 @@ def in_checkmate(game_moves_array):
         return True
     else:
         return False
-
-
-
-
-
-
-
-
 def print_pretty_side_by_side(realboard, bitboard):
     """Print the real board and bitboard side by side."""
     # Print the real board and bitboard side by side
@@ -626,27 +618,30 @@ if __name__ == "__main__":
 
         game_moves_array.append(realboard.last_move_made_UCI)
         print(game_moves_array)
-
-        if(in_checkmate(game_moves_array)):
-            print("Checkmate, Chessbot Wins!")
-            exit()
-
-        if(in_check(game_moves_array)):
-            print("Player is in Check!")
-            white_check = True
-        else:
-            white_check = False
-
         if(move_legal(game_moves_array)):
             print("Move is legal!")
         else:
             print("Move is illegal!")
             exit()
+        if(in_check(game_moves_array)):
+            print("Player is in Check!")
+            gamestate = 'player_checked'
+        else:
+            gamestate = 0
+
+        if(in_checkmate(game_moves_array)):
+            print("Checkmate, Chessbot Wins!")
+            gamestate = 'chessbot_win'
+            continue
+
+
+
+
         
         print_pretty_side_by_side(realboard, new_bitboard)
         player_last_piece = realboard.last_piece_moved
         player_last_move = realboard.last_move_made_UCI
-        RealBoard.draw_board(realboard, player_last_piece, player_last_move, 0, 0)
+        RealBoard.draw_board(realboard, player_last_piece, player_last_move, 0, 0, gamestate)
 
         stockfish_response = engine.make_move((' '.join(game_moves_array))) #get the best move from stockfish
         print(f"Stockfish response: {stockfish_response}")
@@ -659,25 +654,28 @@ if __name__ == "__main__":
         new_bitboard = user_move(new_bitboard, move)
         game_moves_array.append(move)
         print(game_moves_array)
-
-        if(in_checkmate(game_moves_array)):
-            print("Checkmate, Player Wins!")
-            exit()
-
-        if(in_check(game_moves_array)):
-            print("Chessbot is in Check!")
-            white_check = True
-        else:
-            white_check = False
-
         if(move_legal(game_moves_array)):
             print("Move is legal!")
         else:
             print("Move is illegal!")
             exit()
 
+
+        if(in_check(game_moves_array)):
+            print("Chessbot is in Check!")
+            gamestate = 'chessbot_checked'
+        else:
+            gamestate = 0
+
+        if(in_checkmate(game_moves_array)):
+            print("Checkmate, Player Wins!")
+            gamestate = 'player_win'
+            continue    
+
         realboard = realboard.move_compare_and_update(bitboard, new_bitboard)
         print_pretty_side_by_side(realboard, new_bitboard)
-        RealBoard.draw_board(realboard, player_last_piece, player_last_move, realboard.last_piece_moved, realboard.last_move_made_UCI)
-
+        RealBoard.draw_board(realboard, player_last_piece, player_last_move, realboard.last_piece_moved, realboard.last_move_made_UCI, gamestate)
+        if(gamestate == 'player_win' or gamestate == 'chessbot_win'):
+            print("Thanks for playing!")
+            exit()
         bitboard = new_bitboard.copy()

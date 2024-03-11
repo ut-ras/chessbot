@@ -1,4 +1,5 @@
 from PIL import Image, ImageDraw, ImageFont
+import time
 
 # Define the path to the icons
 icons_path = "/Users/jake/chessbot/6px_Icons/"
@@ -27,11 +28,11 @@ def get_piece_image_path(piece):
 # Create blank image for drawing.
 width = 128
 height = 64
-def draw_board(chessboard, player_piece, player_move, chessbot_piece, chessbot_move):
+def draw_board(chessboard, player_piece, player_move, chessbot_piece, chessbot_move, gamestate):
     """Draw the board on a 128x64 image, with the last moves made by the player and the chessbot."""
     image = Image.new('1', (width, height))
-    font = ImageFont.truetype("/Users/jake/chessbot/6px_Icons/AGoblinAppears-o2aV.ttf",7)
-
+    font = ImageFont.truetype("/Users/jake/chessbot/6px_Icons/m5x7.ttf",16)
+    small_font = ImageFont.truetype("/Users/jake/chessbot/6px_Icons/m3x6.ttf",16)
 
     #convert piece character to actual piece name
     if player_piece == 'P' or player_piece == 'p':
@@ -95,23 +96,54 @@ def draw_board(chessboard, player_piece, player_move, chessbot_piece, chessbot_m
     #if both are missing, then it must be the start of the game
     #if chessbot_move is missing, then the player made the last move and chessbot is thinking
 
+    #gamestate variables
 
-    if player_move and chessbot_move:
-
-        #remove first two letters in player_move and chessbot_move
-        player_move = player_move[2:]
-        chessbot_move = chessbot_move[2:]
-
-        draw.text((67, 1), f"{player_piece} to \n {player_move}", font=font, fill=0)
-        draw.text((67, 40), f"{chessbot_piece} to \n {chessbot_move}", font=font, fill=0)
-    elif player_move:
-        player_move = player_move[2:]
-        draw.text((67, 1), f"{player_piece} to \n {player_move}", font=font, fill=0)
-
+    player_checked = gamestate == 'player_checked'
+    chessbot_checked = gamestate == 'chessbot_checked'
+    player_win = gamestate == 'player_win'
+    chessbot_win = gamestate == 'chessbot_win'
+    stalemate = gamestate == 'stalemate'
+    
+    if player_win:
+        draw.text((72, 8), f"Player", font=font, fill=0)
+        draw.text((72, 23), f"Wins!", font=font, fill=0)
+    elif chessbot_win:
+        draw.text((72, 8), f"Chessbot", font=font, fill=0)
+        draw.text((72, 23), f"Wins!", font=font, fill=0)
+    elif stalemate:
+        draw.text((72, 20), f"Stalemate", font=font, fill=0)
+    
     else:
-        draw.text((80, 8), f"White", font=font, fill=0)
-        draw.text((88, 23), f"To", font=font, fill=0)
-        draw.text((80, 38), f"Move", font=font, fill=0)
+        if player_move and not chessbot_move:
+            draw.text((66, -4), f"PLAYER-WHITE", font=small_font, fill=0)
+            draw.text((66, 4), f"{player_piece}", font=font, fill=0)
+            draw.text((66, 12), f"{player_move[:2]} to {player_move[2:]}", font=font, fill=0)
+            draw.line((65, 32, 128, 32), fill=0)
+
+            draw.text((66, 29), f"CHESSBOT-BLACK", font=small_font, fill=0)
+            draw.text((66, 37), f"Thinking...", font=font, fill=0)
+            if(chessbot_checked):
+                draw.rectangle((65, 56, 128, 64), fill=0)
+                draw.text((80, 52), f"In Check!", font=small_font, fill=255)
+                
+
+        elif player_move and chessbot_move:
+            draw.text((66, -4), f"PLAYER-WHITE", font=small_font, fill=0)
+            draw.text((66, 4), f"{player_piece}", font=font, fill=0)
+            draw.text((66, 12), f"{player_move[:2]} to {player_move[2:]}", font=font, fill=0)
+            if(player_checked):            
+                draw.rectangle((65, 24, 128, 32), fill=0)
+                draw.text((80, 20), f"In Check!", font=small_font, fill=255)
+
+            draw.line((65, 32, 128, 32), fill=0)
+            draw.text((66, 29), f"CHESSBOT-BLACK", font=small_font, fill=0)
+            draw.text((66, 37), f"{chessbot_piece}", font=font, fill=0)
+            draw.text((66, 45), f"{chessbot_move[:2]} to {chessbot_move[2:]}", font=font, fill=0)
+            
+        else:
+            draw.text((80, 8), f"White", font=font, fill=0)
+            draw.text((88, 23), f"To", font=font, fill=0)
+            draw.text((80, 38), f"Move", font=font, fill=0)
 
 
 
