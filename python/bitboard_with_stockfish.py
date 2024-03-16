@@ -28,6 +28,8 @@ import subprocess
 import display_output
 import chess
 import chess.pgn
+import keyboard
+
 
 gamestate = 0
 turn = 'white'
@@ -472,7 +474,6 @@ class RealBoard:
         self.clear_piece(from_square)
         self.set_piece(to_square, self.last_piece_moved)
         return self
-
 class Bitboard:
     def __init__(self):
         # Initialize an empty board, where 0 represents no pieces on the board
@@ -987,11 +988,14 @@ if __name__ == "__main__":
     engine = StockfishEngine(path_to_stockfish)
     engine.start_new_game()
     game_moves_array = [" "]  # Array that stores the moves made in the game, in UCI format
-
+    
     bitboard, realboard, new_bitboard, white_check, black_check, white_king_moved, white_king_side_rook_moved, white_queen_side_rook_moved, black_king_moved, black_king_side_rook_moved, black_queen_side_rook_moved, white_castled, black_castled, turn = Game_Init()
-
-
-
+    realboard.draw_board(0, 0, 0, 0)
+    #Game start message (press space for confirmation)
+    print("Welcome to Chessbot! Press space to start the game.")
+    while True:
+        if keyboard.is_pressed('space'):
+            break
 
     #gameplay loop
     while True:
