@@ -103,6 +103,7 @@ def draw_board(chessboard, player_piece, player_move, chessbot_piece, chessbot_m
     player_win = gamestate == 'player_win'
     chessbot_win = gamestate == 'chessbot_win'
     stalemate = gamestate == 'stalemate'
+    draw_end = gamestate == 'draw'
     
     if player_win:
         draw.text((72, 8), f"Player", font=font, fill=0)
@@ -111,8 +112,9 @@ def draw_board(chessboard, player_piece, player_move, chessbot_piece, chessbot_m
         draw.text((72, 8), f"Chessbot", font=font, fill=0)
         draw.text((72, 23), f"Wins!", font=font, fill=0)
     elif stalemate:
-        draw.text((72, 20), f"Stalemate", font=font, fill=0)
-    
+        draw.text((72, 20), f"Stalemate!", font=font, fill=0)
+    elif draw_end:
+        draw.text((72, 20), f"Draw!", font=font, fill=0)
     else:
         if player_move and not chessbot_move:
             draw.text((66, -4), f"PLAYER-WHITE", font=small_font, fill=0)

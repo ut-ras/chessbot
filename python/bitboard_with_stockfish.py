@@ -27,6 +27,7 @@ import re
 import subprocess
 import display_output
 import chess
+import chess.pgn
 
 gamestate = 0
 turn = 'white'
@@ -64,7 +65,8 @@ class RealBoard:
     def draw_board(self, player_piece=0, player_move=0, chessbot_piece=0, chessbot_move=0):
         """Draw the board with the pieces and moves made."""
         display_output.draw_board(self.board, player_piece, player_move, chessbot_piece, chessbot_move, gamestate)
-    
+
+
     def print_pretty_board(self):
         board=zip(self.get_pretty_board_representation())
         #print the array
@@ -261,14 +263,20 @@ class RealBoard:
             self.set_piece(to_square, piece)
             return self
 
-
     def move_compare_update(self, old_board, new_bitboard):
         """Compare the bitboard after the first move to the default starting chessboard. Outputs the move made!"""
         #bitboard is a 64 bit integer representation of the chess board, where each bit represents a square on the board.
 
+        if old_board == -1:
+            print("Error, old_board is -1 in move_compare_update")
+            return
+        if new_bitboard == -1:
+            print("Error, new_bitboard is -1 in move_compare_update")
+            return
+
         #compare the bitboard to the default board
         if old_board.board == new_bitboard.board:
-            print("Detected no moves made!")
+            print("Error, Detected no moves made!")
             return
         else:
             print("Detected that a move has been made!")
@@ -290,7 +298,7 @@ class RealBoard:
                 from_square = 'e1'
                 to_square = 'g1'
                 
-            elif positions_changed == [60, 59, 58, 57, 56]:
+            elif positions_changed == [56,58,59,60]:
                 print("Detected White queenside castle")
                 from_square = 'e1'
                 to_square = 'c1'
@@ -321,6 +329,8 @@ class RealBoard:
 
             print(f"Detected move made from {from_square} to {to_square}") #if this matches the user input, then the bitboard analysis is working correctly!!!
 
+
+
             #check what piece was moved from the from_square to the to_square
 
             #since this is the first move, we can assume that the piece moved is the only piece that has changed positions so far into the game, so the starting chessboard is used for comparison
@@ -329,6 +339,19 @@ class RealBoard:
             self.last_piece_moved = self.board[8 - int(from_square[1])][ord(from_square[0]) - ord('a')]
             print(f"Detected piece moved: {self.last_piece_moved}: {self.piece_symbol_to_piece_name(self.last_piece_moved)}")
 
+            #check if promotion was made
+            if new_bitboard.last_move_promotion != 0:
+                    
+                self.clear_piece(from_square)
+                if turn == 'white':
+                    print(f"Detected pawn promoted to " + self.piece_symbol_to_piece_name(new_bitboard.last_move_promotion.upper))
+
+                    self.set_piece(to_square, new_bitboard.last_move_promotion.upper())
+                else:
+                    print(f"Detected pawn promoted to " + self.piece_symbol_to_piece_name(new_bitboard.last_move_promotion.lower))
+                    self.set_piece(to_square, new_bitboard.last_move_promotion)
+                self.last_move_made_UCI = f"{from_square}{to_square}{new_bitboard.last_move_promotion}"
+                return self
             
 
             #update the real board with the move made
@@ -450,15 +473,11 @@ class RealBoard:
         self.set_piece(to_square, self.last_piece_moved)
         return self
 
-
-
-
-
 class Bitboard:
     def __init__(self):
         # Initialize an empty board, where 0 represents no pieces on the board
         self.board = 0
-    
+        self.last_move_promotion = 0
     def set_piece(self, position):
         """Set a piece on the board at the specified position (0-63)."""
         if 0 <= position < 64:
@@ -600,6 +619,7 @@ class StockfishEngine:
     def make_move(self, moves):
         self.send_command(f"position startpos moves {moves}")
         self.send_command("go movetime 1")  # Adjust movetime as needed
+        self.send_command("depth 1")
         output = self.get_output(["bestmove"])
         # Extract the best move from the output
         best_move_line = next((line for line in output.split('\n') if line.startswith('bestmove')), None)
@@ -608,9 +628,10 @@ class StockfishEngine:
         else:
             best_move = "No move found"
         return best_move
-    def make_slow_move(self, moves):
+    def make_player_move(self, moves):
         self.send_command(f"position startpos moves {moves}")
-        self.send_command("go movetime 1")
+        self.send_command("go movetime 1")  # Adjust movetime as needed
+        self.send_command("depth 1")
         output = self.get_output(["bestmove"])
         # Extract the best move from the output
         best_move_line = next((line for line in output.split('\n') if line.startswith('bestmove')), None)
@@ -710,7 +731,7 @@ def move_legal(game_moves_array, realboard):
     
     # Check the legality of the last move in the array
     last_move = game_moves_array[-1]
-    if last_move != ' ':
+    if last_move != ' ' or last_move != '':
         last_chess_move = chess.Move.from_uci(last_move)
         if last_chess_move in board.legal_moves:
             # The last move is legal
@@ -797,8 +818,24 @@ def in_draw(game_moves_array):
         return True
     else:
         return False
+def write_to_PGN(game_moves_array):
+    """Write the game moves to a PGN file."""
+    # Create a new game
+    game = chess.pgn.Game()
+    node = game
+    # Add the moves to the game
+    for move in game_moves_array[1:]:
+        # Skip the first empty string in your array format
+        if move != ' ':
+            # Convert the move string to a move object
+            chess_move = chess.Move.from_uci(move)
+            # Add the move to the game
+            node = node.add_variation(chess_move)
+    # Write the game to a PGN file
+    with open("game.pgn", "w") as pgn_file:
+        pgn_file.write(str(game))
 def simulate_move_with_stockfish(engine, game_moves_array):
-    stockfish_response = engine.make_slow_move (' '.join(game_moves_array))
+    stockfish_response = engine.make_player_move (' '.join(game_moves_array))
     print(f"Stockfish suggests: {stockfish_response}")
     return stockfish_response
 
@@ -816,10 +853,13 @@ def user_move(bitboard_current, move):
     move = move.lower()
     move = move.replace(" ", "")
     move = move.replace("_", "")
+    bitboard_current.last_move_promotion = False
+
     pattern = r'^[a-hA-H]\d[a-hA-H]\d$'
+    promotion_pattern = r'^[a-hA-H]\d[a-hA-H]\d[qQrRbBnN]$'
 
     # Use the re.match function to check if the string matches the pattern
-    if re.match(pattern, move):
+    if re.match(pattern, move) or re.match(promotion_pattern, move):
         print("Valid formatted move")
         # Convert the move to bitboard numbers
         #split 4 char move into 2 char from and to squares
@@ -866,6 +906,7 @@ def user_move(bitboard_current, move):
             print(f"White queenside castle, User Input move from {from_square} to {to_square}")
             return bitboard_current
 
+        
 
         if from_position == to_position:
             print(f"Invalid move, {from_square} and {to_square} are the same square!!!")
@@ -877,6 +918,9 @@ def user_move(bitboard_current, move):
             return -1
             
 
+
+
+
         # #check if to_position is occupied on the bitboard
         # if bitboard_current.is_occupied(to_position):
         #     print(f"Invalid move, {to_square} is occupied by another piece!!!")
@@ -885,6 +929,14 @@ def user_move(bitboard_current, move):
 
         #print out the bitboard position numbers
         print(f"User Input Move from {from_square} to {to_square} (from bitboard position {from_position} to bitboard position {to_position})")
+
+        if re.match(promotion_pattern, move):
+            print("Promotion move detected")
+            bitboard_current.last_move_promotion = move[4]
+            assert bitboard_current.last_move_promotion in ['q', 'r', 'b', 'n', 'Q', 'R', 'B', 'N']
+
+        else:
+            bitboard_current.last_move_promotion = 0
 
         # if a capture is being made, need to simulate the creation of two bitboards, the first with the to square piece removed, and the second with the from square piece removed (from piece is now at the to_square, and the target piece is removed)
         # these bitboards could be in either order when using actual sensors
@@ -904,18 +956,11 @@ def user_move(bitboard_current, move):
     else:
         print("Invalid formatted move")
         return -1
-        
+    
     bitboard_current.clear_piece(from_position)
     bitboard_current.set_piece(to_position)
     return bitboard_current
-
-if __name__ == "__main__":
-
-    path_to_stockfish = "/opt/homebrew/bin//stockfish"  # Adjust this path as necessary
-    engine = StockfishEngine(path_to_stockfish)
-    engine.start_new_game()
-    game_moves_array = [" "]  # Array that stores the moves made in the game, in UCI format
-
+def Game_Init():
     bitboard = Bitboard()
     bitboard.chessboard_setup()
     realboard = RealBoard()
@@ -926,11 +971,34 @@ if __name__ == "__main__":
 
     white_check = False 
     black_check = False
+    white_king_moved = False
+    white_king_side_rook_moved = False
+    white_queen_side_rook_moved = False
+    black_king_moved = False
+    black_king_side_rook_moved = False
+    black_queen_side_rook_moved = False
+    white_castled = False
+    black_castled = False
     turn = 'white'
+    return bitboard, realboard, new_bitboard, white_check, black_check, white_king_moved, white_king_side_rook_moved, white_queen_side_rook_moved, black_king_moved, black_king_side_rook_moved, black_queen_side_rook_moved, white_castled, black_castled, turn
+if __name__ == "__main__":
+
+    path_to_stockfish = "/opt/homebrew/bin//stockfish"  # Adjust this path as necessary
+    engine = StockfishEngine(path_to_stockfish)
+    engine.start_new_game()
+    game_moves_array = [" "]  # Array that stores the moves made in the game, in UCI format
+
+    bitboard, realboard, new_bitboard, white_check, black_check, white_king_moved, white_king_side_rook_moved, white_queen_side_rook_moved, black_king_moved, black_king_side_rook_moved, black_queen_side_rook_moved, white_castled, black_castled, turn = Game_Init()
 
     #gameplay loop
     while True:
         turn = 'white'
+        if len(game_moves_array) % 2 == 0:
+            turn = 'black'
+        print(f"Turn: {turn}")
+        
+
+
         if AUTOMATED_TEST_MODE:
             move = simulate_move_with_stockfish(engine, game_moves_array)
         else:
@@ -940,40 +1008,53 @@ if __name__ == "__main__":
             move = move.replace("_", "")
         new_bitboard = user_move(new_bitboard, move)
 
+        if new_bitboard == -1:
+            print("user_move returned -1, invalid move")
+            exit()
+
         #if new_bitboard is an array, then a capture is being made, and we need to update the realboard with the capture
         if isinstance(new_bitboard, list):
             capture_bitboards = new_bitboard
             realboard = realboard.capture_compare_update(bitboard, capture_bitboards[0], capture_bitboards[1])
             new_bitboard = capture_bitboards[1]
-        else:
-            realboard = realboard.move_compare_update(bitboard, new_bitboard)
+        else: #if new_bitboard is not an array, then a normal move is being made, and we need to update the realboard with the move
+            realboard = realboard.move_compare_update(bitboard, new_bitboard) #the realboard is updated with the move made, the piece moved is determined here as well
 
         game_moves_array.append(realboard.last_move_made_UCI)
-        print(game_moves_array)
+        # print(game_moves_array)
         if(move_legal(game_moves_array, realboard)):
             print("Move is legal!")
         else:
             print("Move is illegal!")
             exit()
-        if(in_check(game_moves_array)):
+
+        if(in_stalemate(game_moves_array)):
+            print("Stalemate!")
+            gamestate = 'stalemate'
+        elif(in_draw(game_moves_array)):
+            print("Draw!")
+            gamestate = 'draw'   
+
+        elif(in_check(game_moves_array)):
             print("Player is in Check!")
             gamestate = 'player_checked'
+            if(in_checkmate(game_moves_array)):
+                print("Checkmate, Chessbot Wins!")
+                gamestate = 'chessbot_win'
         else:
             gamestate = 0
 
-        if(in_checkmate(game_moves_array)):
-            print("Checkmate, Chessbot Wins!")
-            gamestate = 'chessbot_win'
-            continue
-
-
-
 
         
-        print_pretty_side_by_side(realboard, new_bitboard)
         player_last_piece = realboard.last_piece_moved
         player_last_move = realboard.last_move_made_UCI
         RealBoard.draw_board(realboard, player_last_piece, player_last_move, 0, 0)
+        if len(game_moves_array) >= 2:
+            write_to_PGN(game_moves_array)
+        if(gamestate == 'player_win' or gamestate == 'chessbot_win' or gamestate == 'stalemate' or gamestate == 'draw'):
+            print("Thanks for playing!")
+            exit()
+        print_pretty_side_by_side(realboard, new_bitboard)
 
         turn = 'black'
 
@@ -988,45 +1069,42 @@ if __name__ == "__main__":
         bitboard = new_bitboard.copy()
         new_bitboard = user_move(new_bitboard, move)
         game_moves_array.append(move)
-        print(game_moves_array)
+        # print(game_moves_array)
         if(move_legal(game_moves_array, realboard)):
             print("Move is legal!")
         else:
             print("Move is illegal!")
             exit()
 
-
-        if(in_check(game_moves_array)):
-            print("Chessbot is in Check!")
-            gamestate = 'chessbot_checked'
-        else:
-            gamestate = 0
-
-        if(in_checkmate(game_moves_array)):
-            print("Checkmate, Player Wins!")
-            gamestate = 'player_win'
-                
-
         if(in_stalemate(game_moves_array)):
             print("Stalemate!")
             gamestate = 'stalemate'
-            
-        if(in_draw(game_moves_array)):
+        elif(in_draw(game_moves_array)):
             print("Draw!")
-            gamestate = 'draw'
-            exit()
-            
-            
-        if isinstance(new_bitboard, list):
-            capture_bitboards = new_bitboard
-            realboard = realboard.capture_compare_update(bitboard, capture_bitboards[0], capture_bitboards[1])
-            new_bitboard = capture_bitboards[1]
+            gamestate = 'draw'   
 
+        elif(in_check(game_moves_array)):
+            print("Chessbot is in Check!")
+            gamestate = 'chessbot_checked'
+            if(in_checkmate(game_moves_array)):
+                print("Checkmate, Player Wins!")
+                gamestate = 'player_win'
         else:
-            realboard = realboard.move_compare_update(bitboard, new_bitboard)
-        print_pretty_side_by_side(realboard, new_bitboard)
+            gamestate = 0
+            
+        if gamestate not in ['player_win', 'chessbot_win', 'stalemate', 'draw']:
+            if isinstance(new_bitboard, list):
+                capture_bitboards = new_bitboard
+                realboard = realboard.capture_compare_update(bitboard, capture_bitboards[0], capture_bitboards[1])
+                new_bitboard = capture_bitboards[1]
+            else: #if new_bitboard is not an array, then a normal move is being made, and we need to update the realboard with the move
+                realboard = realboard.move_compare_update(bitboard, new_bitboard)
+            print_pretty_side_by_side(realboard, new_bitboard)
+
         RealBoard.draw_board(realboard, player_last_piece, player_last_move, realboard.last_piece_moved, realboard.last_move_made_UCI)
-        if(gamestate == 'player_win' or gamestate == 'chessbot_win' or gamestate == 'stalemate'):
+        if len(game_moves_array) >= 2:
+            write_to_PGN(game_moves_array)
+        if(gamestate == 'player_win' or gamestate == 'chessbot_win' or gamestate == 'stalemate' or gamestate == 'draw'):
             print("Thanks for playing!")
             exit()
 
