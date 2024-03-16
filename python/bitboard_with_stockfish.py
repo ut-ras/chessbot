@@ -618,8 +618,8 @@ class StockfishEngine:
 
     def make_move(self, moves):
         self.send_command(f"position startpos moves {moves}")
-        self.send_command("go movetime 1")  # Adjust movetime as needed
-        self.send_command("depth 1")
+        self.send_command("go movetime 500")  # Adjust movetime as needed
+        self.send_command("depth 25")
         output = self.get_output(["bestmove"])
         # Extract the best move from the output
         best_move_line = next((line for line in output.split('\n') if line.startswith('bestmove')), None)
@@ -630,8 +630,8 @@ class StockfishEngine:
         return best_move
     def make_player_move(self, moves):
         self.send_command(f"position startpos moves {moves}")
-        self.send_command("go movetime 1")  # Adjust movetime as needed
-        self.send_command("depth 1")
+        self.send_command("go movetime 500")  # Adjust movetime as needed
+        self.send_command("depth 15")
         output = self.get_output(["bestmove"])
         # Extract the best move from the output
         best_move_line = next((line for line in output.split('\n') if line.startswith('bestmove')), None)
@@ -990,6 +990,9 @@ if __name__ == "__main__":
 
     bitboard, realboard, new_bitboard, white_check, black_check, white_king_moved, white_king_side_rook_moved, white_queen_side_rook_moved, black_king_moved, black_king_side_rook_moved, black_queen_side_rook_moved, white_castled, black_castled, turn = Game_Init()
 
+
+
+
     #gameplay loop
     while True:
         turn = 'white'
@@ -997,8 +1000,6 @@ if __name__ == "__main__":
             turn = 'black'
         print(f"Turn: {turn}")
         
-
-
         if AUTOMATED_TEST_MODE:
             move = simulate_move_with_stockfish(engine, game_moves_array)
         else:
@@ -1061,7 +1062,9 @@ if __name__ == "__main__":
         stockfish_response = engine.make_move((' '.join(game_moves_array))) #get the best move from stockfish
         print(f"Stockfish response: {stockfish_response}")
 
-        #turn stockfish response into a bitboard move
+        #turn stockfish response into a bitboard move and pass it through the user move function 
+        # (not super necessary, but can be used to check against the sensors for accuracy)
+        # should just be able to update the realboard with the move suggested by stockfish (or received by lichess) and then move the piece on the irl board
         move = stockfish_response
         move = move.lower()
         move = move.replace(" ", "")
