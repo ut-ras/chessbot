@@ -2,7 +2,7 @@ from PIL import Image, ImageDraw, ImageFont
 import time
 
 # Define the path to the icons
-icons_path = "/Users/jake/chessbot/6px_Icons/"
+icons_path = "icons_fonts/"
 # Mapping from piece symbols to file names
 piece_files = {
     'P': 'white_pawn.bmp',
@@ -31,8 +31,8 @@ height = 64
 def draw_board(chessboard, player_piece, player_move, chessbot_piece, chessbot_move, gamestate):
     """Draw the board on a 128x64 image, with the last moves made by the player and the chessbot."""
     image = Image.new('1', (width, height))
-    font = ImageFont.truetype("/Users/jake/chessbot/6px_Icons/m5x7.ttf",16)
-    small_font = ImageFont.truetype("/Users/jake/chessbot/6px_Icons/m3x6.ttf",16)
+    font = ImageFont.truetype("icons_fonts/m5x7.ttf",16)
+    small_font = ImageFont.truetype("icons_fonts/m3x6.ttf",16)
 
     #convert piece character to actual piece name
     if player_piece == 'P' or player_piece == 'p':
@@ -124,6 +124,9 @@ def draw_board(chessboard, player_piece, player_move, chessbot_piece, chessbot_m
 
             draw.text((66, 29), f"CHESSBOT-BLACK", font=small_font, fill=0)
             draw.text((66, 37), f"Thinking...", font=font, fill=0)
+            if(player_checked):
+                draw.rectangle((65, 24, 128, 32), fill=0)
+                draw.text((80, 20), f"In Check!", font=small_font, fill=255)
             if(chessbot_checked):
                 draw.rectangle((65, 56, 128, 64), fill=0)
                 draw.text((80, 52), f"In Check!", font=small_font, fill=255)
@@ -136,6 +139,9 @@ def draw_board(chessboard, player_piece, player_move, chessbot_piece, chessbot_m
             if(player_checked):            
                 draw.rectangle((65, 24, 128, 32), fill=0)
                 draw.text((80, 20), f"In Check!", font=small_font, fill=255)
+            if(chessbot_checked):
+                draw.rectangle((65, 56, 128, 64), fill=0)
+                draw.text((80, 52), f"In Check!", font=small_font, fill=255)
 
             draw.line((65, 32, 128, 32), fill=0)
             draw.text((66, 29), f"CHESSBOT-BLACK", font=small_font, fill=0)

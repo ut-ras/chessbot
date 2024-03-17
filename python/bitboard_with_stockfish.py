@@ -23,19 +23,33 @@
 #    -------------------------
 #    a  b  c  d  e  f  g  h
 
+from os import path
 import re
 import subprocess
 import display_output
 import chess
 import chess.pgn
-import keyboard
 
 
 gamestate = 0
 turn = 'white'
 
+# Path to the Stockfish binary
+STOCKFISH_PATH = 'stockfish'  
+
 # Automated test mode flag
 AUTOMATED_TEST_MODE = True  # Set to False for manual input mode
+
+# Set the Stockfish engine difficulty level from 1 to 8 (based on lichess)
+STOCKFISH_DIFFICULTY = 1  
+""" Level 1: Skill -9, Depth 5, 50ms
+Level 2: Skill -5, Depth 5, 100ms
+Level 3: Skill -1, Depth 5, 150ms
+Level 4: Skill 3, Depth 5, 200ms
+Level 5: Skill 7, Depth 5, 300ms
+Level 6: Skill 11, Depth 8, 400ms
+Level 7: Skill 16, Depth 13, 500ms
+Level 8: Skill 20, Depth 22, 1000ms """
 
 class RealBoard:
     def __init__(self):
@@ -586,14 +600,55 @@ class Bitboard:
         for row in board:
             print(' '.join(row))
 class StockfishEngine:
-    def __init__(self, path_to_stockfish):
+    def __init__(self, STOCKFISH_PATH):
         self.process = subprocess.Popen(
-            path_to_stockfish,
+            STOCKFISH_PATH,
             universal_newlines=True,
             stdin=subprocess.PIPE,
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
         )
+        self.set_stockfish_difficulty(STOCKFISH_DIFFICULTY)
+
+    def set_stockfish_difficulty(self, difficulty):
+        if difficulty == 1:
+            self.STOCKFISH_MOVETIME = 50
+            self.STOCKFISH_DEPTH = 5
+            self.STOCKFISH_SKILL = -9
+        elif difficulty == 2:
+            self.STOCKFISH_MOVETIME = 100
+            self.STOCKFISH_DEPTH = 5
+            self.STOCKFISH_SKILL = -5
+        elif difficulty == 3:
+            self.STOCKFISH_MOVETIME = 150
+            self.STOCKFISH_DEPTH = 5
+            self.STOCKFISH_SKILL = -1
+        elif difficulty == 4:
+            self.STOCKFISH_MOVETIME = 200
+            self.STOCKFISH_DEPTH = 5
+            self.STOCKFISH_SKILL = 3
+        elif difficulty == 5:
+            self.STOCKFISH_MOVETIME = 300
+            self.STOCKFISH_DEPTH = 5
+            self.STOCKFISH_SKILL = 7
+        elif difficulty == 6:
+            self.STOCKFISH_MOVETIME = 400
+            self.STOCKFISH_DEPTH = 8
+            self.STOCKFISH_SKILL = 11
+        elif difficulty == 7:
+            self.STOCKFISH_MOVETIME = 500
+            self.STOCKFISH_DEPTH = 13
+            self.STOCKFISH_SKILL = 16
+        elif difficulty == 8:
+            self.STOCKFISH_MOVETIME = 1000
+            self.STOCKFISH_DEPTH = 22
+            self.STOCKFISH_SKILL = 20
+        else:
+            raise ValueError("Invalid difficulty level. Must be between 1 and 8.")
+        print(f"Stockfish difficulty set to level {difficulty}")
+        print(f"Stockfish movetime set to {self.STOCKFISH_MOVETIME}")
+        print(f"Stockfish depth set to {self.STOCKFISH_DEPTH}")
+        print(f"Stockfish skill set to {self.STOCKFISH_SKILL}")
 
     def send_command(self, command):
         self.process.stdin.write(command + "\n")
@@ -619,8 +674,7 @@ class StockfishEngine:
 
     def make_move(self, moves):
         self.send_command(f"position startpos moves {moves}")
-        self.send_command("go movetime 500")  # Adjust movetime as needed
-        self.send_command("depth 25")
+        self.send_command(f"go movetime {self.STOCKFISH_MOVETIME} depth {self.STOCKFISH_DEPTH} skill {self.STOCKFISH_SKILL}") 
         output = self.get_output(["bestmove"])
         # Extract the best move from the output
         best_move_line = next((line for line in output.split('\n') if line.startswith('bestmove')), None)
@@ -631,8 +685,7 @@ class StockfishEngine:
         return best_move
     def make_player_move(self, moves):
         self.send_command(f"position startpos moves {moves}")
-        self.send_command("go movetime 500")  # Adjust movetime as needed
-        self.send_command("depth 15")
+        self.send_command("go movetime 100 depth 15 skill 10")  # Adjust movetime as needed
         output = self.get_output(["bestmove"])
         # Extract the best move from the output
         best_move_line = next((line for line in output.split('\n') if line.startswith('bestmove')), None)
@@ -966,7 +1019,7 @@ def Game_Init():
     bitboard.chessboard_setup()
     realboard = RealBoard()
     print_pretty_side_by_side(realboard, bitboard)
-    RealBoard.draw_board(realboard)
+    realboard.draw_board()
 
     new_bitboard = bitboard.copy()
 
@@ -983,20 +1036,15 @@ def Game_Init():
     turn = 'white'
     return bitboard, realboard, new_bitboard, white_check, black_check, white_king_moved, white_king_side_rook_moved, white_queen_side_rook_moved, black_king_moved, black_king_side_rook_moved, black_queen_side_rook_moved, white_castled, black_castled, turn
 if __name__ == "__main__":
-
-    path_to_stockfish = "/opt/homebrew/bin//stockfish"  # Adjust this path as necessary
-    engine = StockfishEngine(path_to_stockfish)
+    engine = StockfishEngine(STOCKFISH_PATH)
     engine.start_new_game()
     game_moves_array = [" "]  # Array that stores the moves made in the game, in UCI format
-    
     bitboard, realboard, new_bitboard, white_check, black_check, white_king_moved, white_king_side_rook_moved, white_queen_side_rook_moved, black_king_moved, black_king_side_rook_moved, black_queen_side_rook_moved, white_castled, black_castled, turn = Game_Init()
     realboard.draw_board(0, 0, 0, 0)
     #Game start message (press space for confirmation)
-    print("Welcome to Chessbot! Press space to start the game.")
-    while True:
-        if keyboard.is_pressed('space'):
-            break
-
+    print("Welcome to Chessbot! Press enter to start the game.")
+    # input()        
+       
     #gameplay loop
     while True:
         turn = 'white'
@@ -1041,11 +1089,18 @@ if __name__ == "__main__":
             gamestate = 'draw'   
 
         elif(in_check(game_moves_array)):
-            print("Player is in Check!")
-            gamestate = 'player_checked'
-            if(in_checkmate(game_moves_array)):
-                print("Checkmate, Chessbot Wins!")
-                gamestate = 'chessbot_win'
+            if turn == 'white':
+                print("Chessbot is in Check!")
+                gamestate = 'chessbot_checked'
+                if(in_checkmate(game_moves_array)):
+                    print("Checkmate, Player Wins!")
+                    gamestate = 'player_win'
+            else:
+                print("Player is in Check!")
+                gamestate = 'player_checked'
+                if(in_checkmate(game_moves_array)):
+                    print("Checkmate, Chessbot Wins!")
+                    gamestate = 'chessbot_win'
         else:
             gamestate = 0
 
@@ -1091,11 +1146,18 @@ if __name__ == "__main__":
             gamestate = 'draw'   
 
         elif(in_check(game_moves_array)):
-            print("Chessbot is in Check!")
-            gamestate = 'chessbot_checked'
-            if(in_checkmate(game_moves_array)):
-                print("Checkmate, Player Wins!")
-                gamestate = 'player_win'
+            if turn == 'white':
+                print("Chessbot is in Check!")
+                gamestate = 'chessbot_checked'
+                if(in_checkmate(game_moves_array)):
+                    print("Checkmate, Player Wins!")
+                    gamestate = 'player_win'
+            else:
+                print("Player is in Check!")
+                gamestate = 'player_checked'
+                if(in_checkmate(game_moves_array)):
+                    print("Checkmate, Chessbot Wins!")
+                    gamestate = 'chessbot_win'
         else:
             gamestate = 0
             
@@ -1108,7 +1170,7 @@ if __name__ == "__main__":
                 realboard = realboard.move_compare_update(bitboard, new_bitboard)
             print_pretty_side_by_side(realboard, new_bitboard)
 
-        RealBoard.draw_board(realboard, player_last_piece, player_last_move, realboard.last_piece_moved, realboard.last_move_made_UCI)
+        realboard.draw_board(player_last_piece, player_last_move, realboard.last_piece_moved, realboard.last_move_made_UCI)
         if len(game_moves_array) >= 2:
             write_to_PGN(game_moves_array)
         if(gamestate == 'player_win' or gamestate == 'chessbot_win' or gamestate == 'stalemate' or gamestate == 'draw'):
