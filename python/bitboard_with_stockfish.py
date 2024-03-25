@@ -41,7 +41,7 @@ STOCKFISH_PATH = 'stockfish'
 AUTOMATED_TEST_MODE = True  # Set to False for manual input mode
 
 # Set the Stockfish engine difficulty level from 1 to 8 (based on lichess)
-STOCKFISH_DIFFICULTY = 1  
+STOCKFISH_DIFFICULTY = 8  
 """ Level 1: Skill -9, Depth 5, 50ms
 Level 2: Skill -5, Depth 5, 100ms
 Level 3: Skill -1, Depth 5, 150ms
