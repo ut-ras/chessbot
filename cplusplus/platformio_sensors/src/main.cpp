@@ -4,8 +4,6 @@
  * Turns on an LED on for one second,
  * then off for one second, repeatedly.
  */
-//#include <TinyI2CMaster.h>
-#include <Arduino.h>
 
 #ifndef LED_BUILTIN
 #define LED_BUILTIN 13
