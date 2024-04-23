@@ -4,6 +4,7 @@ import RPi.GPIO as GPIO
 from time import sleep
 from gpiozero import Servo, Device
 from gpiozero.pins.pigpio import PiGPIOFactory
+import paho.mqtt.client as mqtt
 
 # Set up GPIO pin factory to use PiGPIO for hardware PWM
 Device.pin_factory = PiGPIOFactory()
@@ -158,11 +159,37 @@ def perform_castling(uci_castling):
         move_to_square("d8")
         manipulate_piece_servo(False)
 
+def on_message(client, userdata, message):
+    # userdata is the structure we choose to provide, here it's a list()
+    if (message.topic == "/moves"):
+        mes = message.payload.strip().decode()
+        print(mes)
 
+        perform_uci_move(mes)
+        
+    # We only want to process 10 messages
+   
+
+def on_connect(client, userdata, flags, reason_code, properties):
+    if reason_code.is_failure:
+        print(f"Failed to connect: {reason_code}. loop_forever() will retry connection")
+    else:
+        print(f"Successfully connected")
+        # we should always subscribe from on_connect callback to be sure
+        # our subscribed is persisted across reconnections.
+        client.subscribe("$SYS/#")
+        client.subscribe("/moves")
+
+
+mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
+mqttc.on_connect = on_connect
+mqttc.on_message = on_message
+mqttc.connect("localhost")
 
 if __name__ == "__main__":
     try:
         home_axes()
+        mqttc.loop_forever()
         #perform_uci_move("a1b2")
 
         choice = ""
