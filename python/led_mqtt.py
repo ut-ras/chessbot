@@ -1,9 +1,10 @@
 # run with cd ~/chessbot; sudo venv/bin/python python/led_mqtt.py
-# test with mosquitto_pub -L mqtt://raspberrypi.local:1883//led -m `python -c "import sys; write=sys.stdout.buffer.write; write(b'\x01z\x01'*64)"`
+print('''test with \nmosquitto_pub -L mqtt://raspberrypi.local:1883//led -m `python -c "import sys; write=sys.stdout.buffer.write; write(b'\\x01z\\x01'*64)"`''')
 import paho.mqtt.client as mqtt
 import board
 import neopixel
 
+DEBUG = False
 p = neopixel.NeoPixel(board.D18, 64)
 
 def on_message(client, userdata, message):
@@ -11,13 +12,13 @@ def on_message(client, userdata, message):
     if (message.topic == "/led"):
         mes = message.payload
         if not mes: return
-        if len(mes) != 64 * 3: 
+        if len(mes) % 3: 
             print("wrong size led payload")
             return
-        print(mes)
+        if DEBUG: print(mes)
         for i in range(0, len(mes), 3):
             p[i // 3] = (mes[i], mes[i + 1], mes[i+2])
-        print(p)
+        if DEBUG:print(p)
         p.show()
 
 

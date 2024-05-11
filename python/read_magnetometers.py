@@ -1,11 +1,13 @@
 import smbus
-from time import sleep
+from time import sleep, time
 
-bus_number = 1
+bus_number = 0
 
 
 COLUMNS = 8
-ROWS = 1
+ROWS = 2
+
+DEBUG = False
 
 class PCAArray:
     def __init__(self):
@@ -15,6 +17,7 @@ class PCAArray:
     def enableOnly(self, chip, line):
         for i in range(0, ROWS):
             self.bus.write_byte(0x70 + i, 0)
+            if self.bus.read_byte(0x70 + i) != 0: print("ERR WRITING")
         # enable
         self.bus.write_byte(0x70 + chip, 1 << line)
 
@@ -114,17 +117,23 @@ def init_a_bunch():
             j = [4,5,6,7,0,1,2,3][j]
             switches.enableOnly(i, j)
             print (f'initalizing {i}, {j} to {hex(n)}')
+            if DEBUG: input('Press enter to config it: ')
             try:
                 TMAG5273.init(n)
             except OSError as e: print(f'already initialized ', e)
     switches.enableAll()
     print(switches.bus.read_byte(0x70))
+    print(switches.bus.read_byte(0x71))
 
 def get_a_bunch(start, stop):
     ret = []
     for i in range(start, stop):
         tmag5273 = TMAG5273(i)
-        ret.append(tmag5273.read_magnetism())
+        try:
+            ret.append(tmag5273.read_magnetism())
+        except OSError:
+            print("err on", i)
+            ret.append((0,0,0))
     return ret
 
 
@@ -172,13 +181,35 @@ def plotty_plot():
         # Redraw the plot
         fig.canvas.draw()
         fig.canvas.flush_events()
+
+def on_connect(client, userdata, flags, reason_code, properties):
+    if reason_code.is_failure:
+        print(f"Failed to connect: {reason_code}. loop_forever() will retry connection")
+    else:
+        print(f"Successfully connected")
+        # we should always subscribe from on_connect callback to be sure
+        # our subscribed is persisted across reconnections.
+        #client.subscribe("$SYS/#")
+        #client.subscribe("/led")
+
 if __name__ == "__main__":
     init_a_bunch()
-    plotty_plot()
-    exit(1)
+    #plotty_plot()
+    #exit(1)
+    import paho.mqtt.client as mqtt
+    import struct
+    mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
+    print(mqttc.connect("localhost"))
+    mqttc.loop_start()
     while True:
         ans = get_a_bunch(0x20, 0x20 + ROWS*COLUMNS)
-        print([round(i[2], 1) for i in ans])
+        if DEBUG: print([round(i[2], 1) for i in ans])
+        flat_list = [item for sublist in ans for item in sublist]
+        byte_array = b''.join(struct.pack('f', num) for num in flat_list)
+        p = mqttc.publish("/magnets", byte_array)
+        if DEBUG: print(p)
+        print(time())
         #print("Magnetic Field (X,Y,Z):", round(x, 1), round(y, 1), round(z, 1))
-        sleep(.1)
+        sleep(.12)  # approx 50 hz like Vex pid
+    mqttc.loop_stop()
     # Wait for some time before the next reading
