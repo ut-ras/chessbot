@@ -12,7 +12,7 @@ charset-normalizer==3.3.2
 colorzero==2.0
 gpiozero==2.0.1
 idna==3.7
-paho-mqtt==2.0.0
+paho-mqtt==2.1.0
 pigpio==1.78
 pyftdi==0.55.0
 pyserial==3.5
@@ -24,4 +24,13 @@ smbus==1.1.post2
 smbus2==0.4.3
 sysv-ipc==1.1.0
 typing_extensions==4.11.0
-urllib3==2.2.1
+urllib3==1.26.0
+board==1.0
+chess==1.10.0
+gpiozero==2.0.1
+matplotlib==3.8.4
+neopixel==0.0.1
+numpy==1.26.4
+Pillow==9.0.0
+Requests==2.31.0
+smbus==1.1.post2
