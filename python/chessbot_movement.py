@@ -163,6 +163,7 @@ def on_message(client, userdata, message):
     # userdata is the structure we choose to provide, here it's a list()
     if (message.topic == "/moves"):
         mes = message.payload.strip().decode()
+        if not mes: return
         print(mes)
 
         perform_uci_move(mes)
