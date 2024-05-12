@@ -135,7 +135,8 @@ def init_a_bunch():
             except Exception as e:
                 print('could not initialize', e)
     switches.enableAll()
-    print(switches.bus.read_byte(PCA_ADDR))
+    try: print(switches.bus.read_byte(PCA_ADDR))
+    except: pass
     #print(switches.bus.read_byte(0x71))
 
 def get_a_bunch(start, stop):
@@ -221,7 +222,7 @@ if __name__ == "__main__":
         flat_list = [item for sublist in ans for item in sublist]
         byte_array = b''.join(struct.pack('f', num) for num in flat_list)
         p = mqttc.publish("/magnets", byte_array, retain=False, qos=0)
-        if DEBUG: print(p)
+        #if DEBUG: print(p)
         print(time(), 0.05 - ( time() - t))
         #print("Magnetic Field (X,Y,Z):", round(x, 1), round(y, 1), round(z, 1))
         sleep(max(0.05 - ( time() - t), 0 ) ) # approx 50 hz like Vex pid
