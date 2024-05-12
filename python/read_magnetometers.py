@@ -5,9 +5,14 @@ bus_number = 0
 
 
 COLUMNS = 8
-ROWS = 2
+ROWS = 1
 
-DEBUG = False
+DEBUG = True
+PCA_OFFSET = 0  # 0 for normal use, 0-7 for debugging a single board that is not yet daisy chained
+PCA_OG_ADDR = 0x70
+TMAG_START_ADDR = 0x35
+PCA_ADDR = PCA_OG_ADDR + PCA_OFFSET
+PCA_TO_PHYSICAL_WIRING_ORDER = [4,5,6,7,0,1,2,3]
 
 class PCAArray:
     def __init__(self):
@@ -16,15 +21,19 @@ class PCAArray:
     # chip from 0 to 7
     def enableOnly(self, chip, line):
         for i in range(0, ROWS):
-            self.bus.write_byte(0x70 + i, 0)
-            if self.bus.read_byte(0x70 + i) != 0: print("ERR WRITING")
+            try: 
+                self.bus.write_byte(PCA_ADDR + i, 0)
+                if self.bus.read_byte(PCA_ADDR + i) != 0: print("ERR WRITING")
+            except: pass
         # enable
-        self.bus.write_byte(0x70 + chip, 1 << line)
+        self.bus.write_byte(PCA_ADDR + chip, 1 << line)
 
 
     def enableAll(self):
         for i in range(0, ROWS):
-            self.bus.write_byte(0x70 + i, 0xFF)
+            try:
+                self.bus.write_byte(PCA_ADDR + i, 0xFF)
+            except: pass
 
 class TMAG5273:
     RANGE = 233
@@ -114,16 +123,20 @@ def init_a_bunch():
     for i in range(ROWS):
         for j in range(COLUMNS):
             n = 0x20 + i * COLUMNS + j
-            j = [4,5,6,7,0,1,2,3][j]
-            switches.enableOnly(i, j)
-            print (f'initalizing {i}, {j} to {hex(n)}')
-            if DEBUG: input('Press enter to config it: ')
+            j = PCA_TO_PHYSICAL_WIRING_ORDER[j]
             try:
-                TMAG5273.init(n)
-            except OSError as e: print(f'already initialized ', e)
+                print (f'initalizing {i}, {j} to {hex(n)}')
+                switches.enableOnly(i, j)
+                if DEBUG: input('Press enter to config it: ')
+                try:
+                    TMAG5273.init(n)
+                except OSError as e: print(f'already initialized ', e)
+ 
+            except Exception as e:
+                print('could not initialize', e)
     switches.enableAll()
-    print(switches.bus.read_byte(0x70))
-    print(switches.bus.read_byte(0x71))
+    print(switches.bus.read_byte(PCA_ADDR))
+    #print(switches.bus.read_byte(0x71))
 
 def get_a_bunch(start, stop):
     ret = []
@@ -202,14 +215,15 @@ if __name__ == "__main__":
     print(mqttc.connect("localhost"))
     mqttc.loop_start()
     while True:
+        t = time()
         ans = get_a_bunch(0x20, 0x20 + ROWS*COLUMNS)
         if DEBUG: print([round(i[2], 1) for i in ans])
         flat_list = [item for sublist in ans for item in sublist]
         byte_array = b''.join(struct.pack('f', num) for num in flat_list)
-        p = mqttc.publish("/magnets", byte_array)
+        p = mqttc.publish("/magnets", byte_array, retain=False, qos=0)
         if DEBUG: print(p)
-        print(time())
+        print(time(), 0.05 - ( time() - t))
         #print("Magnetic Field (X,Y,Z):", round(x, 1), round(y, 1), round(z, 1))
-        sleep(.12)  # approx 50 hz like Vex pid
+        sleep(max(0.05 - ( time() - t), 0 ) ) # approx 50 hz like Vex pid
     mqttc.loop_stop()
     # Wait for some time before the next reading

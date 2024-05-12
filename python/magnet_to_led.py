@@ -1,5 +1,6 @@
 import paho.mqtt.client as mqtt
 import struct
+from time import time, sleep
 
 mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
 
@@ -9,6 +10,7 @@ def clamp(n, smallest, largest): return max(smallest, min(n, largest))
 def on_message(client, userdata, message):
     # userdata is the structure we choose to provide, here it's a list()
     if (message.topic == "/magnets"):
+        if DEBUG: print(time(), end = " ")
         byte_array = message.payload
         decoded_data = []
         float_size = struct.calcsize('f')
@@ -31,6 +33,7 @@ def on_message(client, userdata, message):
 
 
         mqttc.publish("/led", ledstuff)
+        if DEBUG: print(time())
 
 
 
@@ -48,9 +51,13 @@ def on_connect(client, userdata, flags, reason_code, properties):
         client.subscribe("/magnets")
 
 
+mqttc.max_queued_messages_set(2)
 mqttc.on_connect = on_connect
 mqttc.on_message = on_message
 print("connecting")
 print(mqttc.connect("localhost"))
 
-mqttc.loop_forever()
+mqttc.loop_start()
+while True:
+    sleep(.01)
+mqttc.loop_stop()
