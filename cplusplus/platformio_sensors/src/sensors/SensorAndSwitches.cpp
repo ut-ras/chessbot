@@ -1,5 +1,4 @@
 #include <assert.h>
-#include <Arduino.h>
 #include "MagVals.h"
 #include "I2C.cpp"
 #include "utils.hpp"

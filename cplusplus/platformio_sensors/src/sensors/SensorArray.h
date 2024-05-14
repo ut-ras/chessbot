@@ -1,5 +1,5 @@
-#include <Arduino.h>
 #include "MagVals.h"
+#include "utils.hpp"
 
 class SensorArray
 {

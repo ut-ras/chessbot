@@ -1,5 +1,4 @@
 #include <assert.h>
-#include <TinyI2CMaster.h>
 #include "SensorArray.h"
 #include "SensorAndSwitches.cpp"
 
