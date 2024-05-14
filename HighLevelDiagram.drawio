@@ -1,0 +1,31 @@
+<mxfile host="app.diagrams.net" modified="2024-05-14T01:20:55.095Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:121.0) Gecko/20100101 Firefox/121.0" etag="P9i1sNfPKz2eiSfv9HnN" version="24.2.7" type="github">
+  <diagram name="Page-1" id="nCdqRld3pfw7KjP9Pnf6">
+    <mxGraphModel dx="687" dy="976" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="mftfHhQZmoNIgqtyZh9h-1" value="Path Planner" style="html=1;dashed=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="140" y="120" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="mftfHhQZmoNIgqtyZh9h-2" value="&lt;div&gt;Stockfish&lt;/div&gt;&lt;div&gt;(Chess Engine)&lt;br&gt;&lt;/div&gt;" style="html=1;dashed=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="140" y="190" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="mftfHhQZmoNIgqtyZh9h-3" value="LiChess&lt;br&gt;(Online Play)" style="html=1;dashed=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="140" y="260" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="mftfHhQZmoNIgqtyZh9h-4" value="&lt;div&gt;Board Analyzer&lt;/div&gt;" style="html=1;dashed=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="140" y="330" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="mftfHhQZmoNIgqtyZh9h-5" value="Magnet Analyzer" style="html=1;dashed=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="140" y="400" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="mftfHhQZmoNIgqtyZh9h-6" value="&lt;div&gt;i2C Interface&lt;/div&gt;" style="html=1;dashed=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="140" y="470" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="mftfHhQZmoNIgqtyZh9h-7" value="&lt;div&gt;i2C Interface&lt;/div&gt;" style="html=1;dashed=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="140" y="540" width="100" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
