@@ -39,7 +39,7 @@
     (property "Footprint" "0my_project:ESSOP-10_CH224K" (at 17.78 -17.78 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "https://www.laskakit.cz/user/related_files/ch224ds1.pdf" (at -8.89 -20.32 0)
+    (property "Datasheet" "https://akizukidenshi.com/download/ds/wch/CH224.pdf" (at -8.89 -20.32 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "ki_keywords" "USB PD Sink Controller" (at 0 0 0)
