@@ -58,7 +58,7 @@ def on_message(client, userdata, message):
         x2, y2 = [1, 10], [3, 2]
         #plt.plot([0,0], [0,8], marker = 'o')
 
-        path_nums = [int(i) for i in message.payload.decode().split(',')]
+        path_nums = [float(i) for i in message.payload.decode().split(',')]
         path_pts = [tuple(path_nums[i:i+3]) for i in range(0, len(path_nums), 3)]
         print(path_pts)
         for i in range(1, len(path_pts)):

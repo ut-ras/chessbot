@@ -1,0 +1,86 @@
+
+if __name__ == "__main__": print('''test with \nmosquitto_pub -L mqtt://raspberrypi.local:1883//led -m `python -c "import sys; write=sys.stdout.buffer.write; write(b'\\x01z\\x01'*64)"`''')
+import paho.mqtt.client as mqtt
+
+
+# to only take latest quickly (and be idempotent if unplugged), we'll loop seperately
+def square_to_coordinates(square): # Converts chess square to coordinates (e.g., "a1" -> (0, 0))
+    # Converts chess square to coordinates (e.g., "a1" -> (0, 0))
+    #column = ord(square[0]) - ord('a')
+    column = square[0] - ord('a')
+    row = (square[1]) - ord('1')
+    return (column * 1, row * 1)
+
+
+def on_message(client, userdata, message):
+    
+    if (message.topic == "/robotmoves"):
+        print("hi")
+        mes = message.payload
+        from_square, to_square = mes[:2], mes[2:]
+      
+      
+        from_square = square_to_coordinates(from_square)
+        to_square = square_to_coordinates(to_square)
+
+        combined_string = str(from_square[0])+ "," +str(from_square[1]) +  "," +str(1)
+        #either goes up half a sqaure or down half a sqaure then moves horizontal to coordinate half a sqaure from final y
+        #then moves up or down to be half a sqaure a way from final postion 
+        if from_square[1] < to_square[1]:
+            combined_string =combined_string+ ","+str(from_square[0])+ "," +str(from_square[1]+.5) +  ","+str(1)
+            if from_square[0] < to_square[0]:
+                combined_string =combined_string+ ","+str(to_square[0]-.5)+ "," +str(from_square[1]+.5) +  ","+str(1)
+                combined_string = combined_string+ ","+str(to_square[0]-.5)+ "," +str(to_square[1]) +  ","+str(1)
+            elif from_square[0] > to_square[0]:
+                 combined_string =combined_string+ ","+str(to_square[0]+.5)+ "," +str(from_square[1]+.5) +  ","+str(1)
+                 combined_string = combined_string+ ","+str(to_square[0]+.5)+ "," +str(to_square[1]) +  ","+str(1)
+
+
+
+
+        elif  from_square[1] > to_square[1]:
+            combined_string =combined_string+ ","+str(from_square[0])+ "," +str(from_square[1]-.5) +  ","+str(1)
+            if from_square[0] < to_square[0]:
+                combined_string =combined_string+ ","+str(to_square[0]-.5)+ "," +str(from_square[1]-.5) +  ","+str(1)
+                combined_string = combined_string+ ","+str(to_square[0]-.5)+ "," +str(to_square[1]) +  ","+str(1)
+            elif from_square[0] > to_square[0]:
+                 combined_string =combined_string+ ","+str(to_square[0]+.5)+ "," +str(from_square[1]-.5) +  ","+str(1)
+                 combined_string = combined_string+ ","+str(to_square[0]+.5)+ "," +str(to_square[1]) +  ","+str(1)
+            
+        combined_string = combined_string+ ","+str(to_square[0])+ "," +str(to_square[1]) +  "," +str(1)
+        #combined_string = "{},{},{},{},{},{}".format(from_square[0], from_square[1], 1, to_square[0], to_square[1], 1)
+       
+    
+        print(combined_string)
+        print(list(from_square), list(to_square))
+        print(mes)
+        client.publish("/path",combined_string)
+
+
+
+
+        
+
+def on_connect(client, userdata, flags, reason_code, properties):
+    if reason_code.is_failure:
+        print(f"Failed to connect: {reason_code}. loop_forever() will retry connection")
+    else:
+        print(f"Successfully connected")
+        # we should always subscribe from on_connect callback to be sure
+        # our subscribed is persisted across reconnections.
+        client.subscribe("$SYS/#")
+        client.subscribe("/robotmoves")
+        
+
+
+if __name__ == "__main__":
+    mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
+    mqttc.on_connect = on_connect
+    mqttc.on_message = on_message
+    print("connecting")
+    print(mqttc.connect("localhost"))
+    
+    mqttc.loop_forever()
+    
+       
+    
