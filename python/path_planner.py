@@ -25,32 +25,37 @@ def on_message(client, userdata, message):
 
         combined_string = str(from_square[0])+ "," +str(from_square[1]) +  "," +str(1)
         #either goes up half a square or down half a square then moves horizontal to coordinate half a square from final y
-        #then moves up or down to be half a square a way from final postion 
-        if from_square[1] < to_square[1]:
-            combined_string =combined_string+ ","+str(from_square[0])+ "," +str(from_square[1]+.5) +  ","+str(1)
-            if from_square[0] < to_square[0]:
-                combined_string =combined_string+ ","+str(to_square[0]-.5)+ "," +str(from_square[1]+.5) +  ","+str(1)
-                combined_string = combined_string+ ","+str(to_square[0]-.5)+ "," +str(to_square[1]) +  ","+str(1)
-            elif from_square[0] > to_square[0]:
-                 combined_string =combined_string+ ","+str(to_square[0]+.5)+ "," +str(from_square[1]+.5) +  ","+str(1)
-                 combined_string = combined_string+ ","+str(to_square[0]+.5)+ "," +str(to_square[1]) +  ","+str(1)
-
-
-
-
-        elif  from_square[1] > to_square[1]:
-            combined_string =combined_string+ ","+str(from_square[0])+ "," +str(from_square[1]-.5) +  ","+str(1)
-            if from_square[0] < to_square[0]:
-                combined_string =combined_string+ ","+str(to_square[0]-.5)+ "," +str(from_square[1]-.5) +  ","+str(1)
-                combined_string = combined_string+ ","+str(to_square[0]-.5)+ "," +str(to_square[1]) +  ","+str(1)
-            elif from_square[0] > to_square[0]:
-                 combined_string =combined_string+ ","+str(to_square[0]+.5)+ "," +str(from_square[1]-.5) +  ","+str(1)
-                 combined_string = combined_string+ ","+str(to_square[0]+.5)+ "," +str(to_square[1]) +  ","+str(1)
-
+        #then moves up or down to be half a square a way from final postion
+        if from_square[0] == to_square[0]:
+            combined_string =combined_string+ ","+str(from_square[0]+.5)+ "," +str(from_square[1]) +  ","+str(1)
+            combined_string =combined_string+ ","+str(from_square[0]+.5)+ "," +str(to_square[1]) +  ","+str(1)
         else:
-            if from_square[0] != to_square[0]:
+            if from_square[1] < to_square[1]: 
                 combined_string =combined_string+ ","+str(from_square[0])+ "," +str(from_square[1]+.5) +  ","+str(1)
-                combined_string =combined_string+ ","+str(to_square[0])+ "," +str(from_square[1]+.5) +  ","+str(1)
+                if from_square[0] < to_square[0]:
+                    combined_string =combined_string+ ","+str(to_square[0]-.5)+ "," +str(from_square[1]+.5) +  ","+str(1)
+                    combined_string = combined_string+ ","+str(to_square[0]-.5)+ "," +str(to_square[1]) +  ","+str(1)
+                elif from_square[0] > to_square[0]:
+                    combined_string =combined_string+ ","+str(to_square[0]+.5)+ "," +str(from_square[1]+.5) +  ","+str(1)
+                    combined_string = combined_string+ ","+str(to_square[0]+.5)+ "," +str(to_square[1]) +  ","+str(1)
+            
+
+
+
+
+            elif  from_square[1] > to_square[1]:
+                combined_string =combined_string+ ","+str(from_square[0])+ "," +str(from_square[1]-.5) +  ","+str(1)
+                if from_square[0] < to_square[0]:
+                    combined_string =combined_string+ ","+str(to_square[0]-.5)+ "," +str(from_square[1]-.5) +  ","+str(1)
+                    combined_string = combined_string+ ","+str(to_square[0]-.5)+ "," +str(to_square[1]) +  ","+str(1)
+                elif from_square[0] > to_square[0]:
+                    combined_string =combined_string+ ","+str(to_square[0]+.5)+ "," +str(from_square[1]-.5) +  ","+str(1)
+                    combined_string = combined_string+ ","+str(to_square[0]+.5)+ "," +str(to_square[1]) +  ","+str(1)
+
+            else:
+                if from_square[0] != to_square[0]:
+                    combined_string =combined_string+ ","+str(from_square[0])+ "," +str(from_square[1]+.5) +  ","+str(1)
+                    combined_string =combined_string+ ","+str(to_square[0])+ "," +str(from_square[1]+.5) +  ","+str(1)
 
 
             
