@@ -6793,45 +6793,6 @@
 		)
 	)
 	(sheet
-		(at 267.97 19.05)
-		(size 12.7 5.08)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0.0000)
-		)
-		(uuid "4663c501-88fe-41fc-a487-364f1c0319e0")
-		(property "Sheetname" "USB Hub"
-			(at 267.97 18.3384 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "USB.kicad_sch"
-			(at 267.97 24.7146 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(instances
-			(project "controlboard"
-				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941"
-					(page "3")
-				)
-			)
-		)
-	)
-	(sheet
 		(at 81.28 107.95)
 		(size 25.4 33.02)
 		(stroke
