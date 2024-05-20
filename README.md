@@ -59,6 +59,11 @@ python python/bitboard_with_stockfish.py
 
 ## Software
 
+
+### Communication Structure
+![Communication Structure](HighLevelDiagram.drawio.png)
+---
+### Python Files
 - [python/bitboard_with_stockfish.py](python/bitboard_with_stockfish.py) - This is the main file that runs the chess engine. It uses the python-chess library to interface with the Stockfish chess engine. The bitboard implementation is a custom implementation that uses 64-bit integers to represent the chessboard. Makes calls to functions in [python/display_output.py](python/display_output.py), animates the board for a 128x64 display, currently only makes the bitmap.
 
   - Bitboards are 64bit integer representations of the entire chessboard. 8x8 squares = 64 squares, so a digital for each individual square, that digit is 1 when a piece is on the corresponding square and 0 when a piece is absent from the square.

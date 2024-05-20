@@ -1,0 +1,6 @@
+{
+    "files": [
+        "chessbot_gui.py",
+        "form.ui"
+    ]
+}
