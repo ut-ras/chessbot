@@ -76,6 +76,8 @@ def on_message(client, userdata, message):
         # Redraw the plot
         fig.canvas.draw()
         fig.canvas.flush_events()  
+
+        
     elif message.topic == "/boardstate":
         plt.cla()
         plt.close()

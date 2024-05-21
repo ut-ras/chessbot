@@ -1,5 +1,5 @@
 
-if __name__ == "__main__": print('''test with \nmosquitto_pub -L mqtt://raspberrypi.local:1883//led -m `python -c "import sys; write=sys.stdout.buffer.write; write(b'\\x01z\\x01'*64)"`''')
+if __name__ == "__main__": print('''test with \nmosquitto_pub -t /robotmoves -m 'g4a4''')
 import paho.mqtt.client as mqtt
 
 
