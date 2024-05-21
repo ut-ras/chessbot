@@ -6,6 +6,9 @@ from time import sleep
 import matplotlib.patches as patches
 
 
+
+
+
 oldfig= None
 # Enable interactive mode
 plt.ion()
@@ -42,12 +45,14 @@ def on_connect(client, userdata, flags, reason_code, properties):
         # our subscribed is persisted across reconnections.
         client.subscribe("$SYS/#")
         client.subscribe("/path")
+        client.subscribe("/boardstate")
 
 
 
 def on_message(client, userdata, message):
     global oldfig
     if message.topic == "/path":
+        print("message from path planner")
         plt.cla()
         plt.close()
         #if oldfig: oldfig.close()
@@ -66,15 +71,61 @@ def on_message(client, userdata, message):
             b = path_pts[i]
             plt.plot([a[0], b[0]],[a[1], b[1]], marker='o', color = 'green' if b[2] else 'red')
             print(list(a), list(b))
+        oldfig = fig  
+        print("HI", message.topic, message.payload)
+        # Redraw the plot
+        fig.canvas.draw()
+        fig.canvas.flush_events()  
+    elif message.topic == "/boardstate":
+        plt.cla()
+        plt.close()
+        #if oldfig: oldfig.close()
+        im, fig= init_plot()
+        scores = np.zeros((rows, cols))
+        im.set_array(scores)
+        x1, y1 = [0, 0], [1, 4]
+        x2, y2 = [1, 10], [3, 2]
+        mes = message.payload.decode()
+        print("message from boardstate analyzer")
+        mes = int(mes)
+        print(mes)
+        print(bin(mes))
+        mask = 1
+        r = 7
+        c= 0
+        while(r > -1):
+            while(c < 8):
+                result = mask & int(mes)
+                if(result != 0):
+                    print("contains the vaule "+ str(mask)+" or " +str(bin(mask)))
+                    # Define the center and radius of the circle
+                    center = (c, r)
+                    radius = .25
+                    # Generate points along the circumference of the circle
+                    theta = np.linspace(0, 2*np.pi, 100)
+                    x_c = center[0] + radius * np.cos(theta)
+                    y_c = center[1] + radius * np.sin(theta)
+                    #Plot Circle
+                    plt.plot(x_c,y_c)
+                c = c+1
+                mask = mask << 1
+            c = 0
+            r = r-1
         oldfig = fig
-
-
-    
-
         print("HI", message.topic, message.payload)
         # Redraw the plot
         fig.canvas.draw()
         fig.canvas.flush_events()
+
+            
+                
+            
+        
+
+
+
+
+
 
 client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
 client.on_message = on_message
