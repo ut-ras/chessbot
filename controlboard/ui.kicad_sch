@@ -1,0 +1,150 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "be613212-10a9-43fc-9770-7dcac1f2ff2b")
+	(paper "A4")
+	(lib_symbols)
+	(text "It's a Pi hat, so don't need to worry about connectors\n\nmaking this to keep track of free pins"
+		(exclude_from_sim no)
+		(at 56.134 64.262 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "affb8f6b-20f5-44ca-a13d-671079eca991")
+	)
+	(hierarchical_label "3.3V"
+		(shape input)
+		(at 52.07 19.05 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0100a330-8134-432b-9180-45c282f941f2")
+	)
+	(hierarchical_label "LCD_RS"
+		(shape input)
+		(at 52.07 34.29 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "268cdc82-ff8b-44f4-9957-289d3080c7fa")
+	)
+	(hierarchical_label "LCD_SCK {slash} TP_SCK"
+		(shape input)
+		(at 52.07 49.53 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "50dee274-c298-4a89-bcd6-779702c90323")
+	)
+	(hierarchical_label "5V"
+		(shape input)
+		(at 52.07 22.86 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "64d735e4-c5d1-455b-8b7f-9df784d8b8e3")
+	)
+	(hierarchical_label "TP_IRQ"
+		(shape input)
+		(at 52.07 30.48 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "70853856-5306-4b87-a0c9-ff0eff177437")
+	)
+	(hierarchical_label "TP_SO"
+		(shape input)
+		(at 52.07 41.91 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "79d9c5cc-a8a8-4a34-b140-078311f9722a")
+	)
+	(hierarchical_label "RST"
+		(shape input)
+		(at 52.07 45.72 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "86edf46c-c3bf-413e-af98-96cb06bff1e3")
+	)
+	(hierarchical_label "LCD_SI {slash} TP_SI"
+		(shape input)
+		(at 52.07 38.1 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "87139dac-9448-4284-b390-52d048803949")
+	)
+	(hierarchical_label "TP_CS"
+		(shape input)
+		(at 52.07 57.15 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a288cf1b-b736-468b-8e03-9a0697e9b7db")
+	)
+	(hierarchical_label "LCD_CS"
+		(shape input)
+		(at 52.07 53.34 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "aa61fa68-6e68-4ce0-ad51-7e5812868beb")
+	)
+	(hierarchical_label "GND"
+		(shape input)
+		(at 52.07 26.67 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c708864b-70a5-4bb3-a060-b0bdb4e2408e")
+	)
+)

@@ -584,8 +584,20 @@
       "Power"
     ],
     [
-      "4663c501-88fe-41fc-a487-364f1c0319e0",
-      "USB Hub"
+      "5be4ea58-2822-4c96-82fa-ac7323f92cc7",
+      "CNC"
+    ],
+    [
+      "765b86b2-b0cc-4f3c-b57e-87a89e7dcfe3",
+      "UI"
+    ],
+    [
+      "c2db6f1c-d2f1-4706-b337-b813616aa0aa",
+      "ChessBoard"
+    ],
+    [
+      "6637b2c6-7d27-4b13-9f7b-0e59d672e784",
+      "How popular display hats connect"
     ]
   ],
   "text_variables": {}
