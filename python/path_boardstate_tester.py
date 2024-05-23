@@ -113,11 +113,12 @@ def on_message(client, userdata, message):
                 mask = mask << 1
             c = 0
             r = r-1
-                # Redraw the plot and display it
+                
         plt.title("Boardstate Plot")  # Add a title to distinguish plots
         
         oldfig = fig
         print("HI", message.topic, message.payload)
+
         # Redraw the plot
         fig.canvas.draw()
         fig.canvas.flush_events()
