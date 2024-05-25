@@ -1,5 +1,5 @@
 #!/bin/sh
-# dtparam=i2c_arm=on
+# dtparam=i2c_arm=on,i2c_arm_baudrate=200000
 # dtparam=i2s=on
 # dtparam=spi=on
 #
