@@ -20,9 +20,10 @@ def on_message(client, userdata, message):
         if DEBUG: print(len(decoded_data), float_size)
         ledstuff = b''
         for i in range(len(decoded_data)):
-            z = int(decoded_data[i][2] * 20) 
-            if abs(z) < 8: z = 0 # deadband
-            z = clamp(z, -255, 255)
+            z = decoded_data[i][2]
+            if abs(z) < 1.5: z = 0 # deadband
+            z = int(z * 5) 
+            z = clamp(z, -40, 40)
             if DEBUG: print(z)
             if DEBUG: print(decoded_data[i][2], z, max(0, z).to_bytes(1), max(0, -z).to_bytes(1))
 
