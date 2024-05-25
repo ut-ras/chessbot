@@ -7,7 +7,7 @@ import time
 import threading
 
 DEBUG = False
-p = neopixel.NeoPixel(board.D18, 64)
+p = neopixel.NeoPixel(board.D12, 68)
 
 # to only take latest quickly (and be idempotent if unplugged), we'll loop seperately
 lock = threading.Lock()

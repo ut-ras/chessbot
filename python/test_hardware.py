@@ -19,7 +19,9 @@ for i in range(8):
         for j in range(8):
             j = PCA_TO_PHYSICAL_WIRING_ORDER[j]
             print(bin(1<<j), ' ' * (8-j), end= " " )
-            bus.write_byte(PCA_OG_ADDR+i, 1 << j)
+            try: bus.write_byte(PCA_OG_ADDR+i, 1 << j)
+            except Exception as e: print("e", e)
+
             try:
                 data = bus.read_i2c_block_data(TMAG_START_ADDR, 0xD, 3)
                 print("O" if data[1:2+1] == [0x49, 0x54] else "X data" + str([hex(i) for i in data]))
@@ -37,9 +39,9 @@ for j in range(3): #RGB
     elif j == 1: print("green")
     else: print("blue")
     p.fill((0,0,0))
-    for i in range(9):
+    for i in range(68):
         a = [0,0,0]
-        a[j] = 40 
+        a[j] = 20 
         p[i] = a
         p.show()
         sleep(.20)
