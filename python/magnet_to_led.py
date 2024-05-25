@@ -1,22 +1,28 @@
 import paho.mqtt.client as mqtt
 import struct
 from time import time, sleep
+from typing import List, Tuple
 
 mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
 
 DEBUG = False
+
+def decode_mag_msg(byte_array: bytearray) -> List[Tuple[float, float, float]]:
+    decoded_data = []
+    float_size = struct.calcsize('f')
+    for i in range(0, len(byte_array), float_size):
+        decoded_data.append(struct.unpack('f', byte_array[i:i+float_size])[0])
+    decoded_data = [tuple(decoded_data[i:i+3]) for i in range(0, len(decoded_data), 3)]
+    return decoded_data
+
+
 def clamp(n, smallest, largest): return max(smallest, min(n, largest))
 
 def on_message(client, userdata, message):
     # userdata is the structure we choose to provide, here it's a list()
     if (message.topic == "/magnets"):
         if DEBUG: print(time(), end = " ")
-        byte_array = message.payload
-        decoded_data = []
-        float_size = struct.calcsize('f')
-        for i in range(0, len(byte_array), float_size):
-            decoded_data.append(struct.unpack('f', byte_array[i:i+float_size])[0])
-        decoded_data = [tuple(decoded_data[i:i+3]) for i in range(0, len(decoded_data), 3)]
+        decoded_data = decode_mag_msg(message.payload)
         if DEBUG: print(len(decoded_data), float_size)
         ledstuff = b''
         for i in range(len(decoded_data)):
@@ -52,13 +58,14 @@ def on_connect(client, userdata, flags, reason_code, properties):
         client.subscribe("/magnets")
 
 
-mqttc.max_queued_messages_set(2)
-mqttc.on_connect = on_connect
-mqttc.on_message = on_message
-print("connecting")
-print(mqttc.connect("localhost"))
-
-mqttc.loop_start()
-while True:
-    sleep(.01)
-mqttc.loop_stop()
+if __name__ == "__main__":
+    mqttc.max_queued_messages_set(2)
+    mqttc.on_connect = on_connect
+    mqttc.on_message = on_message
+    print("connecting")
+    print(mqttc.connect("localhost"))
+    
+    mqttc.loop_start()
+    while True:
+        sleep(.01)
+    mqttc.loop_stop()

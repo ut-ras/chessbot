@@ -23,22 +23,22 @@ def on_message(client, userdata, message):
         from_square = square_to_coordinates(from_square)
         to_square = square_to_coordinates(to_square)
 
-        combined_string = str(from_square[0])+ "," +str(from_square[1]) +  "," +str(1)
+        combined_string = str(from_square[0])+ "," +str(from_square[1]) 
         #either goes up half a square or down half a square then moves horizontal to coordinate half a square from final y
         #then moves up or down to be half a square a way from final postion
         #if from_square[0] == to_square[0]:
-            #combined_string =combined_string+ ","+str(from_square[0]+.5)+ "," +str(from_square[1]) +  ","+str(1)
-            #combined_string =combined_string+ ","+str(from_square[0]+.5)+ "," +str(to_square[1]) +  ","+str(1)
+            #combined_string =combined_string+ ","+str(from_square[0]+.5)+ "," +str(from_square[1]) 
+            #combined_string =combined_string+ ","+str(from_square[0]+.5)+ "," +str(to_square[1]) 
         #else:
         if from_square[1] < to_square[1]: 
             if from_square[0] != to_square[0]:
-                combined_string =combined_string+ ","+str(from_square[0])+ "," +str(from_square[1]+.5) +  ","+str(1)
+                combined_string =combined_string+ ","+str(from_square[0])+ "," +str(from_square[1]+.5) 
             if from_square[0] < to_square[0]:
-                combined_string =combined_string+ ","+str(to_square[0]-.5)+ "," +str(from_square[1]+.5) +  ","+str(1)
-                combined_string = combined_string+ ","+str(to_square[0]-.5)+ "," +str(to_square[1]) +  ","+str(1)
+                combined_string =combined_string+ ","+str(to_square[0]-.5)+ "," +str(from_square[1]+.5) 
+                combined_string = combined_string+ ","+str(to_square[0]-.5)+ "," +str(to_square[1])
             elif from_square[0] > to_square[0]:
-                combined_string =combined_string+ ","+str(to_square[0]+.5)+ "," +str(from_square[1]+.5) +  ","+str(1)
-                combined_string = combined_string+ ","+str(to_square[0]+.5)+ "," +str(to_square[1]) +  ","+str(1)
+                combined_string =combined_string+ ","+str(to_square[0]+.5)+ "," +str(from_square[1]+.5)
+                combined_string = combined_string+ ","+str(to_square[0]+.5)+ "," +str(to_square[1]) 
             
 
 
@@ -46,19 +46,19 @@ def on_message(client, userdata, message):
 
         elif from_square[1] > to_square[1]:
             if from_square[0] != to_square[0]:
-                combined_string =combined_string+ ","+str(from_square[0])+ "," +str(from_square[1]-.5) +  ","+str(1)
+                combined_string =combined_string+ ","+str(from_square[0])+ "," +str(from_square[1]-.5) 
             if from_square[0] < to_square[0]:
-                combined_string =combined_string+ ","+str(to_square[0]-.5)+ "," +str(from_square[1]-.5) +  ","+str(1)
-                combined_string = combined_string+ ","+str(to_square[0]-.5)+ "," +str(to_square[1]) +  ","+str(1)
+                combined_string =combined_string+ ","+str(to_square[0]-.5)+ "," +str(from_square[1]-.5) 
+                combined_string = combined_string+ ","+str(to_square[0]-.5)+ "," +str(to_square[1]) 
             elif from_square[0] > to_square[0]:
-                combined_string =combined_string+ ","+str(to_square[0]+.5)+ "," +str(from_square[1]-.5) +  ","+str(1)
-                combined_string = combined_string+ ","+str(to_square[0]+.5)+ "," +str(to_square[1]) +  ","+str(1)
+                combined_string =combined_string+ ","+str(to_square[0]+.5)+ "," +str(from_square[1]-.5) 
+                combined_string = combined_string+ ","+str(to_square[0]+.5)+ "," +str(to_square[1]) 
 
         #else:
             #if from_square[0] != to_square[0]:
                 #combined_string =combined_string+ ","+str(from_square[0])+ "," +str(from_square[1]+.5) +  ","+str(1)
                 #combined_string =combined_string+ ","+str(to_square[0])+ "," +str(from_square[1]+.5) +  ","+str(1)
-        combined_string = combined_string+ ","+str(to_square[0])+ "," +str(to_square[1]) +  "," +str(1)
+        combined_string = combined_string+ ","+str(to_square[0])+ "," +str(to_square[1]) 
         #combined_string = "{},{},{},{},{},{}".format(from_square[0], from_square[1], 1, to_square[0], to_square[1], 1)
         print(combined_string)
         print(list(from_square), list(to_square))
@@ -87,7 +87,7 @@ if __name__ == "__main__":
     mqttc.on_connect = on_connect
     mqttc.on_message = on_message
     print("connecting")
-    print(mqttc.connect("localhost"))
+    print(mqttc.connect("chessbot"))
     
     mqttc.loop_forever()
     
