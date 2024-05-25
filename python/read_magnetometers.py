@@ -1,40 +1,57 @@
 import smbus
 from time import sleep, time
+from i2cdev import I2C
 
-bus_number = 0
+bus_number = 1
 
 
 COLUMNS = 8
-ROWS = 1
+ROWS = 8
 
-DEBUG = True
+DEBUG = False
 PCA_OFFSET = 0  # 0 for normal use, 0-7 for debugging a single board that is not yet daisy chained
 PCA_OG_ADDR = 0x70
 TMAG_START_ADDR = 0x35
 PCA_ADDR = PCA_OG_ADDR + PCA_OFFSET
 PCA_TO_PHYSICAL_WIRING_ORDER = [4,5,6,7,0,1,2,3]
 
+ban_addrs = banned_addresses_that_are_being_mean_to_me = [0x36 , 0x33, 0x34, 0x35, 0x3d]
+
+ban_adr = [((i - 0x20) // COLUMNS, PCA_TO_PHYSICAL_WIRING_ORDER.index((i-0x20) % COLUMNS)) for i in banned_addresses_that_are_being_mean_to_me]
+
 class PCAArray:
     def __init__(self):
         self.bus = smbus.SMBus(bus_number)
-
-    # chip from 0 to 7
-    def enableOnly(self, chip, line):
+    def softDisableAll(self):
         for i in range(0, ROWS):
             try: 
-                self.bus.write_byte(PCA_ADDR + i, 0)
-                if self.bus.read_byte(PCA_ADDR + i) != 0: print("ERR WRITING")
+                pigpio.i2c_write_byte(self.pcas[i], 0)
+                #if .read_byte(PCA_ADDR + i) != 0: print("ERR WRITING")
+                # TODO
             except: pass
+     
+    # chip from 0 to 7
+    def enableOnly(self, chip, line):
+        self.softDisableAll()
         # enable
         self.bus.write_byte(PCA_ADDR + chip, 1 << line)
-
-
+    def unsafeEnableRow(self, chip):
+        on = 0xff
+        for chp, sq in ban_adr:
+            if chip == chp:
+                on &= ~(1 << sq)
+        #print(bin(on), chip)
+        self.bus.write_byte(PCA_ADDR + chip, on)
+    def unsafeDisableRow(self, chip):
+        self.bus.write_byte(PCA_ADDR + chip, 0x00)
     def enableAll(self):
         for i in range(0, ROWS):
             try:
-                self.bus.write_byte(PCA_ADDR + i, 0xFF)
+                self.bus.write_byte(PCA_ADDR + i, enabled_cells[i])
             except: pass
+switches = PCAArray()
 
+tmagcache = {}
 class TMAG5273:
     RANGE = 233
     def __init__(self, addr):
@@ -53,7 +70,7 @@ class TMAG5273:
         thing[0] |= 0 << 7; #NO TODO IT DOESN"T LIKE IT # Enable CRC
         # ignore magtempcompensation
         thing[0] |= 0x5 << 2; # 32x averaging = 400 samples / sec
-        thing[0] |= 0x0; #NO TODO     # 16 bit, 1-byte fast read command
+        thing[0] |= 0x1; # 16 bit, 1-byte fast read command
 
         # cfg 2
         # ignore threshold stuff
@@ -95,10 +112,21 @@ class TMAG5273:
         # Wait for the measurement to complete (adjust the delay according to the datasheet)
         #sleep(0.1)
         # Read 6 bytes of data (X, Y, Z magnetic field values)
-        data = self.bus.read_i2c_block_data(self.device_address, 0x10, 9)
+
+        if self.device_address in ban_addrs:
+            return 0,0,0
+        if self.device_address not in tmagcache:
+            tmagcache[self.device_address] = I2C(self.device_address, bus_number)
+        i2c = tmagcache[self.device_address]
+        #data = self.bus.read_i2c_block_data(self.device_address, 0x12, 6)
+        data1 = list(bytearray(i2c.read(8)))         # read 1 byte
+        data1 = data1[2:]
+        #i2c.close()                 # close connection
+
+        #print(data == data1, data, data1)
         #print(len(data))
         #print(data)
-        data = data[2:]
+        data = data1
         x = twos_complement_int(data[1], data[0]) * self.RANGE  / 2**15
         y = twos_complement_int(data[3], data[2]) * self.RANGE  / 2**15
         z = twos_complement_int(data[5], data[4]) * self.RANGE  / 2**15
@@ -117,9 +145,7 @@ def twos_complement_int(LSB, MSB):
     else:
         return value
 
-
 def init_a_bunch():
-    switches = PCAArray()
     for i in range(ROWS):
         for j in range(COLUMNS):
             n = 0x20 + i * COLUMNS + j
@@ -134,20 +160,30 @@ def init_a_bunch():
  
             except Exception as e:
                 print('could not initialize', e)
-    switches.enableAll()
+        #switches.enableAll(); input("row boundary") # for debug, enable all after each row
+    #switches.enableAll()
     try: print(switches.bus.read_byte(PCA_ADDR))
     except: pass
     #print(switches.bus.read_byte(0x71))
 
 def get_a_bunch(start, stop):
     ret = []
+    switches.softDisableAll()
     for i in range(start, stop):
+        y,x = (i-0x20) // COLUMNS, (i-0x20) % COLUMNS
+        if x==0:
+            switches.unsafeEnableRow(y)
+
+        #if DEBUG: input("enabling " + str((y)))
         tmag5273 = TMAG5273(i)
         try:
             ret.append(tmag5273.read_magnetism())
-        except OSError:
-            print("err on", i)
+        except OSError as e:
+            print("err on", hex(i), e)
             ret.append((0,0,0))
+
+        if x==7:
+            switches.unsafeDisableRow(y)
     return ret
 
 
@@ -223,8 +259,8 @@ if __name__ == "__main__":
         byte_array = b''.join(struct.pack('f', num) for num in flat_list)
         p = mqttc.publish("/magnets", byte_array, retain=False, qos=0)
         #if DEBUG: print(p)
-        print(time(), 0.05 - ( time() - t))
+        #print(time(), 0.03 - ( time() - t))
         #print("Magnetic Field (X,Y,Z):", round(x, 1), round(y, 1), round(z, 1))
-        sleep(max(0.05 - ( time() - t), 0 ) ) # approx 50 hz like Vex pid
+        sleep(max(0.03 - ( time() - t), 0 ) ) # approx 50 hz like Vex pid
     mqttc.loop_stop()
     # Wait for some time before the next reading
