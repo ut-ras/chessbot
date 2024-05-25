@@ -3323,6 +3323,12 @@
 		(uuid "b97b59e1-588f-47d0-a541-293e2861d321")
 	)
 	(junction
+		(at 234.95 73.66)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c236e148-daa0-4d9f-a19a-fd889e32d465")
+	)
+	(junction
 		(at 90.17 137.16)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3388,7 +3394,7 @@
 	)
 	(wire
 		(pts
-			(xy 232.41 73.66) (xy 240.03 73.66)
+			(xy 232.41 73.66) (xy 234.95 73.66)
 		)
 		(stroke
 			(width 0)
@@ -3405,6 +3411,16 @@
 			(type default)
 		)
 		(uuid "57817dd0-ebf5-4709-8e7a-910da014ae31")
+	)
+	(wire
+		(pts
+			(xy 234.95 73.66) (xy 240.03 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "63634271-2e5e-4b0e-b488-4826f5c276e6")
 	)
 	(wire
 		(pts
@@ -3606,6 +3622,26 @@
 			)
 		)
 		(uuid "807a4075-36da-4c05-b6d7-26e7acb54ad9")
+	)
+	(text "Our motors take 3.7ohm * 1A, 8W, worst case 16 prob\n+ 12V 10 ohms = 1.2A for emag (oof, that's a lot LOT)\n\nso let's say 2A for the subsystem VMOT\n\nNom: 10W motor, 6W emag with PWM -> 1.4A"
+		(exclude_from_sim no)
+		(at 78.232 162.306 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "96afae34-d06c-4a25-9a53-6868878fa5fc")
+	)
+	(text "~30 mA / on VIO pins\n"
+		(exclude_from_sim no)
+		(at 78.486 154.178 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "e2f8ae17-43ec-49b4-979f-70b73bb64e26")
 	)
 	(label "VMOT"
 		(at 92.71 52.07 0)
@@ -4086,6 +4122,76 @@
 			(project "controlboard"
 				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5be4ea58-2822-4c96-82fa-ac7323f92cc7"
 					(reference "J2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Polarized")
+		(at 234.95 77.47 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1049ea90-63a5-4c4d-b515-92d6ebbb98d3")
+		(property "Reference" "C6"
+			(at 235.712 80.518 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "C_Polarized"
+			(at 238.76 77.8509 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 235.9152 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 234.95 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Polarized capacitor"
+			(at 234.95 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "b0bab3b0-367b-4674-a274-b8ab0c27ad18")
+		)
+		(pin "1"
+			(uuid "8b85b924-d922-4716-b01b-8b42dff5e890")
+		)
+		(instances
+			(project "controlboard"
+				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5be4ea58-2822-4c96-82fa-ac7323f92cc7"
+					(reference "C6")
 					(unit 1)
 				)
 			)
@@ -5122,6 +5228,73 @@
 			(project "controlboard"
 				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5be4ea58-2822-4c96-82fa-ac7323f92cc7"
 					(reference "JP3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 234.95 81.28 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7e3af231-a3c0-4a63-a94e-ba3b47f5c8de")
+		(property "Reference" "#PWR025"
+			(at 234.95 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 234.95 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 234.95 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 234.95 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 234.95 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b42cb5f0-0ff1-44f4-9ef0-8a9783fbf10c")
+		)
+		(instances
+			(project "controlboard"
+				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5be4ea58-2822-4c96-82fa-ac7323f92cc7"
+					(reference "#PWR025")
 					(unit 1)
 				)
 			)

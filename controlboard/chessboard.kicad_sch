@@ -1314,6 +1314,12 @@
 		(uuid "2c5f3c10-d5e6-4e29-ba64-12177659f96c")
 	)
 	(junction
+		(at 240.03 128.27)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7227f25b-3c40-4018-92f4-cdd499427867")
+	)
+	(junction
 		(at 182.88 69.85)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1331,6 +1337,12 @@
 		(color 0 0 0 0)
 		(uuid "effd6eb0-20d5-4ced-b9c6-8af6e858e316")
 	)
+	(junction
+		(at 240.03 140.97)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f9eb2e48-c1c8-423a-9a83-63d146991104")
+	)
 	(wire
 		(pts
 			(xy 222.25 74.93) (xy 219.71 74.93)
@@ -1343,6 +1355,16 @@
 	)
 	(wire
 		(pts
+			(xy 260.35 128.27) (xy 259.08 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0aead89d-9bbf-466f-8c7d-d7588688e85f")
+	)
+	(wire
+		(pts
 			(xy 243.84 74.93) (xy 240.03 74.93)
 		)
 		(stroke
@@ -1350,6 +1372,16 @@
 			(type default)
 		)
 		(uuid "16c2c3a1-b678-495b-ab98-a3ccb31931a6")
+	)
+	(wire
+		(pts
+			(xy 226.06 140.97) (xy 219.71 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "20a2a712-ecb2-4913-8b30-6426419ebe0c")
 	)
 	(wire
 		(pts
@@ -1393,6 +1425,16 @@
 	)
 	(wire
 		(pts
+			(xy 260.35 140.97) (xy 260.35 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6ff88156-2ceb-44c9-b5cc-05180aa16197")
+	)
+	(wire
+		(pts
 			(xy 233.68 87.63) (xy 240.03 87.63)
 		)
 		(stroke
@@ -1400,6 +1442,16 @@
 			(type default)
 		)
 		(uuid "7026040f-6896-436c-bc57-e300f523dca9")
+	)
+	(wire
+		(pts
+			(xy 219.71 140.97) (xy 219.71 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "730f01b5-a971-4e31-b9fe-e8ed01dee9f1")
 	)
 	(wire
 		(pts
@@ -1430,6 +1482,36 @@
 			(type default)
 		)
 		(uuid "8b5e0e8b-e561-4dd7-8cf3-df478851ce19")
+	)
+	(wire
+		(pts
+			(xy 247.65 140.97) (xy 240.03 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "96742df6-03b9-483f-8673-3c31fd035f2e")
+	)
+	(wire
+		(pts
+			(xy 219.71 128.27) (xy 220.98 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9727a514-aff9-46c9-98c3-ad85fcb79d0f")
+	)
+	(wire
+		(pts
+			(xy 251.46 118.11) (xy 251.46 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a0624579-91a6-4746-af61-4f0ec7d74f42")
 	)
 	(wire
 		(pts
@@ -1473,6 +1555,46 @@
 	)
 	(wire
 		(pts
+			(xy 236.22 128.27) (xy 240.03 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c73df0a4-9284-43c4-b965-a117f13e6fc6")
+	)
+	(wire
+		(pts
+			(xy 255.27 140.97) (xy 260.35 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ca815724-c517-4f40-84f6-edf9097cb2c8")
+	)
+	(wire
+		(pts
+			(xy 228.6 118.11) (xy 228.6 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cbbc09f3-917c-45a8-ae24-49dc55c796a9")
+	)
+	(wire
+		(pts
+			(xy 233.68 140.97) (xy 240.03 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cef8f92e-bd2e-4394-84b0-2e3e4fa5d69a")
+	)
+	(wire
+		(pts
 			(xy 187.96 69.85) (xy 182.88 69.85)
 		)
 		(stroke
@@ -1511,6 +1633,66 @@
 		)
 		(uuid "ef6acac9-3b64-4d66-a3b5-24b181160168")
 	)
+	(wire
+		(pts
+			(xy 240.03 128.27) (xy 243.84 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f56cebb0-d37e-4de5-8da8-63dd7e51a18f")
+	)
+	(wire
+		(pts
+			(xy 240.03 140.97) (xy 240.03 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fa5a2208-84c5-4ef6-8d7d-1dccdb118b45")
+	)
+	(text "Max: 5V 68 * 36mA = 2.5A\nNom: 5V 68 * 12mA = .9A"
+		(exclude_from_sim no)
+		(at 176.784 58.166 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "2c8a97dd-c8d2-4d32-b3ed-4c8da78ade8e")
+	)
+	(text "two pixels onboard for debugging/status stuff"
+		(exclude_from_sim no)
+		(at 241.808 96.774 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "38fefb95-c046-4af8-9c33-f5ff9c878c21")
+	)
+	(text "two more at the end cuz we're cool 😎\n      + can you ever have too much RGB?\n"
+		(exclude_from_sim no)
+		(at 241.554 148.082 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "7a87858f-280d-469c-9d65-42fb63392916")
+	)
+	(text "3.3V: 64 * 5mA + 8 * 20mA = 480mA"
+		(exclude_from_sim no)
+		(at 179.324 95.758 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "b2c54818-e14e-485c-a516-5fb7cc4614f5")
+	)
 	(text "LED_IN is ~5V, BE CAREFUL"
 		(exclude_from_sim no)
 		(at 200.66 77.724 0)
@@ -1520,6 +1702,17 @@
 			)
 		)
 		(uuid "cc20107f-d4c7-4d84-8b59-e3dfab9cdcaf")
+	)
+	(label "LED_IN"
+		(at 260.35 128.27 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "60fa4ddb-3935-4a42-8bc6-f9af292c460b")
 	)
 	(label "RESERVED"
 		(at 187.96 69.85 0)
@@ -1531,6 +1724,29 @@
 			(justify left bottom)
 		)
 		(uuid "6b531af7-7632-4dab-975d-4f7926f3c401")
+	)
+	(label "LED_IN"
+		(at 179.07 77.47 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "70ac1a31-9528-48a8-8403-6d6448e841f5")
+	)
+	(hierarchical_label "LED_IN"
+		(shape input)
+		(at 219.71 128.27 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "061ad7bd-495c-4117-a274-e9ed830fadb4")
 	)
 	(hierarchical_label "3V3"
 		(shape input)
@@ -1592,9 +1808,9 @@
 		)
 		(uuid "ae11f455-529f-45c6-8682-6f017f1e7f98")
 	)
-	(hierarchical_label "LED_IN"
+	(hierarchical_label "5V"
 		(shape input)
-		(at 179.07 77.47 0)
+		(at 228.6 118.11 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1602,7 +1818,19 @@
 			)
 			(justify left)
 		)
-		(uuid "cc4ddeda-2d2a-4d2a-8ee0-f82e8124a325")
+		(uuid "bd5b05fa-e373-4d28-bd83-0cd7cf70e064")
+	)
+	(hierarchical_label "5V"
+		(shape input)
+		(at 251.46 118.11 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d5875069-b64f-4766-a371-455fd00e6769")
 	)
 	(hierarchical_label "5V"
 		(shape input)
@@ -1627,6 +1855,73 @@
 			(justify left)
 		)
 		(uuid "ff6be948-88af-4671-8269-c6d1cd9e3123")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 251.46 135.89 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "09267f08-9453-4421-aae2-a38309883d9f")
+		(property "Reference" "#PWR017"
+			(at 251.46 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 251.46 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 251.46 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 251.46 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 251.46 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3081814e-327c-4dfb-a65f-d205a11e0b63")
+		)
+		(instances
+			(project "controlboard"
+				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/c2db6f1c-d2f1-4706-b337-b813616aa0aa"
+					(reference "#PWR017")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x08")
@@ -2084,6 +2379,151 @@
 		)
 	)
 	(symbol
+		(lib_id "Jumper:SolderJumper_2_Open")
+		(at 251.46 140.97 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "71fe3a07-68a4-4498-b1d4-1b2280f3bbbe")
+		(property "Reference" "JP18"
+			(at 251.46 143.764 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SolderJumper_2_Open"
+			(at 251.46 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 251.46 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 251.46 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Solder Jumper, 2-pole, open"
+			(at 251.46 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "daaa5052-4bc2-47ac-bc00-e45eb5a372a8")
+		)
+		(pin "2"
+			(uuid "97b384dd-74f3-453d-90fd-c46821271fb2")
+		)
+		(instances
+			(project "controlboard"
+				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/c2db6f1c-d2f1-4706-b337-b813616aa0aa"
+					(reference "JP18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B")
+		(at 251.46 128.27 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "903019b1-a09c-433f-b292-97b4522f8e2c")
+		(property "Reference" "D14"
+			(at 262.89 121.9514 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "WS2812B"
+			(at 262.89 124.4914 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
+			(at 250.19 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf"
+			(at 248.92 137.795 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED with integrated controller"
+			(at 251.46 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e6f6751f-c7df-4b88-aa7d-32f59baa9057")
+		)
+		(pin "2"
+			(uuid "688438a3-d0ad-4260-8638-350b572ca069")
+		)
+		(pin "3"
+			(uuid "a87c2f70-228b-4d8b-9c8c-f29282cbf43d")
+		)
+		(pin "4"
+			(uuid "2884e77d-064e-48b2-8c40-c9aefd1d99a6")
+		)
+		(instances
+			(project "controlboard"
+				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/c2db6f1c-d2f1-4706-b337-b813616aa0aa"
+					(reference "D14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 251.46 82.55 0)
 		(unit 1)
@@ -2145,6 +2585,83 @@
 			(project "controlboard"
 				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/c2db6f1c-d2f1-4706-b337-b813616aa0aa"
 					(reference "#PWR039")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B")
+		(at 228.6 128.27 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ae4b3955-f32d-423e-9095-4bfc368b3c0e")
+		(property "Reference" "D15"
+			(at 240.03 121.9514 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "WS2812B"
+			(at 240.03 124.4914 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
+			(at 227.33 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf"
+			(at 226.06 137.795 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED with integrated controller"
+			(at 228.6 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3cc1c744-626b-4744-81d6-d5842ae80323")
+		)
+		(pin "2"
+			(uuid "9973bb7e-d555-4fc0-9bb8-ed08f6b00d2a")
+		)
+		(pin "3"
+			(uuid "cd72b7d7-9ac2-47a0-abbf-0596fac23027")
+		)
+		(pin "4"
+			(uuid "a4db77db-865b-420e-975e-6e2fac45b3c2")
+		)
+		(instances
+			(project "controlboard"
+				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/c2db6f1c-d2f1-4706-b337-b813616aa0aa"
+					(reference "D15")
 					(unit 1)
 				)
 			)
@@ -2287,6 +2804,73 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 228.6 135.89 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d2180fb6-9d62-4a01-86f4-f8d7ea785842")
+		(property "Reference" "#PWR021"
+			(at 228.6 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 228.6 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 228.6 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 228.6 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 228.6 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c92d2639-2f85-4b63-a5c5-1272c1a09d8a")
+		)
+		(instances
+			(project "controlboard"
+				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/c2db6f1c-d2f1-4706-b337-b813616aa0aa"
+					(reference "#PWR021")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:D")
 		(at 251.46 63.5 90)
 		(unit 1)
@@ -2369,6 +2953,74 @@
 			(project "controlboard"
 				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/c2db6f1c-d2f1-4706-b337-b813616aa0aa"
 					(reference "D9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Jumper:SolderJumper_2_Open")
+		(at 229.87 140.97 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "e8a6b45c-9e4e-4a6a-aa1b-9d620a7a6b6e")
+		(property "Reference" "JP8"
+			(at 229.87 143.764 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SolderJumper_2_Open"
+			(at 229.87 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 229.87 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 229.87 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Solder Jumper, 2-pole, open"
+			(at 229.87 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7756e5af-06a1-4178-934f-a8302db3bc7b")
+		)
+		(pin "2"
+			(uuid "6c329dd1-d2a1-4f71-8a4e-80d673f7f78d")
+		)
+		(instances
+			(project "controlboard"
+				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/c2db6f1c-d2f1-4706-b337-b813616aa0aa"
+					(reference "JP8")
 					(unit 1)
 				)
 			)

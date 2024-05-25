@@ -15,6 +15,16 @@
 		)
 		(uuid "affb8f6b-20f5-44ca-a13d-671079eca991")
 	)
+	(text "5V 200mA"
+		(exclude_from_sim no)
+		(at 48.768 76.962 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "c1285316-cd5e-4f85-b77c-9268dc991d1c")
+	)
 	(hierarchical_label "3.3V"
 		(shape input)
 		(at 52.07 19.05 0)
