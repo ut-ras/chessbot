@@ -1,0 +1,200 @@
+(footprint "mini560"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(descr "Through hole straight socket strip, 1x05, 2.54mm pitch, single row (from Kicad 4.0.7), script generated")
+	(tags "Through hole socket strip THT 1x05 2.54mm single row")
+	(property "Reference" "REF**"
+		(at -1.27 -1.27 90)
+		(layer "F.SilkS")
+		(uuid "997d1552-1d83-4682-82a1-6a143a819aeb")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "mini560"
+		(at 18.796 -1.91 90)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "2e6ef013-bd7b-4e31-b312-571c00a61577")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Footprint" ""
+		(at 5.73 -1.91 90)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "7b342312-f245-4dec-b50c-aea74a4f4b39")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 5.73 -1.91 90)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "ab89d6ea-9482-4656-be87-cf67dba35213")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" "mini560 5V 5A buck converter"
+		(at -7.874 4.572 90)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "274b08b7-4d50-4203-b7b3-66d65eaba2e5")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_rect
+		(start 0.034 -29.972)
+		(end 18.034 0.028)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill none)
+		(layer "F.SilkS")
+		(uuid "c0ef746b-b9b9-47c9-a3d6-5bfe71fb7f90")
+	)
+	(fp_rect
+		(start 6.35 -7.62)
+		(end 6.604 -7.366)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill none)
+		(layer "F.SilkS")
+		(uuid "b072439f-953a-4f0a-801f-b383ef8644dc")
+	)
+	(fp_rect
+		(start -0.254 -13.462)
+		(end 6.604 -4.826)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill none)
+		(layer "F.CrtYd")
+		(uuid "44268a84-b998-435c-897d-f532ffebf574")
+	)
+	(pad "1" thru_hole rect
+		(at 2 -28 90)
+		(size 4 2.54)
+		(drill 1
+			(offset 1 0)
+		)
+		(property pad_prop_castellated)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "8026be11-daa0-4a48-a9f8-ebc97ea8091b")
+	)
+	(pad "1" thru_hole rect
+		(at 4.54 -28 90)
+		(size 4 2.54)
+		(drill 1
+			(offset 1 0)
+		)
+		(property pad_prop_castellated)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "554b4a3e-1e59-4861-9567-475e64710fae")
+	)
+	(pad "2" thru_hole rect
+		(at 13.46 -28 90)
+		(size 4 2.54)
+		(drill 1
+			(offset 1 0)
+		)
+		(property pad_prop_castellated)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "e1fa8dc9-db9d-469c-9c57-925bc1d9fbb4")
+	)
+	(pad "2" thru_hole rect
+		(at 16 -28 90)
+		(size 4 2.54)
+		(drill 1
+			(offset 1 0)
+		)
+		(property pad_prop_castellated)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "5274e09e-4843-4861-8cc9-57b6dd832077")
+	)
+	(pad "3" thru_hole rect
+		(at 2 -2 270)
+		(size 4 2.54)
+		(drill 1
+			(offset 1 0)
+		)
+		(property pad_prop_castellated)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "22a9455c-1ec2-4f67-b6b4-fb8090d2cf58")
+	)
+	(pad "3" thru_hole rect
+		(at 4.54 -2 270)
+		(size 4 2.54)
+		(drill 1
+			(offset 1 0)
+		)
+		(property pad_prop_castellated)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "351ac394-3faa-416e-80cf-0cfbfccc2a36")
+	)
+	(pad "4" thru_hole rect
+		(at 13.46 -2 270)
+		(size 4 2.54)
+		(drill 1
+			(offset 1 0)
+		)
+		(property pad_prop_castellated)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "64116c64-82f9-463b-bda6-b2902afb0cbc")
+	)
+	(pad "4" thru_hole rect
+		(at 16 -2 270)
+		(size 4 2.54)
+		(drill 1
+			(offset 1 0)
+		)
+		(property pad_prop_castellated)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "110443ab-ba82-4469-8866-b52abbe02878")
+	)
+	(model "${KICAD8_3DMODEL_DIR}/Connector_PinSocket_2.54mm.3dshapes/PinSocket_1x05_P2.54mm_Vertical.wrl"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

@@ -490,7 +490,7 @@
     },
     "bom_presets": [],
     "bom_settings": {
-      "exclude_dnp": false,
+      "exclude_dnp": true,
       "fields_ordered": [
         {
           "group_by": false,
@@ -614,6 +614,10 @@
       "Power"
     ],
     [
+      "6730c4ed-849e-4137-aae0-c93a08939ea9",
+      "eFuse ${R1} ${R2} ${R3} ${RILIM} #1"
+    ],
+    [
       "5be4ea58-2822-4c96-82fa-ac7323f92cc7",
       "CNC"
     ],
@@ -626,8 +630,12 @@
       "ChessBoard"
     ],
     [
-      "6637b2c6-7d27-4b13-9f7b-0e59d672e784",
-      "How popular display hats connect"
+      "6f35b5a2-4903-498d-a87f-00926de2e745",
+      "eFuse ${R1} ${R2} ${R3} ${RILIM} #2"
+    ],
+    [
+      "c4ae39fe-dfab-4842-91d5-7d80cdea31e1",
+      "eFuse ${R1} ${R2} ${R3} ${RILIM}"
     ]
   ],
   "text_variables": {}
