@@ -9,25 +9,23 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "U4"
-				(at 0.9241 -12.7 0)
+			(property "Reference" "U"
+				(at 2.54 15.24 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
 			(property "Value" "CH224K"
-				(at 0.9241 -15.24 0)
+				(at 5.08 -11.43 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
-			(property "Footprint" "0chessbot-parts:SSOP-10-1EP_3.9x4.9mm_P1mm_EP2.1x3.3mm"
+			(property "Footprint" "0my_project:ESSOP-10_CH224K"
 				(at 17.78 -17.78 0)
 				(effects
 					(font
@@ -75,24 +73,6 @@
 						)
 					)
 					(number "0"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -1.27 12.7 270)
-					(length 2.54)
-					(name "VDD"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -155,7 +135,7 @@
 					)
 				)
 				(pin bidirectional line
-					(at -8.89 -5.08 0)
+					(at -8.89 5.08 0)
 					(length 2.54)
 					(name "DP"
 						(effects
@@ -173,7 +153,7 @@
 					)
 				)
 				(pin bidirectional line
-					(at -8.89 -2.54 0)
+					(at -8.89 2.54 0)
 					(length 2.54)
 					(name "DM"
 						(effects
@@ -191,7 +171,7 @@
 					)
 				)
 				(pin bidirectional line
-					(at -8.89 2.54 0)
+					(at -8.89 -3.81 0)
 					(length 2.54)
 					(name "CC2"
 						(effects
@@ -209,7 +189,7 @@
 					)
 				)
 				(pin bidirectional line
-					(at -8.89 5.08 0)
+					(at -8.89 -1.27 0)
 					(length 2.54)
 					(name "CC1"
 						(effects
@@ -219,24 +199,6 @@
 						)
 					)
 					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 2.54 12.7 270)
-					(length 2.54)
-					(name "VBUS"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -255,6 +217,44 @@
 						)
 					)
 					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "CH224K_1_0"
+				(pin bidirectional line
+					(at -1.27 12.7 270)
+					(length 2.54)
+					(name "VDD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 2.54 12.7 270)
+					(length 2.54)
+					(name "VBUS"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3085,12 +3085,108 @@
 				)
 			)
 		)
+		(symbol "power:PWR_FLAG"
+			(power)
+			(pin_numbers hide)
+			(pin_names
+				(offset 0) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#FLG"
+				(at 0 1.905 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "PWR_FLAG"
+				(at 0 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Special symbol for telling ERC where power comes from"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "flag power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "PWR_FLAG_0_0"
+				(pin power_out line
+					(at 0 0 90)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "PWR_FLAG_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+		)
 	)
 	(junction
-		(at 46.99 45.72)
+		(at 93.98 113.03)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "16e34f19-2ecf-4474-887e-413e1724afdb")
+		(uuid "176ead21-7eb1-441e-8495-9a8d36aaa328")
 	)
 	(junction
 		(at 236.22 33.02)
@@ -3103,6 +3199,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "2a625a89-e0ca-4d1c-bdeb-5281a81d1491")
+	)
+	(junction
+		(at 48.26 19.05)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "30af3e33-7598-42c2-a26f-8784d8610fc6")
 	)
 	(junction
 		(at 53.34 19.05)
@@ -3195,12 +3297,6 @@
 		(uuid "9b887607-f75f-4ee8-9386-f97c4d057bbf")
 	)
 	(junction
-		(at 93.98 113.665)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a97f8037-c588-4e53-a165-a2d87ed18ed4")
-	)
-	(junction
 		(at 85.09 58.42)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3241,6 +3337,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e50ba43b-c614-4b76-91aa-5dc2f5ad0cdf")
+	)
+	(junction
+		(at 46.99 44.45)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f372fabe-a648-4974-9d3f-63c8c31d4d0e")
 	)
 	(no_connect
 		(at 229.87 35.56)
@@ -3318,6 +3420,16 @@
 	)
 	(wire
 		(pts
+			(xy 66.04 46.99) (xy 66.04 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b986bb6-018a-46ee-9820-77a656ad0444")
+	)
+	(wire
+		(pts
 			(xy 60.96 24.13) (xy 62.23 24.13)
 		)
 		(stroke
@@ -3335,6 +3447,16 @@
 			(type default)
 		)
 		(uuid "1ed076e0-b9f7-4895-a24d-d5ed5ae6db6b")
+	)
+	(wire
+		(pts
+			(xy 93.98 114.3) (xy 93.98 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "215bf082-1c11-4faa-a134-e715fb8f1b25")
 	)
 	(wire
 		(pts
@@ -3358,7 +3480,7 @@
 	)
 	(wire
 		(pts
-			(xy 46.99 45.72) (xy 66.04 45.72)
+			(xy 46.99 44.45) (xy 66.04 44.45)
 		)
 		(stroke
 			(width 0)
@@ -3398,7 +3520,7 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 115.57) (xy 107.95 115.57)
+			(xy 93.98 114.3) (xy 107.95 114.3)
 		)
 		(stroke
 			(width 0)
@@ -3528,16 +3650,6 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 113.665) (xy 93.98 115.57)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5d6243db-e0c7-45a1-8aaf-e520a6d65ae0")
-	)
-	(wire
-		(pts
 			(xy 180.34 45.72) (xy 181.61 45.72)
 		)
 		(stroke
@@ -3588,7 +3700,7 @@
 	)
 	(wire
 		(pts
-			(xy 46.99 19.05) (xy 53.34 19.05)
+			(xy 46.99 19.05) (xy 48.26 19.05)
 		)
 		(stroke
 			(width 0)
@@ -3728,7 +3840,7 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 111.76) (xy 93.98 113.665)
+			(xy 93.98 111.76) (xy 93.98 113.03)
 		)
 		(stroke
 			(width 0)
@@ -3805,6 +3917,16 @@
 			(type default)
 		)
 		(uuid "a55f9025-2487-4d41-817a-bc2d4d1a54d9")
+	)
+	(wire
+		(pts
+			(xy 46.99 44.45) (xy 46.99 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a778afa7-054b-4611-b4db-457071be9af2")
 	)
 	(wire
 		(pts
@@ -3898,7 +4020,7 @@
 	)
 	(wire
 		(pts
-			(xy 46.99 43.18) (xy 46.99 45.72)
+			(xy 46.99 43.18) (xy 46.99 44.45)
 		)
 		(stroke
 			(width 0)
@@ -3945,6 +4067,16 @@
 			(type default)
 		)
 		(uuid "d6e2ec7d-ca5a-415b-956b-255e77d71dae")
+	)
+	(wire
+		(pts
+			(xy 48.26 19.05) (xy 53.34 19.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e46cb88a-a262-4af4-8f01-21c83cc72ca4")
 	)
 	(wire
 		(pts
@@ -4345,7 +4477,7 @@
 	)
 	(hierarchical_label "SERVO_5V"
 		(shape input)
-		(at 107.95 115.57 0)
+		(at 107.95 114.3 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4627,6 +4759,72 @@
 			(project "controlboard"
 				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5fab4b81-761e-4fae-b113-00364a75fd9a"
 					(reference "#PWR08")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 48.26 19.05 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "17005f48-6258-4cd9-accb-a18c5812d2a5")
+		(property "Reference" "#FLG01"
+			(at 48.26 17.145 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 48.26 13.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 48.26 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 48.26 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 48.26 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b89941ce-c37f-4992-b7ba-8c023f920430")
+		)
+		(instances
+			(project "controlboard"
+				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5fab4b81-761e-4fae-b113-00364a75fd9a"
+					(reference "#FLG01")
 					(unit 1)
 				)
 			)
@@ -6149,7 +6347,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
 			(at 255.27 76.2 0)
 			(effects
 				(font
@@ -6824,7 +7022,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
 			(at 240.03 76.2 0)
 			(effects
 				(font
@@ -7213,7 +7411,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "0chessbot-parts:SSOP-10-1EP_3.9x4.9mm_P1mm_EP2.1x3.3mm"
+		(property "Footprint" "0my_project:ESSOP-10_CH224K"
 			(at 92.71 60.96 0)
 			(effects
 				(font
@@ -7766,7 +7964,7 @@
 			(uuid "08e92811-5d80-4946-9382-aace4cbc29ba")
 		)
 		(pin "OUT" input
-			(at 93.98 113.665 0)
+			(at 93.98 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)

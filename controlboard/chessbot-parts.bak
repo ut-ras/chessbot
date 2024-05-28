@@ -1321,7 +1321,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at -11.43 0 0)
+				(at -11.43 -2.54 0)
 				(length 2.54)
 				(name "OVLO"
 					(effects
