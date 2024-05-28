@@ -5,166 +5,6 @@
 	(uuid "2797250d-6fee-4769-b4dd-0e20ce4f0941")
 	(paper "A4")
 	(lib_symbols
-		(symbol "Connector:Conn_01x02_Pin"
-			(pin_names
-				(offset 1.016) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J"
-				(at 0 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Conn_01x02_Pin"
-				(at 0 -5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Generic connector, single row, 01x02, script generated"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_locked" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "connector"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Connector*:*_1x??_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Conn_01x02_Pin_1_1"
-				(polyline
-					(pts
-						(xy 1.27 -2.54) (xy 0.8636 -2.54)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 0) (xy 0.8636 0)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 0.8636 -2.413)
-					(end 0 -2.667)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start 0.8636 0.127)
-					(end 0 -0.127)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(pin passive line
-					(at 5.08 0 180)
-					(length 3.81)
-					(name "Pin_1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 -2.54 180)
-					(length 3.81)
-					(name "Pin_2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "Connector:TestPoint"
 			(pin_numbers hide)
 			(pin_names
@@ -2540,12 +2380,6 @@
 		(uuid "0ecd0955-1b74-43ce-bc32-ad8eadc14a33")
 	)
 	(junction
-		(at 176.53 66.04)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "31a9ea2e-e016-40cc-8815-d94ce288458c")
-	)
-	(junction
 		(at 100.33 45.72)
 		(diameter 1.016)
 		(color 0 0 0 0)
@@ -2580,12 +2414,6 @@
 		(diameter 1.016)
 		(color 0 0 0 0)
 		(uuid "fc562f8e-c8ae-44c6-96b3-4b43e8189967")
-	)
-	(junction
-		(at 176.53 55.88)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "fd5d130a-6544-4ffe-b3b0-49f539ee88ac")
 	)
 	(no_connect
 		(at 74.93 105.41)
@@ -2730,16 +2558,6 @@
 			(type solid)
 		)
 		(uuid "1c7004fb-7674-4208-ac04-128202330565")
-	)
-	(wire
-		(pts
-			(xy 184.15 62.23) (xy 184.15 66.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1e3e441e-6c91-433c-8f3e-a7992e1c2d5b")
 	)
 	(wire
 		(pts
@@ -2923,16 +2741,6 @@
 	)
 	(wire
 		(pts
-			(xy 184.15 55.88) (xy 176.53 55.88)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "514d69cb-7c3f-4f41-8700-0e5ee2b41e1b")
-	)
-	(wire
-		(pts
 			(xy 82.55 53.34) (xy 85.09 53.34)
 		)
 		(stroke
@@ -3020,16 +2828,6 @@
 			(type solid)
 		)
 		(uuid "68bb4534-99be-436b-97e8-d8208871dbe7")
-	)
-	(wire
-		(pts
-			(xy 184.15 59.69) (xy 184.15 55.88)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6972eca3-7279-4cb8-a9be-84cc77dcb653")
 	)
 	(wire
 		(pts
@@ -3670,16 +3468,6 @@
 			(type default)
 		)
 		(uuid "f90c00f7-110c-4f51-a850-fc90a0c8cc53")
-	)
-	(wire
-		(pts
-			(xy 184.15 66.04) (xy 176.53 66.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f921e41f-b832-4979-9412-81e4bd29c3e5")
 	)
 	(wire
 		(pts
@@ -5112,6 +4900,7 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+				(hide yes)
 			)
 		)
 		(property "Value" "SW_Push TODO FP CHECK"
@@ -6601,7 +6390,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical"
 			(at 276.86 139.7 0)
 			(effects
 				(font
@@ -6967,76 +6756,6 @@
 			(project "controlboard"
 				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941"
 					(reference "#PWR032")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:Conn_01x02_Pin")
-		(at 189.23 62.23 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ba65aacd-d595-403d-be93-1935eb6c98bd")
-		(property "Reference" "J10"
-			(at 190.5 59.6899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "Conn_01x02_Pin"
-			(at 190.5 62.2299 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 189.23 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 189.23 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x02, script generated"
-			(at 189.23 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "ce5a9de7-c855-4126-a2f9-2b41a72b43ef")
-		)
-		(pin "2"
-			(uuid "21ed10f2-ddea-45da-813c-26d05f199f97")
-		)
-		(instances
-			(project "controlboard"
-				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941"
-					(reference "J10")
 					(unit 1)
 				)
 			)
