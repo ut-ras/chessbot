@@ -78,8 +78,8 @@ def init_boardstate():
 def render_boardstate():
     global latest_message, ax, items
     mes = int(latest_message.get("/boardstate", b'0').decode())
-    print(mes)
-    print(bin(mes))
+    #print(mes)
+    #print(bin(mes))
     mask = 1
     r = 7
     c= 0
@@ -88,7 +88,7 @@ def render_boardstate():
         while(c < 8):
             result = mask & int(mes)
             if(result != 0):
-                print("contains the vaule "+ str(mask)+" or " +str(bin(mask)))
+                #print("contains the vaule "+ str(mask)+" or " +str(bin(mask)))
                 # Define the center and radius of the circle
                 center = (c, r)
                 radius = .25
