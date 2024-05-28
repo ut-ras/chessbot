@@ -2989,151 +2989,6 @@
 				)
 			)
 		)
-		(symbol "Switch:SW_Push"
-			(pin_numbers hide)
-			(pin_names
-				(offset 1.016) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "SW"
-				(at 1.27 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "SW_Push"
-				(at 0 -1.524 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Push button switch, generic, two pins"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "switch normally-open pushbutton push-button"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "SW_Push_0_1"
-				(circle
-					(center -2.032 0)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 1.27) (xy 0 3.048)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 1.27) (xy -2.54 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.032 0)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 0 180)
-					(length 2.54)
-					(name "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "power:GND"
 			(power)
 			(pin_numbers hide)
@@ -3236,12 +3091,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "16e34f19-2ecf-4474-887e-413e1724afdb")
-	)
-	(junction
-		(at 87.63 40.64)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "1eb01a08-b6e3-44d6-a8bb-8aa8e630a9f0")
 	)
 	(junction
 		(at 236.22 33.02)
@@ -3364,12 +3213,6 @@
 		(uuid "aa4cdd0c-319e-46d6-aa1d-2723fde8b549")
 	)
 	(junction
-		(at 99.06 40.64)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c3f0291b-a894-475a-a47c-53b0a5afc38f")
-	)
-	(junction
 		(at 73.66 58.42)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3442,6 +3285,16 @@
 			(type default)
 		)
 		(uuid "0b5e2510-edf5-452b-9d5c-da35f1765f1b")
+	)
+	(wire
+		(pts
+			(xy 86.36 40.64) (xy 83.82 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0ef61317-fb76-48b3-9db9-50dd2e59dc65")
 	)
 	(wire
 		(pts
@@ -3535,7 +3388,7 @@
 	)
 	(wire
 		(pts
-			(xy 88.9 31.75) (xy 87.63 31.75)
+			(xy 88.9 31.75) (xy 86.36 31.75)
 		)
 		(stroke
 			(width 0)
@@ -3725,7 +3578,7 @@
 	)
 	(wire
 		(pts
-			(xy 87.63 31.75) (xy 87.63 40.64)
+			(xy 86.36 31.75) (xy 86.36 40.64)
 		)
 		(stroke
 			(width 0)
@@ -4092,26 +3945,6 @@
 			(type default)
 		)
 		(uuid "d6e2ec7d-ca5a-415b-956b-255e77d71dae")
-	)
-	(wire
-		(pts
-			(xy 87.63 40.64) (xy 88.9 40.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "dfb44336-cc81-401b-92e0-19fcfab04f9e")
-	)
-	(wire
-		(pts
-			(xy 83.82 40.64) (xy 87.63 40.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e196dd20-1cb3-4aa0-8c5e-a2b16ad60b71")
 	)
 	(wire
 		(pts
@@ -4498,6 +4331,18 @@
 		)
 		(uuid "784194eb-29dd-4333-97a3-cccc58e15633")
 	)
+	(hierarchical_label "PWR_SW_A"
+		(shape input)
+		(at 86.36 36.83 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "79684eda-ee09-4287-a1cd-e73da6f2e961")
+	)
 	(hierarchical_label "SERVO_5V"
 		(shape input)
 		(at 107.95 115.57 0)
@@ -4509,6 +4354,18 @@
 			(justify left)
 		)
 		(uuid "9a018b13-6a7a-4890-b5a2-9fcb29414649")
+	)
+	(hierarchical_label "PWR_SW_B"
+		(shape input)
+		(at 99.06 40.64 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e21eecf6-825d-456b-8601-12bb09cc1d79")
 	)
 	(hierarchical_label "CNC_VIO"
 		(shape input)
@@ -4910,73 +4767,6 @@
 			(project "controlboard"
 				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5fab4b81-761e-4fae-b113-00364a75fd9a"
 					(reference "JP5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 93.98 40.64 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "1cbbe8c2-0716-4bc5-81de-3cd2c09df935")
-		(property "Reference" "SW3"
-			(at 93.98 35.306 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Main Power Switch/EStop"
-			(at 93.98 36.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical"
-			(at 93.98 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 93.98 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 93.98 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "566b1753-a622-4df6-9dd6-3773245eecd4")
-		)
-		(pin "1"
-			(uuid "cb3eacd8-72fd-43ea-b8b3-7ed547a76006")
-		)
-		(instances
-			(project "controlboard"
-				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5fab4b81-761e-4fae-b113-00364a75fd9a"
-					(reference "SW3")
 					(unit 1)
 				)
 			)

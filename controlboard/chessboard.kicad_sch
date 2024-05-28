@@ -1627,12 +1627,6 @@
 		(color 0 0 0 0)
 		(uuid "f9eb2e48-c1c8-423a-9a83-63d146991104")
 	)
-	(junction
-		(at 176.53 71.12)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "fb5a7137-7942-45ef-adcb-1c69ab13df27")
-	)
 	(wire
 		(pts
 			(xy 222.25 74.93) (xy 219.71 74.93)
@@ -1935,16 +1929,6 @@
 	)
 	(wire
 		(pts
-			(xy 179.07 71.12) (xy 176.53 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d29c8a88-80d9-4679-945f-de93b43e9a0b")
-	)
-	(wire
-		(pts
 			(xy 115.57 95.25) (xy 123.19 95.25)
 		)
 		(stroke
@@ -2067,6 +2051,16 @@
 		)
 		(uuid "7a87858f-280d-469c-9d65-42fb63392916")
 	)
+	(text "RESERVED"
+		(exclude_from_sim no)
+		(at 184.15 70.104 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "962e1b27-1af2-4f44-8c81-3fad2035f153")
+	)
 	(text "3.3V: 64 * 5mA + 8 * 20mA = 480mA"
 		(exclude_from_sim no)
 		(at 205.994 37.846 0)
@@ -2118,17 +2112,6 @@
 			(justify left bottom)
 		)
 		(uuid "60fa4ddb-3935-4a42-8bc6-f9af292c460b")
-	)
-	(label "RESERVED"
-		(at 179.07 71.12 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "6b531af7-7632-4dab-975d-4f7926f3c401")
 	)
 	(label "LED_IN_REAL"
 		(at 168.91 58.42 90)
