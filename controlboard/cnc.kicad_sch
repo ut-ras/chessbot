@@ -3968,6 +3968,16 @@
 	)
 	(wire
 		(pts
+			(xy 109.22 55.88) (xy 109.22 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "10668d54-b5bc-4c73-9b3e-691a3630f472")
+	)
+	(wire
+		(pts
 			(xy 276.86 128.27) (xy 276.86 125.73)
 		)
 		(stroke
@@ -4238,6 +4248,16 @@
 	)
 	(wire
 		(pts
+			(xy 22.86 54.61) (xy 22.86 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6a5766cd-3255-4d78-84d9-a7d69c033877")
+	)
+	(wire
+		(pts
 			(xy 101.6 146.05) (xy 121.92 146.05)
 		)
 		(stroke
@@ -4498,7 +4518,17 @@
 	)
 	(wire
 		(pts
-			(xy 119.38 64.77) (xy 119.38 63.5)
+			(xy 99.06 55.88) (xy 99.06 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c7068381-ffd1-4c70-a745-85d37f008041")
+	)
+	(wire
+		(pts
+			(xy 119.38 55.88) (xy 119.38 64.77)
 		)
 		(stroke
 			(width 0)
@@ -4628,7 +4658,7 @@
 	)
 	(wire
 		(pts
-			(xy 64.77 63.5) (xy 64.77 62.23)
+			(xy 64.77 54.61) (xy 64.77 63.5)
 		)
 		(stroke
 			(width 0)
@@ -4645,6 +4675,16 @@
 			(type default)
 		)
 		(uuid "ecf0c34f-c8b5-444d-864c-8d6300c849dc")
+	)
+	(wire
+		(pts
+			(xy 54.61 54.61) (xy 54.61 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f3763e3c-8f7e-4b8f-ac6c-14aaa786e6c3")
 	)
 	(wire
 		(pts
@@ -4665,6 +4705,16 @@
 			(type default)
 		)
 		(uuid "f8946250-c61d-4c9f-92ce-f93147fc2ef4")
+	)
+	(wire
+		(pts
+			(xy 44.45 54.61) (xy 44.45 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fced11b2-4363-44aa-94a1-d72a06812ff2")
 	)
 	(rectangle
 		(start 13.335 44.45)
@@ -4726,6 +4776,16 @@
 		)
 		(uuid aab858a6-b195-45df-94e0-79f5880f334c)
 	)
+	(text "TODO: Double check that all GPIO pins used by LEDs have resistors (pretty sure they do)"
+		(exclude_from_sim no)
+		(at 67.818 72.644 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "04b5bdc4-aacf-4671-9343-90f3a1a9086b")
+	)
 	(text "Optional (TBD)"
 		(exclude_from_sim no)
 		(at 125.73 37.592 0)
@@ -4736,7 +4796,7 @@
 		)
 		(uuid "0b1074e9-c013-4707-8b9a-ca33210e7e35")
 	)
-	(text "TODO TVS FPs, PNs, temporarily assuming sod-123"
+	(text "Assuming sod-123 TVS, will select part numbers later"
 		(exclude_from_sim no)
 		(at 107.188 16.002 0)
 		(effects
@@ -4787,6 +4847,16 @@
 		)
 		(uuid "450e6d41-f724-4799-9dad-60b9d76c3103")
 	)
+	(text "TODO: is this circuit correct"
+		(exclude_from_sim no)
+		(at 238.76 19.304 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "4fb7b9db-6bbb-49b9-ac48-6ceb0d4d29d7")
+	)
 	(text "Limit Switches"
 		(exclude_from_sim no)
 		(at 262.636 114.808 0)
@@ -4827,9 +4897,9 @@
 		)
 		(uuid "78f05cbd-3816-47c1-9cdc-fbe0358994af")
 	)
-	(text "TODO DOUBLE CHECK WIRING"
+	(text "TODO DOUBLE CHECK THAT PINOUT/SYMBOL/WIRING IS CORRECT FOR MP6500 POLOLU"
 		(exclude_from_sim no)
-		(at 170.434 78.232 0)
+		(at 185.42 93.98 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4846,6 +4916,16 @@
 			)
 		)
 		(uuid "96afae34-d06c-4a25-9a53-6868878fa5fc")
+	)
+	(text "Using software pullups"
+		(exclude_from_sim no)
+		(at 269.748 142.24 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "9a13f855-054f-4190-88ec-d7b31aaff3d0")
 	)
 	(text "skipping resistors since GPIO pins are 1k"
 		(exclude_from_sim no)
@@ -4982,18 +5062,6 @@
 			(justify left)
 		)
 		(uuid "1effbe78-ea3f-4fe2-8ff1-126e6cbe8363")
-	)
-	(hierarchical_label "VMOT"
-		(shape input)
-		(at 269.24 67.31 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "22cb25d6-6cb0-4c69-81cd-002aec284ccd")
 	)
 	(hierarchical_label "(CS{slash}I1)2"
 		(shape input)
@@ -5175,18 +5243,6 @@
 		)
 		(uuid "66dcc9c5-9e2f-4def-8cbb-297a5698478c")
 	)
-	(hierarchical_label "VIO"
-		(shape input)
-		(at 255.27 73.66 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "674a1fc4-3dc4-4b90-a18c-c6f62fd7101a")
-	)
 	(hierarchical_label "SERVO_VIN"
 		(shape input)
 		(at 129.54 22.86 0)
@@ -5198,30 +5254,6 @@
 			(justify left)
 		)
 		(uuid "6c4b699e-709a-42c4-9fd9-e9cc16332d74")
-	)
-	(hierarchical_label "ENBL"
-		(shape input)
-		(at 77.47 63.5 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "6de7f979-48b4-4f50-a85b-69659501e6a1")
-	)
-	(hierarchical_label "VMOT"
-		(shape input)
-		(at 77.47 48.26 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "71cb8b4c-7996-429b-91ec-12373ad8b886")
 	)
 	(hierarchical_label "SERVO_VIN"
 		(shape input)
@@ -5282,6 +5314,18 @@
 			(justify right)
 		)
 		(uuid "829bcbd4-43ca-4d6d-abea-fa01159eb024")
+	)
+	(hierarchical_label "VMOT"
+		(shape input)
+		(at 255.27 73.66 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "851c4003-1b28-4994-8a6f-53fede911aaf")
 	)
 	(hierarchical_label "SDI{slash}MS1"
 		(shape input)
@@ -5366,6 +5410,18 @@
 			(justify left)
 		)
 		(uuid "8eee3647-90e6-4f4d-849f-5a3bd632c75f")
+	)
+	(hierarchical_label "VIO"
+		(shape input)
+		(at 269.24 67.31 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "94b569e5-db15-464b-8d0e-b395c3c1d37a")
 	)
 	(hierarchical_label "VMOT"
 		(shape input)
@@ -5605,75 +5661,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 99.06 59.69 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "01ac97ed-7e66-445a-9cba-2a82471ac396")
-		(property "Reference" "R26"
-			(at 96.52 58.4199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "0"
-			(at 96.52 60.9599 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 97.282 59.69 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 99.06 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 99.06 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "235987af-c8a7-41fa-b6ad-1effa1dbd05d")
-		)
-		(pin "1"
-			(uuid "432453b9-508d-454a-990d-84451552d42e")
-		)
-		(instances
-			(project "controlboard"
-				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5be4ea58-2822-4c96-82fa-ac7323f92cc7"
-					(reference "R26")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 44.45 62.23 0)
 		(unit 1)
@@ -5802,76 +5789,6 @@
 			(project "controlboard"
 				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5be4ea58-2822-4c96-82fa-ac7323f92cc7"
 					(reference "#PWR027")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 77.47 59.69 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "0f0f7568-17e3-465d-826e-caa006699e45")
-		(property "Reference" "R25"
-			(at 80.01 58.4199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "0"
-			(at 80.01 60.9599 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 75.692 59.69 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 77.47 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 77.47 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "1a3d8fba-3463-4032-ba5b-b5710f941295")
-		)
-		(pin "1"
-			(uuid "80520b47-afa8-44f7-b932-be4e4f0707ff")
-		)
-		(instances
-			(project "controlboard"
-				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5be4ea58-2822-4c96-82fa-ac7323f92cc7"
-					(reference "R25")
 					(unit 1)
 				)
 			)
@@ -6126,75 +6043,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 44.45 58.42 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "1e287417-86bb-4c54-8046-351ca161d0ff")
-		(property "Reference" "R24"
-			(at 41.91 57.1499 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "0"
-			(at 41.91 59.6899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 42.672 58.42 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 44.45 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 44.45 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "fe030fd9-1418-407b-9457-9580e022c100")
-		)
-		(pin "1"
-			(uuid "130eb0c4-09dd-43b8-8e97-1bda4ef8d190")
-		)
-		(instances
-			(project "controlboard"
-				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5be4ea58-2822-4c96-82fa-ac7323f92cc7"
-					(reference "R24")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 55.88 27.94 0)
 		(mirror y)
@@ -6424,7 +6272,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "G"
+		(property "Value" "Y"
 			(at 26.67 53.6574 90)
 			(effects
 				(font
@@ -7054,76 +6902,6 @@
 			(project "controlboard"
 				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5be4ea58-2822-4c96-82fa-ac7323f92cc7"
 					(reference "#PWR013")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:LED")
-		(at 77.47 52.07 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "5cfcfec0-8a02-49d9-a2da-104af7d6c3a9")
-		(property "Reference" "D22"
-			(at 81.28 52.3874 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "G"
-			(at 81.28 54.9274 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
-			(at 77.47 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 77.47 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Light emitting diode"
-			(at 77.47 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "e03d225a-87ab-40b4-8ea9-9a86b733edaf")
-		)
-		(pin "2"
-			(uuid "4eed2154-29a3-4f2d-877f-7910cd9135ea")
-		)
-		(instances
-			(project "controlboard"
-				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5be4ea58-2822-4c96-82fa-ac7323f92cc7"
-					(reference "D22")
 					(unit 1)
 				)
 			)
@@ -8155,76 +7933,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 54.61 58.42 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a73a1cb9-4872-428b-bee5-4da14f681d4d")
-		(property "Reference" "R23"
-			(at 52.07 57.1499 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "0"
-			(at 52.07 59.6899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 52.832 58.42 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 54.61 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 54.61 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "c93443d3-af22-484b-93e2-48bc6b6b3371")
-		)
-		(pin "1"
-			(uuid "175f6d4b-7ef7-49dc-9934-015f115b54a4")
-		)
-		(instances
-			(project "controlboard"
-				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5be4ea58-2822-4c96-82fa-ac7323f92cc7"
-					(reference "R23")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:D_TVS")
 		(at 129.54 27.94 90)
 		(unit 1)
@@ -8288,146 +7996,6 @@
 			(project "controlboard"
 				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5be4ea58-2822-4c96-82fa-ac7323f92cc7"
 					(reference "D18")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 119.38 59.69 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b6adfb84-e919-4dd7-9f1c-ba1402402f34")
-		(property "Reference" "R28"
-			(at 116.84 58.4199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "0"
-			(at 116.84 60.9599 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 117.602 59.69 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 119.38 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 119.38 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "c9d0e624-2af7-403d-a64b-df7eef48b347")
-		)
-		(pin "1"
-			(uuid "59049914-7116-4b76-8631-96da4bde1aee")
-		)
-		(instances
-			(project "controlboard"
-				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5be4ea58-2822-4c96-82fa-ac7323f92cc7"
-					(reference "R28")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 64.77 58.42 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "bb54ae48-584f-467c-b883-be14e718f25f")
-		(property "Reference" "R22"
-			(at 62.23 57.1499 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "0"
-			(at 62.23 59.6899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 62.992 58.42 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 64.77 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 64.77 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "8cd3d779-e658-4ba4-960c-15211991cbb2")
-		)
-		(pin "1"
-			(uuid "27657231-432e-4a8f-a437-770fd55884c0")
-		)
-		(instances
-			(project "controlboard"
-				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5be4ea58-2822-4c96-82fa-ac7323f92cc7"
-					(reference "R22")
 					(unit 1)
 				)
 			)
@@ -9155,76 +8723,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 109.22 59.69 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f16a2720-3bec-4461-8fef-5b34180c8cfb")
-		(property "Reference" "R27"
-			(at 106.68 58.4199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "0"
-			(at 106.68 60.9599 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 107.442 59.69 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 109.22 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 109.22 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "f186282b-e685-463c-a16b-50ade354aac7")
-		)
-		(pin "1"
-			(uuid "43ac4c46-50ee-4e94-9656-7d54e3cd0740")
-		)
-		(instances
-			(project "controlboard"
-				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5be4ea58-2822-4c96-82fa-ac7323f92cc7"
-					(reference "R27")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 99.06 63.5 0)
 		(unit 1)
@@ -9286,76 +8784,6 @@
 			(project "controlboard"
 				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5be4ea58-2822-4c96-82fa-ac7323f92cc7"
 					(reference "#PWR034")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 22.86 58.42 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "fafd7fe8-d1ea-4059-a026-7fd81c2fba50")
-		(property "Reference" "R21"
-			(at 25.4 57.1499 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "0"
-			(at 25.4 59.6899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 21.082 58.42 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 22.86 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 22.86 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "c3fcf090-4b00-4f9c-99a7-7a3de0ea2fe1")
-		)
-		(pin "1"
-			(uuid "dd31f3d4-8e08-4d5b-b21f-01b4595cbf22")
-		)
-		(instances
-			(project "controlboard"
-				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5be4ea58-2822-4c96-82fa-ac7323f92cc7"
-					(reference "R21")
 					(unit 1)
 				)
 			)
