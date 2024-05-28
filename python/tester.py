@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import Dict, Text
 import paho.mqtt.client as mqtt
 import matplotlib as mp
 import numpy as np
@@ -9,6 +9,7 @@ from matplotlib.collections import PatchCollection
 from magnet_to_led import decode_mag_msg
 from matplotlib.widgets import CheckButtons
 from matplotlib.patches import Circle, FancyArrowPatch, Arrow
+from util.matplotlib_text_collection import TextCollection
 
 fig, ax, items, check = None, None, {}, None
 # Define the chessboard size
@@ -17,7 +18,9 @@ rows, cols = 8, 8
 # Create a chessboard pattern
 
 
-latest_message: Dict[str, bytearray] = {}
+latest_message: Dict[str, bytearray] = {
+    "moves": [(b"none", "/robotmoves"), (b"NONE", "/playermoves")]
+}
 
 
 # different views
@@ -25,7 +28,11 @@ latest_message: Dict[str, bytearray] = {}
 def init_mag():
     global ax
     items["mag_z"] = ax.imshow(
-        np.zeros((rows, cols)), alpha=0.5, cmap="bwr", interpolation="nearest", clim=(-5, 5)
+        np.zeros((rows, cols)),
+        alpha=0.5,
+        cmap="bwr",
+        interpolation="nearest",
+        clim=(-5, 5),
     )
     colorbar = plt.colorbar(items["mag_z"], label="Score")
 
@@ -75,30 +82,55 @@ def init_boardstate():
     ax.add_collection(coll)
     items["boardstate"] = coll
 
+
 def render_boardstate():
-    global latest_message, ax, items
-    mes = int(latest_message.get("/boardstate", b'0').decode())
-    #print(mes)
-    #print(bin(mes))
+    global latest_message, items
+    mes = int(latest_message.get("/boardstate", b"0").decode())
+    # print(mes)
+    # print(bin(mes))
     mask = 1
     r = 7
-    c= 0
+    c = 0
     circles = []
-    while(r > -1):
-        while(c < 8):
+    while r > -1:
+        while c < 8:
             result = mask & int(mes)
-            if(result != 0):
-                #print("contains the vaule "+ str(mask)+" or " +str(bin(mask)))
+            if result != 0:
+                # print("contains the vaule "+ str(mask)+" or " +str(bin(mask)))
                 # Define the center and radius of the circle
                 center = (c, r)
-                radius = .25
+                radius = 0.25
                 circles.append(Circle(center, radius))
-            c = c+1
+            c = c + 1
             mask = mask << 1
         c = 0
-        r = r-1
+        r = r - 1
     items["boardstate"].set_paths(circles)
- 
+
+
+# MOVES
+def init_moves():
+    global ax, items
+
+    items["moves"] = TextCollection((3, 0),fig.add_axes([.1,.9,.00,.00]) , ["Moves: ", "", " ", ""])
+    # thanks ChatGPT
+
+topic_to_color = {
+    "/robotmoves": "red",
+    "/playermoves": "green",
+}
+def render_moves():
+    global items, latest_message, ax
+
+    items["moves"].set_text_at_index( # second from last
+        1, latest_message["moves"][-2][0].decode(),  
+        topic_to_color[latest_message["moves"][-2][1]]
+    )
+    items["moves"].set_text_at_index( # last
+        3, latest_message["moves"][-1][0].decode(), 
+        topic_to_color[latest_message["moves"][-1][1]]
+    )
+
 
 # OTHER STUFF
 
@@ -124,10 +156,18 @@ def render_chessboard_bg():
     items["board"] = ax.imshow(chessboard, cmap="binary", alpha=0.3)
 
 
+def matplotlib_toggle_visibility(item):
+    item.set_visible(not item.get_visible())
+
+
 def update_checkbox_state(label):
     global items
-    print(f"setting items[{label}] visibility to {not items[label].get_visible()}")
-    items[label].set_visible(not items[label].get_visible())
+    # print(f"setting items[{label}] visibility to {not items[label].get_visible()}")
+    if items[label] is list:
+        for i in items[label]:
+            matplotlib_toggle_visibility(i)
+    else:
+        matplotlib_toggle_visibility(items[label])
 
 
 def render_checkboxes():
@@ -153,6 +193,7 @@ def init_plot():
     init_mag()
     init_paths()
     init_boardstate()
+    init_moves()
     render_checkboxes()
     # ax.invert_yaxis()
     fig.canvas.draw()
@@ -165,7 +206,7 @@ def on_connect(client, userdata, flags, reason_code, properties):
     else:
         print(f"Successfully connected")
         client.subscribe(
-            [(i, 0) for i in ["$SYS/#", "/path", "/boardstate", "/magnets"]]
+            [(i, 0) for i in ["$SYS/#", "/path", "/boardstate", "/magnets", "/playermoves", "/robotmoves"]]
         )
 
 
@@ -177,11 +218,15 @@ def on_message(client, userdata, message):
     #    mes = int(mes)
     #    print(mes)
     #    print(bin(mes))
-   #
+    #
     #    plt.title("Boardstate Plot")  # Add a title to distinguish plots
 
     if message.topic in ("/magnets", "/path", "/boardstate"):
         latest_message[message.topic] = message.payload
+    elif message.topic.startswith("/") and message.topic.endswith("moves"):
+        latest_message["moves"].append((message.payload, message.topic))
+        # keep track of all the moves (robot and player) sequentially,
+        # can display whatever we want
 
 
 client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
@@ -196,6 +241,7 @@ while True:
     render_mag()
     render_paths()
     render_boardstate()
+    render_moves()
     fig.canvas.draw()
     fig.canvas.flush_events()
     sleep(0.52)
