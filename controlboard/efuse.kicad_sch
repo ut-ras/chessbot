@@ -1149,151 +1149,6 @@
 				)
 			)
 		)
-		(symbol "Switch:SW_Push"
-			(pin_numbers hide)
-			(pin_names
-				(offset 1.016) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "SW"
-				(at 1.27 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "SW_Push"
-				(at 0 -1.524 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Push button switch, generic, two pins"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "switch normally-open pushbutton push-button"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "SW_Push_0_1"
-				(circle
-					(center -2.032 0)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 1.27) (xy 0 3.048)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 1.27) (xy -2.54 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.032 0)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 0 180)
-					(length 2.54)
-					(name "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "power:GND"
 			(power)
 			(pin_numbers hide)
@@ -1713,16 +1568,6 @@
 	)
 	(wire
 		(pts
-			(xy 80.01 90.17) (xy 80.01 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "91d41c48-2d0b-400c-a73e-c4de7d4c4098")
-	)
-	(wire
-		(pts
 			(xy 163.83 41.91) (xy 163.83 44.45)
 		)
 		(stroke
@@ -1730,6 +1575,16 @@
 			(type default)
 		)
 		(uuid "942bd53f-67ba-4cb7-9dd0-867a04b44cf7")
+	)
+	(wire
+		(pts
+			(xy 80.01 88.9) (xy 80.01 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a9d61864-c7af-454b-a9e2-5193e525bf8d")
 	)
 	(wire
 		(pts
@@ -1783,7 +1638,7 @@
 	)
 	(wire
 		(pts
-			(xy 80.01 80.01) (xy 80.01 74.93)
+			(xy 80.01 74.93) (xy 80.01 81.28)
 		)
 		(stroke
 			(width 0)
@@ -2595,84 +2450,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 80.01 85.09 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "8cc3ddfc-32f2-4dde-b505-bc668e8068d9")
-		(property "Reference" "SW1"
-			(at 74.168 83.82 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "SW_Push TODO FP CHECK"
-			(at 81.28 86.3599 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Button_Switch_SMD:SW_SPST_SKQG_WithStem"
-			(at 74.93 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 74.93 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 80.01 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "6f88bfc8-5b97-4a4a-b26c-378df131959a")
-		)
-		(pin "1"
-			(uuid "0ce152ed-d2d3-4d2f-b8fe-ada5f9da13e9")
-		)
-		(instances
-			(project "controlboard"
-				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5fab4b81-761e-4fae-b113-00364a75fd9a/6730c4ed-849e-4137-aae0-c93a08939ea9"
-					(reference "SW1")
-					(unit 1)
-				)
-				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5fab4b81-761e-4fae-b113-00364a75fd9a/6f35b5a2-4903-498d-a87f-00926de2e745"
-					(reference "SW4")
-					(unit 1)
-				)
-				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5fab4b81-761e-4fae-b113-00364a75fd9a/c4ae39fe-dfab-4842-91d5-7d80cdea31e1"
-					(reference "SW5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 109.22 90.17 0)
 		(mirror y)
@@ -2851,7 +2628,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical"
+		(property "Footprint" "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm"
 			(at 151.13 82.55 0)
 			(effects
 				(font
@@ -3304,7 +3081,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SO:SOIC-8-1EP_3.9x4.9mm_P1.27mm_EP2.95x4.9mm_Mask2.71x3.4mm_ThermalVias"
+		(property "Footprint" "Package_SO:TI_SO-PowerPAD-8"
 			(at 119.38 96.52 0)
 			(effects
 				(font
@@ -3443,6 +3220,85 @@
 				)
 				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5fab4b81-761e-4fae-b113-00364a75fd9a/c4ae39fe-dfab-4842-91d5-7d80cdea31e1"
 					(reference "#PWR041")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Jumper:SolderJumper_2_Open")
+		(at 80.01 85.09 270)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "fdc607e9-2619-43b1-a274-b211739390f5")
+		(property "Reference" "JP30"
+			(at 77.47 83.8199 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "SolderJumper_2_Open"
+			(at 77.47 86.3599 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm"
+			(at 80.01 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 80.01 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Solder Jumper, 2-pole, open"
+			(at 80.01 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "1111e10b-8ba4-4cfc-b882-1f8c6281bf49")
+		)
+		(pin "1"
+			(uuid "3c558a24-0aab-42fc-8632-b15945a36990")
+		)
+		(instances
+			(project "controlboard"
+				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5fab4b81-761e-4fae-b113-00364a75fd9a/c4ae39fe-dfab-4842-91d5-7d80cdea31e1"
+					(reference "JP30")
+					(unit 1)
+				)
+				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5fab4b81-761e-4fae-b113-00364a75fd9a/6730c4ed-849e-4137-aae0-c93a08939ea9"
+					(reference "JP19")
+					(unit 1)
+				)
+				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5fab4b81-761e-4fae-b113-00364a75fd9a/6f35b5a2-4903-498d-a87f-00926de2e745"
+					(reference "JP29")
 					(unit 1)
 				)
 			)

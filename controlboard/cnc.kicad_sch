@@ -1164,7 +1164,7 @@
 				)
 			)
 		)
-		(symbol "Connector_Generic:Conn_02x04_Row_Letter_First"
+		(symbol "Connector_Generic:Conn_02x04_Odd_Even"
 			(pin_names
 				(offset 1.016) hide)
 			(exclude_from_sim no)
@@ -1178,7 +1178,7 @@
 					)
 				)
 			)
-			(property "Value" "Conn_02x04_Row_Letter_First"
+			(property "Value" "Conn_02x04_Odd_Even"
 				(at 1.27 -7.62 0)
 				(effects
 					(font
@@ -1204,7 +1204,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Generic connector, double row, 02x04, row letter first pin numbering scheme (pin number consists of a letter for the row and a number for the pin index in this row. a1, ..., aN; b1, ..., bN), script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(property "Description" "Generic connector, double row, 02x04, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1231,7 +1231,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "Conn_02x04_Row_Letter_First_1_1"
+			(symbol "Conn_02x04_Odd_Even_1_1"
 				(rectangle
 					(start -1.27 -4.953)
 					(end 0 -5.207)
@@ -1334,68 +1334,14 @@
 				(pin passive line
 					(at -5.08 2.54 0)
 					(length 3.81)
-					(name "Pin_a1"
+					(name "Pin_1"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "a1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 3.81)
-					(name "Pin_a2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "a2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -2.54 0)
-					(length 3.81)
-					(name "Pin_a3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "a3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -5.08 0)
-					(length 3.81)
-					(name "Pin_a4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "a4"
+					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1406,273 +1352,14 @@
 				(pin passive line
 					(at 7.62 2.54 180)
 					(length 3.81)
-					(name "Pin_b1"
+					(name "Pin_2"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "b1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 7.62 0 180)
-					(length 3.81)
-					(name "Pin_b2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "b2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 7.62 -2.54 180)
-					(length 3.81)
-					(name "Pin_b3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "b3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 7.62 -5.08 180)
-					(length 3.81)
-					(name "Pin_b4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "b4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
-		(symbol "Connector_Generic:Conn_02x04_Row_Letter_Last"
-			(pin_names
-				(offset 1.016) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J"
-				(at 1.27 5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Conn_02x04_Row_Letter_Last"
-				(at 1.27 -7.62 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Generic connector, double row, 02x04, row letter last pin numbering scheme (pin number consists of a letter for the row and a number for the pin index in this row. 1a, ..., Na; 1b, ..., Nb)), script generated (kicad-library-utils/schlib/autogen/connector/)"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "connector"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Connector*:*_2x??_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Conn_02x04_Row_Letter_Last_1_1"
-				(rectangle
-					(start -1.27 -4.953)
-					(end 0 -5.207)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 -2.413)
-					(end 0 -2.667)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 0.127)
-					(end 0 -0.127)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 2.667)
-					(end 0 2.413)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 3.81)
-					(end 3.81 -6.35)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(rectangle
-					(start 3.81 -4.953)
-					(end 2.54 -5.207)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 3.81 -2.413)
-					(end 2.54 -2.667)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 3.81 0.127)
-					(end 2.54 -0.127)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 3.81 2.667)
-					(end 2.54 2.413)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at -5.08 2.54 0)
-					(length 3.81)
-					(name "Pin_1a"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1a"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 7.62 2.54 180)
-					(length 3.81)
-					(name "Pin_1b"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1b"
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1683,14 +1370,14 @@
 				(pin passive line
 					(at -5.08 0 0)
 					(length 3.81)
-					(name "Pin_2a"
+					(name "Pin_3"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "2a"
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1701,14 +1388,14 @@
 				(pin passive line
 					(at 7.62 0 180)
 					(length 3.81)
-					(name "Pin_2b"
+					(name "Pin_4"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "2b"
+					(number "4"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1719,14 +1406,14 @@
 				(pin passive line
 					(at -5.08 -2.54 0)
 					(length 3.81)
-					(name "Pin_3a"
+					(name "Pin_5"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "3a"
+					(number "5"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1737,14 +1424,14 @@
 				(pin passive line
 					(at 7.62 -2.54 180)
 					(length 3.81)
-					(name "Pin_3b"
+					(name "Pin_6"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "3b"
+					(number "6"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1755,14 +1442,14 @@
 				(pin passive line
 					(at -5.08 -5.08 0)
 					(length 3.81)
-					(name "Pin_4a"
+					(name "Pin_7"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "4a"
+					(number "7"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1773,14 +1460,14 @@
 				(pin passive line
 					(at 7.62 -5.08 180)
 					(length 3.81)
-					(name "Pin_4b"
+					(name "Pin_8"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "4b"
+					(number "8"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -6332,7 +6019,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector_Generic:Conn_02x04_Row_Letter_First")
+		(lib_id "Connector_Generic:Conn_02x04_Odd_Even")
 		(at 271.78 74.93 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6375,7 +6062,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Generic connector, double row, 02x04, row letter first pin numbering scheme (pin number consists of a letter for the row and a number for the pin index in this row. a1, ..., aN; b1, ..., bN), script generated (kicad-library-utils/schlib/autogen/connector/)"
+		(property "Description" "Generic connector, double row, 02x04, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
 			(at 271.78 74.93 0)
 			(effects
 				(font
@@ -6384,28 +6071,28 @@
 				(hide yes)
 			)
 		)
-		(pin "b4"
+		(pin "4"
 			(uuid "565dff13-3799-442d-8809-7b3c1cc0dc9c")
 		)
-		(pin "a1"
+		(pin "8"
 			(uuid "0bf85e57-7425-471a-a581-3fddc411a113")
 		)
-		(pin "a2"
+		(pin "3"
 			(uuid "e061c689-dc00-480b-98cf-718820c8891c")
 		)
-		(pin "a3"
+		(pin "2"
 			(uuid "8e5ed9e3-f679-408f-a692-c3c3b283667c")
 		)
-		(pin "b1"
+		(pin "6"
 			(uuid "20995118-8bb6-4b19-a0b0-904215adf845")
 		)
-		(pin "a4"
+		(pin "7"
 			(uuid "d48f5354-68e2-4c7b-8662-848c4d388670")
 		)
-		(pin "b2"
+		(pin "5"
 			(uuid "77b6d488-d233-479a-aba1-ee8524a13fe2")
 		)
-		(pin "b3"
+		(pin "1"
 			(uuid "dce8c159-15c4-4cf3-ad8a-5561728d659d")
 		)
 		(instances
@@ -8420,7 +8107,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector_Generic:Conn_02x04_Row_Letter_Last")
+		(lib_id "Connector_Generic:Conn_02x04_Odd_Even")
 		(at 269.24 125.73 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -8463,7 +8150,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Generic connector, double row, 02x04, row letter last pin numbering scheme (pin number consists of a letter for the row and a number for the pin index in this row. 1a, ..., Na; 1b, ..., Nb)), script generated (kicad-library-utils/schlib/autogen/connector/)"
+		(property "Description" "Generic connector, double row, 02x04, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
 			(at 269.24 125.73 0)
 			(effects
 				(font
@@ -8472,28 +8159,28 @@
 				(hide yes)
 			)
 		)
-		(pin "1a"
+		(pin "6"
 			(uuid "e5a4ac8f-4645-4c96-973c-08cc3bc8809d")
 		)
-		(pin "4b"
+		(pin "1"
 			(uuid "7468c590-2974-4d39-a0e6-1be9e65e0e88")
 		)
-		(pin "2a"
+		(pin "5"
 			(uuid "11b23eb4-73bf-47d1-9af8-ed2356d2b9b5")
 		)
-		(pin "2b"
+		(pin "4"
 			(uuid "d530a8c2-c4c7-41c7-8b9d-be9ebee339ce")
 		)
-		(pin "3a"
+		(pin "8"
 			(uuid "adf396bc-371d-4fcf-9898-79061227b4c0")
 		)
-		(pin "3b"
+		(pin "3"
 			(uuid "7d298c08-f2e8-42d3-b132-d43c37ec9a34")
 		)
-		(pin "4a"
+		(pin "2"
 			(uuid "a199ca86-d155-4b24-a5e5-b788f08310fc")
 		)
-		(pin "1b"
+		(pin "7"
 			(uuid "1ce08bcd-7f56-45ee-8a07-0786cd942f3d")
 		)
 		(instances

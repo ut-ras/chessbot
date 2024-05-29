@@ -4637,7 +4637,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_2Pads_Pitch2.54mm_Drill0.8mm"
+		(property "Footprint" "0chessbot-parts:Bridged_TestPoint_2Pads_Pitch2.54mm_Drill0.8mm"
 			(at 158.75 146.05 0)
 			(effects
 				(font
@@ -5537,7 +5537,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_2Pads_Pitch2.54mm_Drill0.8mm"
+		(property "Footprint" "0chessbot-parts:Bridged_TestPoint_2Pads_Pitch2.54mm_Drill0.8mm"
 			(at 158.75 135.89 0)
 			(effects
 				(font
@@ -5738,7 +5738,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_2x20_P2.54mm_Vertical_SMD"
+		(property "Footprint" "Connector_Samtec_HLE_SMD:Samtec_HLE-120-02-xxx-DV-BE-A_2x20_P2.54mm_Horizontal"
 			(at -33.02 69.85 0)
 			(effects
 				(font
@@ -5757,6 +5757,15 @@
 			)
 		)
 		(property "Description" "Generic connector, double row, 02x20, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 90.17 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C2685112"
 			(at 90.17 45.72 0)
 			(effects
 				(font
@@ -5920,7 +5929,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_2Pads_Pitch2.54mm_Drill0.8mm"
+		(property "Footprint" "0chessbot-parts:Bridged_TestPoint_2Pads_Pitch2.54mm_Drill0.8mm"
 			(at 158.75 138.43 0)
 			(effects
 				(font
@@ -6256,7 +6265,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_2Pads_Pitch2.54mm_Drill0.8mm"
+		(property "Footprint" "0chessbot-parts:Bridged_TestPoint_2Pads_Pitch2.54mm_Drill0.8mm"
 			(at 158.75 143.51 0)
 			(effects
 				(font
@@ -6854,7 +6863,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_2Pads_Pitch2.54mm_Drill0.8mm"
+		(property "Footprint" "0chessbot-parts:Bridged_TestPoint_2Pads_Pitch2.54mm_Drill0.8mm"
 			(at 158.75 140.97 0)
 			(effects
 				(font

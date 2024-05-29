@@ -6,7 +6,7 @@
 	(descr "Through hole straight socket strip, 1x05, 2.54mm pitch, single row (from Kicad 4.0.7), script generated")
 	(tags "Through hole socket strip THT 1x05 2.54mm single row")
 	(property "Reference" "REF**"
-		(at -1.27 -1.27 90)
+		(at -10.321 13.7134 90)
 		(layer "F.SilkS")
 		(uuid "997d1552-1d83-4682-82a1-6a143a819aeb")
 		(effects
@@ -17,7 +17,7 @@
 		)
 	)
 	(property "Value" "mini560"
-		(at 18.796 -1.91 90)
+		(at 9.745 13.0734 90)
 		(layer "F.Fab")
 		(hide yes)
 		(uuid "2e6ef013-bd7b-4e31-b312-571c00a61577")
@@ -29,7 +29,7 @@
 		)
 	)
 	(property "Footprint" ""
-		(at 5.73 -1.91 90)
+		(at -3.321 13.0734 90)
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
@@ -41,7 +41,7 @@
 		)
 	)
 	(property "Datasheet" ""
-		(at 5.73 -1.91 90)
+		(at -3.321 13.0734 90)
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
@@ -66,8 +66,8 @@
 	)
 	(attr through_hole)
 	(fp_rect
-		(start 0.034 -29.972)
-		(end 18.034 0.028)
+		(start -9.017 -14.9886)
+		(end 8.983 15.0114)
 		(stroke
 			(width 0.1)
 			(type default)
@@ -77,8 +77,8 @@
 		(uuid "c0ef746b-b9b9-47c9-a3d6-5bfe71fb7f90")
 	)
 	(fp_rect
-		(start 6.35 -7.62)
-		(end 6.604 -7.366)
+		(start -2.701 7.3634)
+		(end -2.447 7.6174)
 		(stroke
 			(width 0.1)
 			(type default)
@@ -88,8 +88,8 @@
 		(uuid "b072439f-953a-4f0a-801f-b383ef8644dc")
 	)
 	(fp_rect
-		(start -0.254 -13.462)
-		(end 6.604 -4.826)
+		(start -9.305 1.5214)
+		(end -2.447 10.1574)
 		(stroke
 			(width 0.1)
 			(type default)
@@ -98,89 +98,97 @@
 		(layer "F.CrtYd")
 		(uuid "44268a84-b998-435c-897d-f532ffebf574")
 	)
-	(pad "1" thru_hole rect
-		(at 2 -28 90)
-		(size 4 2.54)
-		(drill 1
-			(offset 1 0)
-		)
+	(pad "1" thru_hole circle
+		(at -7.051 -13.0166 90)
+		(size 2 2)
+		(drill 1)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(uuid "8026be11-daa0-4a48-a9f8-ebc97ea8091b")
 	)
-	(pad "1" thru_hole rect
-		(at 4.54 -28 90)
-		(size 4 2.54)
-		(drill 1
-			(offset 1 0)
-		)
+	(pad "1" smd rect
+		(at -5.781 -14.0166)
+		(size 5.08 4)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "d12722d9-4a45-4601-8cdc-82f88e6bb082")
+	)
+	(pad "1" thru_hole circle
+		(at -4.511 -13.0166 90)
+		(size 2 2)
+		(drill 1)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(uuid "554b4a3e-1e59-4861-9567-475e64710fae")
 	)
-	(pad "2" thru_hole rect
-		(at 13.46 -28 90)
-		(size 4 2.54)
-		(drill 1
-			(offset 1 0)
-		)
+	(pad "2" thru_hole circle
+		(at 4.409 -13.0166 90)
+		(size 2 2)
+		(drill 1)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(uuid "e1fa8dc9-db9d-469c-9c57-925bc1d9fbb4")
 	)
-	(pad "2" thru_hole rect
-		(at 16 -28 90)
-		(size 4 2.54)
-		(drill 1
-			(offset 1 0)
-		)
+	(pad "2" smd rect
+		(at 5.679 -14.016599)
+		(size 5.08 3.999998)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "abce7d32-ab63-4593-8648-add9a4081eba")
+	)
+	(pad "2" thru_hole circle
+		(at 6.949 -13.0166 90)
+		(size 2 2)
+		(drill 1)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(uuid "5274e09e-4843-4861-8cc9-57b6dd832077")
 	)
-	(pad "3" thru_hole rect
-		(at 2 -2 270)
-		(size 4 2.54)
-		(drill 1
-			(offset 1 0)
-		)
+	(pad "3" thru_hole circle
+		(at -7.051 12.9834 270)
+		(size 2 2)
+		(drill 1)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(uuid "22a9455c-1ec2-4f67-b6b4-fb8090d2cf58")
 	)
-	(pad "3" thru_hole rect
-		(at 4.54 -2 270)
-		(size 4 2.54)
-		(drill 1
-			(offset 1 0)
-		)
+	(pad "3" smd rect
+		(at -5.781 13.9834)
+		(size 5.08 4)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "b391e588-61fa-4793-b0ac-38f7cc879182")
+	)
+	(pad "3" thru_hole circle
+		(at -4.511 12.9834 270)
+		(size 2 2)
+		(drill 1)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(uuid "351ac394-3faa-416e-80cf-0cfbfccc2a36")
 	)
-	(pad "4" thru_hole rect
-		(at 13.46 -2 270)
-		(size 4 2.54)
-		(drill 1
-			(offset 1 0)
-		)
+	(pad "4" thru_hole circle
+		(at 4.409 12.9834 270)
+		(size 2 2)
+		(drill 1)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(uuid "64116c64-82f9-463b-bda6-b2902afb0cbc")
 	)
-	(pad "4" thru_hole rect
-		(at 16 -2 270)
-		(size 4 2.54)
-		(drill 1
-			(offset 1 0)
-		)
+	(pad "4" smd rect
+		(at 5.679 13.9834)
+		(size 5.08 4)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "3997a2c2-63f5-4ce1-a704-c516c7a66207")
+	)
+	(pad "4" thru_hole circle
+		(at 6.949 12.9834 270)
+		(size 2 2)
+		(drill 1)
 		(property pad_prop_castellated)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
