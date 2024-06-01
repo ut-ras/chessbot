@@ -5369,7 +5369,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Module:Pololu_Breakout-16_15.2x20.3mm"
+		(property "Footprint" "0chessbot-parts:Pololu_Breakout-16_15.2x20.3mm"
 			(at 139.065 170.18 0)
 			(effects
 				(font
@@ -6872,7 +6872,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23_Handsoldering"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 251.46 48.26 0)
 			(effects
 				(font
@@ -7105,7 +7105,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Module:Pololu_Breakout-16_15.2x20.3mm"
+		(property "Footprint" "0chessbot-parts:Pololu_Breakout-16_15.2x20.3mm"
 			(at 139.065 119.38 0)
 			(effects
 				(font

@@ -312,4 +312,15 @@
 			(xyz 0 0 -90)
 		)
 	)
+	(model "${KIPRJMOD}/0chessbot-parts.pretty/d24v50f5-step-down-voltage-regulator.step"
+		(offset
+			(xyz 0 1 7.5)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
 )

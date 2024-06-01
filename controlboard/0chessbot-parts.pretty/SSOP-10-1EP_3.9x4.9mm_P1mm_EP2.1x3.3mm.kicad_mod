@@ -326,7 +326,7 @@
 		(remove_unused_layers no)
 		(uuid "08413cb8-b44d-40b8-8af9-58e51217dd1b")
 	)
-	(model "${KICAD8_3DMODEL_DIR}/Package_SO.3dshapes/SSOP-10-1EP_3.9x4.9mm_P1mm_EP2.1x3.3mm.wrl"
+	(model "${KICAD8_3DMODEL_DIR}/Package_SO.3dshapes/SSOP-10_3.9x4.9mm_P1.00mm.wrl"
 		(offset
 			(xyz 0 0 0)
 		)

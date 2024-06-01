@@ -4891,7 +4891,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Button_Switch_SMD:SW_SPST_SKQG_WithStem"
+		(property "Footprint" "0chessbot-parts:SW_SPST_SKQG_WithStem"
 			(at 181.61 60.96 0)
 			(effects
 				(font
@@ -5783,7 +5783,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_Samtec_HLE_SMD:Samtec_HLE-120-02-xxx-DV-BE-A_2x20_P2.54mm_Horizontal"
+		(property "Footprint" "0chessbot-parts:Samtec_HLE-120-02-xxx-DV-BE-A_2x20_P2.54mm_Horizontal"
 			(at -33.02 69.85 0)
 			(effects
 				(font
