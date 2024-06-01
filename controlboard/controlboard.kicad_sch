@@ -2362,12 +2362,6 @@
 		)
 	)
 	(junction
-		(at 80.01 22.86)
-		(diameter 1.016)
-		(color 0 0 0 0)
-		(uuid "0b488dce-6308-4daf-9615-bd88b6442d73")
-	)
-	(junction
 		(at 100.33 58.42)
 		(diameter 1.016)
 		(color 0 0 0 0)
@@ -2418,6 +2412,10 @@
 	(no_connect
 		(at 74.93 105.41)
 		(uuid "992a1318-0f32-4811-a951-6ecd48077ca5")
+	)
+	(no_connect
+		(at 85.09 22.86)
+		(uuid "d584ba30-8ab4-4192-8c93-33a38eb76424")
 	)
 	(wire
 		(pts
@@ -2481,16 +2479,6 @@
 	)
 	(wire
 		(pts
-			(xy 80.01 22.86) (xy 80.01 43.18)
-		)
-		(stroke
-			(width 0)
-			(type solid)
-		)
-		(uuid "0d9e680b-5053-4d2c-88c0-8d87bee9393b")
-	)
-	(wire
-		(pts
 			(xy 163.83 146.05) (xy 170.18 146.05)
 		)
 		(stroke
@@ -2498,16 +2486,6 @@
 			(type default)
 		)
 		(uuid "118c46a6-8b81-4462-baa6-d0420b064615")
-	)
-	(wire
-		(pts
-			(xy 80.01 22.86) (xy 85.09 22.86)
-		)
-		(stroke
-			(width 0)
-			(type solid)
-		)
-		(uuid "12ee2061-91e9-4f3b-abb6-03f585ea1d06")
 	)
 	(wire
 		(pts
@@ -2818,16 +2796,6 @@
 			(type default)
 		)
 		(uuid "6507ae9f-aeac-4fe7-82ea-cacdb6510086")
-	)
-	(wire
-		(pts
-			(xy 80.01 19.05) (xy 80.01 22.86)
-		)
-		(stroke
-			(width 0)
-			(type solid)
-		)
-		(uuid "654226e2-1b84-47bf-b396-9cad4caff7f6")
 	)
 	(wire
 		(pts
@@ -3658,6 +3626,16 @@
 		)
 		(uuid "7ad94aac-1f4d-4b18-a39d-09c387dfdf1e")
 	)
+	(text "PI_3V3_secondary"
+		(exclude_from_sim no)
+		(at 75.946 22.86 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "7d5a8169-b91c-45f0-bae3-ca2f8801c8de")
+	)
 	(text "GPIO17"
 		(exclude_from_sim no)
 		(at 55.88 35.56 0)
@@ -4359,7 +4337,7 @@
 		(uuid "b1f0f780-b6cf-4c4e-a154-ad9f052e04ab")
 	)
 	(label "PI_3V3"
-		(at 80.01 19.05 180)
+		(at 80.01 43.18 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6402,7 +6380,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical"
+		(property "Footprint" "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm"
 			(at 276.86 139.7 0)
 			(effects
 				(font
