@@ -2444,7 +2444,7 @@
 	)
 	(text "RESERVED"
 		(exclude_from_sim no)
-		(at 184.15 70.104 0)
+		(at 181.864 70.104 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2464,7 +2464,7 @@
 	)
 	(text "LED_IN is ~5V, BE CAREFUL"
 		(exclude_from_sim no)
-		(at 167.64 29.718 90)
+		(at 175.768 55.118 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2505,7 +2505,7 @@
 		(uuid "5281c3cd-300f-4923-a995-2c73089cc67d")
 	)
 	(label "LED_IN_REAL"
-		(at 168.91 58.42 90)
+		(at 168.91 58.42 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2527,13 +2527,13 @@
 		(uuid "71c1cbf4-328e-462a-8a31-cee3228b253b")
 	)
 	(label "LED_OUT"
-		(at 166.37 71.12 90)
+		(at 166.37 71.12 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "b5bab591-ebea-464b-9bde-3abed728cf2f")
 	)

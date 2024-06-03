@@ -406,7 +406,7 @@
 			)
 		)
 	)
-	(text "TODO (for karmanyaah only) verify waveshare display pinout once again"
+	(text "TODO verify waveshare display pinout once again"
 		(exclude_from_sim no)
 		(at 70.358 14.986 0)
 		(effects

@@ -5,6 +5,7 @@ fp-info-cache
 *auto_saved_files*
 production/
 *.log
+*board/*bak
 
 
 # Created by https://www.toptal.com/developers/gitignore/api/python,circuitpython,c++

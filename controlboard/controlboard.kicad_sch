@@ -2779,6 +2779,16 @@
 	)
 	(wire
 		(pts
+			(xy 270.51 87.63) (xy 259.08 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6309f0a0-3ff7-4601-b87a-f6e9a1ee1ea2")
+	)
+	(wire
+		(pts
 			(xy 100.33 27.94) (xy 97.79 27.94)
 		)
 		(stroke
@@ -3488,16 +3498,6 @@
 		)
 		(uuid "008a8fed-4499-4d00-bfa4-682c309d3d72")
 	)
-	(text ".06A"
-		(exclude_from_sim no)
-		(at 189.992 109.982 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "0f663bf0-9dcd-4c68-890e-f7de32d8dd85")
-	)
 	(text "GPIO12/PWM0"
 		(exclude_from_sim no)
 		(at 124.46 60.96 0)
@@ -3519,6 +3519,16 @@
 			(justify right bottom)
 		)
 		(uuid "13aca2c1-1aa8-47c5-a9dd-a7658b0a67b4")
+	)
+	(text "Max: V_{IO}: .06A\nServo_VIN: .68A"
+		(exclude_from_sim no)
+		(at 202.184 113.284 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "17a36834-95d5-46e3-91e7-755a272a3d11")
 	)
 	(text ".5A"
 		(exclude_from_sim no)
@@ -3608,7 +3618,7 @@
 	)
 	(text "we can always bridge these resistors if things don't work"
 		(exclude_from_sim no)
-		(at 175.26 26.162 0)
+		(at 175.26 24.13 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3693,7 +3703,7 @@
 	)
 	(text "Nominal case total current:\n12V: 1.4A\n5V: 2.3A\n3V: .56A\n\nSumming:\n3V: .6A (rounding up)\n5V: 2.9A (+ .6A, LDO)\n12V: 2.75A (+16W, Buck conv 90% efficient)\n"
 		(exclude_from_sim no)
-		(at 239.522 56.896 0)
+		(at 240.538 56.134 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7345,6 +7355,71 @@
 			(project "controlboard"
 				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941"
 					(reference "R17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 270.51 87.63 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fadf2c7f-a685-43a9-85b1-8ef6fd4d6039")
+		(property "Reference" "#PWR048"
+			(at 270.51 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 270.3957 91.9544 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 270.51 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 270.51 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 270.51 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d5984f5d-8ab3-4b0e-b140-039c0541c65f")
+		)
+		(instances
+			(project "controlboard"
+				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941"
+					(reference "#PWR048")
 					(unit 1)
 				)
 			)

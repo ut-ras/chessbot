@@ -301,15 +301,15 @@
 		(remove_unused_layers no)
 		(uuid "aca0d1f6-fc9c-4bc4-8edc-8e74e7b1961c")
 	)
-	(model "${KICAD8_3DMODEL_DIR}/Connector_PinSocket_2.54mm.3dshapes/PinSocket_1x05_P2.54mm_Vertical.wrl"
+	(model "${KIPRJMOD}/0chessbot-parts.pretty/SS-105-TT-2.stp"
 		(offset
-			(xyz 5.5 2 0)
+			(xyz 10.82 1.9 1.6)
 		)
 		(scale
 			(xyz 1 1 1)
 		)
 		(rotate
-			(xyz 0 0 -90)
+			(xyz -90 0 0)
 		)
 	)
 	(model "${KIPRJMOD}/0chessbot-parts.pretty/d24v50f5-step-down-voltage-regulator.step"
@@ -321,6 +321,17 @@
 		)
 		(rotate
 			(xyz 0 0 0)
+		)
+	)
+	(model "${KICAD8_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x05_P2.54mm_Vertical.wrl"
+		(offset
+			(xyz 5.75 1.9 7)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 -180 -90)
 		)
 	)
 )

@@ -404,15 +404,15 @@
 			(xyz 0 0 0)
 		)
 	)
-	(model "${KICAD8_3DMODEL_DIR}/Connector_PinSocket_2.54mm.3dshapes/PinSocket_1x08_P2.54mm_Vertical.wrl"
+	(model "${KIPRJMOD}/0chessbot-parts.pretty/SS-105-TT-2.stp"
 		(offset
-			(xyz 0 0 0)
+			(xyz 0 -12.7 1.6)
 		)
 		(scale
 			(xyz 1 1 1)
 		)
 		(rotate
-			(xyz 0 0 0)
+			(xyz -90 0 -90)
 		)
 	)
 	(model "${KICAD8_3DMODEL_DIR}/Connector_PinSocket_2.54mm.3dshapes/PinSocket_1x08_P2.54mm_Vertical.wrl"
@@ -424,6 +424,17 @@
 		)
 		(rotate
 			(xyz 0 0 0)
+		)
+	)
+	(model "${KIPRJMOD}/0chessbot-parts.pretty/SS-105-TT-2.stp"
+		(offset
+			(xyz 0 -5.04 1.6)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -90 0 -90)
 		)
 	)
 )

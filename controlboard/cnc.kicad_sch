@@ -2720,7 +2720,7 @@
 				)
 			)
 		)
-		(symbol "Simulation_SPICE:PMOS"
+		(symbol "Simulation_SPICE:NMOS"
 			(pin_numbers hide)
 			(pin_names
 				(offset 0)
@@ -2737,7 +2737,7 @@
 					(justify left)
 				)
 			)
-			(property "Value" "PMOS"
+			(property "Value" "NMOS"
 				(at 5.08 -1.27 0)
 				(effects
 					(font
@@ -2764,7 +2764,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "P-MOSFET transistor, drain/source/gate"
+			(property "Description" "N-MOSFET transistor, drain/source/gate"
 				(at 0 0 0)
 				(effects
 					(font
@@ -2773,7 +2773,7 @@
 					(hide yes)
 				)
 			)
-			(property "Sim.Device" "PMOS"
+			(property "Sim.Device" "NMOS"
 				(at 0 -17.145 0)
 				(effects
 					(font
@@ -2800,7 +2800,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "transistor PMOS P-MOS P-MOSFET simulation"
+			(property "ki_keywords" "transistor NMOS N-MOS N-MOSFET simulation"
 				(at 0 0 0)
 				(effects
 					(font
@@ -2809,7 +2809,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "PMOS_0_1"
+			(symbol "NMOS_0_1"
 				(polyline
 					(pts
 						(xy 0.254 0) (xy -2.54 0)
@@ -2896,7 +2896,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0.762 1.778) (xy 3.302 1.778) (xy 3.302 -1.778) (xy 0.762 -1.778)
+						(xy 0.762 -1.778) (xy 3.302 -1.778) (xy 3.302 1.778) (xy 0.762 1.778)
 					)
 					(stroke
 						(width 0)
@@ -2908,7 +2908,7 @@
 				)
 				(polyline
 					(pts
-						(xy 2.286 0) (xy 1.27 0.381) (xy 1.27 -0.381) (xy 2.286 0)
+						(xy 1.016 0) (xy 2.032 0.381) (xy 2.032 -0.381) (xy 1.016 0)
 					)
 					(stroke
 						(width 0)
@@ -2920,7 +2920,7 @@
 				)
 				(polyline
 					(pts
-						(xy 2.794 -0.508) (xy 2.921 -0.381) (xy 3.683 -0.381) (xy 3.81 -0.254)
+						(xy 2.794 0.508) (xy 2.921 0.381) (xy 3.683 0.381) (xy 3.81 0.254)
 					)
 					(stroke
 						(width 0)
@@ -2932,7 +2932,7 @@
 				)
 				(polyline
 					(pts
-						(xy 3.302 -0.381) (xy 2.921 0.254) (xy 3.683 0.254) (xy 3.302 -0.381)
+						(xy 3.302 0.381) (xy 2.921 -0.254) (xy 3.683 -0.254) (xy 3.302 0.381)
 					)
 					(stroke
 						(width 0)
@@ -2976,7 +2976,7 @@
 					)
 				)
 			)
-			(symbol "PMOS_1_1"
+			(symbol "NMOS_1_1"
 				(pin passive line
 					(at 2.54 5.08 270)
 					(length 2.54)
@@ -3269,12 +3269,6 @@
 		(uuid "96f7a839-e1e5-4653-b76a-461e6a4956a1")
 	)
 	(junction
-		(at 238.76 30.48)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a83264fe-e176-42d2-b4ba-c66d08d5e61e")
-	)
-	(junction
 		(at 134.62 120.65)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3305,6 +3299,12 @@
 		(uuid "c6cb80bd-3334-40d2-9cff-65251e749c98")
 	)
 	(junction
+		(at 242.57 58.42)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d2139207-c2b9-422c-8fe7-ceb34242641f")
+	)
+	(junction
 		(at 110.49 91.44)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3315,12 +3315,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f2d2d676-fd57-4dfc-9476-5655837b5952")
-	)
-	(junction
-		(at 238.76 45.72)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "fc1c0715-f596-42b3-ae5f-2fcfd680947a")
 	)
 	(no_connect
 		(at 121.92 107.95)
@@ -3482,7 +3476,7 @@
 	)
 	(wire
 		(pts
-			(xy 237.49 30.48) (xy 238.76 30.48)
+			(xy 237.49 30.48) (xy 248.92 30.48)
 		)
 		(stroke
 			(width 0)
@@ -3492,13 +3486,23 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 45.72) (xy 241.3 45.72)
+			(xy 234.95 45.72) (xy 241.3 45.72)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "486c6b3a-58d9-4941-8ab6-7ba813b387fe")
+	)
+	(wire
+		(pts
+			(xy 234.95 57.15) (xy 234.95 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4f14389f-6559-46b1-9d2c-fe6b252bfaf9")
 	)
 	(wire
 		(pts
@@ -3509,26 +3513,6 @@
 			(type default)
 		)
 		(uuid "5022fb64-db69-4178-8b3a-94361e3f4b68")
-	)
-	(wire
-		(pts
-			(xy 234.95 45.72) (xy 238.76 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "55f95c42-5623-499b-8b18-046256126fd1")
-	)
-	(wire
-		(pts
-			(xy 242.57 58.42) (xy 248.92 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "57943a9e-3d55-4ffc-8376-cad4bac8dbe3")
 	)
 	(wire
 		(pts
@@ -3572,6 +3556,16 @@
 	)
 	(wire
 		(pts
+			(xy 242.57 58.42) (xy 248.92 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "61fcc041-615c-4d5e-90a4-3b40577efd74")
+	)
+	(wire
+		(pts
 			(xy 132.08 171.45) (xy 134.62 171.45)
 		)
 		(stroke
@@ -3609,16 +3603,6 @@
 			(type default)
 		)
 		(uuid "6fde540d-d297-4bff-b30a-6ed1f0df330e")
-	)
-	(wire
-		(pts
-			(xy 238.76 35.56) (xy 238.76 30.48)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "743bc495-1b95-407c-a81f-c78b40039d17")
 	)
 	(wire
 		(pts
@@ -3782,16 +3766,6 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 43.18) (xy 238.76 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9f3cc41a-c95d-4b4b-b734-a27d05b09cad")
-	)
-	(wire
-		(pts
 			(xy 185.42 105.41) (xy 185.42 120.65)
 		)
 		(stroke
@@ -3809,6 +3783,16 @@
 			(type default)
 		)
 		(uuid "a83c2db2-60fd-4490-af98-d195171ceb15")
+	)
+	(wire
+		(pts
+			(xy 234.95 49.53) (xy 234.95 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a8e82c45-7229-446f-9c49-2804c47f9b0f")
 	)
 	(wire
 		(pts
@@ -3899,16 +3883,6 @@
 			(type default)
 		)
 		(uuid "c525f17e-6d4e-47ff-bb4b-4cb6743f06aa")
-	)
-	(wire
-		(pts
-			(xy 238.76 30.48) (xy 248.92 30.48)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c894873e-91aa-4467-8b86-abefdea82b29")
 	)
 	(wire
 		(pts
@@ -4042,6 +4016,16 @@
 	)
 	(wire
 		(pts
+			(xy 234.95 58.42) (xy 242.57 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f20b5fad-381b-4749-9ce8-f335892a8436")
+	)
+	(wire
+		(pts
 			(xy 276.86 128.27) (xy 276.86 130.81)
 		)
 		(stroke
@@ -4132,7 +4116,7 @@
 	)
 	(text "TODO: Double check that all GPIO pins used by LEDs have resistors (pretty sure they do)"
 		(exclude_from_sim no)
-		(at 54.864 81.026 0)
+		(at 57.404 72.644 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4251,6 +4235,16 @@
 		)
 		(uuid "78f05cbd-3816-47c1-9cdc-fbe0358994af")
 	)
+	(text "NMOS not PMOS because Pi is running from 0 to 3.3V, \ntherefore V_{GS} must be positive"
+		(exclude_from_sim no)
+		(at 218.694 41.656 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+		)
+		(uuid "904c62e5-0bef-464e-82be-83d51a0315e5")
+	)
 	(text "TODO DOUBLE CHECK THAT PINOUT/SYMBOL/WIRING IS CORRECT FOR MP6500 POLOLU"
 		(exclude_from_sim no)
 		(at 185.42 93.98 0)
@@ -4270,6 +4264,16 @@
 			)
 		)
 		(uuid "96afae34-d06c-4a25-9a53-6868878fa5fc")
+	)
+	(text "ik we could do opto-isolators, tvs diodes, and all that fancy protection, \nbut tbh the resistors we put on the pi ought to be good enough"
+		(exclude_from_sim no)
+		(at 184.912 20.828 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "99345cdb-5669-498a-920a-4acc973ca47a")
 	)
 	(text "Using software pullups"
 		(exclude_from_sim no)
@@ -6507,6 +6511,106 @@
 		)
 	)
 	(symbol
+		(lib_id "Simulation_SPICE:NMOS")
+		(at 246.38 45.72 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "70244fc2-6a2a-4878-907d-9f93165909b9")
+		(property "Reference" "Q1"
+			(at 252.73 44.4499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "NMOS AO3400A"
+			(at 252.73 46.9899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23_Handsoldering"
+			(at 251.46 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs"
+			(at 246.38 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "N-MOSFET transistor, drain/source/gate"
+			(at 246.38 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "NMOS"
+			(at 246.38 62.865 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" "VDMOS"
+			(at 246.38 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=D 2=G 3=S"
+			(at 246.38 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "23e073b0-b1f8-48db-993a-29b971321f1a")
+		)
+		(pin "2"
+			(uuid "94b22ed7-bf15-4b4a-b1fa-47a8b884b1db")
+		)
+		(pin "3"
+			(uuid "56410241-489a-47cd-92c8-3cb089ca35a6")
+		)
+		(instances
+			(project "controlboard"
+				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5be4ea58-2822-4c96-82fa-ac7323f92cc7"
+					(reference "Q1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 121.92 27.94 0)
 		(mirror y)
@@ -6584,7 +6688,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "78de016a-d7f9-4008-8e42-0f4b43845903")
 		(property "Reference" "#FLG05"
 			(at 55.88 20.955 0)
@@ -6596,7 +6699,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 55.88 17.78 0)
+			(at 59.69 19.304 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6704,6 +6807,76 @@
 			(project "controlboard"
 				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5be4ea58-2822-4c96-82fa-ac7323f92cc7"
 					(reference "#PWR024")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 234.95 53.34 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "80e6d259-1f7c-4951-94dd-3ee93fca7e89")
+		(property "Reference" "R20"
+			(at 233.426 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "10k"
+			(at 233.426 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 233.172 53.34 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 234.95 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 234.95 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "5dafad23-448c-451b-9cb7-781608f971b2")
+		)
+		(pin "1"
+			(uuid "c66bd37a-cddf-4154-8512-f5d8ae22f37e")
+		)
+		(instances
+			(project "controlboard"
+				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5be4ea58-2822-4c96-82fa-ac7323f92cc7"
+					(reference "R20")
 					(unit 1)
 				)
 			)
@@ -6838,107 +7011,6 @@
 			(project "controlboard"
 				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5be4ea58-2822-4c96-82fa-ac7323f92cc7"
 					(reference "TP4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Simulation_SPICE:PMOS")
-		(at 246.38 45.72 0)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "8a8eb662-dac3-4075-9cf0-e6d41fb5fb7d")
-		(property "Reference" "Q1"
-			(at 252.73 44.4499 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "PMOS AO3401A"
-			(at 252.73 46.9899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 251.46 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs"
-			(at 246.38 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "P-MOSFET transistor, drain/source/gate"
-			(at 246.38 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" "PMOS"
-			(at 246.38 28.575 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" "VDMOS"
-			(at 246.38 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=D 2=G 3=S"
-			(at 246.38 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "3"
-			(uuid "c54bafb4-a240-4059-9f85-9289e9e2f4a1")
-		)
-		(pin "1"
-			(uuid "cec7b8db-a408-49ab-a98d-0366952c0d2a")
-		)
-		(pin "2"
-			(uuid "c8545d85-a2aa-4311-8938-cc23c28bee0f")
-		)
-		(instances
-			(project "controlboard"
-				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5be4ea58-2822-4c96-82fa-ac7323f92cc7"
-					(reference "Q1")
 					(unit 1)
 				)
 			)
@@ -7550,76 +7622,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 238.76 39.37 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "bfe02fce-a8fc-40db-8c6b-9787176ef498")
-		(property "Reference" "R20"
-			(at 241.3 38.0999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "10k"
-			(at 241.3 40.6399 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 240.538 39.37 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 238.76 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 238.76 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "58d941ff-817b-4e40-9f5a-33937733339c")
-		)
-		(pin "1"
-			(uuid "7856088c-15ff-4514-993f-37becbe7884b")
-		)
-		(instances
-			(project "controlboard"
-				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5be4ea58-2822-4c96-82fa-ac7323f92cc7"
-					(reference "R20")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:ElectromagneticActor")
 		(at 248.92 55.88 0)
 		(unit 1)
@@ -8203,7 +8205,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "ec0e161f-5303-4e66-9bbe-17964de4aeb6")
 		(property "Reference" "#FLG06"
 			(at 63.5 20.955 0)
@@ -8215,11 +8216,12 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 63.5 17.78 0)
+			(at 66.294 19.304 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" ""
@@ -8344,7 +8346,7 @@
 		(dnp no)
 		(uuid "eeb92a83-39a3-4978-a50a-0ec0e15c4aa3")
 		(property "Reference" "D1"
-			(at 240.03 55.118 90)
+			(at 241.046 54.61 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8479,7 +8481,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "fe3da10b-3170-4455-9efe-9c73d71469b0")
 		(property "Reference" "#FLG07"
 			(at 121.92 20.955 0)
@@ -8491,7 +8492,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 121.92 17.78 0)
+			(at 121.666 19.558 0)
 			(effects
 				(font
 					(size 1.27 1.27)
