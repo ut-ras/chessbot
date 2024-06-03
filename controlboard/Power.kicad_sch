@@ -4405,7 +4405,7 @@
 				)
 			)
 		)
-		(property "Value" "USB_C_Receptacle_USB2.0_14P"
+		(property "Value" "TYPE-C-31-M-12"
 			(at 31.75 25.4 0)
 			(effects
 				(font
@@ -7787,7 +7787,7 @@
 				(hide yes)
 			)
 		)
-		(property "RILIM" "3.6k"
+		(property "RILIM" "3k"
 			(at 78.74 133.35 0)
 			(effects
 				(font

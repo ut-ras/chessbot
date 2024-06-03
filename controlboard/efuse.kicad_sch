@@ -1646,6 +1646,16 @@
 		)
 		(uuid "ffb9dc35-22b7-4be1-8a09-af08f843ff88")
 	)
+	(text "1 to 7mA, reusing 3k value needed for ILim"
+		(exclude_from_sim no)
+		(at 167.64 69.342 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "0fa19f49-69b7-46d8-a845-6df9b65c55dc")
+	)
 	(text "Reset Switch"
 		(exclude_from_sim no)
 		(at 72.136 81.28 0)
@@ -1656,7 +1666,7 @@
 		)
 		(uuid "7d565c62-d429-44f2-acca-49bb902251f1")
 	)
-	(text "RILIM: 903 / (lim - 0.0112) (11mA is rounding error tbh so: R = 903 / lim\n\n3600ohm: .25A\n1200ohm: .75A\n470ohm: 1.92A\n\nVoltage limit calculator\nhttps://www.desmos.com/calculator/8uivoc5bgt\n\n3.3V rail: (82k,20k,47k) 2.66V - 3.80V\n5V rail: (150k,10k,47k)  4.34V - 5.29V\nPower rail: (150k, 47k, 12k) 4.25V - 20.9V\nAlt power rail: (150k, 47k, 15k) 4.10V - 17.0V\n\n(IC is only rated for 2.7V-19V so i don't want to risk it,\n but also having 20V would be cool for batteries (4s max = 17V)\n and just more power in general)"
+	(text "RILIM: 903 / (lim - 0.0112) (11mA is rounding error tbh so: R = 903 / lim\n\n3000ohm: .31A\n1200ohm: .75A\n470ohm: 1.92A\n\nVoltage limit calculator\nhttps://www.desmos.com/calculator/8uivoc5bgt\n\n3.3V rail: (82k,20k,47k) 2.66V - 3.80V\n5V rail: (150k,10k,47k)  4.34V - 5.29V\nPower rail: (150k, 47k, 12k) 4.25V - 20.9V\nAlt power rail: (150k, 47k, 15k) 4.10V - 17.0V\n\n(IC is only rated for 2.7V-19V so i don't want to risk it,\n but also having 20V would be cool for batteries (4s max = 17V)\n and just more power in general)"
 		(exclude_from_sim no)
 		(at 17.526 39.37 0)
 		(effects
@@ -2771,7 +2781,7 @@
 				)
 			)
 		)
-		(property "Value" "2k"
+		(property "Value" "3k"
 			(at 140.97 72.39 90)
 			(effects
 				(font

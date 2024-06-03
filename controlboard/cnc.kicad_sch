@@ -3986,16 +3986,6 @@
 	)
 	(wire
 		(pts
-			(xy 83.82 22.86) (xy 83.82 24.13)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "dfa07f1c-4c07-4533-a05e-10d64323cd5f")
-	)
-	(wire
-		(pts
 			(xy 134.62 120.65) (xy 137.16 120.65)
 		)
 		(stroke
@@ -4901,18 +4891,6 @@
 		)
 		(uuid "e6273d34-574b-4b95-864b-68de80ceb550")
 	)
-	(hierarchical_label "VMOT"
-		(shape input)
-		(at 83.82 22.86 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "ed24500a-33bc-46ec-a89f-af6aafc54367")
-	)
 	(hierarchical_label "VIO"
 		(shape input)
 		(at 88.9 143.51 180)
@@ -4936,75 +4914,6 @@
 			(justify right)
 		)
 		(uuid "fad41aa1-3b3c-4b8a-bb93-12d04573e1e6")
-	)
-	(symbol
-		(lib_id "Device:D_TVS")
-		(at 83.82 27.94 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "016adea7-6a70-469a-bba7-a6e083bb00d5")
-		(property "Reference" "D16"
-			(at 86.36 26.6699 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "20V+ D_TVS"
-			(at 78.486 37.084 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Diode_SMD:D_SOD-123F"
-			(at 83.82 27.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 83.82 27.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Bidirectional transient-voltage-suppression diode"
-			(at 83.82 27.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "1f478558-a808-45d5-9cc2-258380268f65")
-		)
-		(pin "2"
-			(uuid "6e4198c7-cb44-4809-9105-f66098c653ab")
-		)
-		(instances
-			(project "controlboard"
-				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5be4ea58-2822-4c96-82fa-ac7323f92cc7"
-					(reference "D16")
-					(unit 1)
-				)
-			)
-		)
 	)
 	(symbol
 		(lib_id "Device:D_TVS")
@@ -7257,73 +7166,6 @@
 			(project "controlboard"
 				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5be4ea58-2822-4c96-82fa-ac7323f92cc7"
 					(reference "A1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 83.82 31.75 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "9ddc3f5b-880b-4bed-918d-f3c9b40be038")
-		(property "Reference" "#PWR010"
-			(at 83.82 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 83.82 36.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 83.82 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 83.82 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 83.82 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b45a784c-342b-4a59-ae6d-b8ec6f49633c")
-		)
-		(instances
-			(project "controlboard"
-				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5be4ea58-2822-4c96-82fa-ac7323f92cc7"
-					(reference "#PWR010")
 					(unit 1)
 				)
 			)
