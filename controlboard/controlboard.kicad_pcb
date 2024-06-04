@@ -45804,20 +45804,7 @@
 			(justify left bottom mirror)
 		)
 	)
-	(gr_text "this!!"
-		(at 106.858 50.096 0)
-		(layer "B.SilkS")
-		(uuid "69c198cf-67af-43e7-a07a-c323e1d38631")
-		(effects
-			(font
-				(size 1 0.9)
-				(thickness 0.15)
-				(bold yes)
-			)
-			(justify left bottom mirror)
-		)
-	)
-	(gr_text "Hi future RASers! Email me at karmanyaah@malhotra.cc if you   see"
+	(gr_text "Hi future RAScals! Email me at karras@malhotra.cc if you see    this!!"
 		(at 154.102 48.064 0)
 		(layer "B.SilkS")
 		(uuid "7026bb45-8d09-49c7-9431-a54c43066c75")
