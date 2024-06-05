@@ -2,6 +2,8 @@ from typing import Dict, Text
 import paho.mqtt.client as mqtt
 import matplotlib as mp
 import numpy as np
+#import matplotlib
+#matplotlib.use('Qt5Agg')
 import matplotlib.pyplot as plt
 from time import sleep
 import matplotlib.patches as patches
@@ -48,6 +50,57 @@ def render_mag():
     # plt.title("Magnet Plot")  # Add a title to distinguish plots
 
 
+# VECTORS
+
+def init_vectors():
+    global items, ax
+    coll = PatchCollection([], color="blue")
+    ax.add_collection(coll)
+    items["vectors"] = coll
+
+    # items["vectors"] = []
+    # for r in range(rows):
+    #     for c in range(cols):
+    #         arrow = FancyArrowPatch((c, r), (c+0.5, r+0.5), color='blue')
+    #         ax.add_patch(arrow)
+    #         items["vectors"].append(arrow)
+
+
+def render_vectors():
+    global latest_message, items
+    new_lines = []
+    vals = decode_mag_msg(latest_message.get("/magnets", b""))
+    r = 0
+    c = 0 
+    i = 0
+    arrows = []
+    while r < 8:
+        while c < 8:
+    #for i in range(1, len(vals)):
+         
+            coordinates = vals[i]
+            x = coordinates[0]
+            y = coordinates[1]
+            print(x)
+            print(y)
+            arrows.append(Arrow(c,r , x * .01, y * .01, width=0.2))
+            c = c + 1
+            i = i + 1
+        c = 0
+        r = r + 1
+
+    items["vectors"].set_paths(arrows)
+
+        
+    #vals = [(0, 0, 0)] * (64 - len(vals)) + vals  # Assume vals now has x and y
+    
+    # for (i, val) in enumerate(vals):
+    #     x, y, z = val
+    #     r, c = divmod(i, cols)
+    #     vx, vy = x * 0.1, y * 0.1  # Arbitrary scaling for visibility
+    #     arrow = items["vectors"][i]
+    #     arrow.set_positions((c, r), (c + vx, r + vy))
+
 # PATHS
 
 
@@ -89,22 +142,25 @@ def render_boardstate():
     # print(mes)
     # print(bin(mes))
     mask = 1
-    r = 7
+    r = 0
     c = 0
+    count  = 0
     circles = []
-    while r > -1:
+    while r < 8 :
         while c < 8:
-            result = mask & int(mes)
-            if result != 0:
-                # print("contains the vaule "+ str(mask)+" or " +str(bin(mask)))
-                # Define the center and radius of the circle
-                center = (c, r)
-                radius = 0.25
-                circles.append(Circle(center, radius))
+            if count < 63:
+                result = mask & int(mes)
+                if result != 0:
+                    # print("contains the vaule "+ str(mask)+" or " +str(bin(mask)))
+                    # Define the center and radius of the circle
+                    center = (c, r)
+                    radius = 0.25
+                    circles.append(Circle(center, radius))
             c = c + 1
+            count = count +1
             mask = mask << 1
         c = 0
-        r = r - 1
+        r = r + 1
     items["boardstate"].set_paths(circles)
 
 
@@ -192,9 +248,11 @@ def init_plot():
     render_chessboard_bg()
     init_mag()
     init_paths()
+    init_vectors()  # Initialize vectors
     init_boardstate()
     init_moves()
     render_checkboxes()
+    
     # ax.invert_yaxis()
     fig.canvas.draw()
     fig.canvas.flush_events()
@@ -227,12 +285,13 @@ def on_message(client, userdata, message):
         latest_message["moves"].append((message.payload, message.topic))
         # keep track of all the moves (robot and player) sequentially,
         # can display whatever we want
-
+   
+    
 
 client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
 client.on_message = on_message
 client.on_connect = on_connect
-client.connect("chessbot")
+client.connect("localhost")
 
 
 client.loop_start()
@@ -240,10 +299,13 @@ init_plot()
 while True:
     render_mag()
     render_paths()
+    render_vectors()
     render_boardstate()
     render_moves()
     fig.canvas.draw()
     fig.canvas.flush_events()
     sleep(0.52)
+    
+
 
 client.loop_stop()
