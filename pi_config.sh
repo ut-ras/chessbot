@@ -8,7 +8,7 @@
 
 sudo systemctl enable --now ssh
 sudo apt update
-sudo apt install git vim mosquitto mosquitto-clients libi2c-dev python3-dev tmux pv
+sudo apt install git vim mosquitto mosquitto-clients libi2c-dev python3-dev tmux pv stockfish
 sudo systemctl enable --now mosquitto
 git clone git@github.com:ut-ras/chessbot.git
 

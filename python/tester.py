@@ -232,7 +232,7 @@ def on_message(client, userdata, message):
 client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
 client.on_message = on_message
 client.on_connect = on_connect
-client.connect("chessbot")
+client.connect("localhost")
 
 
 client.loop_start()
