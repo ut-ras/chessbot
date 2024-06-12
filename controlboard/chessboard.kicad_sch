@@ -2800,6 +2800,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Rotation Offset" ""
+			(at 130.81 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "3"
 			(uuid "1a8a9c56-a764-4777-98b2-95cb7a1d8be5")
 		)
@@ -2872,6 +2881,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Rotation Offset" ""
+			(at 173.99 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "4a53875e-d809-4051-8942-63ff8f57d4c1")
 		)
@@ -2932,6 +2950,15 @@
 			)
 		)
 		(property "Description" "Solder Jumper, 2-pole, open"
+			(at 229.87 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
 			(at 229.87 87.63 0)
 			(effects
 				(font
@@ -3028,6 +3055,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Rotation Offset" ""
+			(at 251.46 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "293317c0-2180-44ce-b488-f54cac2bf476")
 		)
@@ -3087,6 +3123,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 215.9 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
 			(at 215.9 74.93 0)
 			(effects
 				(font
@@ -3299,6 +3344,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Rotation Offset" ""
+			(at 251.46 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "d9efb9ca-90e4-4186-8b34-09907a8fe9b5")
 		)
@@ -3364,6 +3418,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 168.91 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
 			(at 168.91 67.31 0)
 			(effects
 				(font
@@ -3442,6 +3505,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Rotation Offset" ""
+			(at 142.24 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "a8b143e5-b629-4a4f-afdc-4a99e6a1905c")
 		)
@@ -3502,6 +3574,15 @@
 			)
 		)
 		(property "Description" "Generic connector, double row, 02x04, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 168.91 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
 			(at 168.91 78.74 0)
 			(effects
 				(font
@@ -3596,6 +3677,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Rotation Offset" ""
+			(at 251.46 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "daaa5052-4bc2-47ac-bc00-e45eb5a372a8")
 		)
@@ -3659,6 +3749,15 @@
 			)
 		)
 		(property "Description" "RGB LED with integrated controller"
+			(at 251.46 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
 			(at 251.46 113.03 0)
 			(effects
 				(font
@@ -3810,6 +3909,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Rotation Offset" ""
+			(at 139.7 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "ac2b94e1-934e-44e2-9de2-16e982178f10")
 		)
@@ -3873,6 +3981,15 @@
 			)
 		)
 		(property "Description" "RGB LED with integrated controller"
+			(at 228.6 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
 			(at 228.6 113.03 0)
 			(effects
 				(font
@@ -4024,6 +4141,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Rotation Offset" ""
+			(at 173.99 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "65d5a150-5f05-44c8-8cb1-64f16fd9e2b9")
 		)
@@ -4081,6 +4207,15 @@
 			)
 		)
 		(property "Description" "Solder Jumper, 2-pole, open"
+			(at 251.46 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
 			(at 251.46 87.63 0)
 			(effects
 				(font
@@ -4226,6 +4361,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Rotation Offset" ""
+			(at 115.57 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "f59d6e1e-05d6-4ea0-8474-95ba16aba610")
 		)
@@ -4286,6 +4430,15 @@
 			)
 		)
 		(property "Description" "Solder Jumper, 2-pole, open"
+			(at 229.87 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
 			(at 229.87 125.73 0)
 			(effects
 				(font
@@ -4356,6 +4509,15 @@
 			)
 		)
 		(property "Description" "test point"
+			(at 176.53 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
 			(at 176.53 71.12 0)
 			(effects
 				(font
@@ -4558,6 +4720,15 @@
 			)
 		)
 		(property "Description" "RGB LED with integrated controller"
+			(at 229.87 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
 			(at 229.87 74.93 0)
 			(effects
 				(font

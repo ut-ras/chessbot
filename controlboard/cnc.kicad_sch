@@ -4969,6 +4969,24 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C123807"
+			(at 76.2 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
+			(at 76.2 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "276534c0-d109-431c-9ae4-92eb48936ca4")
 		)
@@ -5173,6 +5191,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Rotation Offset" ""
+			(at 115.57 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "0bc8d149-9882-428a-a156-91a77d116128")
 		)
@@ -5310,6 +5337,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Rotation Offset" ""
+			(at 132.08 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "3791be26-8ad4-4e6f-a357-c64017dd1e26")
 		)
@@ -5414,6 +5450,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 55.88 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
 			(at 55.88 27.94 0)
 			(effects
 				(font
@@ -5560,6 +5605,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Rotation Offset" ""
+			(at 250.19 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "3"
 			(uuid "329fc0da-812c-42c6-a1dc-f14c48a8404a")
 		)
@@ -5633,6 +5687,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Rotation Offset" ""
+			(at 22.86 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "37d0e8a0-8b3c-4b00-8158-038d0052f3b9")
 		)
@@ -5693,6 +5756,15 @@
 			)
 		)
 		(property "Description" "Generic connector, double row, 02x04, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 271.78 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
 			(at 271.78 74.93 0)
 			(effects
 				(font
@@ -5855,6 +5927,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Rotation Offset" ""
+			(at 87.63 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "7f9504f8-aafd-4026-9767-94605b990b4b")
 		)
@@ -5915,6 +5996,15 @@
 			)
 		)
 		(property "Description" "Schottky diode"
+			(at 31.75 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
 			(at 31.75 27.94 0)
 			(effects
 				(font
@@ -5993,6 +6083,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Rotation Offset" ""
+			(at 88.9 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "ef191659-503b-4035-98c2-49248382f5b4")
 		)
@@ -6055,6 +6154,15 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
+			(at 54.61 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
 			(at 54.61 50.8 0)
 			(effects
 				(font
@@ -6200,6 +6308,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Rotation Offset" ""
+			(at 63.5 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "d0150e9d-096c-4393-b29c-31f3fb2b085d")
 		)
@@ -6262,6 +6379,15 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
+			(at 115.57 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
 			(at 115.57 59.69 0)
 			(effects
 				(font
@@ -6501,6 +6627,24 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "AO3400A"
+			(at 246.38 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
+			(at 246.38 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "23e073b0-b1f8-48db-993a-29b971321f1a")
 		)
@@ -6566,6 +6710,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 121.92 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
 			(at 121.92 27.94 0)
 			(effects
 				(font
@@ -6776,6 +6929,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Rotation Offset" ""
+			(at 234.95 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "5dafad23-448c-451b-9cb7-781608f971b2")
 		)
@@ -6905,6 +7067,15 @@
 			)
 		)
 		(property "Description" "test point"
+			(at 255.27 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
 			(at 255.27 73.66 0)
 			(effects
 				(font
@@ -7114,6 +7285,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Rotation Offset" ""
+			(at 132.08 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "3"
 			(uuid "6986e34d-7f6e-40ab-a156-736c63adeffb")
 		)
@@ -7219,6 +7399,15 @@
 			)
 		)
 		(property "Description" "Generic connector, double row, 02x04, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 180.34 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
 			(at 180.34 125.73 0)
 			(effects
 				(font
@@ -7448,6 +7637,24 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C123807"
+			(at 129.54 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
+			(at 129.54 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "72b3465b-ae9b-4e16-a806-abed9acd9145")
 		)
@@ -7518,6 +7725,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Rotation Offset" ""
+			(at 248.92 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "eae4fd28-283e-4ad9-b576-638116b579d1")
 		)
@@ -7579,6 +7795,15 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
+			(at 40.64 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
 			(at 40.64 54.61 0)
 			(effects
 				(font
@@ -7724,6 +7949,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Rotation Offset" ""
+			(at 54.61 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "ebea5d09-7e7d-4d3f-a587-6d7360bf47e1")
 		)
@@ -7784,6 +8018,15 @@
 			)
 		)
 		(property "Description" "Generic connector, double row, 02x04, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 269.24 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
 			(at 269.24 125.73 0)
 			(effects
 				(font
@@ -7881,6 +8124,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Rotation Offset" ""
+			(at 233.68 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "b4c4c298-24b4-468f-89bb-c3c1d43789d3")
 		)
@@ -7953,6 +8205,24 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C123807"
+			(at 96.52 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
+			(at 96.52 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "8b7c59c1-12f9-47ed-8e89-abd34f0f1709")
 		)
@@ -8016,6 +8286,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 110.49 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
 			(at 110.49 87.63 0)
 			(effects
 				(font
@@ -8159,6 +8438,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Rotation Offset" ""
+			(at 271.78 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "93fdbb27-4e90-436a-9df4-5f1eb47405b3")
 		)
@@ -8225,6 +8513,15 @@
 			)
 		)
 		(property "Description" "Schottky diode"
+			(at 242.57 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
 			(at 242.57 54.61 0)
 			(effects
 				(font
@@ -8426,6 +8723,15 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
+			(at 99.06 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
 			(at 99.06 57.15 0)
 			(effects
 				(font

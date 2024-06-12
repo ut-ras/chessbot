@@ -1824,6 +1824,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Rotation Offset" ""
+			(at 171.45 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "19e36da8-5a72-46f5-9c4d-0ae5e689838e")
 		)
@@ -1902,6 +1911,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Rotation Offset" ""
+			(at 95.25 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "bb072ae7-66a0-4522-ac24-bc116ccc877d")
 		)
@@ -1970,6 +1988,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 142.24 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
 			(at 142.24 95.25 0)
 			(effects
 				(font
@@ -2128,6 +2155,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Rotation Offset" ""
+			(at 137.16 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "c4c6a591-9ca4-4967-9c44-5c03c3e639f9")
 		)
@@ -2196,6 +2232,15 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
+			(at 142.24 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
 			(at 142.24 86.36 0)
 			(effects
 				(font
@@ -2274,6 +2319,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 95.25 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
 			(at 95.25 78.74 0)
 			(effects
 				(font
@@ -2436,6 +2490,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Rotation Offset" ""
+			(at 121.92 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "f63ad318-cb70-452f-9ef8-71af272c625d")
 		)
@@ -2506,6 +2569,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 109.22 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
 			(at 109.22 90.17 0)
 			(effects
 				(font
@@ -2665,6 +2737,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Rotation Offset" ""
+			(at 146.05 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "334dae9c-0025-4042-8c0e-6dde1b3ebaae")
 		)
@@ -2732,6 +2813,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 95.25 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
 			(at 95.25 71.12 0)
 			(effects
 				(font
@@ -2808,6 +2898,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 137.16 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
 			(at 137.16 72.39 0)
 			(effects
 				(font
@@ -2967,6 +3066,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Rotation Offset" ""
+			(at 163.83 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "618237fb-cd53-4a7d-8c55-c45a4bcf496c")
 		)
@@ -3043,6 +3151,15 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Rotation Offset" ""
+			(at 102.87 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "72526ca9-a846-40f0-8a97-e162ac403c6b")
 		)
@@ -3110,6 +3227,15 @@
 			)
 		)
 		(property "Description" "eFuse Protection Switch"
+			(at 120.65 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" "-90"
 			(at 120.65 80.01 0)
 			(effects
 				(font
@@ -3283,6 +3409,15 @@
 			)
 		)
 		(property "Description" "Solder Jumper, 2-pole, open"
+			(at 80.01 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
 			(at 80.01 85.09 0)
 			(effects
 				(font
