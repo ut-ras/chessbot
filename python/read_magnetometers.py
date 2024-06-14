@@ -15,7 +15,10 @@ TMAG_START_ADDR = 0x35
 PCA_ADDR = PCA_OG_ADDR + PCA_OFFSET
 PCA_TO_PHYSICAL_WIRING_ORDER = [4,5,6,7,0,1,2,3]
 
-ban_addrs = banned_addresses_that_are_being_mean_to_me = [0x36 , 0x33, 0x34, 0x35, 0x3d]
+ban_addrs = banned_addresses_that_are_being_mean_to_me = []
+
+# these addresses are tmaga1s (+- 40mT) whereas all the others are tmaga2s (+= 133mT)
+tmag1s = [0x36]
 
 ban_adr = [((i - 0x20) // COLUMNS, PCA_TO_PHYSICAL_WIRING_ORDER.index((i-0x20) % COLUMNS)) for i in banned_addresses_that_are_being_mean_to_me]
 
@@ -53,10 +56,13 @@ switches = PCAArray()
 
 tmagcache = {}
 class TMAG5273:
-    RANGE = 233
     def __init__(self, addr):
         self.bus = smbus.SMBus(bus_number)
         self.device_address = addr
+        if addr in tmag1s:
+            self.RANGE = 80
+        else:
+            self.RANGE = 266
 
     @classmethod
     def init(self, new_addr, old_addr = 0x35):
