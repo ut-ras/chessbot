@@ -67,9 +67,10 @@ def init_vectors():
 
 
 def render_vectors():
+    FACTOR = 3
     global latest_message, items
     new_lines = []
-    vals = decode_mag_msg(latest_message.get("/magnets", b""))
+    vals = decode_mag_msg(latest_message.get("/magnets", b"\0" * 4 * 3 * 64))
     r = 0
     c = 0 
     i = 0
@@ -81,9 +82,9 @@ def render_vectors():
             coordinates = vals[i]
             x = coordinates[0]
             y = coordinates[1]
-            print(x)
-            print(y)
-            arrows.append(Arrow(c,r , x * .01, y * .01, width=0.2))
+            #print(x)
+            #print(y)
+            arrows.append(Arrow(c,r , x * .01 * FACTOR , y * .01 * FACTOR, width=0.2))
             c = c + 1
             i = i + 1
         c = 0
