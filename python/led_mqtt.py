@@ -7,7 +7,7 @@ import time
 import threading
 
 DEBUG = False
-p = neopixel.NeoPixel(board.D12, 68)
+p = neopixel.NeoPixel(board.D12, 68, auto_write = False)
 
 # to only take latest quickly (and be idempotent if unplugged), we'll loop seperately
 lock = threading.Lock()
@@ -58,5 +58,5 @@ if __name__ == "__main__":
                 p[i // 3] = (currentstate[i], currentstate[i + 1], currentstate[i+2])
             if DEBUG:print(p)
             p.show()
-        time.sleep(0.02)
+        time.sleep(1/60)
     mqttc.loop_stop()
