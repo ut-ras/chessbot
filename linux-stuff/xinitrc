@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# symlink this file to ~/.xinitrc
+tmux
+#cd chessbot
+#venv/bin/python python/tester.py
+#t
+#exec ~/chessbot/venv/bin/python --kiosk

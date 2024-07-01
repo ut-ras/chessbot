@@ -11,20 +11,30 @@ p = neopixel.NeoPixel(board.D12, 68, auto_write = False)
 
 # to only take latest quickly (and be idempotent if unplugged), we'll loop seperately
 lock = threading.Lock()
-currentstate = b''
+current_st_state = b'\0\0\0' * 4
+currentstate = b'\0\0\0' * 64
 def on_message(client, userdata, message):
     # userdata is the structure we choose to provide, here it's a list()
-    if (message.topic == "/led"):
+    if (message.topic in ("/led", "/statusled")):
         with lock:
-            global currentstate
+            global currentstate, current_st_state
             if DEBUG: print(time.time())
             mes = message.payload
             if not mes: return
-            if len(mes) % 3: 
-                print("wrong size led payload")
-                return
+
             if DEBUG: print(mes)
-            currentstate = mes
+            if message.topic == "/led":
+                if len(mes) != 64 * 3: 
+                    print("wrong size led payload")
+                    return
+                currentstate = mes
+            elif message.topic == "/statusled":
+                if len(mes) != 4 * 3: 
+                    print("wrong size led payload")
+                    return
+                current_st_state = mes
+            if DEBUG: print(currentstate, current_st_state)
+
 
 
 
@@ -42,6 +52,7 @@ def on_connect(client, userdata, flags, reason_code, properties):
         # our subscribed is persisted across reconnections.
         client.subscribe("$SYS/#")
         client.subscribe("/led")
+        client.subscribe("/statusled")
 
 
 if __name__ == "__main__":
@@ -53,10 +64,13 @@ if __name__ == "__main__":
     
     mqttc.loop_start()
     while True:
+        lasttime = time.time()
         with lock:
-            for i in range(0, len(currentstate), 3):
-                p[i // 3] = (currentstate[i], currentstate[i + 1], currentstate[i+2])
-            if DEBUG:print(p)
+            for i in range(0, 64):
+                p[i + 2] = (min(0x20,currentstate[i * 3]), min(0x20,currentstate[i * 3 + 1]), min(0x20,currentstate[i * 3 + 2]))
+            for i in range(0, 2):
+                p[i] = (current_st_state[i * 3], current_st_state[i * 3 + 1], current_st_state[i * 3 + 2])
+            if DEBUG:print(p, current_st_state)
             p.show()
-        time.sleep(1/60)
+        time.sleep((1/30) - (time.time() - lasttime)) # run loop at 30Hz
     mqttc.loop_stop()

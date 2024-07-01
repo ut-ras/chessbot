@@ -1,0 +1,9 @@
+[Unit]
+Description=[Service description]
+
+[Service]
+Type=simple
+ExecStart=/home/chessbot/chessbot/venv/bin/python -u /home/chessbot/chessbot/python/stepper/__init__.py
+
+[Install]
+WantedBy=default.target
