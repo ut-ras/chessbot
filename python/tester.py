@@ -116,7 +116,7 @@ def render_paths():
     global latest_message, ax
     new_lines = []
     path_nums = [
-        float(i) for i in latest_message.get("/path", b"0,0").decode().split(",")
+        float(i)/50 for i in latest_message.get("/path", b"0,0").decode().split(",")
     ]
     path_pts = [tuple(path_nums[i : i + 2]) for i in range(0, len(path_nums), 2)]
     # print(path_pts)
@@ -164,7 +164,25 @@ def render_boardstate():
         r = r + 1
     items["boardstate"].set_paths(circles)
 
+# POS
+def init_pos():
+    global items, ax
+    #coll = PatchCollection([], color="orange")
+    #ax.add_collection(coll)
+    
+    items["current_pos"] = Circle((0,0), .2, color="cyan")
+    ax.add_patch(items["current_pos"])
 
+
+def render_pos():
+    global latest_message, items
+    mes = latest_message.get("/currentpos", b"0,0").decode()
+    #print(mes)
+    mes = [float(i) for i in mes.split(',')]
+
+
+    items["current_pos"].set_center((mes[0]/50, mes[1]/50))
+    #print((mes[0]/50, mes[1]/50))
 # MOVES
 def init_moves():
     global ax, items
@@ -203,6 +221,9 @@ def render_chessboard_pattern():
     plt.yticks(
         np.arange(rows), labels=[str(i + 1) for i in range(rows)]
     )  # Add y-axis labels (1-8)
+    # 400, 400 is defined to be the edge of the board and also the furthest our magnet can go
+    ax.set_xlim(-75/50, 475/50)
+    ax.set_ylim(475/50 , -75/50)
 
 
 def render_chessboard_bg():
@@ -252,8 +273,9 @@ def init_plot():
     init_vectors()  # Initialize vectors
     init_boardstate()
     init_moves()
+    init_pos()
     render_checkboxes()
-    
+
     # ax.invert_yaxis()
     fig.canvas.draw()
     fig.canvas.flush_events()
@@ -265,7 +287,7 @@ def on_connect(client, userdata, flags, reason_code, properties):
     else:
         print(f"Successfully connected")
         client.subscribe(
-            [(i, 0) for i in ["$SYS/#", "/path", "/boardstate", "/magnets", "/playermoves", "/robotmoves"]]
+            [(i, 0) for i in ["$SYS/#", "/path", "/boardstate", "/magnets", "/playermoves", "/robotmoves", "/currentpos"]]
         )
 
 
@@ -280,7 +302,7 @@ def on_message(client, userdata, message):
     #
     #    plt.title("Boardstate Plot")  # Add a title to distinguish plots
 
-    if message.topic in ("/magnets", "/path", "/boardstate"):
+    if message.topic in ("/magnets", "/path", "/boardstate", "/currentpos"):
         latest_message[message.topic] = message.payload
     elif message.topic.startswith("/") and message.topic.endswith("moves"):
         latest_message["moves"].append((message.payload, message.topic))
@@ -292,7 +314,7 @@ def on_message(client, userdata, message):
 client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
 client.on_message = on_message
 client.on_connect = on_connect
-client.connect("localhost")
+client.connect("chessbot")
 
 
 client.loop_start()
@@ -303,6 +325,7 @@ while True:
     render_vectors()
     render_boardstate()
     render_moves()
+    render_pos()
     fig.canvas.draw()
     fig.canvas.flush_events()
     sleep(0.52)
