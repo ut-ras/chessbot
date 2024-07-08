@@ -12,6 +12,7 @@ def square_to_coordinates(square): # Converts chess square to coordinates (e.g.,
     row = (square[1]) - ord('1')
     if 0 > column or 8 < column or 0 > row or 8 < row: # allow rows 0 through 8 (0th row is for storing dead pieces)
         return None
+    row = 7-row
     return (column * SIZE, row * SIZE)
 
 
