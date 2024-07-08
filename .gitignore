@@ -193,7 +193,7 @@ pyrightconfig.json
 
 # End of https://www.toptal.com/developers/gitignore/api/python,circuitpython,c++
 .DS_Store
-game.pgn
+*.pgn
 chess_board_simulation.png
 chess_board_simulation.png
 bin/*
