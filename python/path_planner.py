@@ -10,6 +10,8 @@ def square_to_coordinates(square): # Converts chess square to coordinates (e.g.,
     #column = ord(square[0]) - ord('a')
     column = square[0] - ord('a')
     row = (square[1]) - ord('1')
+    if 0 > column or 8 < column or 0 > row or 8 < row: # allow rows 0 through 8 (0th row is for storing dead pieces)
+        return None
     return (column * SIZE, row * SIZE)
 
 
@@ -23,6 +25,9 @@ def on_message(client, userdata, message):
       
         from_square = square_to_coordinates(from_square)
         to_square = square_to_coordinates(to_square)
+        if from_square is None or to_square is None:#invalid positions
+            client.publish("/path", b"home")
+            return
 
         combined_string = str(from_square[0])+ "," +str(from_square[1]) 
         #either goes up half a square or down half a square then moves horizontal to coordinate half a square from final y
