@@ -142,11 +142,11 @@ def render_boardstate():
     # print(mes)
     # print(bin(mes))
     mask = 1
-    r = 0
+    r = 7
     c = 0
     count  = 0
     circles = []
-    while r < 8 :
+    while r>=0:
         while c < 8:
             if count < 63:
                 result = mask & int(mes)
@@ -160,7 +160,7 @@ def render_boardstate():
             count = count +1
             mask = mask << 1
         c = 0
-        r = r + 1
+        r = r - 1
     items["boardstate"].set_paths(circles)
 
 # POS
