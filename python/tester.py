@@ -44,7 +44,7 @@ def render_mag():
     vals = decode_mag_msg(latest_message.get("/magnets", b""))
     vals = [(0, 0, 0)] * (64 - len(vals)) + vals
     z_vals = [i[2] for i in vals]
-    imval = np.array(z_vals).reshape((8, 8))
+    imval = np.array(z_vals).reshape((8, 8))[::-1]
     items["mag_z"].set_array(imval)
     # print(len(z_vals), imval)
     # plt.title("Magnet Plot")  # Add a title to distinguish plots
@@ -71,24 +71,23 @@ def render_vectors():
     global latest_message, items
     new_lines = []
     vals = decode_mag_msg(latest_message.get("/magnets", b"\0" * 4 * 3 * 64))
-    r = 0
-    c = 0 
+    r = 7
+    c = 0
     i = 0
     arrows = []
-    while r < 8:
+    while r>=0:
         while c < 8:
     #for i in range(1, len(vals)):
-         
             coordinates = vals[i]
             x = coordinates[0]
             y = coordinates[1]
             #print(x)
             #print(y)
-            arrows.append(Arrow(c,r , x * .01 * FACTOR , y * .01 * FACTOR, width=0.2))
+            arrows.append(Arrow(c,r , -x * .01 * FACTOR , y * .01 * FACTOR, width=0.2))
             c = c + 1
             i = i + 1
         c = 0
-        r = r + 1
+        r = r - 1
 
     items["vectors"].set_paths(arrows)
 
@@ -223,7 +222,7 @@ def render_chessboard_pattern():
     )  # Add y-axis labels (1-8)
     # 400, 400 is defined to be the edge of the board and also the furthest our magnet can go
     ax.set_xlim(-75/50, 475/50)
-    ax.set_ylim(475/50 , -75/50)
+    ax.set_ylim(-75/50, 475/50)
 
 
 def render_chessboard_bg():
@@ -314,7 +313,7 @@ def on_message(client, userdata, message):
 client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
 client.on_message = on_message
 client.on_connect = on_connect
-client.connect("chessbot")
+client.connect("chessbot.local")
 
 
 client.loop_start()
