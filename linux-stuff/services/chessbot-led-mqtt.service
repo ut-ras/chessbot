@@ -5,6 +5,7 @@ Description=[Service description]
 Type=simple
 WorkingDirectory=~
 ExecStart=/bin/sh -c '/usr/bin/sudo /home/chessbot/chessbot/venv/bin/python -u /home/chessbot/chessbot/python/led_mqtt.py'
+Restart=on-failure
 
 [Install]
 WantedBy=default.target

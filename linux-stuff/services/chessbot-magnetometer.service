@@ -4,6 +4,7 @@ Description=[Service description]
 [Service]
 Type=simple
 ExecStart=/home/chessbot/chessbot/venv/bin/python -u /home/chessbot/chessbot/python/read_magnetometers.py
+Restart=on-failure
 
 [Install]
 WantedBy=default.target
