@@ -112,7 +112,9 @@ if __name__ == "__main__":
         if len(paths) > 0:
             mag = False # mag turns on for every other movement
             for targets in paths.pop(0):
+                print(targets)
                 if targets == 'home':
+                    print('homing manual')
                     home()
                 else:
                     # emag off for first target on for subseq

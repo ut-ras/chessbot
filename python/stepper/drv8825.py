@@ -43,7 +43,10 @@ def move(x : int, y : int) -> Generator[Tuple[int, int], None, None]:
         if y > 0 and yrat >= xrat:
             STEP2.value = True
             y-=1
-        sleep(0.006)
+        if STEP2.value: # y axis is heavier
+            sleep(12 * 0.450 / 1000) # actually this is step rate, so can hypothetically be 0.225ms it for high/low transitions
+        elif STEP1.value: # x axis  is light and agile
+            sleep(6*0.450/1000)
         #print(time(), STEP1.value, STEP2.value)
         STEP1.value = False
         STEP2.value = False
