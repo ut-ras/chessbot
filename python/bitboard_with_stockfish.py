@@ -488,6 +488,7 @@ class RealBoard:
         self.clear_piece(from_square)
         self.set_piece(to_square, self.last_piece_moved)
         return self
+
 class Bitboard:
     def __init__(self):
         # Initialize an empty board, where 0 represents no pieces on the board
@@ -599,6 +600,7 @@ class Bitboard:
     def print_chessboard(board):
         for row in board:
             print(' '.join(row))
+
 class StockfishEngine:
     def __init__(self, STOCKFISH_PATH):
         self.process = subprocess.Popen(
