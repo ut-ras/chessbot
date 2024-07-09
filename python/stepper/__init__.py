@@ -78,8 +78,8 @@ def home():
     print("DONE HOMING")
 
 
-def publish_current_pos(mqttc):
-    mqttc.publish("/currentpos", f'{current[0]},{current[1]}', retain=True)
+def publish_current_pos(mqttc, mag = 0):
+    mqttc.publish("/currentpos", f'{current[0]},{current[1]},{int(mag)}', retain=True)
 
 STEPS_PER_MM_X =5 
 STEPS_PER_MM_Y = 5 
@@ -128,7 +128,7 @@ if __name__ == "__main__":
                     for i in move((targets[0] - current[0])*STEPS_PER_MM_X,(targets[1] - current[1])*STEPS_PER_MM_Y):
                         current = ((targets[0] - i[0] / STEPS_PER_MM_X), (targets[1] - i[1] / STEPS_PER_MM_Y))
                         #print(i)
-                        if not n % 10: publish_current_pos(mqttc)
+                        if not n % 10: publish_current_pos(mqttc, mag)
                         n += 1
                     mag = True#not mag
                     #EMAG.value = 0

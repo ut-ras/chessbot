@@ -1,10 +1,13 @@
 [Unit]
 Description=[Service description]
+StartLimitBurst=200
+StartLimitIntervalSec=0.1s
 
 [Service]
 Type=simple
 ExecStart=/home/chessbot/chessbot/venv/bin/python -u /home/chessbot/chessbot/python/read_magnetometers.py
 Restart=on-failure
+
 
 [Install]
 WantedBy=default.target

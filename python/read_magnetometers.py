@@ -15,7 +15,7 @@ TMAG_START_ADDR = 0x35
 PCA_ADDR = PCA_OG_ADDR + PCA_OFFSET
 PCA_TO_PHYSICAL_WIRING_ORDER = [4,5,6,7,0,1,2,3]
 
-ban_addrs = banned_addresses_that_are_being_mean_to_me = []
+ban_addrs = banned_addresses_that_are_being_mean_to_me = [0x56]
 
 # these addresses are tmaga1s (+- 40mT) whereas all the others are tmaga2s (+= 133mT)
 tmag1s = [0x36]
@@ -120,7 +120,7 @@ class TMAG5273:
         # Read 6 bytes of data (X, Y, Z magnetic field values)
 
         if self.device_address in ban_addrs:
-            return 0,0,0
+            return 10,10,-32
         if self.device_address not in tmagcache:
             tmagcache[self.device_address] = I2C(self.device_address, bus_number)
         i2c = tmagcache[self.device_address]

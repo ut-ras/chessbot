@@ -36,6 +36,9 @@ turn = 'white'
 
 # Path to the Stockfish binary
 STOCKFISH_PATH = 'stockfish'  
+STOCKFISH_PATH = subprocess.run(["which", "stockfish"], capture_output=True).stdout.strip()
+print(STOCKFISH_PATH)
+STOCKFISH_PATH = '/usr/games/stockfish'
 
 # Automated test mode flag
 AUTOMATED_TEST_MODE = True  # Set to False for manual input mode
