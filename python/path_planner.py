@@ -37,29 +37,36 @@ def on_message(client, userdata, message):
             #combined_string =combined_string+ ","+str(from_square[0]+.5)+ "," +str(from_square[1]) 
             #combined_string =combined_string+ ","+str(from_square[0]+.5)+ "," +str(to_square[1]) 
         #else:
-        if from_square[1] < to_square[1]: 
-            if from_square[0] != to_square[0]:
-                combined_string =combined_string+ ","+str(from_square[0])+ "," +str(from_square[1]+.5 * SIZE) 
-            if from_square[0] < to_square[0]:
-                combined_string =combined_string+ ","+str(to_square[0]-.5 * SIZE)+ "," +str(from_square[1]+.5 * SIZE) 
-                combined_string = combined_string+ ","+str(to_square[0]-.5 * SIZE)+ "," +str(to_square[1])
-            elif from_square[0] > to_square[0]:
-                combined_string =combined_string+ ","+str(to_square[0]+.5 *SIZE )+ "," +str(from_square[1]+.5 *SIZE)
-                combined_string = combined_string+ ","+str(to_square[0]+.5*SIZE)+ "," +str(to_square[1]) 
+        y_diff = from_square[1] - to_square[1]
+        x_diff = from_square[0] - to_square[0]
+        y_diff = abs(y_diff)
+        x_diff = abs(x_diff)
+        print(x_diff)
+        print(y_diff)
+        if(x_diff == 2*SIZE and y_diff ==1*SIZE) or (x_diff ==1*SIZE and y_diff ==2*SIZE):
+            if from_square[1] < to_square[1]: 
+                if from_square[0] != to_square[0]:
+                    combined_string =combined_string+ ","+str(from_square[0])+ "," +str(from_square[1]+.5 * SIZE) 
+                if from_square[0] < to_square[0]:
+                    combined_string =combined_string+ ","+str(to_square[0]-.5 * SIZE)+ "," +str(from_square[1]+.5 * SIZE) 
+                    combined_string = combined_string+ ","+str(to_square[0]-.5 * SIZE)+ "," +str(to_square[1])
+                elif from_square[0] > to_square[0]:
+                    combined_string =combined_string+ ","+str(to_square[0]+.5 *SIZE )+ "," +str(from_square[1]+.5 *SIZE)
+                    combined_string = combined_string+ ","+str(to_square[0]+.5*SIZE)+ "," +str(to_square[1]) 
             
 
 
 
 
-        elif from_square[1] > to_square[1]:
-            if from_square[0] != to_square[0]:
-                combined_string =combined_string+ ","+str(from_square[0])+ "," +str(from_square[1]-.5*SIZE) 
-            if from_square[0] < to_square[0]:
-                combined_string =combined_string+ ","+str(to_square[0]-.5*SIZE)+ "," +str(from_square[1]-.5*SIZE) 
-                combined_string = combined_string+ ","+str(to_square[0]-.5*SIZE)+ "," +str(to_square[1]) 
-            elif from_square[0] > to_square[0]:
-                combined_string =combined_string+ ","+str(to_square[0]+.5*SIZE)+ "," +str(from_square[1]-.5*SIZE) 
-                combined_string = combined_string+ ","+str(to_square[0]+.5*SIZE)+ "," +str(to_square[1]) 
+            elif from_square[1] > to_square[1]:
+                if from_square[0] != to_square[0]:
+                    combined_string =combined_string+ ","+str(from_square[0])+ "," +str(from_square[1]-.5*SIZE) 
+                if from_square[0] < to_square[0]:
+                    combined_string =combined_string+ ","+str(to_square[0]-.5*SIZE)+ "," +str(from_square[1]-.5*SIZE) 
+                    combined_string = combined_string+ ","+str(to_square[0]-.5*SIZE)+ "," +str(to_square[1]) 
+                elif from_square[0] > to_square[0]:
+                    combined_string =combined_string+ ","+str(to_square[0]+.5*SIZE)+ "," +str(from_square[1]-.5*SIZE) 
+                    combined_string = combined_string+ ","+str(to_square[0]+.5*SIZE)+ "," +str(to_square[1]) 
 
         #else:
             #if from_square[0] != to_square[0]:
