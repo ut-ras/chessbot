@@ -101,7 +101,9 @@ if __name__ == "__main__":
     mqttc.on_connect = on_connect
     mqttc.on_message = on_message
     print("connecting")
+    #print(mqttc.connect("localhost"))
     print(mqttc.connect("chessbot"))
+
     
     mqttc.loop_forever()
     
