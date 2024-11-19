@@ -2608,18 +2608,6 @@
 		)
 		(uuid "46c89140-54f4-4b8f-8ff4-62d07df2eacd")
 	)
-	(hierarchical_label "SCL"
-		(shape input)
-		(at 171.45 83.82 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "71f59aab-ad54-4fc1-8f3b-d973b2849756")
-	)
 	(hierarchical_label "5V"
 		(shape input)
 		(at 114.3 95.25 180)
@@ -2632,7 +2620,7 @@
 		)
 		(uuid "a1203611-a9c4-4422-92a7-3bba9c8e81ec")
 	)
-	(hierarchical_label "SDA"
+	(hierarchical_label "SCL"
 		(shape input)
 		(at 168.91 83.82 270)
 		(fields_autoplaced yes)
@@ -2642,7 +2630,7 @@
 			)
 			(justify right)
 		)
-		(uuid "ae11f455-529f-45c6-8682-6f017f1e7f98")
+		(uuid "a837fa0d-8623-4a40-abb0-9cd17b29ec29")
 	)
 	(hierarchical_label "5V"
 		(shape input)
@@ -2655,6 +2643,18 @@
 			(justify left)
 		)
 		(uuid "be533a17-4c9f-4ebf-a5f1-8d85c48f0054")
+	)
+	(hierarchical_label "SDA"
+		(shape input)
+		(at 171.45 83.82 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c291ac33-97a6-4bbf-9ebd-f88c588abf69")
 	)
 	(hierarchical_label "5V"
 		(shape input)
