@@ -367,169 +367,6 @@
 				)
 			)
 		)
-		(symbol "Device:D"
-			(pin_numbers hide)
-			(pin_names
-				(offset 1.016) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "D"
-				(at 0 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "D"
-				(at 0 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Diode"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Sim.Device" "D"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Sim.Pins" "1=K 2=A"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "diode"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "D_0_1"
-				(polyline
-					(pts
-						(xy -1.27 1.27) (xy -1.27 -1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 0) (xy -1.27 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "D_1_1"
-				(pin passive line
-					(at -3.81 0 0)
-					(length 2.54)
-					(name "K"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 3.81 0 180)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "Device:LED"
 			(pin_numbers hide)
 			(pin_names
@@ -1531,6 +1368,126 @@
 				)
 			)
 		)
+		(symbol "power:+3V3"
+			(power)
+			(pin_numbers hide)
+			(pin_names
+				(offset 0) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "+3V3"
+				(at 0 3.556 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"+3V3\""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "+3V3_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+3V3_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "power:GND"
 			(power)
 			(pin_numbers hide)
@@ -1767,10 +1724,16 @@
 		(uuid "14ec2253-344b-4a1d-9ca6-e5f98a0e39be")
 	)
 	(junction
-		(at 125.73 106.68)
+		(at 165.1 124.46)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "278089c5-5ed0-4a0b-bdae-cdaaa00abe8b")
+		(uuid "2aa0c216-90a4-471c-8e79-8ef8f86c47d1")
+	)
+	(junction
+		(at 96.52 106.68)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3fe912ff-466c-4fbf-82e6-ffaa99d4c1a9")
 	)
 	(junction
 		(at 261.62 132.08)
@@ -1783,6 +1746,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5050668e-c9de-4ca3-802d-2a2f76cdb6a3")
+	)
+	(junction
+		(at 165.1 109.22)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5289ec66-7dd0-4e27-93a3-6ef0b31fc566")
 	)
 	(junction
 		(at 135.89 152.4)
@@ -1803,18 +1772,6 @@
 		(uuid "87ee5d8e-4089-49b9-a0c0-fba846c0c476")
 	)
 	(junction
-		(at 165.1 124.46)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "8bd0e7a1-40f9-42ad-b0e0-8988a18d84ec")
-	)
-	(junction
-		(at 139.7 106.68)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "97d4b3ee-7b6d-4631-85f3-35e1e9d9fdf5")
-	)
-	(junction
 		(at 278.13 129.54)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1825,6 +1782,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c143dde6-c6f7-4771-8b55-ba5956e9fc0c")
+	)
+	(junction
+		(at 96.52 152.4)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c3d5ee2a-b6c3-43ca-ae73-aa4f7334d1cc")
 	)
 	(junction
 		(at 271.78 121.92)
@@ -1874,6 +1837,16 @@
 	)
 	(wire
 		(pts
+			(xy 139.7 109.22) (xy 165.1 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "08ee13db-1bf3-45cc-83b3-ed139dda376e")
+	)
+	(wire
+		(pts
 			(xy 115.57 106.68) (xy 120.65 106.68)
 		)
 		(stroke
@@ -1904,6 +1877,16 @@
 	)
 	(wire
 		(pts
+			(xy 72.39 152.4) (xy 96.52 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1f61494d-485c-4586-869a-5f791c80b345")
+	)
+	(wire
+		(pts
 			(xy 261.62 127) (xy 278.13 127)
 		)
 		(stroke
@@ -1911,6 +1894,16 @@
 			(type default)
 		)
 		(uuid "23e5dc55-69f9-4f98-9114-d952d8b0c74a")
+	)
+	(wire
+		(pts
+			(xy 165.1 106.68) (xy 165.1 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "291d2248-6ce0-4d40-a628-e2a51421a056")
 	)
 	(wire
 		(pts
@@ -1954,16 +1947,6 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 106.68) (xy 139.7 106.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3e6c355f-b4d7-454f-bb5b-faa022d510d8")
-	)
-	(wire
-		(pts
 			(xy 278.13 129.54) (xy 280.67 129.54)
 		)
 		(stroke
@@ -1991,16 +1974,6 @@
 			(type default)
 		)
 		(uuid "4674f5d6-17bc-4749-96f5-a14434dab3ea")
-	)
-	(wire
-		(pts
-			(xy 139.7 106.68) (xy 139.7 109.22)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "49bddb86-b81a-44b4-ac8c-2e35e20de00b")
 	)
 	(wire
 		(pts
@@ -2134,6 +2107,16 @@
 	)
 	(wire
 		(pts
+			(xy 72.39 106.68) (xy 96.52 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7db96a5f-1f65-4e1a-a8c9-e7aab86d5692")
+	)
+	(wire
+		(pts
 			(xy 278.13 127) (xy 280.67 127)
 		)
 		(stroke
@@ -2174,6 +2157,16 @@
 	)
 	(wire
 		(pts
+			(xy 72.39 123.19) (xy 72.39 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "934438f4-eefb-470d-85c5-c716ecbfc3b9")
+	)
+	(wire
+		(pts
 			(xy 120.65 121.92) (xy 120.65 124.46)
 		)
 		(stroke
@@ -2201,16 +2194,6 @@
 			(type default)
 		)
 		(uuid "ad77ee07-9afa-4aeb-a5b7-51dfe3ca649d")
-	)
-	(wire
-		(pts
-			(xy 157.48 96.52) (xy 157.48 119.38)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b890027b-d9b9-46d5-b5a8-a6df744cc448")
 	)
 	(wire
 		(pts
@@ -2244,6 +2227,16 @@
 	)
 	(wire
 		(pts
+			(xy 72.39 130.81) (xy 72.39 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bea8bb34-98b1-4d0c-9933-329bfeefeafa")
+	)
+	(wire
+		(pts
 			(xy 139.7 119.38) (xy 157.48 119.38)
 		)
 		(stroke
@@ -2261,26 +2254,6 @@
 			(type default)
 		)
 		(uuid "c5f339d2-589d-41dc-823f-3eb6463455a3")
-	)
-	(wire
-		(pts
-			(xy 139.7 91.44) (xy 139.7 106.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c7d0cab9-7519-4497-a8b9-431a5165706a")
-	)
-	(wire
-		(pts
-			(xy 139.7 91.44) (xy 165.1 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cb203479-f922-4aec-a316-5352ba263aed")
 	)
 	(wire
 		(pts
@@ -2361,6 +2334,16 @@
 			(type default)
 		)
 		(uuid "ebd25c19-3c3f-4d40-a9a9-056b7aa47dc1")
+	)
+	(wire
+		(pts
+			(xy 165.1 109.22) (xy 165.1 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f4a72b17-530e-48dd-ba32-876bacf1a57a")
 	)
 	(wire
 		(pts
@@ -2963,7 +2946,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 115.57 118.11 0)
 			(effects
 				(font
@@ -3006,35 +2989,111 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:D")
-		(at 165.1 105.41 90)
+		(lib_id "Transistor_FET:AO3401A")
+		(at 162.56 119.38 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7ef03df4-f0e5-45a2-b6fe-b480a0f8cd91")
+		(property "Reference" "Q1"
+			(at 168.91 120.6501 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "AO3401A"
+			(at 168.91 118.1101 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23_Handsoldering"
+			(at 167.64 117.475 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.aosmd.com/pdfs/datasheet/AO3401A.pdf"
+			(at 167.64 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "-4.0A Id, -30V Vds, P-Channel MOSFET, SOT-23"
+			(at 162.56 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "95f83da0-de0a-4874-ab83-d8b284778d0a")
+		)
+		(pin "1"
+			(uuid "f3c1e8ba-6645-49c7-91bf-e76bfb75d334")
+		)
+		(pin "3"
+			(uuid "5fc4d7f9-6e65-4372-8fb9-048a54b0967a")
+		)
+		(instances
+			(project "chessboard2"
+				(path "/acabfe98-929d-44a8-a67c-4204ca98f09f"
+					(reference "Q1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 72.39 127 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "93eb87b1-d607-4f1e-ac7d-4064037b6a0e")
-		(property "Reference" "D4"
-			(at 167.64 104.1399 90)
+		(uuid "814417f0-a271-42ce-89c3-b95f7c840bf3")
+		(property "Reference" "C1"
+			(at 76.2 125.7299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
-		(property "Value" "Vf=.6"
-			(at 167.64 106.6799 90)
+		(property "Value" "10u"
+			(at 76.2 128.2699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
-		(property "Footprint" ""
-			(at 165.1 105.41 0)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+			(at 73.3552 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3043,7 +3102,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 165.1 105.41 0)
+			(at 72.39 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3051,26 +3110,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Diode"
-			(at 165.1 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" "D"
-			(at 165.1 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 165.1 105.41 0)
+		(property "Description" "Unpolarized capacitor"
+			(at 72.39 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3079,15 +3120,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "5f20abb3-f1f0-48eb-9224-34d23cdcc0e8")
+			(uuid "9fb90c7f-e83d-4a61-9d5b-4f646fd7fc9a")
 		)
 		(pin "2"
-			(uuid "5caa40cb-fcec-4be8-b2ab-d9eb860ddd21")
+			(uuid "5f055054-7df4-43ff-9737-4cc6f18890c4")
 		)
 		(instances
 			(project "chessboard2"
 				(path "/acabfe98-929d-44a8-a67c-4204ca98f09f"
-					(reference "D4")
+					(reference "C1")
 					(unit 1)
 				)
 			)
@@ -3121,7 +3162,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 118.872 128.27 90)
 			(effects
 				(font
@@ -3182,7 +3223,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10u"
+		(property "Value" "1u"
 			(at 193.04 137.1599 0)
 			(effects
 				(font
@@ -3301,170 +3342,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Transistor_FET:AO3401A")
-		(at 162.56 96.52 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a92559eb-cabb-4a96-8062-18b189171120")
-		(property "Reference" "Q1"
-			(at 168.91 95.2499 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "AO3401A"
-			(at 168.91 97.7899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 167.64 98.425 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.aosmd.com/pdfs/datasheet/AO3401A.pdf"
-			(at 167.64 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "-4.0A Id, -30V Vds, P-Channel MOSFET, SOT-23"
-			(at 162.56 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "4c4f435e-2e5e-4d58-ba28-66276448a545")
-		)
-		(pin "1"
-			(uuid "33088d1c-6fbc-4943-bc48-480a249c1b83")
-		)
-		(pin "3"
-			(uuid "41ccee4a-329c-4600-a5fa-919809deead6")
-		)
-		(instances
-			(project "chessboard2"
-				(path "/acabfe98-929d-44a8-a67c-4204ca98f09f"
-					(reference "Q1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:D")
-		(at 165.1 113.03 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b14c8278-53f5-4a0e-80bf-1d038ec93bf7")
-		(property "Reference" "D3"
-			(at 167.64 111.7599 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "Vf=.6"
-			(at 167.64 114.2999 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 165.1 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 165.1 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Diode"
-			(at 165.1 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" "D"
-			(at 165.1 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 165.1 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f6d53c31-b507-4f5b-99a4-18db52f1cf75")
-		)
-		(pin "2"
-			(uuid "75299ead-a237-4de5-929d-a4a64ffbd0f0")
-		)
-		(instances
-			(project "chessboard2"
-				(path "/acabfe98-929d-44a8-a67c-4204ca98f09f"
-					(reference "D3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:LED")
 		(at 120.65 118.11 270)
 		(mirror x)
@@ -3492,7 +3369,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 120.65 118.11 0)
 			(effects
 				(font
@@ -3562,7 +3439,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 123.952 128.27 90)
 			(effects
 				(font
@@ -3683,35 +3560,34 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:D")
-		(at 165.1 120.65 90)
+		(lib_id "power:+3V3")
+		(at 165.1 106.68 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "d1662879-872a-4765-9001-efb51ded7787")
-		(property "Reference" "D2"
-			(at 167.64 119.3799 90)
+		(uuid "d6d7e04a-fb81-427e-b43f-2ba6738cb063")
+		(property "Reference" "#PWR03"
+			(at 165.1 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(hide yes)
 			)
 		)
-		(property "Value" "Vf=.6"
-			(at 167.64 121.9199 90)
+		(property "Value" "+3V3"
+			(at 165.1 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Footprint" ""
-			(at 165.1 120.65 0)
+			(at 165.1 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3719,8 +3595,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 165.1 120.65 0)
+		(property "Datasheet" ""
+			(at 165.1 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3728,26 +3604,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Diode"
-			(at 165.1 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" "D"
-			(at 165.1 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 165.1 120.65 0)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 165.1 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3756,15 +3614,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "04c2b5b9-b47b-4b69-86c6-ac036951a8cc")
-		)
-		(pin "2"
-			(uuid "4440a0ac-7a5d-40b1-944a-b797871786e6")
+			(uuid "85f4c081-2c11-40b6-8112-c349a5fb1aa4")
 		)
 		(instances
 			(project "chessboard2"
 				(path "/acabfe98-929d-44a8-a67c-4204ca98f09f"
-					(reference "D2")
+					(reference "#PWR03")
 					(unit 1)
 				)
 			)
@@ -3865,7 +3720,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 117.348 128.27 90)
 			(effects
 				(font
@@ -4092,7 +3947,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-6"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-6_Handsoldering"
 			(at 163.83 149.86 0)
 			(effects
 				(font
@@ -4174,7 +4029,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 125.73 118.11 0)
 			(effects
 				(font
