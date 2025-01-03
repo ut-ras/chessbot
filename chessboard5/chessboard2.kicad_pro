@@ -542,11 +542,23 @@
           "label": "DNP",
           "name": "${DNP}",
           "show": true
+        },
+        {
+          "group_by": false,
+          "label": "#",
+          "name": "${ITEM_NUMBER}",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Description",
+          "name": "Description",
+          "show": false
         }
       ],
       "filter_string": "",
       "group_symbols": true,
-      "name": "Grouped By Value",
+      "name": "",
       "sort_asc": true,
       "sort_field": "Reference"
     },
@@ -593,6 +605,38 @@
     [
       "acabfe98-929d-44a8-a67c-4204ca98f09f",
       "Root"
+    ],
+    [
+      "baa1ed7e-b023-44da-b1f7-17a389052799",
+      "Cell"
+    ],
+    [
+      "ebcb53f7-58fd-409c-8719-320b24457066",
+      "Cell1"
+    ],
+    [
+      "23ed26b1-8d60-43ca-b6a7-5586453700e2",
+      "Cell2"
+    ],
+    [
+      "ea4f5474-c124-483a-b05c-97db30728daf",
+      "Cell3"
+    ],
+    [
+      "8dc5d56a-bfdc-4a40-b66e-dfea5278dc65",
+      "Cell4"
+    ],
+    [
+      "730ed345-c18d-4f02-adc8-c8506f5407de",
+      "Cell5"
+    ],
+    [
+      "5a95ed4a-0e33-40ab-8120-c7c932b67184",
+      "Cell6"
+    ],
+    [
+      "72d5fca6-10ec-41c2-be98-438aeffd8b3b",
+      "Cell7"
     ]
   ],
   "text_variables": {}
