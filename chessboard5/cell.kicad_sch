@@ -141,7 +141,7 @@
 				)
 			)
 		)
-		(symbol "Device:LED_ARGB"
+		(symbol "Device:LED_GBRA"
 			(pin_names
 				(offset 0) hide)
 			(exclude_from_sim no)
@@ -155,7 +155,7 @@
 					)
 				)
 			)
-			(property "Value" "LED_ARGB"
+			(property "Value" "LED_GBRA"
 				(at 0 -8.89 0)
 				(effects
 					(font
@@ -181,7 +181,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "RGB LED, anode/red/green/blue"
+			(property "Description" "RGB LED, green/blue/red/anode"
 				(at 0 0 0)
 				(effects
 					(font
@@ -208,7 +208,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "LED_ARGB_0_0"
+			(symbol "LED_GBRA_0_0"
 				(text "B"
 					(at -1.905 -6.35 0)
 					(effects
@@ -234,7 +234,7 @@
 					)
 				)
 			)
-			(symbol "LED_ARGB_0_1"
+			(symbol "LED_GBRA_0_1"
 				(polyline
 					(pts
 						(xy -1.27 -5.08) (xy -2.54 -5.08)
@@ -566,11 +566,11 @@
 					)
 				)
 			)
-			(symbol "LED_ARGB_1_1"
+			(symbol "LED_GBRA_1_1"
 				(pin passive line
-					(at 5.08 0 180)
+					(at -5.08 0 0)
 					(length 2.54)
-					(name "A"
+					(name "GK"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -578,6 +578,24 @@
 						)
 					)
 					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -5.08 0)
+					(length 2.54)
+					(name "BK"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -595,24 +613,6 @@
 							)
 						)
 					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "GK"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
 					(number "3"
 						(effects
 							(font
@@ -622,9 +622,9 @@
 					)
 				)
 				(pin passive line
-					(at -5.08 -5.08 0)
+					(at 5.08 0 180)
 					(length 2.54)
-					(name "BK"
+					(name "A"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1996,16 +1996,6 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 72.39) (xy 125.73 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "04821a1c-bd24-4d07-a2fd-2791db0444b8")
-	)
-	(wire
-		(pts
 			(xy 106.68 99.06) (xy 139.7 99.06)
 		)
 		(stroke
@@ -2016,16 +2006,6 @@
 	)
 	(wire
 		(pts
-			(xy 106.68 93.98) (xy 120.65 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "13a569cb-868c-499f-b3ed-068cc2297648")
-	)
-	(wire
-		(pts
 			(xy 135.89 102.87) (xy 165.1 102.87)
 		)
 		(stroke
@@ -2033,16 +2013,6 @@
 			(type default)
 		)
 		(uuid "1892f1f2-d423-4fb7-8762-80679f3cc89e")
-	)
-	(wire
-		(pts
-			(xy 106.68 91.44) (xy 115.57 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "19608647-aae7-43ba-8df6-ccc16073469e")
 	)
 	(wire
 		(pts
@@ -2096,6 +2066,16 @@
 	)
 	(wire
 		(pts
+			(xy 106.68 96.52) (xy 120.65 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4e48eac6-4632-4e4d-93bb-3a1232eb7790")
+	)
+	(wire
+		(pts
 			(xy 120.65 57.15) (xy 120.65 62.23)
 		)
 		(stroke
@@ -2113,16 +2093,6 @@
 			(type default)
 		)
 		(uuid "5df86afd-ad74-4e5f-af2b-654cef90ce69")
-	)
-	(wire
-		(pts
-			(xy 106.68 96.52) (xy 125.73 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "672f3adc-e43d-4616-b003-5a009d81aecb")
 	)
 	(wire
 		(pts
@@ -2266,6 +2236,26 @@
 	)
 	(wire
 		(pts
+			(xy 115.57 91.44) (xy 106.68 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a7a64129-58f4-44ac-b11e-752c031d0f3a")
+	)
+	(wire
+		(pts
+			(xy 115.57 72.39) (xy 115.57 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ba0a4ab9-1c8b-4fb2-8192-edc41cb57b1c")
+	)
+	(wire
+		(pts
 			(xy 96.52 102.87) (xy 135.89 102.87)
 		)
 		(stroke
@@ -2306,13 +2296,23 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 72.39) (xy 120.65 93.98)
+			(xy 120.65 72.39) (xy 120.65 96.52)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "cafe70f2-35a7-4497-9094-6f79a2931c5b")
+	)
+	(wire
+		(pts
+			(xy 125.73 72.39) (xy 125.73 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d7b2db65-e87c-4c11-aca7-5da1b7bb8b68")
 	)
 	(wire
 		(pts
@@ -2323,6 +2323,16 @@
 			(type default)
 		)
 		(uuid "e208214b-eb59-4660-8081-82e5f52ac9b9")
+	)
+	(wire
+		(pts
+			(xy 125.73 93.98) (xy 106.68 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e696ece7-2942-41e2-a6d0-58723866b9b7")
 	)
 	(wire
 		(pts
@@ -2343,16 +2353,6 @@
 			(type default)
 		)
 		(uuid "f5aa49db-def3-4895-a6f9-3f20ad4bdcfd")
-	)
-	(wire
-		(pts
-			(xy 115.57 72.39) (xy 115.57 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fec056a4-ccef-431e-afbc-3ff56c0de465")
 	)
 	(global_label "SCL"
 		(shape input)
@@ -2423,7 +2423,7 @@
 		(uuid "93118b62-422b-47bc-896e-ee6ef8801230")
 	)
 	(symbol
-		(lib_id "Device:LED_ARGB")
+		(lib_id "Device:LED_GBRA")
 		(at 120.65 67.31 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -2431,8 +2431,8 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "47a635c9-3628-4990-a2cd-d3f3f357f221")
-		(property "Reference" "D3"
+		(uuid "20904906-cad3-48a3-91ea-f894073826e6")
+		(property "Reference" "D11"
 			(at 129.54 66.0399 90)
 			(effects
 				(font
@@ -2441,7 +2441,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "LED_ARGB"
+		(property "Value" "LED_RGAB"
 			(at 129.54 68.5799 90)
 			(effects
 				(font
@@ -2450,7 +2450,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_Inolux_IN-PI554FCH_PLCC4_5.0x5.0mm_P3.2mm"
+		(property "Footprint" "LED_SMD:LED_RGB_Wuerth-PLCC4_3.2x2.8mm_150141M173100"
 			(at 121.92 67.31 0)
 			(effects
 				(font
@@ -2468,7 +2468,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "RGB LED, anode/red/green/blue"
+		(property "Description" "RGB LED, green/blue/red/anode"
 			(at 120.65 67.31 0)
 			(effects
 				(font
@@ -2477,50 +2477,68 @@
 				(hide yes)
 			)
 		)
-		(pin "1"
-			(uuid "e94a0180-4600-4821-90c5-928807eca20f")
+		(property "got" "XINGLIGHT XL-3227RGB-RF"
+			(at 120.65 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
-		(pin "2"
-			(uuid "52bc91db-5eb8-4720-91b8-435da8006856")
+		(property "gotnum" "100"
+			(at 120.65 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
 		(pin "3"
-			(uuid "3d658725-bd04-49cf-b95c-d67764e22686")
+			(uuid "19883ee9-3bf4-4cab-b648-990eb07d956e")
+		)
+		(pin "2"
+			(uuid "c82a068e-dc1c-4f8b-ba56-cc905e86bb58")
 		)
 		(pin "4"
-			(uuid "4c18aebb-d0ee-45a6-9048-f4e7b5f3f593")
+			(uuid "593b6f8e-45ec-458f-bbe7-78342df97048")
+		)
+		(pin "1"
+			(uuid "301e0286-e5c6-4dcb-879a-1c56f4057ae5")
 		)
 		(instances
 			(project "chessboard2"
 				(path "/acabfe98-929d-44a8-a67c-4204ca98f09f/23ed26b1-8d60-43ca-b6a7-5586453700e2"
-					(reference "D3")
-					(unit 1)
-				)
-				(path "/acabfe98-929d-44a8-a67c-4204ca98f09f/5a95ed4a-0e33-40ab-8120-c7c932b67184"
-					(reference "D7")
-					(unit 1)
-				)
-				(path "/acabfe98-929d-44a8-a67c-4204ca98f09f/72d5fca6-10ec-41c2-be98-438aeffd8b3b"
-					(reference "D8")
-					(unit 1)
-				)
-				(path "/acabfe98-929d-44a8-a67c-4204ca98f09f/730ed345-c18d-4f02-adc8-c8506f5407de"
-					(reference "D6")
-					(unit 1)
-				)
-				(path "/acabfe98-929d-44a8-a67c-4204ca98f09f/8dc5d56a-bfdc-4a40-b66e-dfea5278dc65"
-					(reference "D5")
+					(reference "D11")
 					(unit 1)
 				)
 				(path "/acabfe98-929d-44a8-a67c-4204ca98f09f/baa1ed7e-b023-44da-b1f7-17a389052799"
-					(reference "D1")
-					(unit 1)
-				)
-				(path "/acabfe98-929d-44a8-a67c-4204ca98f09f/ea4f5474-c124-483a-b05c-97db30728daf"
-					(reference "D4")
+					(reference "D9")
 					(unit 1)
 				)
 				(path "/acabfe98-929d-44a8-a67c-4204ca98f09f/ebcb53f7-58fd-409c-8719-320b24457066"
-					(reference "D2")
+					(reference "D10")
+					(unit 1)
+				)
+				(path "/acabfe98-929d-44a8-a67c-4204ca98f09f/ea4f5474-c124-483a-b05c-97db30728daf"
+					(reference "D12")
+					(unit 1)
+				)
+				(path "/acabfe98-929d-44a8-a67c-4204ca98f09f/8dc5d56a-bfdc-4a40-b66e-dfea5278dc65"
+					(reference "D13")
+					(unit 1)
+				)
+				(path "/acabfe98-929d-44a8-a67c-4204ca98f09f/730ed345-c18d-4f02-adc8-c8506f5407de"
+					(reference "D14")
+					(unit 1)
+				)
+				(path "/acabfe98-929d-44a8-a67c-4204ca98f09f/5a95ed4a-0e33-40ab-8120-c7c932b67184"
+					(reference "D15")
+					(unit 1)
+				)
+				(path "/acabfe98-929d-44a8-a67c-4204ca98f09f/72d5fca6-10ec-41c2-be98-438aeffd8b3b"
+					(reference "D16")
 					(unit 1)
 				)
 			)
@@ -2573,6 +2591,24 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 63.5 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "got" "CL10A105KB8NNNC"
+			(at 63.5 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "gotnum" "600"
 			(at 63.5 78.74 0)
 			(effects
 				(font
@@ -2963,6 +2999,24 @@
 				(hide yes)
 			)
 		)
+		(property "got" " RC0603FR-07100RL"
+			(at 96.52 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "gotnum" "1000"
+			(at 96.52 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "ba3354f2-f360-4dab-969e-f8bf5864ae73")
 		)
@@ -3054,6 +3108,24 @@
 		)
 		(property "Description" "3-Channel 8-Bit PWM LED Driver, DIP-8/SOIC-8"
 			(at 96.52 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "got" "WS2814F"
+			(at 96.52 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "gotnum" "100"
+			(at 96.52 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3274,6 +3346,24 @@
 				(hide yes)
 			)
 		)
+		(property "got" "AO3401A"
+			(at 162.56 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "gotnum" "100"
+			(at 162.56 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "87ed24b0-c421-4343-85b1-647b92e1054d")
 		)
@@ -3469,6 +3559,24 @@
 				(hide yes)
 			)
 		)
+		(property "got" "CL10A105KB8NNNC"
+			(at 72.39 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "gotnum" "600"
+			(at 72.39 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "51c347e0-8ffe-433b-a883-c16468fdb588")
 		)
@@ -3559,6 +3667,24 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 189.23 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "got" "CL10A105KB8NNNC"
+			(at 189.23 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "gotnum" "600"
 			(at 189.23 86.36 0)
 			(effects
 				(font
@@ -3664,6 +3790,24 @@
 				(hide yes)
 			)
 		)
+		(property "got" " RC0603FR-0710KL"
+			(at 139.7 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "gotnum" "1000"
+			(at 139.7 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "d4500540-b905-4089-b7de-6e5384e11a3d")
 		)
@@ -3754,6 +3898,24 @@
 			)
 		)
 		(property "Description" "Low power 3D magnetic sensor, I2C interface, SOT-23-6"
+			(at 165.1 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "got" "TMAG5273A2QDBVR"
+			(at 165.1 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "gotnum" "100"
 			(at 165.1 87.63 0)
 			(effects
 				(font

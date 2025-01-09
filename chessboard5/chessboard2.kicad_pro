@@ -559,6 +559,18 @@
           "label": "Description",
           "name": "Description",
           "show": false
+        },
+        {
+          "group_by": false,
+          "label": "got",
+          "name": "got",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "gotnum",
+          "name": "gotnum",
+          "show": true
         }
       ],
       "filter_string": "",
