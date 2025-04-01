@@ -3009,6 +3009,12 @@
 		(uuid "176ead21-7eb1-441e-8495-9a8d36aaa328")
 	)
 	(junction
+		(at 232.41 135.89)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "278d3d32-ee9b-4505-aca7-888c2b25d666")
+	)
+	(junction
 		(at 236.22 33.02)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3676,6 +3682,16 @@
 	)
 	(wire
 		(pts
+			(xy 232.41 144.78) (xy 232.41 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b9c99d6a-c61b-4994-859f-37e46d432ead")
+	)
+	(wire
+		(pts
 			(xy 67.31 26.67) (xy 73.66 26.67)
 		)
 		(stroke
@@ -3753,6 +3769,16 @@
 			(type default)
 		)
 		(uuid "d14ecaf0-d3d5-404f-9f2b-4d5cb091c7e4")
+	)
+	(wire
+		(pts
+			(xy 231.14 135.89) (xy 232.41 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e3249891-6d5e-4b8d-8d38-6ae1cb155a58")
 	)
 	(wire
 		(pts
@@ -3855,7 +3881,7 @@
 		(uuid "feefecd0-a7d4-4481-ad35-94a55b8acaef")
 	)
 	(rectangle
-		(start 238.76 120.65)
+		(start 218.44 120.65)
 		(end 280.67 163.83)
 		(stroke
 			(width 0)
@@ -4075,6 +4101,17 @@
 			(justify left bottom)
 		)
 		(uuid "ae9dd6be-e79d-4631-94b0-53e0abd43337")
+	)
+	(label "VBUS"
+		(at 231.14 135.89 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b086e038-25c5-40f1-ab12-6bd0b9472e90")
 	)
 	(label "UNLIM_5V"
 		(at 78.74 125.095 180)
@@ -4513,6 +4550,83 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 232.41 148.59 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0f55b6f6-e401-4a62-a821-2ad707147b00")
+		(property "Reference" "R23"
+			(at 238.76 148.59 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "4k"
+			(at 236.22 148.59 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 230.632 148.59 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 232.41 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 232.41 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
+			(at 232.41 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "41707e49-a3f4-4657-8cb2-cda1ffd405f5")
+		)
+		(pin "1"
+			(uuid "9b5b5ec4-94fa-4983-9b84-b9658d0f8068")
+		)
+		(instances
+			(project "controlboard"
+				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5fab4b81-761e-4fae-b113-00364a75fd9a"
+					(reference "R23")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 267.97 152.4 0)
 		(unit 1)
@@ -4789,6 +4903,149 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 232.41 152.4 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2cacd951-d01a-4201-9d15-683564ab7e08")
+		(property "Reference" "#PWR010"
+			(at 232.41 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 232.41 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 232.41 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 232.41 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 232.41 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d0f65f01-625a-4546-831c-95fdd02a7c56")
+		)
+		(instances
+			(project "controlboard"
+				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5fab4b81-761e-4fae-b113-00364a75fd9a"
+					(reference "#PWR010")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 232.41 135.89 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2fc751aa-d192-4f67-b2da-ce99b5c79b76")
+		(property "Reference" "TP2"
+			(at 233.426 131.318 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 234.95 133.8579 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm"
+			(at 237.49 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 237.49 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 232.41 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
+			(at 232.41 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "bce15986-fb96-4113-9857-a179c470ac6d")
+		)
+		(instances
+			(project "controlboard"
+				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5fab4b81-761e-4fae-b113-00364a75fd9a"
+					(reference "TP2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector:TestPoint")
 		(at 267.97 135.89 0)
 		(unit 1)
@@ -4859,6 +5116,83 @@
 			(project "controlboard"
 				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5fab4b81-761e-4fae-b113-00364a75fd9a"
 					(reference "TP7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 232.41 139.7 270)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3958665f-c601-4da2-bf22-8f35a7fb38e3")
+		(property "Reference" "D16"
+			(at 238.76 141.2875 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Y"
+			(at 236.22 141.2875 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
+			(at 232.41 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 232.41 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 232.41 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Rotation Offset" ""
+			(at 232.41 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cdbd1ab3-438f-45c5-81b7-8618d9acaa3a")
+		)
+		(pin "2"
+			(uuid "ca3c83b6-aaac-4a2a-91e2-ac61a9434c78")
+		)
+		(instances
+			(project "controlboard"
+				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5fab4b81-761e-4fae-b113-00364a75fd9a"
+					(reference "D16")
 					(unit 1)
 				)
 			)
@@ -6715,7 +7049,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "955a3229-d7df-4204-8ddc-0788f870b132")
 		(property "Reference" "R5"
 			(at 88.9 59.944 0)
@@ -7165,7 +7499,7 @@
 				)
 			)
 		)
-		(property "Value" "1k"
+		(property "Value" "4k"
 			(at 248.92 148.59 90)
 			(effects
 				(font

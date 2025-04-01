@@ -1961,7 +1961,7 @@
 				)
 			)
 		)
-		(property "Value" "1k"
+		(property "Value" "3k"
 			(at 146.05 95.25 90)
 			(effects
 				(font
@@ -3371,7 +3371,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fdc607e9-2619-43b1-a274-b211739390f5")
-		(property "Reference" "JP30"
+		(property "Reference" "JP19"
 			(at 77.47 83.8199 90)
 			(effects
 				(font
@@ -3434,16 +3434,16 @@
 		)
 		(instances
 			(project "controlboard"
-				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5fab4b81-761e-4fae-b113-00364a75fd9a/c4ae39fe-dfab-4842-91d5-7d80cdea31e1"
-					(reference "JP30")
-					(unit 1)
-				)
 				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5fab4b81-761e-4fae-b113-00364a75fd9a/6730c4ed-849e-4137-aae0-c93a08939ea9"
 					(reference "JP19")
 					(unit 1)
 				)
 				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5fab4b81-761e-4fae-b113-00364a75fd9a/6f35b5a2-4903-498d-a87f-00926de2e745"
 					(reference "JP29")
+					(unit 1)
+				)
+				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941/5fab4b81-761e-4fae-b113-00364a75fd9a/c4ae39fe-dfab-4842-91d5-7d80cdea31e1"
+					(reference "JP30")
 					(unit 1)
 				)
 			)

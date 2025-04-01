@@ -2264,6 +2264,139 @@
 				)
 			)
 		)
+		(symbol "Switch:SW_SPST"
+			(pin_names
+				(offset 0) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "SW"
+				(at 0 3.175 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SW_SPST"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Single Pole Single Throw (SPST) switch"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "switch lever"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SW_SPST_0_0"
+				(circle
+					(center -2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.524 0.254) (xy 1.524 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "SW_SPST_1_1"
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "B"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "power:GND"
 			(power)
 			(pin_numbers hide)
@@ -2459,16 +2592,6 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 66.04) (xy 140.97 66.04)
-		)
-		(stroke
-			(width 0)
-			(type solid)
-		)
-		(uuid "0a6212d2-9fcd-48c2-8fa5-993171d14633")
-	)
-	(wire
-		(pts
 			(xy 100.33 27.94) (xy 100.33 38.1)
 		)
 		(stroke
@@ -2536,6 +2659,16 @@
 			(type default)
 		)
 		(uuid "2085aaac-2acd-4d00-aed7-57b699a05fb5")
+	)
+	(wire
+		(pts
+			(xy 161.29 77.47) (xy 161.29 80.01)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "23789515-c596-4b89-9b15-26e59a0093cd")
 	)
 	(wire
 		(pts
@@ -2926,6 +3059,16 @@
 			(type solid)
 		)
 		(uuid "7e8e3e19-148e-41d3-a7ac-a1adcf063e31")
+	)
+	(wire
+		(pts
+			(xy 161.29 66.04) (xy 134.62 66.04)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "7f2e1d2f-1472-48da-bf3f-d966bbbced62")
 	)
 	(wire
 		(pts
@@ -3446,6 +3589,16 @@
 			(type default)
 		)
 		(uuid "f90c00f7-110c-4f51-a850-fc90a0c8cc53")
+	)
+	(wire
+		(pts
+			(xy 161.29 67.31) (xy 161.29 66.04)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "fb87087a-012b-4aba-b622-a2e9f0778b16")
 	)
 	(wire
 		(pts
@@ -4457,7 +4610,7 @@
 		(uuid "d1dad837-6b04-498b-8067-f4f099f67f1c")
 	)
 	(label "ENBL"
-		(at 140.97 66.04 0)
+		(at 161.29 80.01 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4747,6 +4900,73 @@
 			(project "controlboard"
 				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941"
 					(reference "R56")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_SPST")
+		(at 161.29 72.39 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1f104f83-afe9-4f79-8c63-3d04ebfd2668")
+		(property "Reference" "SW1"
+			(at 167.64 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SW_SPST"
+			(at 165.1 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 161.29 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 161.29 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Single Pole Single Throw (SPST) switch"
+			(at 161.29 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "97588d67-ed9b-4b34-9711-8de5f48d38d5")
+		)
+		(pin "2"
+			(uuid "15dea136-a03b-40f0-b04d-2c1c48d3602d")
+		)
+		(instances
+			(project ""
+				(path "/2797250d-6fee-4769-b4dd-0e20ce4f0941"
+					(reference "SW1")
 					(unit 1)
 				)
 			)

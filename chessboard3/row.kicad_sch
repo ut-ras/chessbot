@@ -1,0 +1,867 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "88cd56bd-e9ac-4e5d-993a-43b4609d5f90")
+	(paper "A4")
+	(lib_symbols)
+	(text_box "TODO: make sure footprint correct for jumpers, kicad default footprint doesn't seem to have bridge"
+		(exclude_from_sim no)
+		(at 30.48 95.25 0)
+		(size 31.75 11.43)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "93ea4366-a964-4c7d-8645-80b260bd3e83")
+	)
+	(hierarchical_label "SDA"
+		(shape input)
+		(at 93.98 82.55 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "0bc08d0a-1a2f-4142-9c25-c230e849026a")
+	)
+	(hierarchical_label "SDA"
+		(shape input)
+		(at 93.98 133.35 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "118adaef-16e5-4353-bfb1-3c4d1e4de730")
+	)
+	(hierarchical_label "SDA"
+		(shape input)
+		(at 93.98 69.85 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "1821cd59-93e5-4d43-89ec-92897aac176f")
+	)
+	(hierarchical_label "LED_IN"
+		(shape input)
+		(at 106.68 49.53 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2912133d-a5b0-4ff1-b962-e447ce2b8a27")
+	)
+	(hierarchical_label "SDA"
+		(shape input)
+		(at 93.98 107.95 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "423dda53-e7a3-4a0e-bb75-ebc6e530d948")
+	)
+	(hierarchical_label "SCL"
+		(shape input)
+		(at 93.98 104.14 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6e402406-d3b2-41fb-9647-81dda7d219c9")
+	)
+	(hierarchical_label "SCL"
+		(shape input)
+		(at 93.98 53.34 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "85649171-8ab1-4745-9508-2e8fe5f74d2f")
+	)
+	(hierarchical_label "SCL"
+		(shape input)
+		(at 93.98 66.04 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "9a22a3c2-2834-42e3-bd08-605d48b1b9b6")
+	)
+	(hierarchical_label "LED_OUT"
+		(shape input)
+		(at 106.68 151.13 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b4e11dda-2d73-486e-8e32-98470693f1ec")
+	)
+	(hierarchical_label "SCL"
+		(shape input)
+		(at 93.98 129.54 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b68be3f9-f506-4ffc-933f-719d3bf6d010")
+	)
+	(hierarchical_label "SDA"
+		(shape input)
+		(at 93.98 57.15 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c2858ec1-0dd6-4749-9885-a658d6e93c8b")
+	)
+	(hierarchical_label "SCL"
+		(shape input)
+		(at 93.98 142.24 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c6904107-ceca-455a-9484-859f53036d45")
+	)
+	(hierarchical_label "SDA"
+		(shape input)
+		(at 93.98 120.65 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c8ac49a5-29f3-4cb4-9e58-73405128d5f6")
+	)
+	(hierarchical_label "SCL"
+		(shape input)
+		(at 93.98 78.74 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "cc367d2a-643e-4402-b111-745c293084eb")
+	)
+	(hierarchical_label "SDA"
+		(shape input)
+		(at 93.98 95.25 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d0ce5865-95cb-490e-9ca0-5149b319743a")
+	)
+	(hierarchical_label "SCL"
+		(shape input)
+		(at 93.98 91.44 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "eb54552b-8c34-4d5a-a313-d3b2833afeb5")
+	)
+	(hierarchical_label "SCL"
+		(shape input)
+		(at 93.98 116.84 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f0e28da4-d929-4bc1-b1a0-d2cb73fa15d3")
+	)
+	(hierarchical_label "SDA"
+		(shape input)
+		(at 93.98 146.05 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f37b858c-7c96-4e18-9d5b-345da0ef8386")
+	)
+	(sheet
+		(at 93.98 138.43)
+		(size 27.94 12.7)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "0bcb5758-5069-4403-b6ee-326aebf9097e")
+		(property "Sheetname" "sensorpair7"
+			(at 81.534 144.272 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "sensorpair.kicad_sch"
+			(at 115.57 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "C0" input
+			(at 93.98 142.24 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "7c7e75c0-4cd4-4b33-a9c3-fe386b22badf")
+		)
+		(pin "D0" input
+			(at 93.98 146.05 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "c286759e-2827-468b-ae29-3bb49f1d0a14")
+		)
+		(pin "DIN" input
+			(at 106.68 138.43 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "632d5a01-9ba3-4f68-baea-014f92b30aef")
+		)
+		(pin "DOUT" input
+			(at 106.68 151.13 270)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "efd70826-f26a-4fea-b5d8-174a68160091")
+		)
+		(instances
+			(project "chessboard"
+				(path "/178674ef-da23-4447-9d4b-ea3429461404/501c11bc-04bd-4d54-8bc8-c6f63ce2a0b8"
+					(page "10")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 93.98 74.93)
+		(size 27.94 12.7)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "312d26c6-bcf0-4dec-86c9-45146c58cd02")
+		(property "Sheetname" "sensorpair2"
+			(at 81.534 80.772 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "sensorpair.kicad_sch"
+			(at 115.57 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "C0" input
+			(at 93.98 78.74 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "7cdc4c0b-b8fc-443f-a749-1701742f9cdb")
+		)
+		(pin "D0" input
+			(at 93.98 82.55 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "fdf6155e-2e89-4139-8540-4c4e01d0cf24")
+		)
+		(pin "DIN" input
+			(at 106.68 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "de271814-c117-44d5-a753-dfdfbfa2c04f")
+		)
+		(pin "DOUT" input
+			(at 106.68 87.63 270)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "01d15bc7-8274-4da6-b404-648122936d32")
+		)
+		(instances
+			(project "chessboard"
+				(path "/178674ef-da23-4447-9d4b-ea3429461404/501c11bc-04bd-4d54-8bc8-c6f63ce2a0b8"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 93.98 49.53)
+		(size 27.94 12.7)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "3a6df440-836a-4ebe-8c9a-7f83ec2eaae1")
+		(property "Sheetname" "sensorpair0"
+			(at 81.534 55.372 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "sensorpair.kicad_sch"
+			(at 115.57 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "C0" input
+			(at 93.98 53.34 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "34fbaaeb-b6c6-464e-8672-c94385fee587")
+		)
+		(pin "D0" input
+			(at 93.98 57.15 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "a075e798-78fc-4ea7-99b8-7f939a33605c")
+		)
+		(pin "DIN" input
+			(at 106.68 49.53 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "4b962654-89e9-4c26-b1d7-f62045aec02d")
+		)
+		(pin "DOUT" input
+			(at 106.68 62.23 270)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "7e2595ac-d26f-4043-be9f-d87f310513cf")
+		)
+		(instances
+			(project "chessboard"
+				(path "/178674ef-da23-4447-9d4b-ea3429461404/501c11bc-04bd-4d54-8bc8-c6f63ce2a0b8"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 93.98 113.03)
+		(size 27.94 12.7)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "503d609d-a05a-4a5e-a803-7ba9a2906582")
+		(property "Sheetname" "sensorpair5"
+			(at 81.534 118.872 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "sensorpair.kicad_sch"
+			(at 115.57 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "C0" input
+			(at 93.98 116.84 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "3de9e648-8407-4234-9206-e60fd5fcecd5")
+		)
+		(pin "D0" input
+			(at 93.98 120.65 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "2541ef71-529b-4ab1-ba8f-d3595351d0e5")
+		)
+		(pin "DIN" input
+			(at 106.68 113.03 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "2727d824-16de-40d8-badc-ffdd6378931d")
+		)
+		(pin "DOUT" input
+			(at 106.68 125.73 270)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "cf3d050f-f4a5-4b8e-861a-2d2d24be6f62")
+		)
+		(instances
+			(project "chessboard"
+				(path "/178674ef-da23-4447-9d4b-ea3429461404/501c11bc-04bd-4d54-8bc8-c6f63ce2a0b8"
+					(page "8")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 93.98 62.23)
+		(size 27.94 12.7)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "8ae9b3aa-ece3-425e-81e0-a41f7bf7279c")
+		(property "Sheetname" "sensorpair1"
+			(at 81.534 68.072 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "sensorpair.kicad_sch"
+			(at 115.57 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "C0" input
+			(at 93.98 66.04 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "2d0ec106-c2f5-4a62-8d5e-7d4922e515ef")
+		)
+		(pin "D0" input
+			(at 93.98 69.85 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "93441bc8-a492-4471-a519-9f131029c5b1")
+		)
+		(pin "DIN" input
+			(at 106.68 62.23 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "3b0894c5-e7ae-446f-9446-1405bb6676fc")
+		)
+		(pin "DOUT" input
+			(at 106.68 74.93 270)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "3501e26f-d68d-490b-af65-643810116148")
+		)
+		(instances
+			(project "chessboard"
+				(path "/178674ef-da23-4447-9d4b-ea3429461404/501c11bc-04bd-4d54-8bc8-c6f63ce2a0b8"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 93.98 125.73)
+		(size 27.94 12.7)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "c0babe7e-df77-44d4-bc58-52984daff73b")
+		(property "Sheetname" "sensorpair6"
+			(at 81.534 131.572 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "sensorpair.kicad_sch"
+			(at 115.57 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "C0" input
+			(at 93.98 129.54 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "8d237c6e-08f0-4844-9474-9611b9505b1b")
+		)
+		(pin "D0" input
+			(at 93.98 133.35 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "4d2c021a-7ed9-4cff-ae76-ccaed676162c")
+		)
+		(pin "DIN" input
+			(at 106.68 125.73 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "8a9c03b9-f416-41ae-ac37-f6fb7a28647e")
+		)
+		(pin "DOUT" input
+			(at 106.68 138.43 270)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "42ac70af-649c-4a32-898c-8f7e407b67bc")
+		)
+		(instances
+			(project "chessboard"
+				(path "/178674ef-da23-4447-9d4b-ea3429461404/501c11bc-04bd-4d54-8bc8-c6f63ce2a0b8"
+					(page "9")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 93.98 87.63)
+		(size 27.94 12.7)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "c617dfeb-3ac2-4faf-80be-9823596c3eb0")
+		(property "Sheetname" "sensorpair3"
+			(at 81.534 93.472 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "sensorpair.kicad_sch"
+			(at 115.57 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "C0" input
+			(at 93.98 91.44 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "7101e4fd-2704-47af-8166-32d1a91b12a5")
+		)
+		(pin "D0" input
+			(at 93.98 95.25 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "e497d070-b775-4f48-90d4-ce7306df709f")
+		)
+		(pin "DIN" input
+			(at 106.68 87.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "11cf9a5b-c474-4abb-aeb9-48a42d505c0d")
+		)
+		(pin "DOUT" input
+			(at 106.68 100.33 270)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "8fd40e9e-9c92-422d-9428-aeb8e602d89e")
+		)
+		(instances
+			(project "chessboard"
+				(path "/178674ef-da23-4447-9d4b-ea3429461404/501c11bc-04bd-4d54-8bc8-c6f63ce2a0b8"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 93.98 100.33)
+		(size 27.94 12.7)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "f50242ad-48d4-4432-bffb-18c3cf59ba0c")
+		(property "Sheetname" "sensorpair4"
+			(at 81.534 106.172 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "sensorpair.kicad_sch"
+			(at 115.57 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "C0" input
+			(at 93.98 104.14 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "8c33b0c5-6c1b-4794-a5e5-40fe6b9c8d0e")
+		)
+		(pin "D0" input
+			(at 93.98 107.95 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "f9c5017c-2a42-4ae4-8ad9-fb5c21009a2e")
+		)
+		(pin "DIN" input
+			(at 106.68 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "9a2eb35c-15c6-4473-b437-cc0af4ac1482")
+		)
+		(pin "DOUT" input
+			(at 106.68 113.03 270)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "15c6a1ec-2588-4e22-8014-b1dd8577007d")
+		)
+		(instances
+			(project "chessboard"
+				(path "/178674ef-da23-4447-9d4b-ea3429461404/501c11bc-04bd-4d54-8bc8-c6f63ce2a0b8"
+					(page "7")
+				)
+			)
+		)
+	)
+)

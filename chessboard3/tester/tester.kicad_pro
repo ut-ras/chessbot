@@ -37,9 +37,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 3.2,
-          "height": 5.5,
-          "width": 5.5
+          "drill": 0.762,
+          "height": 1.524,
+          "width": 1.524
         },
         "silk_line_width": 0.15,
         "silk_text_italic": false,
@@ -131,8 +131,6 @@
         "min_track_width": 0.127,
         "min_via_annular_width": 0.085,
         "min_via_diameter": 0.25,
-        "solder_mask_clearance": 0.0,
-        "solder_mask_min_width": 0.0,
         "solder_mask_to_copper_clearance": 0.005,
         "use_height_for_length_calcs": true
       },
@@ -181,6 +179,7 @@
       ],
       "track_widths": [
         0.0,
+        0.127,
         0.2,
         0.5,
         1.5
@@ -453,13 +452,11 @@
     }
   },
   "libraries": {
-    "pinned_footprint_libs": [
-      "mylibrary"
-    ],
+    "pinned_footprint_libs": [],
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "chessboard.kicad_pro",
+    "filename": "tester.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -539,7 +536,6 @@
   },
   "schematic": {
     "annotate_start_num": 0,
-    "bom_export_filename": "",
     "bom_fmt_presets": [],
     "bom_fmt_settings": {
       "field_delimiter": ",",
@@ -589,11 +585,41 @@
           "label": "DNP",
           "name": "${DNP}",
           "show": true
+        },
+        {
+          "group_by": false,
+          "label": "#",
+          "name": "${ITEM_NUMBER}",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "LCSC",
+          "name": "LCSC",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Device",
+          "name": "Sim.Device",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Pins",
+          "name": "Sim.Pins",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Description",
+          "name": "Description",
+          "show": false
         }
       ],
       "filter_string": "",
       "group_symbols": true,
-      "name": "Grouped By Value",
+      "name": "",
       "sort_asc": true,
       "sort_field": "Reference"
     },
@@ -626,7 +652,7 @@
     },
     "net_format_name": "",
     "page_layout_descr_file": "",
-    "plot_directory": "output",
+    "plot_directory": "production/",
     "spice_current_sheet_as_root": false,
     "spice_external_command": "spice \"%I\"",
     "spice_model_current_sheet_as_root": true,
@@ -638,28 +664,32 @@
   },
   "sheets": [
     [
-      "178674ef-da23-4447-9d4b-ea3429461404",
-      ""
+      "e144808e-76cf-45fc-b9f6-5e7c18fb6f72",
+      "Root"
     ],
     [
-      "501c11bc-04bd-4d54-8bc8-c6f63ce2a0b8",
-      "Row0"
+      "c62c37e6-1ac9-4a07-971b-95626a8aef46",
+      "LED_BASED_RESET0"
     ],
     [
-      "73c9f203-0eaf-49a7-9de9-0b482d2a37ed",
-      "sensorpair3"
+      "29d0044d-7ec2-430a-8dd4-4f72550a8c32",
+      "LED_BASED_RESET1"
     ],
     [
-      "d0d45836-5e97-4706-95cf-18db5897a617",
-      "sensorpair2"
+      "f6e98391-fc36-4646-b8e2-2d460c5b1663",
+      "LED_BASED_RESET2"
     ],
     [
-      "7da4fa47-f7be-472c-8768-5be40d5bac70",
-      "sensorpair0"
+      "6cf3c384-a9b2-43b7-b753-85b963e0778b",
+      "Time Based0"
     ],
     [
-      "1d74f805-e713-4b1a-8ce1-66afcdde9510",
-      "sensorpair1"
+      "f3ca2852-1722-4358-a00d-a3f244d72b7a",
+      "Time Based1"
+    ],
+    [
+      "617c1825-b4e4-4116-a3de-94c9641b8f31",
+      "Time Based2"
     ]
   ],
   "text_variables": {}

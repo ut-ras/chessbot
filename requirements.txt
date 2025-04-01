@@ -4,5 +4,5 @@ urllib3==1.26.0
 chess==1.10.0
 matplotlib==3.8.4
 numpy==1.26.4
-Pillow==9.0.0
+Pillow==11.1.0
 Requests==2.31.0
