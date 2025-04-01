@@ -3,8 +3,10 @@ Description=[Service description]
 
 [Service]
 Type=simple
+ExecStartPre=/bin/sh -c "echo hiiiiistart; printf '\1\77\1\1\1\1\1\1\1\1\1\1' | mosquitto_pub -L mqtt://chessbot.local//statusled -l"
 ExecStart=/home/chessbot/chessbot/venv/bin/python -u /home/chessbot/chessbot/python/stockfish_mqtt.py
-Restart=on-failure
+ExecStopPost=/bin/sh -c "echo hiiiistoppost; printf '\77\1\1\1\1\1\1\1\1\1\1\1' | mosquitto_pub -L mqtt://chessbot.local//statusled -l; sleep 2"
+Restart=always
 
 [Install]
 WantedBy=default.target

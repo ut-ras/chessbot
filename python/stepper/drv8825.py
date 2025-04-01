@@ -27,9 +27,13 @@ RESET = outPin(board.D19, True) #SDO
 def enable(boo): nENBL.value = not boo
 
 
-# x and y pos to move by in n steps
-def move(x : int, y : int) -> Generator[Tuple[int, int], None, None]:
-    DIR1.value = x < 0
+
+def move(inx : int, iny : int) -> Generator[Tuple[int, int], None, None]:
+    # corexy conversion
+    x  = inx + iny
+    y  = inx - iny
+
+    DIR1.value = x < 0 
     DIR2.value = y < 0
     x = abs(x)
     y = abs(y)
@@ -43,19 +47,27 @@ def move(x : int, y : int) -> Generator[Tuple[int, int], None, None]:
         if y > 0 and yrat >= xrat:
             STEP2.value = True
             y-=1
-        if STEP2.value: # y axis is heavier
-            sleep(12 * 0.450 / 1000) # actually this is step rate, so can hypothetically be 0.225ms it for high/low transitions
-        elif STEP1.value: # x axis  is light and agile
-            sleep(6*0.450/1000)
+        #if STEP2.value: # y axis is heavier
+        #    sleep(12 * 0.450 / 1000) # actually this is step rate, so can hypothetically be 0.225ms it for high/low transitions
+        #elif STEPSTEP1.value: # x axis  is light and agile
+        sleep(6*0.450/1000)
         #print(time(), STEP1.value, STEP2.value)
         STEP1.value = False
         STEP2.value = False
-        yield (x if DIR1.value else -x,y if DIR2.value else -y)
+        a = x if DIR1.value else -x
+        b = y if DIR2.value else -y
+        yield ((a+b)//2,(a-b)//2)
     pass
 
 if __name__ == '__main__':
     enable(True)
-    list(move(-100,-500))
+    print("HI")
+
+    for i in move(-100,0):
+        print(i)
+    print("HI2")
+    for i in move(0,-100):
+        print(i)
     #for i in range(1000):
     #    sleep(0.003)
     #    STEP2.value = not STEP2.value

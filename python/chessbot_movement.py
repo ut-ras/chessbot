@@ -39,22 +39,28 @@ current_x, current_y = 0,0
 def home_axis(axis):
     if axis == 'x':
         GPIO.output(x_dir_pin, GPIO.LOW)  # Assume LOW moves towards home
+        GPIO.output(y_dir_pin, GPIO.HIGH)  # Assume LOW moves towards home
         a = 200 * steps_per_mm
         while a > 0:
             a-=1
             GPIO.output(x_step_pin, GPIO.HIGH)
+            GPIO.output(y_step_pin, GPIO.LOW)
             sleep(0.001)  # Short pulse duration
             GPIO.output(x_step_pin, GPIO.LOW)
+            GPIO.output(y_step_pin, GPIO.HIGH)
             sleep(0.001)  # Step interval
         current_x = 0
     elif axis == 'y':
         a = 200 * steps_per_mm
         GPIO.output(y_dir_pin, GPIO.LOW)  # Assume LOW moves towards home
+        GPIO.output(x_dir_pin, GPIO.LOW)  # Assume LOW moves towards home
         while a > 0:
             a-=1
             GPIO.output(y_step_pin, GPIO.HIGH)
+            GPIO.output(x_step_pin, GPIO.LOW)
             sleep(0.001)
             GPIO.output(y_step_pin, GPIO.LOW)
+            GPIO.output(x_step_pin, GPIO.HIGH)
             sleep(0.001)
         current_y = 0
 
@@ -80,18 +86,25 @@ def move_to_square(square):  # Move to a square on the board
     
     # Move X Axis
     GPIO.output(x_dir_pin, GPIO.HIGH if steps_to_move_x > 0 else GPIO.LOW)
+    GPIO.output(y_dir_pin, not (GPIO.HIGH if steps_to_move_x > 0 else GPIO.LOW))
     for _ in range(abs(steps_to_move_x)):
-        GPIO.output(x_step_pin, GPIO.HIGH)
-        sleep(0.001)
+        GPIO.output(y_step_pin, GPIO.HIGH)
         GPIO.output(x_step_pin, GPIO.LOW)
         sleep(0.001)
+        GPIO.output(y_step_pin, GPIO.LOW)
+        GPIO.output(x_step_pin, GPIO.HIGH)
+        sleep(0.001)
+
     
     # Move Y Axis
-    GPIO.output(y_dir_pin, GPIO.HIGH if steps_to_move_y > 0 else GPIO.LOW)
+    GPIO.output(x_dir_pin, GPIO.HIGH if steps_to_move_y > 0 else GPIO.LOW)
+    GPIO.output(y_dir_pin, (GPIO.HIGH if steps_to_move_y > 0 else GPIO.LOW))
     for _ in range(abs(steps_to_move_y)):
         GPIO.output(y_step_pin, GPIO.HIGH)
+        GPIO.output(x_step_pin, GPIO.LOW)
         sleep(0.001)
         GPIO.output(y_step_pin, GPIO.LOW)
+        GPIO.output(x_step_pin, GPIO.HIGH)
         sleep(0.001)
 
     # Update current position

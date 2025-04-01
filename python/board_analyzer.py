@@ -43,7 +43,7 @@ def on_message(client, userdata, message):
         if last_boardstate is None:
             if DEBUG: print("Calibrating...")
             # Set the initial boardstate after a 3-second calibration period
-            sleep(3)
+            sleep(1)
             last_bitboard = current_bitboard.copy()
             last_boardstate = last_bitboard.board
             boardstate_calibrated = True
@@ -54,7 +54,7 @@ def on_message(client, userdata, message):
                 print("Initial time:", last_change_time)
                 current_bitboard.print_pretty_board()
             mqttc.publish("/boardstate", str(current_bitboard.board).encode())
-            sleep(2)
+            sleep(1)
 
         else:
             # Check if the current boardstate is different from the initial boardstate
@@ -84,7 +84,7 @@ def on_message(client, userdata, message):
             is_player_turn = True
             print("Player's turn!")
         EMAG_STATE = new_emag_state
-        print(EMAG_STATE)
+        #print(EMAG_STATE)
 
     elif (message.topic == "/robotmoves"):
         mes = message.payload
@@ -161,10 +161,14 @@ def Game_Init():
     turn = 'white'
     return newbitboard, newrealboard, new_bitboard, white_check, black_check, white_king_moved, white_king_side_rook_moved, white_queen_side_rook_moved, black_king_moved, black_king_side_rook_moved, black_queen_side_rook_moved, white_castled, black_castled, turn
 
+last = "abadpwy;prygin"
 def Game_loop():
-    global game_moves_array, current_bitboard, current_realboard, new_bitboard
+    global game_moves_array, current_bitboard, current_realboard, new_bitboard,last
     #gameplay loop
     while True:
+        if EMAG_STATE:
+            sleep(.1)
+            continue
 
         if is_player_turn:
             turn = 'white'
@@ -175,12 +179,15 @@ def Game_loop():
 
         current_realboard.move_compare_update(last_bitboard, current_bitboard, turn)    
         playermove = current_realboard.last_move_made_UCI
-        print("Player move: ", playermove)
-        if playermove != " " and playermove != "":
+        print("Player move: ", playermove.encode())
+        if playermove != " " and playermove != "" and playermove != last:
+                print("SENDINGGGGGGGGGGGGGGGGG" , playermove)
                 mqttc.publish("/playermoves", playermove.encode())
-
-        playermove = ""
-        sleep(0.5)
+                last = playermove
+                sleep(.2)
+                #exit(1)
+                current_realboard.last_move_made_UCI = ""
+        sleep(.5)
 
         
 

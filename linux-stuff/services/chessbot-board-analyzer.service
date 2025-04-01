@@ -3,7 +3,7 @@ Description=[Service description]
 
 [Service]
 Type=simple
-ExecStart=/home/chessbot/chessbot/venv/bin/python -u /home/chessbot/chessbot/python/magnet_to_bitboard_boardstate.py
+ExecStart=/home/chessbot/chessbot/venv/bin/python -u /home/chessbot/chessbot/python/board_analyzer.py
 Restart=on-failure
 
 [Install]

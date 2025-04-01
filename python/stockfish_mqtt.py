@@ -40,25 +40,34 @@ def write_to_PGN(game_moves_array, pgn_savepath):
     with open(pgn_savepath, "w") as pgn_file:
         pgn_file.write(str(game))
 
+alive = True
 def on_message(client, userdata, message):
-    # userdata is the structure we choose to provide, here it's a list()
-    if (message.topic == "/playermoves"):
-        if DEBUG: print(time(), end = " ")
-        move_received = message.payload
-        
-        if move_valid(move_received):
-            global pgn_savepath, engine
-            game_moves_array.append(move_received.decode('utf-8'))
-            robotmove = engine.make_move((' '.join(game_moves_array))) #get the best move from stockfish
-            game_moves_array.append(robotmove)
-            write_to_PGN(game_moves_array, pgn_savepath)
-            mqttc.publish("/robotmoves", robotmove)
-        else:
-            print(f"Invalid move received. Move received: {move_received}, expected ^[A-Za-z][0-9][A-Za-z][0-9]$ format.")
+    global alive
+    try:
+        # userdata is the structure we choose to provide, here it's a list()
+        if (message.topic == "/playermoves"):
+            if DEBUG: print(time(), end = " ")
+            move_received = message.payload
             
-        if DEBUG: print(time())
-        
+            if move_valid(move_received):
+                global pgn_savepath, engine
+                game_moves_array.append(move_received.decode('utf-8'))
+                print(game_moves_array)
+                robotmove = engine.make_move((' '.join(game_moves_array))) #get the best move from stockfish
+                print(game_moves_array)
+                game_moves_array.append(robotmove)
+                write_to_PGN(game_moves_array, pgn_savepath)
+                print(game_moves_array)
+                mqttc.publish("/robotmoves", robotmove)
+            else:
+                print(f"Invalid move received. Move received: {move_received}, expected ^[A-Za-z][0-9][A-Za-z][0-9]$ format.")
 
+            if DEBUG: print(time())
+    except Exception as e:
+        alive = False
+        print(e)
+        exit(42)
+        
 def on_connect(client, userdata, flags, reason_code, properties):
     if reason_code.is_failure:
         print(f"Failed to connect: {reason_code}. loop_forever() will retry connection")
@@ -81,6 +90,6 @@ if __name__ == "__main__":
     print(mqttc.connect("localhost"))
     
     mqttc.loop_start()
-    while True:
+    while alive:
         sleep(.01)
     mqttc.loop_stop()

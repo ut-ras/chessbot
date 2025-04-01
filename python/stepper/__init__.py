@@ -132,8 +132,12 @@ if __name__ == "__main__":
                         n += 1
                     mag = True#not mag
                     #EMAG.value = 0
+                    publish_current_pos(mqttc, mag)
                     print("MAGOFF")
                     time.sleep(.5)
+            mag = False
+            EMAG.value = mag
+            publish_current_pos(mqttc, mag)
 
         #for i in range(0, len(currentstate), 3):
         #    p[i // 3] = (currentstate[i], currentstate[i + 1], currentstate[i+2])
