@@ -1,5 +1,4 @@
 # run with cd ~/chessbot; sudo venv/bin/python python/led_mqtt.py
-#include <sys/sysmacros.h>
 if __name__ == "__main__": print('''test with \nmosquitto_pub -L mqtt://raspberrypi.local:1883//led -m `python -c "import sys; write=sys.stdout.buffer.write; write(b'\\x01z\\x01'*64)"`''')
 import paho.mqtt.client as mqtt
 import board
@@ -20,7 +19,7 @@ p = neopixel.NeoPixel(board.D12, 68, auto_write = False)
 # to only take latest quickly (and be idempotent if unplugged), we'll loop seperately
 
 lock = threading.Lock()
-led_data = bytearray(2*3 + 64*4 + 2*3)
+led_data = bytearray(2*3 + 64*4 + 2*3 + 2)
 #current_st_state = b'\0\0\0' * 4
 #currentstate = b'\0\0\0' * 64
 def on_message(client, userdata, message):
@@ -35,12 +34,19 @@ def on_message(client, userdata, message):
 
             if DEBUG: print(mes)
             if message.topic == "/led":
-                if len(mes) != 64 * 4: 
+                if len(mes) != 64 * 3: 
                     print("wrong size led payload")
                     return
                 # Store the payload in the middle section of our data array
                 # Starting after the first 2 RGB LEDs (6 bytes)
-                led_data[6:6+64*4] = mes
+                led_data[6:6+64*3] = mes
+                for i in range(64):
+                    led_data[6 + 4*i + 0] = min(0x20, mes[3*i  + 0])
+                    led_data[6 + 4*i + 2] = min(0x20, mes[3*i  + 1])
+                    led_data[6 + 4*i + 3] = min(0x20, mes[3*i  + 2])
+
+
+                
 
                 #currentstate = mes
             elif message.topic == "/statusled":
@@ -56,24 +62,24 @@ def on_message(client, userdata, message):
                 #current_st_state = mes
         
             elif message.topic == "/magpower":
-                if len(mes) != 8:
+                if len(mes) != 8: #8 bytes/ 64 bits
                     print("wrong size led payload")
                     return
                 
-            for i in range(64):
-                byte_idx = i // 8        # Which byte contains this bit
-                bit_idx = 7 - (i % 8)    # Which bit within the byte (MSB first)
-                
-                # Extract the bit value (0 or 1)
-                bit_value = (mes[byte_idx] >> bit_idx) & 1
-                
-                # Set the white cahnnel in the RWBG LED data
-                # Each middle LED uses 4 bytes, starting at offset 6
-                led_data_idx = 6 + (i * 4) + 1  
-                
-                # Set the white channel to 1 if the bit is set
-                if bit_value:
-                    led_data[led_data_idx] = 1
+                for i in range(64):
+                    byte_idx = i // 8        # Which byte contains this bit
+                    bit_idx = 7 - (i % 8)    # Which bit within the byte (MSB first)
+                    
+
+                    # Extract the bit value (0 or 1)
+                    bit_value = (mes[byte_idx] >> bit_idx) & 1
+            
+                #rgbw needs to be mapped to rwbg
+                    # Each middle LED uses 4 bytes, starting at offset 6
+                    led_data_idx = 6 + (i * 4) + 1  # Index for white channel?
+            
+                        # Set the white channel to 255 if the bit is set, otherwise 0
+                    led_data[led_data_idx] = 255 if bit_value else 0
                 
             if DEBUG:
                 print(f"Updated white channels based on mag_power: {mes.hex()}")
@@ -121,32 +127,9 @@ if __name__ == "__main__":
             #     p[i + 2] = (min(0x20,currentstate[i * 3]), min(0x20,currentstate[i * 3 + 1]), min(0x20,currentstate[i * 3 + 2]))
             # for i in range(0, 2):
             #     p[i] = (current_st_state[i * 3], current_st_state[i * 3 + 1], current_st_state[i * 3 + 2])
-            for i in range(2):
-                offset = i * 3
-                r = led_data[offset]
-                g = led_data[offset + 1]
-                b = led_data[offset + 2]
-                p[i] = (r, g, b)
-
-            for i in range(64):
-                offset = 6 + i * 4
-                # Map RGBW (the format stored in led_data) to RWBG (the format expected by the LEDs)
-                # led_data stores in RGBW order: offset+0=R, offset+1=G, offset+2=B, offset+3=W
-                # But we need RWBG order: R=0, W=3, B=2, G=1
-                r = min(0x20, led_data[offset + 0])      # R stays at position 0
-                w = min(0x20, led_data[offset + 3])      # W moves from 3 to 1
-                b = min(0x20, led_data[offset + 2])      # B stays at position 2  
-                g = min(0x20, led_data[offset + 1])      # G moves from 1 to 3   
-                # Assign in RWBG order
-                p[i + 2] = (r, w, b, g)
-
-              # Set the last 2 RGB status LEDs (positions 66-67)
-            for i in range(2):
-                offset = 6 + 64*4 + i * 3  # Start after main LED section
-                r = led_data[offset]
-                g = led_data[offset + 1]
-                b = led_data[offset + 2]
-                p[i + 66] = (r, g, b)
+            assert(len(led_data) % 3 == 0)
+            for i in range(0, len(led_data), 3):
+                p[i//3] = (led_data[i], led_data[i+1], led_data[i+2])
 
 
             if DEBUG:print(p, led_data)
