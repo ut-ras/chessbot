@@ -2,6 +2,9 @@ import smbus
 from time import sleep, time
 from i2cdev import I2C
 
+import paho.mqtt.client as mqtt
+import struct
+
 bus_number = 1
 
 
@@ -11,48 +14,73 @@ ROWS = 8
 DEBUG = False
 PCA_OFFSET = 0  # 0 for normal use, 0-7 for debugging a single board that is not yet daisy chained
 PCA_OG_ADDR = 0x70
-TMAG_START_ADDR = 0x35
 PCA_ADDR = PCA_OG_ADDR + PCA_OFFSET
-PCA_TO_PHYSICAL_WIRING_ORDER = [4,5,6,7,0,1,2,3]
+PCA_TO_PHYSICAL_WIRING_ORDER = [0,1,2,3,4,5,6,7]
 
-ban_addrs = banned_addresses_that_are_being_mean_to_me = [0x56]
+#ban_addrs = banned_addresses_that_are_being_mean_to_me = []
 
 # these addresses are tmaga1s (+- 40mT) whereas all the others are tmaga2s (+= 133mT)
 tmag1s = [0x36]
 
-ban_adr = [((i - 0x20) // COLUMNS, PCA_TO_PHYSICAL_WIRING_ORDER.index((i-0x20) % COLUMNS)) for i in banned_addresses_that_are_being_mean_to_me]
+#ban_adr = [((i - 0x20) // COLUMNS, PCA_TO_PHYSICAL_WIRING_ORDER.index((i-0x20) % COLUMNS)) for i in banned_addresses_that_are_being_mean_to_me]
 
-class PCAArray:
-    def __init__(self):
-        self.bus = smbus.SMBus(bus_number)
-    def softDisableAll(self):
-        for i in range(0, ROWS):
-            try: 
-                pigpio.i2c_write_byte(self.pcas[i], 0)
-                #if .read_byte(PCA_ADDR + i) != 0: print("ERR WRITING")
-                # TODO
-            except: pass
-     
-    # chip from 0 to 7
-    def enableOnly(self, chip, line):
-        self.softDisableAll()
-        # enable
-        self.bus.write_byte(PCA_ADDR + chip, 1 << line)
-    def unsafeEnableRow(self, chip):
-        on = 0xff
-        for chp, sq in ban_adr:
-            if chip == chp:
-                on &= ~(1 << sq)
-        #print(bin(on), chip)
-        self.bus.write_byte(PCA_ADDR + chip, on)
-    def unsafeDisableRow(self, chip):
-        self.bus.write_byte(PCA_ADDR + chip, 0x00)
-    def enableAll(self):
-        for i in range(0, ROWS):
-            try:
-                self.bus.write_byte(PCA_ADDR + i, enabled_cells[i])
-            except: pass
-switches = PCAArray()
+
+mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
+
+def power_on(upto):
+    upto += 1
+    a=b''
+
+    a += b'\xff' * (upto // 8)
+    if len(a) < 8: a += bytes([0xff >> (8-(upto % 8))])
+    if len(a) < 8: a += b'\x00' * ((8- upto // 8  - 1) )
+
+    c = b''
+    for i in range(64):
+        c+= b'\x01\xff\x01' if i < upto else b'\x00\x00\x00'
+
+    mqttc.publish("/magpower", a, retain=True)
+    mqttc.publish("/led", c)
+
+
+
+def power_off():
+    a=b'\x00'*8
+    mqttc.publish("/magpower", a, retain=True)
+
+
+
+#class PCAArray:
+#    def __init__(self):
+#        self.bus = smbus.SMBus(bus_number)
+#    def softDisableAll(self):
+#        for i in range(0, ROWS):
+#            try: 
+#                pigpio.i2c_write_byte(self.pcas[i], 0)
+#                #if .read_byte(PCA_ADDR + i) != 0: print("ERR WRITING")
+#                # TODO
+#            except: pass
+#     
+#    # chip from 0 to 7
+#    def enableOnly(self, chip, line):
+#        self.softDisableAll()
+#        # enable
+#        self.bus.write_byte(PCA_ADDR + chip, 1 << line)
+#    def unsafeEnableRow(self, chip):
+#        on = 0xff
+#        for chp, sq in ban_adr:
+#            if chip == chp:
+#                on &= ~(1 << sq)
+#        #print(bin(on), chip)
+#        self.bus.write_byte(PCA_ADDR + chip, on)
+#    def unsafeDisableRow(self, chip):
+#        self.bus.write_byte(PCA_ADDR + chip, 0x00)
+#    def enableAll(self):
+#        for i in range(0, ROWS):
+#            try:
+#                self.bus.write_byte(PCA_ADDR + i, enabled_cells[i])
+#            except: pass
+#switches = PCAArray()
 
 tmagcache = {}
 class TMAG5273:
@@ -65,7 +93,7 @@ class TMAG5273:
             self.RANGE = 266
 
     @classmethod
-    def init(self, new_addr, old_addr = 0x35):
+    def init(self, new_addr, old_addr = 0x78):
         conf = self.config()
         conf[0xC] |= new_addr << 1
         smbus.SMBus(bus_number).write_i2c_block_data(old_addr, 0, conf)
@@ -119,8 +147,8 @@ class TMAG5273:
         #sleep(0.1)
         # Read 6 bytes of data (X, Y, Z magnetic field values)
 
-        if self.device_address in ban_addrs:
-            return 10,10,-32
+        #if self.device_address in ban_addrs:
+        #    return 10,10,-32
         if self.device_address not in tmagcache:
             tmagcache[self.device_address] = I2C(self.device_address, bus_number)
         i2c = tmagcache[self.device_address]
@@ -152,33 +180,33 @@ def twos_complement_int(LSB, MSB):
         return value
 
 def init_a_bunch():
+    power_off()
     for i in range(ROWS):
         for j in range(COLUMNS):
-            n = 0x20 + i * COLUMNS + j
-            j = PCA_TO_PHYSICAL_WIRING_ORDER[j]
+            n = 0x20 + i * COLUMNS + (8-j -1)
             try:
                 print (f'initalizing {i}, {j} to {hex(n)}')
-                switches.enableOnly(i, j)
+                power_on(i*COLUMNS + j)
+                sleep(.1)
                 if DEBUG: input('Press enter to config it: ')
                 try:
                     TMAG5273.init(n)
-                except OSError as e: print(f'already initialized ', e)
+                except OSError as e: print(f'not at default addy', e)
  
             except Exception as e:
                 print('could not initialize', e)
         #switches.enableAll(); input("row boundary") # for debug, enable all after each row
     #switches.enableAll()
-    try: print(switches.bus.read_byte(PCA_ADDR))
-    except: pass
+    #try: print(switches.bus.read_byte(PCA_ADDR))
+    #except: pass
     #print(switches.bus.read_byte(0x71))
 
 def get_a_bunch(start, stop):
     ret = []
-    switches.softDisableAll()
     for i in range(start, stop):
-        y,x = (i-0x20) // COLUMNS, (i-0x20) % COLUMNS
-        if x==0:
-            switches.unsafeEnableRow(y)
+        #y,x = (i-0x10) // COLUMNS, (i-0x10) % COLUMNS
+        #if x==0:
+        #    switches.unsafeEnableRow(y)
 
         #if DEBUG: input("enabling " + str((y)))
         tmag5273 = TMAG5273(i)
@@ -188,8 +216,8 @@ def get_a_bunch(start, stop):
             print("err on", hex(i), e)
             ret.append((0,0,0))
 
-        if x==7:
-            switches.unsafeDisableRow(y)
+        #if x==7:
+        #    switches.unsafeDisableRow(y)
     return ret
 
 
@@ -248,15 +276,14 @@ def on_connect(client, userdata, flags, reason_code, properties):
         #client.subscribe("$SYS/#")
         #client.subscribe("/led")
 
+
 if __name__ == "__main__":
-    init_a_bunch()
     #plotty_plot()
     #exit(1)
-    import paho.mqtt.client as mqtt
-    import struct
-    mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
+
     print(mqttc.connect("localhost"))
     mqttc.loop_start()
+    init_a_bunch()
     while True:
         t = time()
         ans = get_a_bunch(0x20, 0x20 + ROWS*COLUMNS)

@@ -26,6 +26,7 @@ led_data = bytearray(nbytes)
 #current_st_state = b'\0\0\0' * 4
 #currentstate = b'\0\0\0' * 64
 def on_message(client, userdata, message):
+    #print(message.topic)
     # userdata is the structure we choose to provide, here it's a list()
     if (message.topic in ("/led", "/statusled", "/magpower")):
         with lock:

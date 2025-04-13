@@ -23,15 +23,15 @@ def on_message(client, userdata, message):
     if (message.topic == "/magnets"):
         if DEBUG: print(time(), end = " ")
         decoded_data = decode_mag_msg(message.payload)
-        if DEBUG: print(len(decoded_data), float_size)
+        if DEBUG: print([round(i[2],2) for i in decoded_data])
         ledstuff = b''
         for i in range(len(decoded_data)):
             z = decoded_data[i][2]
             if abs(z) < 1.6: z = 0 # deadband
             z = int(z * 3) 
             z = clamp(z, -20, 20)
-            if DEBUG: print(z)
-            if DEBUG: print(decoded_data[i][2], z, max(0, z).to_bytes(1), max(0, -z).to_bytes(1))
+            #if DEBUG: print(z)
+            #if DEBUG: print(decoded_data[i][2], z, max(0, z).to_bytes(1), max(0, -z).to_bytes(1))
 
             ledstuff += max(0, z).to_bytes(1)
             ledstuff += max(0, -z).to_bytes(1)
@@ -39,6 +39,7 @@ def on_message(client, userdata, message):
 
 
 
+        if DEBUG: print(ledstuff)
         mqttc.publish("/led", ledstuff)
         if DEBUG: print(time())
 
