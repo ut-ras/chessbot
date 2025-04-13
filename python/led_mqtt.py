@@ -6,8 +6,11 @@ import neopixel
 import time
 import threading
 #rgbw needs to be mapped to rwbg
-DEBUG = False
-p = neopixel.NeoPixel(board.D12, 68, auto_write = False)
+nbytes = 2*3 + 64*4 + 2*3
+nbytes = nbytes + (3 - nbytes %3)
+print(f"2 + 64 + 2 leds with {nbytes} bytes and {nbytes // 3} leds")
+DEBUG = True
+p = neopixel.NeoPixel(board.D12, nbytes // 3, auto_write = False)
 # for rgbw
 # p = neopixel.NeoPixel(
 #     board.D12, 
@@ -19,12 +22,12 @@ p = neopixel.NeoPixel(board.D12, 68, auto_write = False)
 # to only take latest quickly (and be idempotent if unplugged), we'll loop seperately
 
 lock = threading.Lock()
-led_data = bytearray(2*3 + 64*4 + 2*3 + 2)
+led_data = bytearray(nbytes)
 #current_st_state = b'\0\0\0' * 4
 #currentstate = b'\0\0\0' * 64
 def on_message(client, userdata, message):
     # userdata is the structure we choose to provide, here it's a list()
-    if (message.topic in ("/led", "/statusled")):
+    if (message.topic in ("/led", "/statusled", "/magpower")):
         with lock:
            # global currentstate, current_st_state
             global led_data
@@ -39,11 +42,13 @@ def on_message(client, userdata, message):
                     return
                 # Store the payload in the middle section of our data array
                 # Starting after the first 2 RGB LEDs (6 bytes)
-                led_data[6:6+64*3] = mes
+                #led_data[6:6+64*3] = mes
                 for i in range(64):
-                    led_data[6 + 4*i + 0] = min(0x20, mes[3*i  + 0])
-                    led_data[6 + 4*i + 2] = min(0x20, mes[3*i  + 1])
-                    led_data[6 + 4*i + 3] = min(0x20, mes[3*i  + 2])
+                    #led_data[6 + 4*i + 0] =255 # min(0x20, mes[3*i  + 0]) # magpower
+                    led_data[6 + 4*i + 1] = min(0x20, mes[3*i  + 0]) # R
+                    led_data[6 + 4*i + 2] = min(0x20, mes[3*i  + 2]) # B
+                    led_data[6 + 4*i + 3] = min(0x20, mes[3*i  + 1]) # G
+                print("got it")
 
 
                 
@@ -62,6 +67,7 @@ def on_message(client, userdata, message):
                 #current_st_state = mes
         
             elif message.topic == "/magpower":
+                print("YO")
                 if len(mes) != 8: #8 bytes/ 64 bits
                     print("wrong size led payload")
                     return
@@ -76,13 +82,13 @@ def on_message(client, userdata, message):
             
                 #rgbw needs to be mapped to rwbg
                     # Each middle LED uses 4 bytes, starting at offset 6
-                    led_data_idx = 6 + (i * 4) + 1  # Index for white channel?
+                    led_data_idx = 6 + (i * 4) + 0  # Index for white channel?
             
                         # Set the white channel to 255 if the bit is set, otherwise 0
                     led_data[led_data_idx] = 255 if bit_value else 0
                 
-            if DEBUG:
-                print(f"Updated white channels based on mag_power: {mes.hex()}")
+                if DEBUG:
+                    print(f"Updated white channels based on mag_power: {mes.hex()}")
 
             #if DEBUG: print(currentstate, current_st_state)
             if DEBUG: 
@@ -128,11 +134,13 @@ if __name__ == "__main__":
             # for i in range(0, 2):
             #     p[i] = (current_st_state[i * 3], current_st_state[i * 3 + 1], current_st_state[i * 3 + 2])
             assert(len(led_data) % 3 == 0)
-            for i in range(0, len(led_data), 3):
-                p[i//3] = (led_data[i], led_data[i+1], led_data[i+2])
+            p._transmit(led_data)
+            #for i in range(0, len(led_data), 3):
+            #    p[i//3] = (led_data[i], led_data[i+1], led_data[i+2])
+            #    #print(p[i//3])
 
 
-            if DEBUG:print(p, led_data)
-            p.show()
+            ##if DEBUG:print(p, led_data)
+            #p.show()
         time.sleep((1/30) - (time.time() - lasttime)) # run loop at 30Hz
     mqttc.loop_stop()
