@@ -63,10 +63,10 @@ if __name__ == '__main__':
     enable(True)
     print("HI")
 
-    for i in move(-100,0):
+    for i in move(-400,0):
         print(i)
     print("HI2")
-    for i in move(0,-100):
+    for i in move(0,-600):
         print(i)
     #for i in range(1000):
     #    sleep(0.003)

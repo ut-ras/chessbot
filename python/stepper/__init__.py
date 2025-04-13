@@ -63,14 +63,21 @@ def home():
     global current
     print("HOMING X")
     enable(True)
-    for x in move(+550*STEPS_PER_MM_X, 0):
+    print(LIM_X_MAX.value, LIM_Y_MAX.value, end = '\n')
+    for x in move(-550*STEPS_PER_MM_X, 0):
         print(LIM_X_MAX.value, LIM_Y_MAX.value, end = '\r')
-        if not LIM_X_MAX.value:
+        if LIM_X_MAX.value:
+            print("BREAKING")
             break
+    print()
     print("HOMING Y")
+    print()
+    print(LIM_X_MAX.value, LIM_Y_MAX.value, end = '\n')
+    print()
     for x in move(0,+550*STEPS_PER_MM_X):
         print(LIM_X_MAX.value, LIM_Y_MAX.value, end = '\r')
-        if not LIM_Y_MAX.value:
+        if LIM_Y_MAX.value:
+            print("BREAKING")
             break
     enable(False)
     current=(365,365) # center of a1 is 0,0, corner of h8 is homing pos
@@ -95,6 +102,22 @@ def on_connect(client, userdata, flags, reason_code, properties):
 
 
 if __name__ == "__main__":
+    #while True:
+    #    enable(True)
+    #    EMAG.value=1
+    #    print("HI")
+    #
+    #    for i in move(-700,0):
+    #        print(i)
+    #    print("HI2")
+    #    for i in move(700,-700):
+    #        print(i)
+    #    EMAG.value=0
+    #    #for i in range(1000):
+    #    #    sleep(0.003)
+    #    #    STEP2.value = not STEP2.value
+    #    #    STEP1.value = not STEP1.value
+    #    enable(False)
     mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
     mqttc.on_connect = on_connect
     mqttc.on_message = on_message
