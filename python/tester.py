@@ -115,7 +115,7 @@ def render_paths():
     global latest_message, ax
     new_lines = []
     path_nums = [
-        float(i)/50 for i in latest_message.get("/path", b"0,0").decode().split(",")
+        float(i)/30 for i in latest_message.get("/path", b"0,0").decode().split(",")
     ]
     path_pts = [tuple(path_nums[i : i + 2]) for i in range(0, len(path_nums), 2)]
     # print(path_pts)
