@@ -30,6 +30,7 @@ def enable(boo): nENBL.value = not boo
 
 def move(inx : int, iny : int) -> Generator[Tuple[int, int], None, None]:
     # corexy conversion
+    inx *= -1
     x  = inx + iny
     y  = inx - iny
 
@@ -56,7 +57,7 @@ def move(inx : int, iny : int) -> Generator[Tuple[int, int], None, None]:
         STEP2.value = False
         a = x if DIR1.value else -x
         b = y if DIR2.value else -y
-        yield ((a+b)//2,(a-b)//2)
+        yield ((a+b)//2,-(a-b)//2)
     pass
 
 if __name__ == '__main__':

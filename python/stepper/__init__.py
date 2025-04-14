@@ -64,7 +64,7 @@ def home():
     print("HOMING X")
     enable(True)
     print(LIM_X_MAX.value, LIM_Y_MAX.value, end = '\n')
-    for x in move(-550*STEPS_PER_MM_X, 0):
+    for x in move(550*STEPS_PER_MM_X, 0):
         print(LIM_X_MAX.value, LIM_Y_MAX.value, end = '\r')
         if LIM_X_MAX.value:
             print("BREAKING")
