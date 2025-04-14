@@ -180,7 +180,7 @@ def render_pos():
     mes = [float(i) for i in mes.split(',')]
 
 
-    items["current_pos"].set_center((mes[0]/50, mes[1]/50))
+    items["current_pos"].set_center((mes[0]/30, mes[1]/30))
     #print((mes[0]/50, mes[1]/50))
 # MOVES
 def init_moves():
@@ -221,8 +221,8 @@ def render_chessboard_pattern():
         np.arange(rows), labels=[str(i + 1) for i in range(rows)]
     )  # Add y-axis labels (1-8)
     # 400, 400 is defined to be the edge of the board and also the furthest our magnet can go
-    ax.set_xlim(-75/50, 475/50)
-    ax.set_ylim(-75/50, 475/50)
+    ax.set_xlim(-75/50, 275/30)
+    ax.set_ylim(-75/50, 275/30)
 
 
 def render_chessboard_bg():
