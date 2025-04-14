@@ -88,8 +88,8 @@ def home():
 def publish_current_pos(mqttc, mag = 0):
     mqttc.publish("/currentpos", f'{current[0]},{current[1]},{int(mag)}', retain=True)
 
-STEPS_PER_MM_X =5 
-STEPS_PER_MM_Y = 5 
+STEPS_PER_MM_X =3 
+STEPS_PER_MM_Y = 3 
 def on_connect(client, userdata, flags, reason_code, properties):
     if reason_code.is_failure:
         print(f"Failed to connect: {reason_code}. loop_forever() will retry connection")
