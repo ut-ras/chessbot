@@ -31,9 +31,9 @@ servo = Servo(servo_pin)
 GPIO.output(electromagnet_pin, GPIO.LOW)
 
 # Constants
-steps_per_mm = 20  # Placeholder value
+steps_per_mm = 12  # Placeholder value previously 20
 board_origin_offset_mm = 0  # Distance from home to A1 square corner, Placeholder value
-square_size_mm = 50
+square_size_mm = 30 #previously 50
 current_x, current_y = 0,0
 
 def home_axis(axis):

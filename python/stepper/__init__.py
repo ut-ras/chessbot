@@ -80,7 +80,7 @@ def home():
             print("BREAKING")
             break
     enable(False)
-    current=(365,365) # center of a1 is 0,0, corner of h8 is homing pos
+    current=(255,255) # center of a1 is 0,0, corner of h8 is homing pos
     # rn we have a 0th row, a0, h0 for captured pieces and stuff ig
     print("DONE HOMING")
 
