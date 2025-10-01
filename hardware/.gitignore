@@ -6,3 +6,4 @@ fp-info-cache
 production/
 *.log
 *board/*bak
+.DS_Store
