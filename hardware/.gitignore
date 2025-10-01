@@ -1,0 +1,8 @@
+*-backups/
+output/
+fp-info-cache
+*.lck
+*auto_saved_files*
+production/
+*.log
+*board/*bak
