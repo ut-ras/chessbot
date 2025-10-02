@@ -1,3 +1,3 @@
-systemctl --user link linux-stuff/services/*
-systemctl --user enable --now linux-stuff/services/*
+systemctl --user link src/linux/services/*
+systemctl --user enable --now src/linux/services/*
 

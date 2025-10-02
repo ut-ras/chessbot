@@ -5,7 +5,7 @@ import digitalio
 import time
 from typing import List, Tuple
 from time import sleep
-import pwmio # THIS IS SOFTWARE PWM, I CAN USE HARDWARE AND DO BETTER
+#import pwmio # THIS IS SOFTWARE PWM, I CAN USE HARDWARE AND DO BETTER
 
 DEBUG = False
 

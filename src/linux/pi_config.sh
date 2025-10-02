@@ -8,11 +8,11 @@
 
 sudo systemctl enable --now ssh
 sudo apt update
-sudo apt install git vim mosquitto mosquitto-clients libi2c-dev python3-dev tmux pv stockfish
+sudo apt install git vim mosquitto mosquitto-clients libi2c-dev python3-dev tmux pv stockfish python3-pyaudio
 sudo systemctl enable --now mosquitto
 git clone git@github.com:ut-ras/chessbot.git
 
 cd chessbot
 
-python -m venv venv
+python -m venv venv --system-site-packages
 venv/bin/pip install -r requirements.txt

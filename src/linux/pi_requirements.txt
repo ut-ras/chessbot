@@ -29,7 +29,6 @@ board==1.0
 chess==1.10.0
 gpiozero==2.0.1
 matplotlib==3.8.4
-neopixel==0.0.1
 numpy==1.26.4
 Pillow==11.1.0
 Requests==2.31.0
