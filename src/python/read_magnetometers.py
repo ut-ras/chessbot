@@ -17,6 +17,8 @@ PCA_OG_ADDR = 0x70
 PCA_ADDR = PCA_OG_ADDR + PCA_OFFSET
 PCA_TO_PHYSICAL_WIRING_ORDER = [0,1,2,3,4,5,6,7]
 
+current_power_state = [0x00] * 8 
+
 #ban_addrs = banned_addresses_that_are_being_mean_to_me = []
 
 # these addresses are tmaga1s (+- 40mT) whereas all the others are tmaga2s (+= 133mT)
@@ -44,9 +46,46 @@ def power_on(upto):
 
 
 
+
+def power_on_single(addr):
+   
+    global current_power_state
+
+    index = addr - 0x20      # 0–63 index
+    row = index // 8
+    col = index % 8
+
+    # set that bit on
+    current_power_state[row] |= (1 << col)
+
+    # Publish updated power state
+    a = bytes(current_power_state)
+    mqttc.publish("/magpower", a, retain=True)
+
+    #print(f"Turned ON TMAG at addr {hex(addr)} (row {row}, col {col})")
+
+
+
+
+
+
 def power_off():
     a=b'\x00'*8
     mqttc.publish("/magpower", a, retain=True)
+
+
+def power_off_single(addr):
+    index = addr - 0x20          # map address to 0–63 index
+    row = index // 8
+    col = index % 8
+
+    power_state = [0xFF] * 8     # start with all on
+    power_state[row] &= ~(1 << col)
+
+    a = bytes(power_state)
+    mqttc.publish("/magpower", a, retain=True)
+
+   # print(f"Turned off TMAG at addr {hex(addr)} (row {row}, col {col})")
 
 
 
@@ -213,8 +252,29 @@ def get_a_bunch(start, stop):
         try:
             ret.append(tmag5273.read_magnetism())
         except OSError as e:
-            print("err on", hex(i), e)
-            ret.append((0,0,0))
+            print(f"error reading {hex(i)}: {e}. Attempting reinit...")
+
+            try:
+                # turn tmag on and off
+                power_off_single(i)
+                sleep(0.05)
+                power_on_single(i)
+                sleep(0.1)
+
+                TMAG5273.init(i)
+
+                tmag = TMAG5273(i)
+                ret.append(tmag.read_magnetism())
+
+                print(f"Recovered {hex(i)} successfully")
+
+            except Exception as e2:
+                print(f"Failed to recover {hex(i)}: {e2}")
+                ret.append((0, 0, 0))  # placeholder if still failed
+
+        except Exception as e:
+            print(f"Unexpected error with {hex(i)}: {e}")
+            ret.append((0, 0, 0))
 
         #if x==7:
         #    switches.unsafeDisableRow(y)
@@ -283,7 +343,7 @@ if __name__ == "__main__":
 
     print(mqttc.connect("localhost"))
     mqttc.loop_start()
-    init_a_bunch()
+    #init_a_bunch()
     while True:
         t = time()
         ans = get_a_bunch(0x20, 0x20 + ROWS*COLUMNS)
